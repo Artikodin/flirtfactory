@@ -2,11 +2,13 @@ import React from "react";
 import { hot } from "react-hot-loader";
 import { Link } from "react-router-dom";
 
+import { Page } from "../../components";
+
 const Page1 = () => (
-  <React.Fragment>
+  <Page backgroundColor="purple">
     <h1>page1</h1>
     <Link to="/page2">to page 2</Link>
-  </React.Fragment>
+  </Page>
 );
 
 export default hot(module)(Page1);
