@@ -10,6 +10,7 @@ class Page2 extends React.Component {
 
   handleClick = () => {
     const { showed } = this.state;
+    // const showed = this.state.showed;
     this.setState({
       showed: !showed
     });

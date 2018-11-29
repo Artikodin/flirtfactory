@@ -12,12 +12,11 @@ const Page = ({ children, showed }) => (
 
 Page.propTypes = {
   children: PropTypes.node,
-  showed: PropTypes.bool
+  showed: PropTypes.bool.isRequired
 };
 
 Page.defaultProps = {
-  children: "",
-  showed: false
+  children: ""
 };
 
 const AnimatedWrapper = posed(Wrapper)({
