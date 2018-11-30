@@ -3,109 +3,60 @@
 import React, { Component } from "react";
 
 import * as THREE from "three";
-window.THREE = THREE;
-
-require('three/examples/js/controls/OrbitControls.js');
-
 import OBJLoader from "../OBJLoader";
-import GLTFLoader from "../GLTFLoader";
 
 export default class Test extends Component {
   constructor(props) {
     super(props);
+    console.log("test");
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(
-      75, window.innerWidth / window.innerHeight, 0.1, 1000
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
     );
 
-    /* HELPERS */
-    // var axes = new THREE.AxisHelper(2);
-    // scene.add(axes);
-    // var gridXZ = new THREE.GridHelper(10, 1, 0xffffff);
-    // scene.add(gridXZ);
-    // var axesHelper = new THREE.AxesHelper( 5 );
-    // scene.add( axesHelper );
-
-    var controls = new THREE.OrbitControls( camera );
-
-    camera.position.x = 15;
-    camera.position.y  = 7;
-    camera.position.z = -15;
-
-    var renderer = new THREE.WebGLRenderer({ antialias: true }  );
+    var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor( 0xa8a8a8, 1);
     document.body.appendChild(renderer.domElement);
 
-    var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
-    directionalLight.intensity = 1;
-    directionalLight.position.x = 0;
-    directionalLight.position.y = 10;
-    directionalLight.position.z = 15;
-    scene.add( directionalLight );
+    var geometry = new THREE.BoxGeometry(1, 1, 1);
+    var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    var cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
 
-    var flacon; 
+    var loader = new OBJLoader();
 
-    var loader = new THREE.GLTFLoader();
-
-    // Load a glTF resource
     loader.load(
-      "./assets/3d/machine.glb",
-      function ( gltf ) {
-        // gltf.animations; // Array<THREE.AnimationClip>
-        // gltf.scene; // THREE.Scene
-        // gltf.scenes; // Array<THREE.Scene>
-        // gltf.cameras; // Array<THREE.Camera>
-        // gltf.asset; // Object
-        gltf.scene.scale.x = 0.02;
-        gltf.scene.scale.y = 0.02;
-        gltf.scene.scale.z = 0.02;
-        scene.add( gltf.scene );
-        animate();
+      // resource URL
+      "./assets/3d/buildings.obj",
+      // called when resource is loaded
+      function ( object ) {
+
+        console.log(object)
+        scene.add( object );
+
       },
-      // called while loading is progressing
+      // called when loading is in progresses
       function ( xhr ) {
+
         console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
       },
       // called when loading has errors
       function ( error ) {
+
         console.log( 'An error happened' );
-      }
-    );
 
-    loader.load(
-      "./assets/3d/flacon.glb",
-      function ( gltf ) {
-        var obj = gltf.scene.children[0];
-        obj.scale.x = 0.02;
-        obj.scale.y = 0.02;
-        obj.scale.z = 0.02;
-        obj.position.set(0, 7, 8.5)
-        scene.add(obj);
-        animate();
-      }
-    );
-
-    loader.load(
-      "./assets/3d/ballon.glb",
-      function ( gltf ) {
-        var obj = gltf.scene.children[0];
-        obj.scale.x = 0.02;
-        obj.scale.y = 0.02;
-        obj.scale.z = 0.02;
-        obj.position.set(0, 7, 10)
-        scene.add(obj);
-        animate();
       }
     );
 
     var raycaster = new THREE.Raycaster();
     var mouse = new THREE.Vector2();
 
-    function onMouseMove( event ) {
-      mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-      mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-    }
+    var animate = function() {
+      requestAnimationFrame(animate);
 
     function onMouseDown () {
       raycaster.setFromCamera( mouse, camera );
@@ -126,13 +77,6 @@ export default class Test extends Component {
       }
     }
 
-    var animate = function() {
-      if (flacon && flacon.rotation.z > -1.5) {
-        flacon.rotation.z -= 0.02;
-      }
-
-      requestAnimationFrame(animate);
-      controls.update()
       renderer.render(scene, camera);
     };
 
