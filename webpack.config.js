@@ -30,7 +30,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpeg|jpg|gif|obj|mtl|gltf|glb|pdf)$/,
+        test: /\.(png|jpeg|jpg|gif)$/,
         use: [
           {
             loader: "file-loader",
@@ -38,6 +38,14 @@ module.exports = {
               name: "[path][name].[ext]",
               publicPath: "assets/"
             }
+          }
+        ]
+      },
+      {
+        test: /\.(obj)$/,
+        use: [
+          {
+            loader: "webpack-obj-loader"
           }
         ]
       },

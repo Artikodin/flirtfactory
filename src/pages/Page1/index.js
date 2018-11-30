@@ -6,8 +6,8 @@ import { Page } from "../../components";
 
 const Page1 = () => (
   <Page backgroundColor="purple">
+    <img src="assets/img/dice.png" alt="" />
     <h1>page1</h1>
-    <img src="./assets/dice.png" alt="" />
     <Link to="/page2">to page 2</Link>
   </Page>
 );
