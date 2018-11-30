@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { hot } from "react-hot-loader";
