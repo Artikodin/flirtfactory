@@ -4490,6 +4490,11 @@ postcss-value-parser@^3.3.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz#9ff822547e2893213cf1c30efa51ac5fd1ba8281"
   integrity sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==
 
+postprocessing@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-5.2.2.tgz#0b3033e4a5d6bdaba4192c3532132c7088dcebaf"
+  integrity sha512-tD1weLLoRxywcmVzkWMXuswkw/17A7bEAH5Mk/kjAdd21QzsSjnr8Hg4lxxxCd3Nj8JcIktlxoDW0oSq48RNJA==
+
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"

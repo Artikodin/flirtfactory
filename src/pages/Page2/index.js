@@ -1,5 +1,6 @@
 import React from "react";
 import { hot } from "react-hot-loader";
+import { Link } from "react-router-dom";
 
 import { Page, Drawer } from "../../components";
 
@@ -25,6 +26,7 @@ class Page2 extends React.Component {
           click
         </button>
         <Drawer showed={showed} />
+        <Link to="/page3">to page 3</Link>
       </Page>
     );
   }

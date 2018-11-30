@@ -4,18 +4,18 @@ import posed, { PoseGroup } from "react-pose";
 
 import { Wrapper } from "./element";
 
-const Page = ({ children, showed }) => (
+const Drawer = ({ children, showed }) => (
   <PoseGroup>
     {showed && <AnimatedWrapper key="wrapper">{children}</AnimatedWrapper>}
   </PoseGroup>
 );
 
-Page.propTypes = {
+Drawer.propTypes = {
   children: PropTypes.node,
   showed: PropTypes.bool.isRequired
 };
 
-Page.defaultProps = {
+Drawer.defaultProps = {
   children: ""
 };
 
@@ -30,4 +30,4 @@ const AnimatedWrapper = posed(Wrapper)({
   }
 });
 
-export default Page;
+export default Drawer;
