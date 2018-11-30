@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -32,7 +33,11 @@ module.exports = {
         test: /\.(png|jpeg|jpg|gif|obj|mtl|gltf|glb|pdf)$/,
         use: [
           {
-            loader: "file-loader"
+            loader: "file-loader",
+            options: {
+              name: "[path][name].[ext]",
+              publicPath: "assets/"
+            }
           }
         ]
       },
@@ -52,10 +57,10 @@ module.exports = {
       template: "./public/index.html",
       filename: "./index.html"
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new CopyWebpackPlugin([{ from: "public/assets", to: "assets" }])
   ],
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
     compress: true,
     historyApiFallback: true,
     hot: true,
