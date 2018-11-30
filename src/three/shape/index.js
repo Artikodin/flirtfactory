@@ -6,3 +6,5 @@ export { default as PixelationPass } from "./PixelationPass";
 export { default as Renderer } from "./Renderer";
 export { default as Scene } from "./Scene";
 export { default as Sphere } from "./Sphere";
+export { default as Obj } from "./Obj";
+export { default as Test } from "./Test";
