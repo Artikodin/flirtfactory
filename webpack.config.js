@@ -29,6 +29,14 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|jpeg|jpg|gif|obj|mtl|gltf|glb|pdf)$/,
+        use: [
+          {
+            loader: "file-loader"
+          }
+        ]
+      },
+      {
         test: /\.html$/,
         exclude: /node_modules/,
         use: [
