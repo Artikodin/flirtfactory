@@ -2,3 +2,4 @@
 export { default as Drawer } from "./Drawer";
 export { default as Page } from "./Page";
 export { default as ScrollHandler } from "./ScrollHandler";
+export { default as TextProvider, TextContext } from "./TextProvider";

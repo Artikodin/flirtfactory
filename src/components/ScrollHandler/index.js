@@ -54,8 +54,8 @@ class ScrollToTopOnMount extends React.Component {
         actualYposition: scrollYposition
       });
     }
-
-    console.log(scrollIdex);
+    console.log(window.requestAnimationFrame);
+    console.log("scrollIdex", scrollIdex);
   };
 
   render() {
