@@ -42,14 +42,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.(obj)$/,
-        use: [
-          {
-            loader: "webpack-obj-loader"
-          }
-        ]
-      },
-      {
         test: /\.html$/,
         exclude: /node_modules/,
         use: [
