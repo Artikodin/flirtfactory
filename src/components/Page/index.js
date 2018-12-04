@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 import { Wrapper } from "./element";
 
 const Page = ({ children, backgroundColor }) => (
-  <Wrapper backgroundColor={backgroundColor}>{children}</Wrapper>
+  <Wrapper backgroundColor={backgroundColor} id="wrapper">
+    {children}
+  </Wrapper>
 );
 
 Page.propTypes = {

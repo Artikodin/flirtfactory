@@ -1,5 +1,4 @@
 import React from "react";
-import { hot } from "react-hot-loader";
 import { Link } from "react-router-dom";
 
 import { Page, Drawer } from "../../components";
@@ -32,4 +31,4 @@ class Page2 extends React.Component {
   }
 }
 
-export default hot(module)(Page2);
+export default Page2;
