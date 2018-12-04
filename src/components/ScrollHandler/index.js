@@ -40,8 +40,8 @@ class ScrollToTopOnMount extends React.Component {
       onScrollBottom();
     }
 
-    console.log("actualYposition", actualYposition);
-    console.log("scrollYposition", scrollYposition);
+    // console.log("actualYposition", actualYposition);
+    // console.log("scrollYposition", scrollYposition);
 
     if (actualYposition > scrollYposition) {
       this.setState({
@@ -54,8 +54,7 @@ class ScrollToTopOnMount extends React.Component {
         actualYposition: scrollYposition
       });
     }
-    console.log(window.requestAnimationFrame);
-    console.log("scrollIdex", scrollIdex);
+    // console.log("scrollIdex", scrollIdex);
   };
 
   render() {
