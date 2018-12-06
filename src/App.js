@@ -5,17 +5,20 @@ import { hot } from "react-hot-loader";
 
 import GlobalStyle from "./theme/global";
 import { Page1, Page2, Page3 } from "./pages";
+import { TextProvider, NavBar } from "./components";
 
 const App = () => (
   <React.Fragment>
     <GlobalStyle />
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Page1} />
-        <Route exact path="/page2" component={Page2} />
-        <Route exact path="/page3" component={Page3} />
-      </Switch>
-    </Router>
+    <TextProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Page1} />
+          <Route exact path="/page2" component={Page2} />
+          <Route exact path="/page3" component={Page3} />
+        </Switch>
+      </Router>
+    </TextProvider>
   </React.Fragment>
 );
 
