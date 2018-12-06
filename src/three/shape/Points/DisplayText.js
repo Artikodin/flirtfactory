@@ -41,6 +41,12 @@ const WrapperAbsolute = styled.div`
   top: 30vh;
   left: 70vw;
   z-index: 50;
+  & p {
+    display: block;
+    background-color: #fff;
+    text-align: justify;
+    padding: 5px 10px;
+  }
 `;
 
 const Point = styled.h1`

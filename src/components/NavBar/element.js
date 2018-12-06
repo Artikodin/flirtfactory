@@ -6,9 +6,11 @@ export const Wrapper = styled.ul`
   list-style: none;
   position: absolute;
   left: 50%;
-  bottom: 10px;
+  bottom: 25px;
   transform: translateX(-50%);
   z-index: 10;
   display: flex;
   align-items: baseline;
+  max-width: 1100px;
+  width: 100%;
 `;

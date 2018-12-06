@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Wrapper, ImgContainer, StyledLink } from "./element";
+import { Wrapper, ImgContainer, StyledLink, TextContainer } from "./element";
 
 /**
  * NavItem
@@ -16,7 +16,7 @@ const NavItem = ({ pathTo, imgSrc, children }) => (
   <Wrapper>
     <StyledLink to={pathTo}>
       <ImgContainer src={imgSrc} alt="" />
-      {children}
+      <TextContainer>{children}</TextContainer>
     </StyledLink>
   </Wrapper>
 );

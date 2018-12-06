@@ -2,47 +2,50 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.li`
-  position: relative;
-  padding: 5px 16px;
+  flex: 1 1 0;
   cursor: pointer;
-  color: #fff;
-  font-size: 16px;
-  transition: all 0.4s ease;
   transform: translate3d(0, 0, 0);
-  &:hover {
-    padding: 5px 80px;
-    font-weight: bold;
-    font-size: 24px;
-  }
+  font-weight: 200;
+  margin-right: -1px;
+  transition: all 0.4s ease;
   &:hover img {
-    transform: translate3d(-50%, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
     opacity: 1;
-    transition: all 0.35s ease;
   }
+  &:hover span {
+    opacity: 1;
+  }
+`;
+
+export const TextContainer = styled.span`
+  border: 1px solid #fff;
+  text-align: center;
+  padding: 4px;
+  font-size: 14px;
+  z-index: 12;
+  opacity: 0.45;
+  transition: all 0.25s ease;
+  transform: translate3d(0, 0, 0);
 `;
 
 export const ImgContainer = styled.img`
   z-index: 11;
   display: block;
-  width: 250px;
-  height: 140px;
-  border-radius: 6px;
-  background-color: white;
-  position: absolute;
-  left: 50%;
-  transform: translate3d(-50%, 90px, 0) scale(0.1);
+  width: 100%;
   bottom: 45px;
+  border: 1px solid #fff;
+  margin-bottom: -1px;
+  transform: translate3d(0, 0, 0) scale(0);
   opacity: 0;
-  transition: all 0.1s ease;
-  border: 2px solid #fff;
+  transition: all 0.25s ease;
+  transform-origin: bottom center;
 `;
 
 export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none !important;
+  color: #fff !important;
   white-space: nowrap;
-  &:hover {
-    text-decoration: none;
-    color: #fff;
-  }
+  position: relative;
 `;

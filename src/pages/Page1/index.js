@@ -14,49 +14,49 @@ const Page1 = ({ history }) => {
     <Page backgroundColor="#c4e6f1">
       <NavBar>
         <NavBar.NavItem
-          imgSrc="https://picsum.photos/250/140?image=0"
+          imgSrc="./assets/img/img1.jpeg"
           pathTo="/"
         >
           Antiquité
         </NavBar.NavItem>
         <NavBar.NavItem
-          imgSrc="https://picsum.photos/250/140?image=1"
+          imgSrc="./assets/img/img2.jpeg"
           pathTo="/page2"
         >
           Moyen-age
         </NavBar.NavItem>
         <NavBar.NavItem
-          imgSrc="https://picsum.photos/250/140?image=2"
+          imgSrc="./assets/img/img8.jpeg"
           pathTo="/page3"
         >
           Renaissance
         </NavBar.NavItem>
         <NavBar.NavItem
-          imgSrc="https://picsum.photos/250/140?image=3"
+          imgSrc="./assets/img/img3.jpeg"
           pathTo="/page3"
         >
           Lumière
         </NavBar.NavItem>
         <NavBar.NavItem
-          imgSrc="https://picsum.photos/250/140?image=4"
+          imgSrc="./assets/img/img4.jpeg"
           pathTo="/page3"
         >
           Belle-époque
         </NavBar.NavItem>
         <NavBar.NavItem
-          imgSrc="https://picsum.photos/250/140?image=5"
+          imgSrc="./assets/img/img5.jpeg"
           pathTo="/page3"
         >
           Moderne
         </NavBar.NavItem>
         <NavBar.NavItem
-          imgSrc="https://picsum.photos/250/140?image=6"
+          imgSrc="./assets/img/img6.gif"
           pathTo="/page3"
         >
           Ère-numérique
         </NavBar.NavItem>
         <NavBar.NavItem
-          imgSrc="https://picsum.photos/250/140?image=7"
+          imgSrc="./assets/img/img7.jpeg"
           pathTo="/page3"
         >
           Futur

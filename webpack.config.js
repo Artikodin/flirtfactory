@@ -30,13 +30,13 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpeg|jpg|gif)$/,
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: "file-loader",
             options: {
-              name: "[path][name].[ext]",
-              publicPath: "assets/"
+              name: "[name].[ext]",
+              outputPath: "fonts/"
             }
           }
         ]
