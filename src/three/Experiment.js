@@ -1,9 +1,17 @@
-import React from "react";
+import React, { Component } from "react";
 
-import { Test } from "./shape";
+import { Scene3D } from "./shape";
 
-const Experiment = () => <Test />;
+/* eslint-disable */
+
+export default class Experiment extends Component {
+  render() {
+    return (
+      <div>
+        <Scene3D />
+      </div>
+    );
+  }
+}
 
 Experiment.displayName = "Experiment";
-
-export default Experiment;

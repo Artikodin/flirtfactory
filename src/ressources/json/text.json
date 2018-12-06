@@ -1,0 +1,67 @@
+{
+  "epoques": [
+    {
+      "name": "MOYEN-AGE",
+      "date": "476 - 1492",
+      "short": "Courtoisie",
+      "intro": "La plupart de relations de l'époque sont des mariages arrangés, le vrai amour se déroule hors-mariage et doit donc rester secret. Apparaît l'amour courtois, un amour purement sentimental qui consiste à prouver sa bravoure pour gagner le coeur de sa dame. ",
+      "description": "Au Moyen- ge apparaît une nouvelle forme de séduction: la courtoisie. A cette époque, la norme est au mariage arrangé. Le vrai amour se déroule hors-mariage et doit rester secret, sous peine de très lourdes conséquences. \n        Les relations sont donc très compliquées et mêlent passion, désespoir, plaisir et souffrance. Un coup de foudre peut alors durer toute une vie, les deux amoureux ne vivant que l'un pour l'autre !\n        L’amour courtois est un amour purement sentimental et ne suppose pas forcément de relation physique. Mais il s'exprime par des actes : il fallait prouver sa bravoure auprès de sa dame, à l'image des chevaliers gagnant une bataille ou délivrant leurs princesses.",
+      "symbols": [
+        {
+          "name": "Tournois",
+          "description": "Des tournois étaient souvent organisés par les seigneurs. En plus d'entraîner leurs chevaliers, les tournois étaient l'occasion pour ces derniers de prouver leurs bravoures auprès des dames."
+        },
+        {
+          "name": "Fleurs",
+          "description": "L’Eglise très stricte empêchait aux couples d’afficher publiquement leur affection, les fleurs devennaient alors un moyen de faire passer ses sentiments. Selon sa composition et son arrangement, le bouquet pouvait délivrer un message en toute discrétion."
+        },
+        {
+          "name": "Serenades",
+          "description": "La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à l'image chantait son amour sous le balcon de sa Juliette. Mais auparavant, il devait effectuer d’incessants allers-retours dans la rue pour attirer son attention. Pas très discret mais efficace…"
+        }
+      ]
+    },
+    {
+      "name": "MOYEN-AGE",
+      "date": "476 - 1492",
+      "short": "Courtoisie",
+      "intro": "La plupart de relations de l'époque sont des mariages arrangés, le vrai amour se déroule hors-mariage et doit donc rester secret. Apparaît l'amour courtois, un amour purement sentimental qui consiste à prouver sa bravoure pour gagner le coeur de sa dame. ",
+      "description": "Au Moyen- ge apparaît une nouvelle forme de séduction: la courtoisie. A cette époque, la norme est au mariage arrangé. Le vrai amour se déroule hors-mariage et doit rester secret, sous peine de très lourdes conséquences. \n        Les relations sont donc très compliquées et mêlent passion, désespoir, plaisir et souffrance. Un coup de foudre peut alors durer toute une vie, les deux amoureux ne vivant que l'un pour l'autre !\n        L’amour courtois est un amour purement sentimental et ne suppose pas forcément de relation physique. Mais il s'exprime par des actes : il fallait prouver sa bravoure auprès de sa dame, à l'image des chevaliers gagnant une bataille ou délivrant leurs princesses.",
+      "symbols": [
+        {
+          "name": "Tournois",
+          "description": "Des tournois étaient souvent organisés par les seigneurs. En plus d'entraîner leurs chevaliers, les tournois étaient l'occasion pour ces derniers de prouver leurs bravoures auprès des dames."
+        },
+        {
+          "name": "Fleurs",
+          "description": "L’Eglise très stricte empêchait aux couples d’afficher publiquement leur affection, les fleurs devennaient alors un moyen de faire passer ses sentiments. Selon sa composition et son arrangement, le bouquet pouvait délivrer un message en toute discrétion."
+        },
+        {
+          "name": "Serenades",
+          "description": "La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à l'image chantait son amour sous le balcon de sa Juliette. Mais auparavant, il devait effectuer d’incessants allers-retours dans la rue pour attirer son attention. Pas très discret mais efficace…"
+        }
+      ]
+    },
+    {
+      "name": "MOYEN-AGE",
+      "date": "476 - 1492",
+      "short": "Courtoisie",
+      "intro": "La plupart de relations de l'époque sont des mariages arrangés, le vrai amour se déroule hors-mariage et doit donc rester secret. Apparaît l'amour courtois, un amour purement sentimental qui consiste à prouver sa bravoure pour gagner le coeur de sa dame. ",
+      "description": "Au Moyen- ge apparaît une nouvelle forme de séduction: la courtoisie. A cette époque, la norme est au mariage arrangé. Le vrai amour se déroule hors-mariage et doit rester secret, sous peine de très lourdes conséquences. \n        Les relations sont donc très compliquées et mêlent passion, désespoir, plaisir et souffrance. Un coup de foudre peut alors durer toute une vie, les deux amoureux ne vivant que l'un pour l'autre !\n        L’amour courtois est un amour purement sentimental et ne suppose pas forcément de relation physique. Mais il s'exprime par des actes : il fallait prouver sa bravoure auprès de sa dame, à l'image des chevaliers gagnant une bataille ou délivrant leurs princesses.",
+      "symbols": [
+        {
+          "name": "Tournois",
+          "description": "Des tournois étaient souvent organisés par les seigneurs. En plus d'entraîner leurs chevaliers, les tournois étaient l'occasion pour ces derniers de prouver leurs bravoures auprès des dames."
+        },
+        {
+          "name": "Fleurs",
+          "description": "L’Eglise très stricte empêchait aux couples d’afficher publiquement leur affection, les fleurs devennaient alors un moyen de faire passer ses sentiments. Selon sa composition et son arrangement, le bouquet pouvait délivrer un message en toute discrétion."
+        },
+        {
+          "name": "Serenades",
+          "description": "La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à l'image chantait son amour sous le balcon de sa Juliette. Mais auparavant, il devait effectuer d’incessants allers-retours dans la rue pour attirer son attention. Pas très discret mais efficace…"
+        }
+      ]
+    }
+  ]
+}
