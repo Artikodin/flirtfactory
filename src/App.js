@@ -14,8 +14,8 @@ const App = () => (
       <Router>
         <Switch>
           <Route exact path="/" component={Page1} />
-          <Route exact path="/page2" component={Page2} />
-          <Route exact path="/page3" component={Page3} />
+          <Route exact path="/page2" component={Page1} />
+          <Route exact path="/page3" component={Page1} />
         </Switch>
       </Router>
     </TextProvider>

@@ -73,7 +73,7 @@ export default class Scene3D extends Component {
 
       renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setClearColor(0xc3e5f0, 1);
+      renderer.setClearColor(0x75abeb, 1);
       renderer.shadowMapEnabled = true;
       renderer.shadowMapType = THREE.PCFSoftShadowMap;
       renderer.setPixelRatio(window.devicePixelRatio);
@@ -93,7 +93,7 @@ export default class Scene3D extends Component {
 
       const geometry = new THREE.PlaneGeometry(1000, 1000, 1, 1);
       const material = new THREE.MeshBasicMaterial({
-        color: 0xc3e5f0,
+        color: 0x75abeb,
         side: THREE.DoubleSide
       });
       const floor = new THREE.Mesh(geometry, material);

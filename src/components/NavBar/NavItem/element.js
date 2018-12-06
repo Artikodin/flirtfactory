@@ -11,6 +11,7 @@ export const Wrapper = styled.li`
   &:hover img {
     transform: translate3d(0, 0, 0) scale(1);
     opacity: 1;
+    margin-right: 1px;
   }
   &:hover span {
     opacity: 1;
