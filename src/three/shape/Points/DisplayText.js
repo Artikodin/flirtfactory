@@ -37,9 +37,9 @@ export default class DisplayTest extends Component {
 
 const WrapperAbsolute = styled.div`
   position: absolute;
-  width: 30vw;
-  top: 10vh;
-  left: 40vw;
+  width: 20vw;
+  top: 30vh;
+  left: 70vw;
   z-index: 50;
 `;
 

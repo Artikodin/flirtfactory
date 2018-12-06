@@ -74,8 +74,8 @@ export default class Scene3D extends Component {
       renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setClearColor(0xc3e5f0, 1);
-      renderer.shadowMap.enabled = true;
-      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.shadowMapEnabled = true;
+      renderer.shadowMapType = THREE.PCFSoftShadowMap;
       renderer.setPixelRatio(window.devicePixelRatio);
       document.body.appendChild(renderer.domElement);
 
@@ -84,6 +84,8 @@ export default class Scene3D extends Component {
       light.position.x = 12;
       light.position.y = 10;
       light.position.z = 0;
+      light.shadowDarkness = 0.7;
+      light.shadowCameraVisible = true;
       scene.add(light);
 
       // const lightHelper = new THREE.DirectionalLightHelper(light, 5);
@@ -96,6 +98,8 @@ export default class Scene3D extends Component {
       });
       const floor = new THREE.Mesh(geometry, material);
       floor.rotation.x = Math.PI / 2;
+      floor.castShadow = true;
+      floor.receiveShadow = false;
       scene.add(floor);
 
       loadItems();
@@ -117,6 +121,9 @@ export default class Scene3D extends Component {
           gltf.scene.scale.x = 0.02;
           gltf.scene.scale.y = 0.02;
           gltf.scene.scale.z = 0.02;
+          console.log(gltf.scene)
+          gltf.scene.children[0].castShadow = true;
+          gltf.scene.children[0].receiveShadow = false;
           scene.add(gltf.scene);
           animate();
         },
@@ -135,18 +142,18 @@ export default class Scene3D extends Component {
         obj.scale.x = 0.02;
         obj.scale.y = 0.02;
         obj.scale.z = 0.02;
-        obj.position.set(0, 7, 8.5);
+        obj.position.set(0, 7, -10);
         scene.add(obj);
       });
 
-      // loader.load("./assets/3d/ballon.glb", gltf => {
-      //   const obj = gltf.scene.children[0];
-      //   obj.scale.x = 0.02;
-      //   obj.scale.y = 0.02;
-      //   obj.scale.z = 0.02;
-      //   obj.position.set(0, 7, 10);
-      //   scene.add(obj);
-      // });
+      loader.load("./assets/3d/tapis.glb", gltf => {
+        const obj = gltf.scene.children[0];
+        obj.scale.x = 0.02;
+        obj.scale.y = 0.02;
+        obj.scale.z = 0.02;
+        obj.position.set(4, 1, -9);
+        scene.add(obj);
+      });
 
       loader.load("./assets/3d/fleche.glb", gltf => {
         gltf.scene.scale.x = 0.02;
