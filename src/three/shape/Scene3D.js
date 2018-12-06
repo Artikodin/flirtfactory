@@ -34,7 +34,7 @@ export default class Scene3D extends Component {
     let loader;
     const gltfStore = {};
     let rotateThing;
-    const d = 15; // distance between object and camera
+    const d = 12; // distance between object and camera
 
     init();
 
@@ -54,17 +54,17 @@ export default class Scene3D extends Component {
       camera.position.set(20, 20, -20); // all components equal
       camera.lookAt(scene.position); // or the origin
 
-      controls = new THREE.OrbitControls(camera);
+      // controls = new THREE.OrbitControls(camera);
 
       /* HELPERS */
-      const axes = new THREE.AxisHelper(2);
-      scene.add(axes);
-      const gridXZ = new THREE.GridHelper(10, 1, 0xffffff);
-      scene.add(gridXZ);
-      const axesHelper = new THREE.AxesHelper(5);
-      scene.add(axesHelper);
-      const cameraHelper = new THREE.CameraHelper(camera);
-      scene.add(cameraHelper);
+      // const axes = new THREE.AxisHelper(2);
+      // scene.add(axes);
+      // const gridXZ = new THREE.GridHelper(10, 1, 0xffffff);
+      // scene.add(gridXZ);
+      // const axesHelper = new THREE.AxesHelper(5);
+      // scene.add(axesHelper);
+      // const cameraHelper = new THREE.CameraHelper(camera);
+      // scene.add(cameraHelper);
 
       raycaster = new THREE.Raycaster();
       mouse = new THREE.Vector2();
@@ -86,8 +86,8 @@ export default class Scene3D extends Component {
       light.position.z = 0;
       scene.add(light);
 
-      const lightHelper = new THREE.DirectionalLightHelper(light, 5);
-      scene.add(lightHelper);
+      // const lightHelper = new THREE.DirectionalLightHelper(light, 5);
+      // scene.add(lightHelper);
 
       const geometry = new THREE.PlaneGeometry(1000, 1000, 1, 1);
       const material = new THREE.MeshBasicMaterial({
@@ -205,7 +205,7 @@ export default class Scene3D extends Component {
           this.displayPoint();
         }
       }
-      controls.update();
+      // controls.update();
       renderer.render(scene, camera);
     }
 

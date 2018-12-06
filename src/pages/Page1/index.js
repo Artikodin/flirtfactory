@@ -1,12 +1,14 @@
+/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Page, TextContext, NavBar } from "../../components";
+import { Page, NavBar } from "../../components";
+import Experiment from "../../three/Experiment";
 
 const Page1 = ({ history }) => {
-  const pushInHistory = () => {
-    history.push("/page2");
-  };
+  // const pushInHistory = () => {
+  //   history.push("/page2");
+  // };
 
   return (
     <Page backgroundColor="#c4e6f1">
@@ -60,7 +62,8 @@ const Page1 = ({ history }) => {
           Futur
         </NavBar.NavItem>
       </NavBar>
-      <TextContext.Consumer>
+      <Experiment />
+      {/* <TextContext.Consumer>
         {value => (
           <React.Fragment>
             <h1>{value.epoques[0].name}</h1>
@@ -70,7 +73,7 @@ const Page1 = ({ history }) => {
             </button>
           </React.Fragment>
         )}
-      </TextContext.Consumer>
+      </TextContext.Consumer> */}
     </Page>
   );
 };

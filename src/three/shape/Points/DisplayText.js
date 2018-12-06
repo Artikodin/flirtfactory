@@ -40,6 +40,7 @@ const WrapperAbsolute = styled.div`
   width: 30vw;
   top: 10vh;
   left: 40vw;
+  z-index: 50;
 `;
 
 const Point = styled.h1`
