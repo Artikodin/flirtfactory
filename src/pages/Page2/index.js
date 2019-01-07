@@ -17,7 +17,7 @@ class Page2 extends React.Component {
   };
 
   handleLog = () => {
-    console.log("log");
+    // console.log("log");
   };
 
   render() {

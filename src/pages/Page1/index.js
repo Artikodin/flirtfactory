@@ -3,7 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Page, NavBar } from "../../components";
-import Experiment from "../../three/Experiment";
 
 const Page1 = ({ history }) => {
   // const pushInHistory = () => {
@@ -62,7 +61,6 @@ const Page1 = ({ history }) => {
           Futur
         </NavBar.NavItem>
       </NavBar>
-      <Experiment />
       {/* <TextContext.Consumer>
         {value => (
           <React.Fragment>

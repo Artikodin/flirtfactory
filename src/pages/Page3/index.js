@@ -1,7 +1,5 @@
 import React from "react";
 
-import Experiment from "../../three/Experiment";
-
-const Page3 = () => <Experiment />;
+const Page3 = () => <div> test</div>;
 
 export default Page3;
