@@ -29,6 +29,7 @@ module.exports = {
     "import/no-unresolved": 2,
     "import/order": 0,
     "import/prefer-default-export": 0,
-    "react/forbid-prop-types": 0
+    "react/forbid-prop-types": 0,
+    "react/no-unescaped-entities": 0
   }
 };

@@ -3,18 +3,14 @@ import PropTypes from "prop-types";
 
 import { Footer } from "./element";
 
-const Footer = () => (
-  <Footer>
+const Footer = () => <Footer>footer</Footer>;
 
-  </Footer>
-);
-
-Page.propTypes = {
+Footer.propTypes = {
   children: PropTypes.node,
   backgroundColor: PropTypes.string
 };
 
-Page.defaultProps = {
+Footer.defaultProps = {
   children: "",
   backgroundColor: "white"
 };

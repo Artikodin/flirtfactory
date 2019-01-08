@@ -5,7 +5,7 @@ import posed, { PoseGroup } from "react-pose";
 import { Wrapper } from "./element";
 
 const Drawer = ({ children, showed }) => (
-  <PoseGroup>
+  <PoseGroup id="Drawer">
     {showed && <AnimatedWrapper key="wrapper">{children}</AnimatedWrapper>}
   </PoseGroup>
 );
@@ -22,11 +22,19 @@ Drawer.defaultProps = {
 const AnimatedWrapper = posed(Wrapper)({
   enter: {
     x: 0,
-    opacity: 1
+    opacity: 1,
+    transition: {
+      duration: 500,
+      ease: "easeIn"
+    }
   },
   exit: {
-    x: 300,
-    opacity: 0
+    x: 0,
+    opacity: 0,
+    transition: {
+      duration: 500,
+      ease: "easeOut"
+    }
   }
 });
 
