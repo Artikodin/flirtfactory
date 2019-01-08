@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Page, NavBar } from "../../components";
+import { Page, NavBar, Cursor } from "../../components";
 
 const Page1 = ({ history }) => {
   // const pushInHistory = () => {
@@ -11,7 +11,7 @@ const Page1 = ({ history }) => {
 
   return (
     <Page backgroundColor="#c4e6f1">
-      {/* <NavBar>
+      <NavBar>
         <NavBar.NavItem
           imgSrc="./assets/img/img1.jpeg"
           pathTo="/"
@@ -60,7 +60,8 @@ const Page1 = ({ history }) => {
         >
           Futur
         </NavBar.NavItem>
-      </NavBar> */}
+      </NavBar>
+      <Cursor/>
       {/* <TextContext.Consumer>
         {value => (
           <React.Fragment>

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export const Wrapper = styled.li`
   flex: 1 1 0;
-  cursor: pointer;
   transform: translate3d(0, 0, 0);
   font-weight: 200;
   margin-right: -1px;
