@@ -42,6 +42,7 @@ export const ImgContainer = styled.img`
 `;
 
 export const StyledLink = styled(Link)`
+  cursor: none;
   display: flex;
   flex-direction: column;
   text-decoration: none !important;

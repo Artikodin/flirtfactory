@@ -6,6 +6,7 @@ export const Pointer = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  pointer-events: none;
 `;
 
 export const OutsideCircle = styled.div`

@@ -24,8 +24,8 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
   html, body{
-    /* font-family: "avenir"; */
-    cursor: unset;
+    font-family: "avenir";
+    /* cursor: none; */
   }
   /* normalize */
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
