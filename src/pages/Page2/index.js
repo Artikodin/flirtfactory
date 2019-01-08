@@ -28,9 +28,13 @@ class Page2 extends React.Component {
         <ScrollHandler onScrollBottom={this.handleLog} />
         <h1>page2</h1>
         <BackgroundVideo>
-          <video src="./assets/videos/video.mp4" type="video/mp4" autoPlay loop>
-            <track />
-          </video>
+          <video
+            src="./assets/videos/video.mp4"
+            type="video/mp4"
+            autoPlay
+            loop
+            muted
+          />
         </BackgroundVideo>
         <button type="button" onClick={this.handleClick}>
           click

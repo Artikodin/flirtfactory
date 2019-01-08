@@ -16,7 +16,7 @@ class Cursor extends React.Component {
   innerPos = { x: 0, y: 0 };
 
   handleMouseMove = throttle(10, e => {
-    const pointerCenterHack = 10;
+    const pointerCenterHack = 0;
     this.target = {
       x: e.clientX - pointerCenterHack,
       y: e.clientY - pointerCenterHack

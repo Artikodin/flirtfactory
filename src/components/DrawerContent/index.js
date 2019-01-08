@@ -23,10 +23,10 @@ const DrawerContent = ({ children }) => (
               Les hommes dominaient totalement la relation amoureuse, au
               détriment des femmes.
             </strong>
-            Il était courant d/'avoir des partenaires multiples, ainsi ils
+            Il était courant davoir des partenaires multiples, ainsi ils
             pouvaient coucher avec toutes femmes non-mariées (coucher avec une
             femme mariée était considéré comme une offense). Les Romains ont une
-            morale sexuelle simple : à condition de ne s'attaquer ni aux femmes
+            morale sexuelle simple : à condition de ne sattaquer ni aux femmes
             ni aux enfants des citoyens, tout est permis !La sexualité était
             totalement débridée !
           </p>
