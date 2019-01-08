@@ -13,4 +13,5 @@ export const Wrapper = styled.ul`
   align-items: baseline;
   max-width: 1100px;
   width: 100%;
+  z-index: 1;
 `;
