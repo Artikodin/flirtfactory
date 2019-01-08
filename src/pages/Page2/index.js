@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Page, Drawer, DrawerContent, ScrollHandler } from "../../components";
 
-/* eslint-disable */
+import styled from "styled-components";
 
 class Page2 extends React.Component {
   state = {
@@ -12,7 +12,6 @@ class Page2 extends React.Component {
 
   handleClick = () => {
     const { showed } = this.state;
-    // const showed = this.state.showed;
     this.setState({
       showed: !showed
     });
@@ -28,10 +27,11 @@ class Page2 extends React.Component {
       <Page>
         <ScrollHandler onScrollBottom={this.handleLog} />
         <h1>page2</h1>
-        <Video autoPlay loop>
-          <track default />
-          <source src="./assets/videos/video.mp4" type="video/mp4" />
-        </Video>
+        <BackgroundVideo>
+          <video src="./assets/videos/video.mp4" type="video/mp4" autoPlay loop>
+            <track />
+          </video>
+        </BackgroundVideo>
         <button type="button" onClick={this.handleClick}>
           click
         </button>
@@ -46,16 +46,19 @@ class Page2 extends React.Component {
 
 export default Page2;
 
-import styled from "styled-components";
-
-export const Video = styled.video`
-  position: fixed; 
-  right: 0; 
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-  width: auto; 
-  height: auto; 
+export const BackgroundVideo = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
-  /* z-index: -100; */
+  video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateX(calc((100% - 100vw) / 2));
+  }
 `;

@@ -11,7 +11,7 @@ const Page1 = ({ history }) => {
 
   return (
     <Page backgroundColor="#c4e6f1">
-      <NavBar>
+      {/* <NavBar>
         <NavBar.NavItem
           imgSrc="./assets/img/img1.jpeg"
           pathTo="/"
@@ -60,7 +60,7 @@ const Page1 = ({ history }) => {
         >
           Futur
         </NavBar.NavItem>
-      </NavBar>
+      </NavBar> */}
       {/* <TextContext.Consumer>
         {value => (
           <React.Fragment>
