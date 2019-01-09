@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Page, Drawer, DrawerContent, ScrollHandler } from "../../components";
+import { Page, Drawer, DrawerContent } from "../../components";
 
 import styled from "styled-components";
 
@@ -25,8 +25,7 @@ class Page2 extends React.Component {
     const { showed } = this.state;
     return (
       <Page>
-        <ScrollHandler onScrollBottom={this.handleLog} />
-        <h1>page2</h1>
+        {/* <ScrollHandler onScrollBottom={this.handleLog} /> */}
         <BackgroundVideo>
           <video
             src="./assets/videos/video.mp4"
@@ -61,8 +60,16 @@ export const BackgroundVideo = styled.div`
     position: fixed;
     right: 0;
     bottom: 0;
+    width: 100%;
     min-width: 100%;
-    min-height: 100%;
-    transform: translateX(calc((100% - 100vw) / 2));
+    min-height: 100vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (max-width: 1200px) {
+      height: 100%;
+      width: auto;
+    }
   }
 `;

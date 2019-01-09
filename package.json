@@ -35,9 +35,10 @@
   },
   "dependencies": {
     "history": "^4.7.2",
+    "interweave": "^10.0.0",
     "postprocessing": "^5.2.2",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
+    "react": "^16.7.0",
     "react-dom": "^16.6.3",
     "react-hot-loader": "^4.3.12",
     "react-pose": "^4.0.2",

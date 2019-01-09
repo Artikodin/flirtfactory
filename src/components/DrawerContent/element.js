@@ -17,38 +17,31 @@ export const MainContent = styled.div`
   height: auto;
   width: 100%;
   margin-top: 10vh;
+  font-family: GTCinetype;
+  color: #ffffff;
+  text-align: center;
+  font-weight: lighter;
+  font-style: normal;
+  font-stretch: normal;
 
   #MainContent-date {
-    font-family: GTCinetype;
     font-size: 14px;
     letter-spacing: 1.9px;
     text-align: center;
-    color: #ffffff;
   }
 
   #MainContent-title {
-    font-family: GTCinetype;
     font-size: 72px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
     line-height: 0.4;
-    color: #ffffff;
-    text-align: center;
   }
 
   #MainContent-text {
     margin-top: 7vh;
+    font-size: 14px;
     p {
-      font-family: GTCinetype;
       font-size: 14px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
       line-height: 2.07;
       letter-spacing: normal;
-      text-align: center;
-      color: #ffffff;
       margin-bottom: 2.5vh;
     }
   }

@@ -1,11 +1,21 @@
-/* eslint-disable */
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { hot } from "react-hot-loader";
 
 import GlobalStyle from "./theme/global";
-import { Page1, Page2, Page3 } from "./pages";
-import { TextProvider, NavBar, Logo, ButtonDrawer } from "./components";
+import {
+  Intro,
+  Antiquite,
+  BelleEpoque,
+  EreNumerique,
+  Futur,
+  Lumieres,
+  Moderne,
+  MoyenAge,
+  Renaissance,
+  Page2
+} from "./pages";
+import { TextProvider, NavBar, Logo, ButtonDrawer, ButtonGlobalView } from "./components";
 
 const App = () => (
   <React.Fragment>
@@ -16,59 +26,52 @@ const App = () => (
           <Logo />
           <ButtonDrawer />
           <Switch>
-            <Route exact path="/" component={Page1} />
+            <Route exact path="/" component={Intro} />
+            <Route exact path="/antiquite" component={Antiquite} />
+            <Route exact path="/belle-epoque" component={BelleEpoque} />
+            <Route exact path="/ere-numerique" component={EreNumerique} />
+            <Route exact path="/futur" component={Futur} />
+            <Route exact path="/lumieres" component={Lumieres} />
+            <Route exact path="/moderne" component={Moderne} />
+            <Route exact path="/moyen-age" component={MoyenAge} />
+            <Route exact path="/renaissance" component={Renaissance} />
             <Route exact path="/page2" component={Page2} />
-            <Route exact path="/page3" component={Page3} />
           </Switch>
           <NavBar>
-            <NavBar.NavItem
-              imgSrc="./assets/img/img1.jpeg"
-              pathTo="/"
-            >
+            <NavBar.NavItem imgSrc="./assets/img/img1.jpeg" pathTo="/antiquite">
               Antiquité
             </NavBar.NavItem>
-            <NavBar.NavItem
-              imgSrc="./assets/img/img2.jpeg"
-              pathTo="/page2"
-            >
-              Moyen-age
+            <NavBar.NavItem imgSrc="./assets/img/img2.jpeg" pathTo="/moyen-age">
+              Moyen-Âge
             </NavBar.NavItem>
             <NavBar.NavItem
               imgSrc="./assets/img/img8.jpeg"
-              pathTo="/page3"
+              pathTo="/renaissance"
             >
               Renaissance
             </NavBar.NavItem>
-            <NavBar.NavItem
-              imgSrc="./assets/img/img3.jpeg"
-              pathTo="/page3"
-            >
+            <NavBar.NavItem imgSrc="./assets/img/img3.jpeg" pathTo="/lumieres">
               Lumière
             </NavBar.NavItem>
             <NavBar.NavItem
               imgSrc="./assets/img/img4.jpeg"
-              pathTo="/page3"
+              pathTo="/belle-epoque"
             >
-              Belle-époque
+              Belle-Époque
             </NavBar.NavItem>
-            <NavBar.NavItem
-              imgSrc="./assets/img/img5.jpeg"
-              pathTo="/page3"
-            >
+            <NavBar.NavItem imgSrc="./assets/img/img5.jpeg" pathTo="/moderne">
               Moderne
             </NavBar.NavItem>
             <NavBar.NavItem
               imgSrc="./assets/img/img6.gif"
-              pathTo="/page3"
+              pathTo="/ere-numerique"
             >
               Ère-numérique
             </NavBar.NavItem>
-            <NavBar.NavItem
-              imgSrc="./assets/img/img7.jpeg"
-              pathTo="/page3"
-            >
+            <NavBar.NavItem imgSrc="./assets/img/img7.jpeg" pathTo="/futur">
               Futur
             </NavBar.NavItem>
+            <ButtonGlobalView />
           </NavBar>
         </div>
       </Router>

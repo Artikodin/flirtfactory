@@ -8,15 +8,15 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'GTCinetype';
     font-style: normal;
-    font-weight: 400;
-    src: url("../assets/fonts/GT-Cinetype-Bold.ttf") format("ttf");
+    font-weight: normal;
+    src: url("../assets/fonts/GT-Cinetype-Regular.ttf") format("truetype");
+    src: local('GTCinetype'), local('GTCinetype'),
+          url('../assets/fonts/GT-Cinetype-Regular.ttf') format('embedded-opentype'), /* IE6-IE8 */
+          url('../assets/fonts/GT-Cinetype-Regular.ttf') format('woff2'), /* Super Modern Browsers */
+          url('../assets/fonts/GT-Cinetype-Regular.ttf') format('woff'), /* Modern Browsers */
+          url('../assets/fonts/GT-Cinetype-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
   }
-  @font-face {
-    font-family: 'GTCinetype';
-    font-style: bold;
-    font-weight: bold;
-    src: url("../assets/fonts/GT-Cinetype-Bold.ttf") format("ttf");
-  }
+  
   canvas {
     top:0;
     position: absolute;
@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
   html, body{
-    font-family: "avenir";
+    font-family: "GTCinetype";
     /* cursor: none; */
   }
   /* normalize */

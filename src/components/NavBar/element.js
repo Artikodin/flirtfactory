@@ -10,7 +10,7 @@ export const Wrapper = styled.ul`
   transform: translateX(-50%);
   z-index: 10;
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   max-width: 1100px;
   width: 100%;
   z-index: 1;
