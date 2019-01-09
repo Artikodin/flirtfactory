@@ -8,7 +8,7 @@ export const ButtonDrawerWrapper = styled.div`
   padding: 30px;
   width: auto;
   height: auto;
-  z-index: 50;
+  z-index: 4;
   img {
     width: 100%;
     height: auto;
