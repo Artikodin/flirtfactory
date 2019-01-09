@@ -5,6 +5,8 @@ import { throttle } from "throttle-debounce";
 import { OutsideCircle, InnerDot } from "./element";
 
 class Default extends React.Component {
+  running = false;
+
   outside = React.createRef();
 
   inner = React.createRef();
@@ -20,13 +22,16 @@ class Default extends React.Component {
       x: e.clientX,
       y: e.clientY
     };
+
+    if (!this.running) {
+      this.update();
+    }
   });
 
   componentDidMount() {
     window.addEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
-    this.update();
   }
 
   componentWillUnmount() {
@@ -37,7 +42,7 @@ class Default extends React.Component {
   }
 
   update = () => {
-    window.requestAnimationFrame(this.update);
+    this.running = true;
 
     const innerEase = 0.9;
     const outsideEase = 0.25;
@@ -55,6 +60,17 @@ class Default extends React.Component {
     this.inner.current.style.transform = `translate3d(${this.innerPos.x}px, ${
       this.innerPos.y
     }px,0)`;
+
+    if (
+      Math.abs(this.outsidePos.x - this.target.x) > 0.1 ||
+      Math.abs(this.outsidePos.y - this.target.y) > 0.1 ||
+      Math.abs(this.innerPos.x - this.target.x) > 0.1 ||
+      Math.abs(this.innerPos.y - this.target.y) > 0.1
+    ) {
+      window.requestAnimationFrame(this.update);
+    } else {
+      this.running = false;
+    }
   };
 
   render() {
