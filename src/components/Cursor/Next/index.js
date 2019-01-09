@@ -43,9 +43,9 @@ class Next extends React.Component {
 
   update = () => {
     this.running = true;
-    console.log("test", Math.abs(this.outsidePos.x - this.target.x));
+
     const innerEase = 0.9;
-    const outsideEase = 0.5;
+    const outsideEase = 0.25;
 
     this.outsidePos.x += (this.target.x - this.outsidePos.x) * outsideEase;
     this.outsidePos.y += (this.target.y - this.outsidePos.y) * outsideEase;
