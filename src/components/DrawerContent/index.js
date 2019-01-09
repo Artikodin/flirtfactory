@@ -1,52 +1,43 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { DrawerHeader } from "../index";
+import { DrawerHeader, TextContext } from "../index";
 import { DrawerLayout, MainContent, MainContentLayout } from "./element";
+
+import { Markup } from "interweave";
 
 const DrawerContent = ({ children }) => (
   <DrawerLayout id="Drawer-layout">
     <div>{children}</div>
     <DrawerHeader />
     <MainContentLayout id="MainContentLayout">
-      <MainContent id="MainContent">
-        <h2 id="MainContent-date">-52 - 476</h2>
-        <h1 id="MainContent-title">Antiquité</h1>
-        <div id="MainContent-text">
-          <p>
-            Les orgies représentées dans les tableaux de l’Antiquité Grecque
-            sont exactement l’état d’esprit de l’époque.
-            <strong>La sexualité était totalement débridée !</strong>
-          </p>
-          <p>
-            <strong>
-              Les hommes dominaient totalement la relation amoureuse, au
-              détriment des femmes.
-            </strong>
-            Il était courant davoir des partenaires multiples, ainsi ils
-            pouvaient coucher avec toutes femmes non-mariées (coucher avec une
-            femme mariée était considéré comme une offense). Les Romains ont une
-            morale sexuelle simple : à condition de ne sattaquer ni aux femmes
-            ni aux enfants des citoyens, tout est permis !La sexualité était
-            totalement débridée !
-          </p>
-          <p>
-            Les Romains découvrent la séduction avec des femmes affranchies, des
-            esclaves ou des étrangères: seules représentantes de la gent
-            féminine qui pouvaient se refuser à eux.
-          </p>
-        </div>
-        <div id="MainContent-gallery">
-          <figure className="ContentImg">
-            <img src="../assets/img/epoques/Antiquite.jpg" alt="Antiquité" />
-            <figcaption>Antiquité</figcaption>
-          </figure>
-          <figure className="ContentImg">
-            <img src="../assets/img/epoques/Antiquite2.jpg" alt="Antiquité" />
-            <figcaption>Antiquité</figcaption>
-          </figure>
-        </div>
-      </MainContent>
+      <TextContext.Consumer>
+        {value => (
+          <MainContent id="MainContent">
+            <h2 id="MainContent-date">{value.epoques[0].date}</h2>
+            <h1 id="MainContent-title">{value.epoques[0].name}</h1>
+            <div id="MainContent-text">
+              <Markup content={value.epoques[0].description} />
+            </div>
+            <div id="MainContent-gallery">
+              <figure className="ContentImg">
+                <img
+                  src="../assets/img/epoques/Antiquite.jpg"
+                  alt="Antiquité"
+                />
+                <figcaption>Antiquité</figcaption>
+              </figure>
+              <figure className="ContentImg">
+                <img
+                  src="../assets/img/epoques/Antiquite2.jpg"
+                  alt="Antiquité"
+                />
+                <figcaption>Antiquité</figcaption>
+              </figure>
+            </div>
+          </MainContent>
+        )}
+      </TextContext.Consumer>
     </MainContentLayout>
   </DrawerLayout>
 );

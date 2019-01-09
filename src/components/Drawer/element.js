@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 300px;
-  background-color: rgb(18, 28, 47, 0.95);
+  background-color: rgb(18, 28, 47, 1);
   height: 100vh;
   width: 70vw;
   position: absolute;
@@ -11,10 +11,10 @@ export const Wrapper = styled.div`
   bottom: 0;
   z-index: 4;
 
-  &:before {
+  &:after {
     content: "";
     background-image: url("./assets/img/noise.gif");
-    /* opacity: 0.5; */
+    opacity: 0.05;
     top: 0;
     left: 0;
     bottom: 0;

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { hot } from "react-hot-loader";
@@ -31,7 +30,7 @@ const App = () => (
               imgSrc="./assets/img/img2.jpeg"
               pathTo="/page2"
             >
-              Moyen-age
+              Moyen-Âge
             </NavBar.NavItem>
             <NavBar.NavItem
               imgSrc="./assets/img/img8.jpeg"

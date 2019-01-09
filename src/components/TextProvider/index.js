@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import text from "../../ressources/json/text.json";
+import text from "../../ressources/json/datas.json";
 
 export const TextContext = React.createContext();
 
