@@ -1,5 +1,6 @@
 // Please respect the alphabetical order
 export { default as ButtonDrawer } from "./ButtonDrawer";
+export { default as ButtonGlobalView } from "./ButtonGlobalView";
 export { default as Cursor } from "./Cursor";
 export { default as Drawer } from "./Drawer";
 export { default as DrawerContent } from "./DrawerContent";

@@ -15,7 +15,7 @@ import {
   Renaissance,
   Page2
 } from "./pages";
-import { TextProvider, NavBar, Logo, ButtonDrawer } from "./components";
+import { TextProvider, NavBar, Logo, ButtonDrawer, ButtonGlobalView } from "./components";
 
 const App = () => (
   <React.Fragment>
@@ -71,6 +71,7 @@ const App = () => (
             <NavBar.NavItem imgSrc="./assets/img/img7.jpeg" pathTo="/futur">
               Futur
             </NavBar.NavItem>
+            <ButtonGlobalView />
           </NavBar>
         </div>
       </Router>

@@ -9,6 +9,7 @@ class ButtonDrawer extends React.Component {
 
   handleClick = () => {
     const { showed } = this.state;
+    console.log("ok");
     this.setState({
       showed: !showed
     });
@@ -21,7 +22,7 @@ class ButtonDrawer extends React.Component {
   render() {
     // const { showed } = this.state;
     return (
-      <ButtonDrawerWrapper>
+      <ButtonDrawerWrapper onClick={this.handleClick}>
         <img src="./assets/ui/menu.svg" alt="Open Drawer" />
       </ButtonDrawerWrapper>
     );
