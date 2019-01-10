@@ -6,9 +6,8 @@ import { BackgroundVideoWrapper } from "./element";
 
 const BackgroundVideo = ({ path }) => (
   <BackgroundVideoWrapper>
-    {path}
     <video
-      src={`./assets/videos/${path}/${path}1.mp4`}
+      src={`./assets/videos/${path}/${path}5.mp4`}
       type="video/mp4"
       autoPlay
       loop

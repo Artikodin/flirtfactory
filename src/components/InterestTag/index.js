@@ -7,8 +7,8 @@ import {
   Paragraph,
   TextContent,
   Wrapper,
-  Container,
-  Icon
+  Container
+  // Icon
 } from "./element";
 
 class InterestTag extends React.Component {
@@ -28,10 +28,15 @@ class InterestTag extends React.Component {
     yPos: "0px"
   };
 
-  handleClick = () => {
-    const { showed } = this.state;
+  handleShow = () => {
     this.setState({
-      showed: !showed
+      showed: true
+    });
+  };
+
+  handleHide = () => {
+    this.setState({
+      showed: false
     });
   };
 
@@ -42,16 +47,19 @@ class InterestTag extends React.Component {
       <AnimatedWrapper
         xPos={xPos}
         yPos={yPos}
-        onClick={this.handleClick}
+        onMouseEnter={this.handleShow}
         pose={showed ? "isOpen" : "isClose"}
       >
-        <Icon src="./assets/ui/PointDinteret.svg" alt="" />
+        {/* <Icon src="./assets/ui/PointDinteret.svg" alt="" /> */}
         <AnimatedContainer>
           <AnimatedTextContent>
             <Title>{children}</Title>
-            <Paragraph>blablablablablablabal</Paragraph>
-            <Paragraph>blablablablablablabal</Paragraph>
-            <Paragraph>blablablablablablabal</Paragraph>
+            <Paragraph>
+              Le « Stimentos » est une pilule aphrodisiaque, mélange d’huile
+              d’olive et de sueur de gladiateur récupérée juste après leur
+              entraînement. Elle était utilisée par les Romaines pour séduire
+              (on ne doute pas de son efficacité)
+            </Paragraph>
           </AnimatedTextContent>
         </AnimatedContainer>
       </AnimatedWrapper>

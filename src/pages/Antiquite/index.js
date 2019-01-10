@@ -26,7 +26,7 @@ class Antiquite extends React.Component {
     return (
       <Page>
         <InterestTag xPos="200px" yPos="200px">
-          Antiquite
+          Stimentos
         </InterestTag>
         <ButtonDrawer click={this.handleClick} />
         <BackgroundVideo path="antiquite" />
