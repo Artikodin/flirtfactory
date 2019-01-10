@@ -5,7 +5,8 @@ import {
   ButtonDrawer,
   Drawer,
   DrawerContent,
-  BackgroundVideo
+  BackgroundVideo,
+  InterestTag
 } from "../../components";
 
 class Antiquite extends React.Component {
@@ -24,6 +25,9 @@ class Antiquite extends React.Component {
     const { drawerShowed } = this.state;
     return (
       <Page>
+        <InterestTag xPos="200px" yPos="200px">
+          Antiquite
+        </InterestTag>
         <ButtonDrawer click={this.handleClick} />
         <BackgroundVideo path="antiquite" />
         <Drawer showed={drawerShowed}>
