@@ -1,21 +1,26 @@
+/* eslint-disable */
+
 import React from "react";
 import { throttle } from "throttle-debounce";
 
 import WordBorder from "./WordBorder";
-import { InnerDot } from "./element";
+import { InnerDot, InnerBackground } from "./element";
 
 class Next extends React.Component {
-  running = false;
-
-  outside = React.createRef();
-
-  inner = React.createRef();
+  isRunning = false;
+  isMouseDown = false;
 
   target = { x: 0, y: 0 };
 
+  outside = React.createRef();
   outsidePos = { x: 0, y: 0 };
 
+  inner = React.createRef();
   innerPos = { x: 0, y: 0 };
+
+  innerBg = React.createRef();
+
+  animationLongClick = null;
 
   handleMouseMove = throttle(10, e => {
     this.target = {
@@ -23,13 +28,28 @@ class Next extends React.Component {
       y: e.clientY
     };
 
-    if (!this.running) {
-      this.update();
+    if (!this.isRunning) {
+      window.requestAnimationFrame(this.update);
     }
   });
 
+  handleMouseDown = () => {
+    this.isMouseDown = true;
+    this.longClick();
+  };
+
+  handleMouseUp = () => {
+    this.isMouseDown = false;
+  };
+
   componentDidMount() {
     window.addEventListener("mousemove", this.handleMouseMove, {
+      passive: true
+    });
+    window.addEventListener("mousedown", this.handleMouseDown, {
+      passive: true
+    });
+    window.addEventListener("mouseup", this.handleMouseUp, {
       passive: true
     });
   }
@@ -38,11 +58,18 @@ class Next extends React.Component {
     window.removeEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
+    window.removeEventListener("mousedown", this.handleMouseDown, {
+      passive: true
+    });
+    window.removeEventListener("mouseup", this.handleMouseUp, {
+      passive: true
+    });
+    window.cancelAnimationFrame(this.longClick);
     window.cancelAnimationFrame(this.update);
   }
 
   update = () => {
-    this.running = true;
+    this.isRunning = true;
 
     const innerEase = 0.9;
     const outsideEase = 0.25;
@@ -69,7 +96,50 @@ class Next extends React.Component {
     ) {
       window.requestAnimationFrame(this.update);
     } else {
-      this.running = false;
+      this.isRunning = false;
+    }
+  };
+
+  animationClick = {
+    start: null,
+    direction: 1,
+    elapsed: 0,
+    progress: 0,
+    totalDuration: 2000
+  };
+
+  longClick = () => {
+    if (!this.animationClick.start) {
+      this.animationClick.start = performance.now();
+      this.animationClick.elapsed = 0;
+      this.animationClick.progress = 0;
+    }
+    if (this.isMouseDown) {
+      this.animationClick.direction = 1;
+      console.log("down");
+    } else {
+      this.animationClick.direction = -1;
+      console.log("up");
+    }
+    const elapsed = this.animationClick.elapsed;
+    this.animationClick.elapsed = performance.now() - this.animationClick.start;
+    this.animationClick.progress = Math.max(
+      Math.min(
+        this.animationClick.progress +
+          ((this.animationClick.elapsed - elapsed) /
+            this.animationClick.totalDuration) *
+            this.animationClick.direction,
+        1
+      ),
+      0
+    );
+    const scale = this.animationClick.progress * 6.5;
+    this.innerBg.current.style.transform = `scale(${scale})`;
+    if (this.animationClick.progress >= 1 || this.animationClick.progress <= 0) {
+      window.cancelAnimationFrame(this.animationLongClick);
+      console.log("finish");
+    } else {
+      this.animationLongClick = window.requestAnimationFrame(this.longClick);
     }
   };
 
@@ -79,7 +149,9 @@ class Next extends React.Component {
         <WordBorder ref={this.outside}>
           suivant suivant suivant suivant suivant
         </WordBorder>
-        <InnerDot ref={this.inner} />
+        <InnerDot ref={this.inner}>
+          <InnerBackground ref={this.innerBg} />
+        </InnerDot>
       </>
     );
   }

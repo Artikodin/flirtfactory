@@ -45,7 +45,7 @@ class Default extends React.Component {
     this.running = true;
 
     const innerEase = 0.9;
-    const outsideEase = 0.25;
+    const outsideEase = 0.1;
 
     this.outsidePos.x += (this.target.x - this.outsidePos.x) * outsideEase;
     this.outsidePos.y += (this.target.y - this.outsidePos.y) * outsideEase;

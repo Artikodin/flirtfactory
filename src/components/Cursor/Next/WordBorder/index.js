@@ -5,9 +5,8 @@ import PropTypes from "prop-types";
 import { Wrapper, Rotation, CircularLetter } from "./element";
 
 const WordBorder = React.forwardRef(({ children }, ref) => {
-  console.log("children", children.length)
   const circularLetter = children.split("").map((letter, index) => (
-    <CircularLetter key={index} rotate={index * 360 / (children.length + 1) }>
+    <CircularLetter key={index} rotate={(index * 360) / (children.length + 1)}>
       {letter}
     </CircularLetter>
   ));

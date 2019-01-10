@@ -24,16 +24,8 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
   html, body{
-<<<<<<< HEAD
-    font-family: "GTCinetype";
-    /* cursor: none; */
-||||||| merged common ancestors
-    font-family: "avenir";
-    /* cursor: none; */
-=======
     font-family: "avenir";
     cursor: none;
->>>>>>> Add next cursor
   }
   /* normalize */
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

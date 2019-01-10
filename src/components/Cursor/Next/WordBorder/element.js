@@ -19,20 +19,20 @@ export const CircularLetter = styled.span`
   transform: ${({ rotate }) => `rotate(${rotate}deg) translate3d(-50%, 0, 0)`};
   z-index: 100;
   color: #fff;
-  bottom: 48%;
+  bottom: 50%;
   left: 50%;
   transform-origin: 0 100%;
 `;
 
 export const Rotation = styled.span`
   position: absolute;
-  height: 7px;
-  width: 7px;
+  height: 8px;
+  width: 8px;
   animation: ${rotation} 13s linear infinite;
 `;
 
 export const Wrapper = styled.span`
   position: absolute;
-  height: 7px;
-  width: 7px;
+  height: 8px;
+  width: 8px;
 `;
