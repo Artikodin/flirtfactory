@@ -32,7 +32,6 @@ const App = () => (
         <>
           <Cursor />
           <Logo />
-          <ButtonDrawer />
           <Switch>
             <Route exact path="/" component={Intro} />
             <Route exact path="/antiquite" component={Antiquite} />
@@ -44,6 +43,7 @@ const App = () => (
             <Route exact path="/moyen-age" component={MoyenAge} />
             <Route exact path="/renaissance" component={Renaissance} />
             <Route exact path="/page2" component={Page2} />
+            <Route path="*" component={Intro} />
           </Switch>
           <NavBar>
             <NavBar.NavItem imgSrc="./assets/img/img1.jpeg" pathTo="/antiquite">

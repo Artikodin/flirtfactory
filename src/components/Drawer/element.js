@@ -14,7 +14,8 @@ export const Wrapper = styled.div`
   &:after {
     content: "";
     background-image: url("./assets/img/noise.gif");
-    opacity: 0.05;
+    background-size: 80px;
+    opacity: 0.1;
     top: 0;
     left: 0;
     bottom: 0;
