@@ -21,10 +21,10 @@
       ]
     },
     {
-      "name": "MOYEN-AGE",
+      "name": "Moyen-Âge",
       "date": "476 - 1492",
       "short": "Courtoisie",
-      "description": "Au Moyen- ge apparaît une nouvelle forme de séduction: la courtoisie. A cette époque, la norme est au mariage arrangé. Le vrai amour se déroule hors-mariage et doit rester secret, sous peine de très lourdes conséquences. \n        Les relations sont donc très compliquées et mêlent passion, désespoir, plaisir et souffrance. Un coup de foudre peut alors durer toute une vie, les deux amoureux ne vivant que l'un pour l'autre !\n        L’amour courtois est un amour purement sentimental et ne suppose pas forcément de relation physique. Mais il s'exprime par des actes : il fallait prouver sa bravoure auprès de sa dame, à l'image des chevaliers gagnant une bataille ou délivrant leurs princesses.",
+      "description": "<p>Au Moyen-Âge apparaît une nouvelle forme de séduction: la<strong>courtoisie</strong>. A cette époque, la norme est au mariage arrangé. Le vrai amour se déroule hors-mariage et doit rester secret, sous peine de très lourdes conséquences.</p><p>Les relations sont donc très compliquées et mêlent passion, désespoir, plaisir et souffrance. Un <strong>coup de foudre</strong> peut alors durer toute une vie, les deux amoureux ne vivant que l'un pour l'autre ! <br />L’amour courtois est un amour <strong>purement sentimental</strong> et ne suppose pas forcément de relation physique. Mais il s'exprime par des actes : il fallait <strong>prouver sa bravoure auprès de sa dame, à l'image des chevaliers gagnant une bataille ou délivrant leurs princesses.</p>",
       "symbols": [
         {
           "name": "Tournois",
@@ -41,23 +41,34 @@
       ]
     },
     {
-      "name": "MOYEN-AGE",
-      "date": "476 - 1492",
+      "name": "Renaissance",
+      "date": "1300 – 1600",
       "short": "Courtoisie",
-      "intro": "La plupart de relations de l'époque sont des mariages arrangés, le vrai amour se déroule hors-mariage et doit donc rester secret. Apparaît l'amour courtois, un amour purement sentimental qui consiste à prouver sa bravoure pour gagner le coeur de sa dame. ",
-      "description": "Au Moyen- ge apparaît une nouvelle forme de séduction: la courtoisie. A cette époque, la norme est au mariage arrangé. Le vrai amour se déroule hors-mariage et doit rester secret, sous peine de très lourdes conséquences. \n        Les relations sont donc très compliquées et mêlent passion, désespoir, plaisir et souffrance. Un coup de foudre peut alors durer toute une vie, les deux amoureux ne vivant que l'un pour l'autre !\n        L’amour courtois est un amour purement sentimental et ne suppose pas forcément de relation physique. Mais il s'exprime par des actes : il fallait prouver sa bravoure auprès de sa dame, à l'image des chevaliers gagnant une bataille ou délivrant leurs princesses.",
+      "description": "<p>C’est à partir du XVIIème siècle que la <strong>galanterie</strong> fait son apparition. Les codes changent et deviennent plus légers et moins dramatiques que ceux de la courtoisie.</p><p>La femme, au centre des échanges galants, commence à être davantage considérée. Les histoires d'amour laissent plus de place aux sentiments, à la sincérité, au désir et à la jalousie…</p><p>C’est aussi l’époque des <strong>relations épistolaires</strong>. On s'écrivait, on faisait des vers et des rimes pour <strong>déclarer sa flamme</strong>. On raffolait des salons où l'on parle de poésie et de littérature.</p>",      
       "symbols": [
         {
-          "name": "Tournois",
-          "description": "Des tournois étaient souvent organisés par les seigneurs. En plus d'entraîner leurs chevaliers, les tournois étaient l'occasion pour ces derniers de prouver leurs bravoures auprès des dames."
+          "name": "Parfum",
+          "description": "Il était courant de parfumer ses lettres avant de les envoyer à l’être aimé."
+        }
+      ]
+    },
+    {
+      "name": "Les Lumières",
+      "date": "1715 - 1789",
+      "short": "Faire la cour",
+      "description": "<p>Le XVIIIème siècle va <strong>théâtraliser la séduction amoureuse</strong>. L’utilisation des décorations à l'excès, comme les mouches, les coiffures pimpées et la poudre blanche est un bel exemple. Les tenues sont plus excentriques. <strong>C’est le Siècle des Lumières, on ose beaucoup plus de choses !</strong></strong></p><p>Les mœurs se sont progressivement libérées et les hommes s'essaient au <strong>libertinage</strong> (quand ce n’est pas la grosse débauche comme à la cour de Louis XV). On ose exprimer son désir charnel.</p><p><strong>Faire la cour</strong> était une activité milimétrée. L'homme avait à sa disposition tout un tas de de règles: servir sa dame, multiplier les petites attentions, faire des compliments, savoir manier les mots... pour parvenir à ses fins.</p>",
+      "symbols": [
+        {
+          "name": "Peacocking",
+          "description": "Le Peacocking est l'art de se vêtir comme un paon, en s'habillant délibérément d'accessoires et de vêtements qui attirent l'attention."
         },
         {
-          "name": "Fleurs",
-          "description": "L’Eglise très stricte empêchait aux couples d’afficher publiquement leur affection, les fleurs devennaient alors un moyen de faire passer ses sentiments. Selon sa composition et son arrangement, le bouquet pouvait délivrer un message en toute discrétion."
+          "name": "Eventail",
+          "description": "L'Eventail est un véritable langage de société dont tous les mouvements sont codifiés. Selon ses positions et ses orientations il pouvait exprimer l’amour, l’indifférence, le dédain ou la jalousie."
         },
         {
-          "name": "Serenades",
-          "description": "La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à l'image chantait son amour sous le balcon de sa Juliette. Mais auparavant, il devait effectuer d’incessants allers-retours dans la rue pour attirer son attention. Pas très discret mais efficace…"
+          "name": "Bel Masqué",
+          "description": "La cour du roi aimait s'amuser. Une des soirée préférée était les bals masqués et un vrai contexte érotique propice à la séduction."
         }
       ]
     }

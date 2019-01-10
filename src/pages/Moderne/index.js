@@ -6,7 +6,7 @@ import { Page } from "../../components";
 
 const Moderne = () => {
   return (
-    <Page backgroundColor="#c4e6f1">
+    <Page>
     </Page>
   );
 };

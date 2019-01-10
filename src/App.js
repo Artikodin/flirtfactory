@@ -9,6 +9,7 @@ import {
   BelleEpoque,
   EreNumerique,
   Futur,
+  Error,
   Lumieres,
   Moderne,
   MoyenAge,
@@ -20,7 +21,6 @@ import {
   TextProvider,
   NavBar,
   Logo,
-  ButtonDrawer,
   ButtonGlobalView
 } from "./components";
 
@@ -43,7 +43,7 @@ const App = () => (
             <Route exact path="/moyen-age" component={MoyenAge} />
             <Route exact path="/renaissance" component={Renaissance} />
             <Route exact path="/page2" component={Page2} />
-            <Route path="*" component={Intro} />
+            <Route path="*" component={Error} />
           </Switch>
           <NavBar>
             <NavBar.NavItem imgSrc="./assets/img/img1.jpeg" pathTo="/antiquite">

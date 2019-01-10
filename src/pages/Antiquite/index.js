@@ -1,8 +1,12 @@
-/* eslint-disable */
 import React from "react";
-import PropTypes from "prop-types";
 
-import { Page, Cursor, ButtonDrawer, Drawer, DrawerContent } from "../../components";
+import {
+  Page,
+  ButtonDrawer,
+  Drawer,
+  DrawerContent,
+  BackgroundVideo
+} from "../../components";
 
 class Antiquite extends React.Component {
   state = {
@@ -19,11 +23,11 @@ class Antiquite extends React.Component {
   render() {
     const { drawerShowed } = this.state;
     return (
-      <Page backgroundColor="#c4e6f1">
-        <Cursor />
+      <Page>
         <ButtonDrawer click={this.handleClick} />
+        <BackgroundVideo path="antiquite" />
         <Drawer showed={drawerShowed}>
-          <DrawerContent />
+          <DrawerContent number={0} />
         </Drawer>
       </Page>
     );

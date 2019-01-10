@@ -2,18 +2,31 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Page } from "../../components";
+import { Page, ButtonDrawer, Drawer, DrawerContent } from "../../components";
 
-const MoyenAge = () => {
-  return (
-    <Page backgroundColor="#c4e6f1">
-      
-    </Page>
-  );
-};
+class MoyenAge extends React.Component {
+  state = {
+    drawerShowed: false
+  };
 
-MoyenAge.propTypes = {
-  history: PropTypes.object.isRequired
-};
+  handleClick = () => {
+    const { drawerShowed } = this.state;
+    this.setState({
+      drawerShowed: !drawerShowed
+    });
+  };
+
+  render() {
+    const { drawerShowed } = this.state;
+    return (
+      <Page>
+        <ButtonDrawer click={this.handleClick} />
+        <Drawer showed={drawerShowed}>
+          <DrawerContent number={1} />
+        </Drawer>
+      </Page>
+    );
+  }
+}
 
 export default MoyenAge;

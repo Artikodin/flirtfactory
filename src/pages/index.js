@@ -4,6 +4,7 @@ export { default as Page2 } from "./Page2";
 export { default as Antiquite } from "./Antiquite";
 export { default as BelleEpoque } from "./BelleEpoque";
 export { default as EreNumerique } from "./EreNumerique";
+export { default as Error } from "./Error";
 export { default as Futur } from "./Futur";
 export { default as Intro } from "./Intro";
 export { default as Lumieres } from "./Lumieres";

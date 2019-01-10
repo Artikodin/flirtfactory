@@ -6,18 +6,17 @@ import { DrawerLayout, MainContent, MainContentLayout } from "./element";
 
 import { Markup } from "interweave";
 
-const DrawerContent = ({ children }) => (
+const DrawerContent = ({ number }) => (
   <DrawerLayout id="Drawer-layout">
-    <div>{children}</div>
     <DrawerHeader />
     <MainContentLayout id="MainContentLayout">
       <TextContext.Consumer>
         {value => (
           <MainContent id="MainContent">
-            <h2 id="MainContent-date">{value.epoques[0].date}</h2>
-            <h1 id="MainContent-title">{value.epoques[0].name}</h1>
+            <h2 id="MainContent-date">{value.epoques[number].date}</h2>
+            <h1 id="MainContent-title">{value.epoques[number].name}</h1>
             <div id="MainContent-text">
-              <Markup content={value.epoques[0].description} />
+              <Markup content={value.epoques[number].description} />
             </div>
             <div id="MainContent-gallery">
               <figure className="ContentImg">
@@ -43,11 +42,11 @@ const DrawerContent = ({ children }) => (
 );
 
 DrawerContent.propTypes = {
-  children: PropTypes.node
+  number: PropTypes.number
 };
 
 DrawerContent.defaultProps = {
-  children: ""
+  number: 0
 };
 
 export default DrawerContent;
