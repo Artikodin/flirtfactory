@@ -15,14 +15,22 @@ import {
   Renaissance,
   Page2
 } from "./pages";
-import { TextProvider, NavBar, Logo, ButtonDrawer, ButtonGlobalView } from "./components";
+import {
+  Cursor,
+  TextProvider,
+  NavBar,
+  Logo,
+  ButtonDrawer,
+  ButtonGlobalView
+} from "./components";
 
 const App = () => (
-  <React.Fragment>
+  <>
     <GlobalStyle />
     <TextProvider>
       <Router>
-        <div>
+        <>
+          <Cursor />
           <Logo />
           <ButtonDrawer />
           <Switch>
@@ -73,10 +81,10 @@ const App = () => (
             </NavBar.NavItem>
             <ButtonGlobalView />
           </NavBar>
-        </div>
+        </>
       </Router>
     </TextProvider>
-  </React.Fragment>
+  </>
 );
 
 export default hot(module)(App);

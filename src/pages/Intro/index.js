@@ -3,19 +3,16 @@ import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { Page, Cursor } from "../../components";
+import { Page } from "../../components";
 
-const Intro = () => {
-  return (
-    <Page backgroundColor="#c4e6f1">
-      <Cursor />
-      <BackgroundImage>
-        <h1>Bonjour tu es sur la Flirt Factory</h1>
-        <Link to="/antiquite">Démarrer</Link>
-      </BackgroundImage>
-    </Page>
-  );
-};
+const Intro = () => (
+  <Page backgroundColor="#c4e6f1">
+    <BackgroundImage>
+      <h1>Bonjour tu es sur la Flirt Factory</h1>
+      <Link to="/antiquite">Démarrer</Link>
+    </BackgroundImage>
+  </Page>
+);
 
 Intro.propTypes = {
   // history: PropTypes.object.isRequired
