@@ -1,27 +1,25 @@
 import React from "react";
 import posed from "react-pose";
+import PropTypes from "prop-types";
 
 import { DragAndDropContainer, Round } from "./element";
 
 class DragAndDrop extends React.Component {
-  onStart = () => {
-    console.log("start drag");
+  static propTypes = {
+    dragEnd: PropTypes.func
   };
 
-  onEnd = () => {
-    console.log("end drag");
-  };
-
-  onValueChange = () => {
-    console.log("end drag");
+  static defaultProps = {
+    dragEnd: () => {}
   };
 
   render() {
+    const { dragEnd } = this.props;
     return (
       <DragAndDropContainer>
         <DraggableRound
           onDragStart={this.onStart}
-          onDragEnd={this.onEnd}
+          onDragEnd={dragEnd}
           // onValueChange={{ x: onDrag }}
         />
       </DragAndDropContainer>

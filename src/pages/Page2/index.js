@@ -29,7 +29,7 @@ class Page2 extends React.Component {
     return (
       <Page>
         <DragAndDrop />
-        <BackgroundVideo path="antiquite" />
+        <BackgroundVideo path="antiquite" number={4} loop={false} />
         <Drawer showed={showed}>
           <DrawerContent />
         </Drawer>

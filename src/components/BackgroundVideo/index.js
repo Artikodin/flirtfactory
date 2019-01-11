@@ -4,24 +4,37 @@ import PropTypes from "prop-types";
 
 import { BackgroundVideoWrapper } from "./element";
 
-const BackgroundVideo = ({ path }) => (
-  <BackgroundVideoWrapper>
-    <video
-      src={`./assets/videos/${path}/${path}5.mp4`}
-      type="video/mp4"
-      autoPlay
-      loop
-      muted
-    />
-  </BackgroundVideoWrapper>
-);
+class BackgroundVideo extends React.Component {
+  static  propTypes = {
+    path: PropTypes.string,
+    number: PropTypes.number,
+    loop: PropTypes.bool
+  };
+  
+  static defaultProps = {
+    path: "",
+    number: 0,
+    loop: true
+  };
 
-BackgroundVideo.propTypes = {
-  path: PropTypes.string
-};
-
-BackgroundVideo.defaultProps = {
-  children: ""
-};
+  componentDidMount() {
+    console.log("mount")
+  }
+  
+  render() {
+    const { path, number, loop } = this.props;
+    return (
+      <BackgroundVideoWrapper>
+        <video
+          src={`./assets/videos/${path}/${path}${number}.mp4`}
+          type="video/mp4"
+          autoPlay
+          loop={loop}
+          muted
+        />
+      </BackgroundVideoWrapper>
+    );
+  }
+}
 
 export default BackgroundVideo;

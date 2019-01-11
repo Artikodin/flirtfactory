@@ -6,12 +6,15 @@ import {
   Drawer,
   DrawerContent,
   BackgroundVideo,
-  InterestTag
+  InterestTag,
+  DragAndDrop
 } from "../../components";
 
 class Antiquite extends React.Component {
   state = {
-    drawerShowed: false
+    drawerShowed: false,
+    number: 1,
+    loop: true
   };
 
   handleClick = () => {
@@ -21,15 +24,23 @@ class Antiquite extends React.Component {
     });
   };
 
+  handleEndDrag = () => {
+    this.setState({
+      number: 2,
+      loop: false
+    });
+  };
+
   render() {
-    const { drawerShowed } = this.state;
+    const { drawerShowed, number, loop } = this.state;
     return (
       <Page>
         <InterestTag xPos="200px" yPos="200px">
           Stimentos
         </InterestTag>
+        <DragAndDrop dragEnd={this.handleEndDrag} />
+        <BackgroundVideo path="antiquite" number={number} loop={loop} />
         <ButtonDrawer click={this.handleClick} />
-        <BackgroundVideo path="antiquite" />
         <Drawer showed={drawerShowed}>
           <DrawerContent number={0} />
         </Drawer>
