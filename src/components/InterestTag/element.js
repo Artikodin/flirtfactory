@@ -24,12 +24,21 @@ export const Container = styled.div`
   top: 100%;
   left: -1px;
   right: -1px;
-
   text-align: justify;
-
   padding: 25px 40px;
   border: solid 1px white;
-  background: rgba(255, 255, 255, 0.1);
+  &:after {
+    content: "";
+    background-image: url("./assets/img/noise.gif");
+    background-size: 80px;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
 `;
 
 export const Title = styled.div`

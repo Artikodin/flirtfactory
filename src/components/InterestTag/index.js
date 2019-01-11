@@ -48,8 +48,10 @@ class InterestTag extends React.Component {
       >
         <Icon src="./assets/ui/PointDinteret.svg" alt="" />
         <AnimatedContainer>
-          <Title>{title}</Title>
-          <Paragraph>{children}</Paragraph>
+          <div>
+            <Title>{title}</Title>
+            <Paragraph>{children}</Paragraph>
+          </div>
         </AnimatedContainer>
       </AnimatedWrapper>
     );
