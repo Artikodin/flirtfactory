@@ -9,14 +9,16 @@ import { Video } from "../index";
 
 class BackgroundVideo extends React.Component {
   static propTypes = {
-    path: PropTypes.string
+    path: PropTypes.string,
+    number: PropTypes.number,
+    loop: PropTypes.bool
   };
 
   static defaultProps = {
-    path: ""
+    path: "",
+    number: 1,
+    loop: true
   };
-
-  // PARRALAX
 
   componentDidMount() {
     this.parallax = new Parallax(this.scene);
@@ -27,11 +29,11 @@ class BackgroundVideo extends React.Component {
   }
 
   render() {
-    const { path } = this.props;
+    const { path, number, loop} = this.props;
     return (
       <BackgroundVideoWrapper ref={el => (this.scene = el)}>
         <div data-depth="0.2">
-          <Video path={path} />
+          <Video path={path} number={number} loop={loop} />
         </div>
       </BackgroundVideoWrapper>
     );

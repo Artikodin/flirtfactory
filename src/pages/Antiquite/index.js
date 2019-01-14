@@ -5,22 +5,26 @@ import {
   // ButtonDrawer,
   // Drawer,
   // DrawerContent,
-  // DragAndDrop
+  DragAndDrop,
   BackgroundVideo,
   InterestTag
 } from "../../components";
 
 class Antiquite extends React.Component {
+  constructor(props) {
+    super(props);
+    this.addOne = this.addOne.bind(this);
+  }
+
   state = {
-    // drawerShowed: false,
-    // number: 1,
-    // loop: true
+    number: 1,
+    loop: true
   };
 
   handleClick = () => {
-    const { drawerShowed } = this.state;
     this.setState({
-      drawerShowed: !drawerShowed
+      number: 2,
+      loop: false
     });
   };
 
@@ -31,21 +35,30 @@ class Antiquite extends React.Component {
     });
   };
 
+  addOne = () => {
+    this.setState(preState => {
+      return {
+        number: preState.number + 1
+      };
+    });
+  }
+
+
   render() {
-    // const { drawerShowed } = this.state;
+    const { number, loop } = this.state;
     return (
       <Page>
+        <DragAndDrop />
         <InterestTag title="Les sérénades" xPos="200px" yPos="200px">
           La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à
           l'image chantait son amour sous le balcon de sa Juliette. Mais
           auparavant, il devait effectuer d’incessants allers-retours dans la
           rue pour attirer son attention. Pas très discret mais efficace…
         </InterestTag>
-        <BackgroundVideo path="antiquite" />
-        {/* <ButtonDrawer click={this.handleClick} /> */}
-        {/* <Drawer showed={drawerShowed}>
-          <DrawerContent number={0} />
-        </Drawer> */}
+        <BackgroundVideo path="antiquite" number={number} loop={loop} />
+        <button type="button" onClick={this.addOne}>
+          {number}
+        </button>
       </Page>
     );
   }
