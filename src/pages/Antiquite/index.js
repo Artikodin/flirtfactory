@@ -5,16 +5,16 @@ import {
   // ButtonDrawer,
   // Drawer,
   // DrawerContent,
+  // DragAndDrop
   BackgroundVideo,
-  InterestTag,
-  DragAndDrop
+  InterestTag
 } from "../../components";
 
 class Antiquite extends React.Component {
   state = {
-    drawerShowed: false,
-    number: 1,
-    loop: true
+    // drawerShowed: false,
+    // number: 1,
+    // loop: true
   };
 
   handleClick = () => {
@@ -26,8 +26,8 @@ class Antiquite extends React.Component {
 
   handleEndDrag = () => {
     this.setState({
-      number: 2,
-      loop: false
+      // number: 2,
+      // loop: false
     });
   };
 

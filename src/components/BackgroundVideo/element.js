@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const BackgroundVideoWrapper = styled.div`
-  perspective: 40px;
-  transition: transform 0.5s;
   position: absolute;
   top: 0;
   left: 0;
@@ -21,7 +19,7 @@ export const BackgroundVideoWrapper = styled.div`
     min-height: 100vh;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
 
     @media (max-width: 1200px) {
       height: 100%;

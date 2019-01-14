@@ -30,7 +30,9 @@ class BackgroundVideo extends React.Component {
     const { path } = this.props;
     return (
       <BackgroundVideoWrapper ref={el => (this.scene = el)}>
-        <Video path={path} data-depth="0.1" />
+        <div data-depth="0.2">
+          <Video path={path} />
+        </div>
       </BackgroundVideoWrapper>
     );
   }
