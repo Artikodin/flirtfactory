@@ -13,3 +13,4 @@ export { default as NavBar } from "./NavBar";
 export { default as Page } from "./Page";
 export { default as ScrollHandler } from "./ScrollHandler";
 export { default as TextProvider, TextContext } from "./TextProvider";
+export { default as Video } from "./Video";

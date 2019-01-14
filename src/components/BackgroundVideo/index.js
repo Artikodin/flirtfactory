@@ -1,27 +1,38 @@
-/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
+import Parallax from "parallax-js";
+
+/* eslint-disable */
 
 import { BackgroundVideoWrapper } from "./element";
+import { Video } from "../index";
 
-const BackgroundVideo = ({ path }) => (
-  <BackgroundVideoWrapper>
-    <video
-      src={`./assets/videos/${path}/${path}5.mp4`}
-      type="video/mp4"
-      autoPlay
-      loop
-      muted
-    />
-  </BackgroundVideoWrapper>
-);
+class BackgroundVideo extends React.Component {
+  static propTypes = {
+    path: PropTypes.string
+  };
 
-BackgroundVideo.propTypes = {
-  path: PropTypes.string
-};
+  static defaultProps = {
+    path: ""
+  };
 
-BackgroundVideo.defaultProps = {
-  children: ""
-};
+  // PARRALAX
 
+  componentDidMount() {
+    this.parallax = new Parallax(this.scene);
+  }
+
+  componentWillUnmount() {
+    this.parallax.disable();
+  }
+
+  render() {
+    const { path } = this.props;
+    return (
+      <BackgroundVideoWrapper ref={el => (this.scene = el)}>
+        <Video path={path} data-depth="0.1" />
+      </BackgroundVideoWrapper>
+    );
+  }
+}
 export default BackgroundVideo;
