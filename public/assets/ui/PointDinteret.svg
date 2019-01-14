@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="52px" height="53px" viewBox="0 0 52 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="4px" height="22px" viewBox="0 0 4 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
-    <title>PointDinteret</title>
+    <title>I Copy</title>
     <desc>Created with Sketch.</desc>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard-Copy-53" transform="translate(-95.000000, -420.000000)">
+        <g id="Artboard-Copy-34" transform="translate(-119.000000, -434.000000)" fill="#FFFFFF">
             <g id="PointDinteret" transform="translate(95.000000, 420.843799)">
-                <rect id="Rectangle-Copy-8" fill-opacity="0.1" fill="#FFFFFF" x="0" y="0" width="52" height="51"></rect>
-                <text id="I-Copy" transform="translate(26.000000, 25.500000) rotate(-180.000000) translate(-26.000000, -25.500000) " font-family="adiNeue-Bold, adiNeue" font-size="31" font-weight="bold" fill="#FFFFFF">
-                    <tspan x="23" y="35">I</tspan>
-                </text>
-                <rect id="Rectangle-Copy-9" stroke="#FFFFFF" x="0.5" y="0.5" width="51" height="51"></rect>
+                <path d="M23.9990234,35 L23.9990234,19.1518555 L27.9042969,19.1518555 L27.9042969,35 L23.9990234,35 Z M23.9990234,17.6987305 L23.9990234,13.793457 L27.9042969,13.793457 L27.9042969,17.6987305 L23.9990234,17.6987305 Z" id="I-Copy" transform="translate(25.951660, 24.396729) rotate(-180.000000) translate(-25.951660, -24.396729) "></path>
             </g>
         </g>
     </g>

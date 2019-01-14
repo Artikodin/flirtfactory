@@ -17,6 +17,10 @@ export const DrawerNav = styled.nav`
       font-weight: bold;
       color: #ffffff;
       margin-left: 40px;
+      opacity: 0.3;
+    }
+    .active {
+      opacity: 1;
     }
   }
 `;

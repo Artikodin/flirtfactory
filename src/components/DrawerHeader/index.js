@@ -6,7 +6,7 @@ import { DrawerNav } from "./element";
 const DrawerHeader = ({ children }) => (
   <DrawerNav id="Drawer-nav">
     <ul>
-      <li>INDEX</li>
+      <li className="active">INDEX</li>
       <li>ABOUT</li>
     </ul>
     <div>{children}</div>
