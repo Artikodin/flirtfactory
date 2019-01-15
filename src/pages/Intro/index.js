@@ -21,7 +21,7 @@ Intro.propTypes = {
 export default Intro;
 
 export const BackgroundImage = styled.div`
-  background-image: url("./assets/img/start.jpg");
+  /* background-image: url("./assets/img/start.jpg"); */
   height: 100vh;
   width: 100vw;
   background-position: center;

@@ -1,24 +1,22 @@
 import styled from "styled-components";
 
 export const DragAndDropContainer = styled.div`
-  /* position: absolute; */
-  /* right: 10vw; */
+  border: 2px solid green;
+  width: 100%;
+  height: 100%;
   top: 0;
-  /* width: 453px; */
-  /* height: 10vh; */
-  height: auto;
   z-index: 50;
   margin: 0 auto;
 
   canvas {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
     border: 2px solid red;
   }
 
-  >video {
+  > video {
     display: none;
+    z-index: -50;
+    position: absolute;
   }
 `;
 
@@ -27,4 +25,5 @@ export const Round = styled.div`
   height: 50px;
   border: 3px solid white;
   border-radius: 50%;
+  position: absolute;
 `;
