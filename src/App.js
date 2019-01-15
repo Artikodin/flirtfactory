@@ -21,9 +21,7 @@ import {
   TextProvider,
   ProgressProvider,
   NavBar,
-  Logo,
-  TestClick,
-  EndingButton
+  Logo
 } from "./components";
 
 const App = () => (
@@ -34,8 +32,6 @@ const App = () => (
         <Router>
           <>
             <Cursor />
-            <TestClick />
-            <EndingButton />
             <Logo />
             <Switch>
               <Route exact path="/" component={Intro} />
