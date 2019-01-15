@@ -16,13 +16,7 @@ import {
   Renaissance,
   Page2
 } from "./pages";
-import {
-  Cursor,
-  TextProvider,
-  NavBar,
-  Logo,
-  ButtonGlobalView
-} from "./components";
+import { Cursor, TextProvider, NavBar, Logo } from "./components";
 
 const App = () => (
   <>
@@ -79,7 +73,6 @@ const App = () => (
             <NavBar.NavItem imgSrc="./assets/img/img7.jpeg" pathTo="/futur">
               Futur
             </NavBar.NavItem>
-            <ButtonGlobalView />
           </NavBar>
         </>
       </Router>

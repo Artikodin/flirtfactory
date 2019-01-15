@@ -1,15 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { Page } from "../../components";
+import { Page, SyncDragAndDrop } from "../../components";
 
 const Intro = () => (
   <Page backgroundColor="#c4e6f1">
     <BackgroundImage>
       <h1>Bonjour tu es sur la Flirt Factory</h1>
-      <Link to="/antiquite">Démarrer</Link>
+      <SyncDragAndDrop />
+      {/* <Link to="/antiquite">Démarrer</Link> */}
     </BackgroundImage>
   </Page>
 );

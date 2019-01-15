@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   z-index: 999;
   top: ${({ yPos }) => yPos};
   left: ${({ xPos }) => xPos};
+  /* mix-blend-mode: soft-light; */
 
   height: 45px;
   width: 45px;
@@ -18,7 +19,6 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   height: auto;
-
   transform-origin: top center;
   position: absolute;
   top: 100%;
@@ -31,7 +31,7 @@ export const Container = styled.div`
     content: "";
     background-image: url("./assets/img/noise.gif");
     background-size: 80px;
-    opacity: 0.2;
+    opacity: 1;
     top: 0;
     left: 0;
     bottom: 0;

@@ -1,4 +1,5 @@
 // Please respect the alphabetical order
+export { default as AudioVisualizer } from "./AudioVisualizer";
 export { default as BackgroundVideo } from "./BackgroundVideo";
 export { default as ButtonDrawer } from "./ButtonDrawer";
 export { default as ButtonGlobalView } from "./ButtonGlobalView";
@@ -12,5 +13,6 @@ export { default as Logo } from "./Logo";
 export { default as NavBar } from "./NavBar";
 export { default as Page } from "./Page";
 export { default as ScrollHandler } from "./ScrollHandler";
+export { default as SyncDragAndDrop } from "./SyncDragAndDrop";
 export { default as TextProvider, TextContext } from "./TextProvider";
 export { default as Video } from "./Video";
