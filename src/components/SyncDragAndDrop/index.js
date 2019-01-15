@@ -16,6 +16,7 @@ class SyncDragAndDrop extends React.Component {
   constructor(props) {
     super(props);
     this.videoElement = React.createRef();
+    this.canvas = React.createRef();
     this.mounted = false;
     this.progressionVideo = 0;
     this.progressionDrag = 0;
@@ -23,6 +24,18 @@ class SyncDragAndDrop extends React.Component {
 
   componentDidMount() {
     this.mounted = true;
+    this.initCanvas();
+  }
+
+  initCanvas() {
+    this.ctx = this.canvas.current.getContext("2d");
+    this.updateCanvas(this.ctx);
+  }
+
+  updateCanvas (ctx) {
+    ctx.drawImage(this.videoElement.current, 0, 0, 720, 560);
+    window.requestAnimationFrame( this.updateCanvas(ctx) )
+    // setTimeout(this.updateCanvas.bind(this), 0);
   }
 
   handleClick = x => {
@@ -31,35 +44,47 @@ class SyncDragAndDrop extends React.Component {
 
   onDrag = x => {
     if (this.mounted) {
-      this.progressionDrag = (x / 400);
-      this.progressionVideo = (this.videoElement.current.currentTime / this.videoElement.current.duration);
-      // console.log(this.progressionVideo, "%")
-      this.videoElement.current.currentTime += 0.2;
+      this.progressionDrag = x / 400;
+      this.progressionVideo =
+        this.videoElement.current.currentTime /
+        this.videoElement.current.duration;
+      this.frame = this.videoElement.current.duration / 400;
+      // console.log(this.progressionVideo, "% video")
+      // console.log(this.progressionDrag, "% drag")
+      this.videoElement.current.currentTime += 0.01;
     }
   };
 
+  shouldComponentUpdate() {
+    console.log("should");
+  }
+
+  componentDidUpdate() {
+    console.log("compoennt update");
+  }
+
   render() {
+    console.log("render");
     return (
-      <div>
+      <DragAndDropContainer>
+        <canvas ref={this.canvas} />
         <video
           ref={this.videoElement}
-          src="./assets/videos/antiquite/antiquite5.mp4"
+          src="./assets/videos/antiquite/antiquite6.mp4"
           type="video/mp4"
           // autoPlay
           // playsInline
           // loop
           muted
         />
-        <DragAndDropContainer>
-          <DraggableRound
-            // onDragStart={{ x: this.handleClick }}
-            // onDragEnd={{ x: dragEnd }}
-            // onMouseDown={mouseDown}
-            // onMouseUp={mouseUp}
-            onValueChange={{ x: this.onDrag }}
-          />
-        </DragAndDropContainer>
-      </div>
+        <DraggableRound
+          // onDragStart={{ x: this.handleClick }}
+          // onDragEnd={{ x: dragEnd }}
+          // onMouseDown={mouseDown}
+          // onMouseUp={mouseUp}
+          onValueChange={{ x: this.onDrag }}
+        />
+      </DragAndDropContainer>
     );
   }
 }
