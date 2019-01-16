@@ -6,7 +6,7 @@ export const Wrapper = styled.ul`
   list-style: none;
   position: absolute;
   left: 50%;
-  bottom: 25px;
+  bottom: 30px;
   transform: translateX(-50%);
   z-index: 10;
   display: flex;

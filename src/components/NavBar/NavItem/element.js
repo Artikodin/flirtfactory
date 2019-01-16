@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Wrapper = styled.li`
   flex: 1 1 0;
+  justify-content: center;
   transform: translate3d(0, 0, 0);
   font-weight: 200;
   width: 100%;
@@ -20,11 +21,11 @@ export const Wrapper = styled.li`
 `;
 
 export const TextContainer = styled.span`
+  max-height: 30px;
   border: 1px solid #fff;
-  height: 50px;
   text-align: center;
-  padding: 4px;
-  font-size: 14px;
+  padding: 10px 0;
+  font-size: 1rem;
   z-index: 12;
   opacity: 0.45;
   transition: all 0.25s ease;

@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import posed from "react-pose";
 
 // import PropTypes from "prop-types";
@@ -17,106 +16,77 @@ class SyncDragAndDrop extends React.Component {
 
   constructor(props) {
     super(props);
-    this.videoElement = React.createRef();
+    this.canvas = React.createRef();
     this.mounted = false;
-    this.progressionVideo = 0;
-    this.progressionDrag = 0;
+    this.image = new Image();
+    this.frame = 1;
+    this.frameTotal = 167;
+    this.prevFrame;
     this.raf = false;
-    this.prevx = 0;
-    this.targetTime = 0;
-    this.currentTime = 0;
+    this.ctx;
+
   }
 
   // CANVAS
 
   componentDidMount() {
     this.mounted = true;
+    this.image.src = "./assets/frames/antiquite/antiquite1.jpg"
+    this.image.onload = this.init();
   }
 
-  videoLoaded = () => {
-  };
-
-  // DRAG AND DROP
-
-  onDragStart = () => {
-    this.videoElement.current.play();
-    // this.raf = true;
-    // this.update();
-  };
-
-  onDragEnd = () => {
-    // this.raf = false;
-    this.videoElement.current.pause();
-  };
-
-  onDrag = x => {
-    // this.raf = true;
-    if (this.mounted) {
-      console.log("frame");
-      // this.targetTime = (this.videoElement.current.duration / 400) * x;
-      // this.update();
-    }
-
-    // if (x > this.prevx) {
-    // console.log(this.videoElement.current.currentTime);
-    // this.targetTime = (this.videoElement.current.duration / 400) * x;
-    // } else {
-    // this.videoElement.current.currentTime += -0.1;
-    // }
-    // this.frameTotal = this.videoElement.current.duration * 25;
-    // console.log("nombre de frames : ", this.frameTotal)
-    // this.frame = Math.round((this.frameTotal / 400) * x)
-    // console.log("frames a afficher : ", this.frame)
-    // this.progressionDrag = x / 400;
-    // this.progressionVideo = this.videoElement.current.currentTime;
-    // console.log(this.videoElement.current.duration)
-    // this.frame = this.videoElement.current.duration / 400;
-    // console.log(this.progressionVideo, "% video");
-    // console.log(this.progressionDrag, "% drag");
-    // this.frameVideo();
-    // this.prevx = x
-  };
-
-  componentDidUpdate = () => {
-    const node = ReactDOM.findDOMNode(this.videoElement.current);
-    console.log(node);
-    node.scrollTop = node.scrollHeight;
-  };
+  init() {
+    const canvas = this.canvas.current;
+    this.ctx = canvas.getContext('2d');
+    this.ctx.imageSmoothingEnabled = false;
+    this.ctx.canvas.width = window.innerWidth;
+    this.ctx.canvas.height = window.innerHeight;
+    this.ctx.drawImage(this.image, 0, 0);
+  }
 
   update() {
-    console.log("raf")
-    this.currentTime += (this.targetTime - this.currentTime) * 0.1;
-    this.videoElement.current.currentTime =
-      Math.floor(this.currentTime * 1000) / 1000;
-    // ReactDOM.findDOMNode(this.videoElement.current).currentTime =
-    //   Math.floor(this.currentTime * 1000) / 1000;
+    this.ctx.drawImage(this.image, 0, 0);
     if (this.raf) {
       requestAnimationFrame(this.update.bind(this));
     }
   }
 
-  onMouseMove(e) {
-    // this.videoElement.current.currentTime = 0.5;
-    // console.log((window.innerHeight / 400) * e.screenX);
-  }
+  // DRAG AND DROP
+
+  onDragStart = () => {
+    this.raf = true;
+    this.update();
+  };
+
+  onDragEnd = () => {
+    if (this.frame === this.frameTotal) {
+      alert("tu as bien drag")
+    } else {
+      console.log(this)      
+    }
+    this.raf = false;
+  };
+
+  onDrag = x => {
+    this.frame = Math.round((this.frameTotal / 400) * x);
+    if (this.mounted) {
+      if (this.prevFrame !== this.frame) {
+        this.image.src = `./assets/frames/antiquite/antiquite${this.frame}.jpg`;
+        if (this.image.complete && this.image.naturalHeight !== 0) {
+          this.update()
+          this.prevFrame = this.frame;
+        }
+      }
+    }
+  };
 
   render() {
     return (
-      <DragAndDropContainer onMouseMove={this.onMouseMove.bind(this)}>
-        <video
-          ref={this.videoElement}
-          src="./assets/videos/antiquite/antiquite6.mp4"
-          type="video/mp4"
-          onCanPlay={this.videoLoaded}
-          // autoPlay
-          // playsInline
-          // loop
-          muted
-        />
+      <DragAndDropContainer>
+        <canvas ref={this.canvas} />
         <DraggableRound
           onDragStart={this.onDragStart}
           onDragEnd={this.onDragEnd}
-          // onMouseDown={this.onMouseDown}
           onValueChange={{ x: this.onDrag }}
         />
       </DragAndDropContainer>

@@ -1,13 +1,13 @@
 // Please respect the alphabetical order
+export { default as About } from "./About";
 export { default as AudioVisualizer } from "./AudioVisualizer";
 export { default as BackgroundVideo } from "./BackgroundVideo";
-export { default as ButtonDrawer } from "./ButtonDrawer";
+export { default as ButtonIA } from "./ButtonIA";
 export { default as ButtonAbout } from "./ButtonAbout";
 export { default as Cursor } from "./Cursor";
 export { default as DragAndDrop } from "./DragAndDrop";
-export { default as Drawer } from "./Drawer";
+export { default as AboutDrawer } from "./AboutDrawer";
 export { default as DrawerContent } from "./DrawerContent";
-export { default as DrawerHeader } from "./DrawerHeader";
 export { default as EndingButton } from "./EndingButton";
 export { default as InterestTag } from "./InterestTag";
 export { default as Logo } from "./Logo";

@@ -17,7 +17,7 @@ import {
   Page2
 } from "./pages";
 import {
-  ButtonAbout,
+  About,
   Cursor,
   TextProvider,
   ProgressProvider,
@@ -52,46 +52,46 @@ const App = () => (
                 imgSrc="./assets/img/img1.jpeg"
                 pathTo="/antiquite"
               >
-                Antiquité
+                antiquité
               </NavBar.NavItem>
               <NavBar.NavItem
                 imgSrc="./assets/img/img2.jpeg"
                 pathTo="/moyen-age"
               >
-                Moyen-Âge
+                moyen-âge
               </NavBar.NavItem>
               <NavBar.NavItem
                 imgSrc="./assets/img/img8.jpeg"
                 pathTo="/renaissance"
               >
-                Renaissance
+                renaissance
               </NavBar.NavItem>
               <NavBar.NavItem
                 imgSrc="./assets/img/img3.jpeg"
                 pathTo="/lumieres"
               >
-                Lumière
+                lumière
               </NavBar.NavItem>
               <NavBar.NavItem
                 imgSrc="./assets/img/img4.jpeg"
                 pathTo="/belle-epoque"
               >
-                Belle-Époque
+                belle-époque
               </NavBar.NavItem>
               <NavBar.NavItem imgSrc="./assets/img/img5.jpeg" pathTo="/moderne">
-                Moderne
+                moderne
               </NavBar.NavItem>
               <NavBar.NavItem
                 imgSrc="./assets/img/img6.gif"
                 pathTo="/ere-numerique"
               >
-                Ère-numérique
+                ère-numérique
               </NavBar.NavItem>
               <NavBar.NavItem imgSrc="./assets/img/img7.jpeg" pathTo="/futur">
-                Futur
+                futur
               </NavBar.NavItem>
-              <ButtonAbout />
             </NavBar>
+            <About />
           </>
         </Router>
       </ProgressProvider>

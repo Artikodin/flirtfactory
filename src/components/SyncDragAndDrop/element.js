@@ -9,7 +9,7 @@ export const DragAndDropContainer = styled.div`
   margin: 0 auto;
 
   canvas {
-    display: none;
+    /* display: none; */
     position: absolute;
     border: 2px solid red;
   }

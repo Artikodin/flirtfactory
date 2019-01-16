@@ -30,8 +30,8 @@ export const Container = styled.div`
   &:after {
     content: "";
     background-image: url("./assets/img/noise.gif");
+    opacity: 0.1;
     background-size: 80px;
-    opacity: 1;
     top: 0;
     left: 0;
     bottom: 0;
@@ -57,5 +57,5 @@ export const Icon = styled.img`
   position: absolute;
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
-  left: 23px;
+  left: 22px;
 `;

@@ -4,9 +4,10 @@ import { ButtonAboutWrapper } from "./element";
 
 class ButtonAbout extends React.Component {
   render() {
+    const { click } = this.props;
     return (
-      <ButtonAboutWrapper onClick={this.handleClick}>
-        <img src="./assets/ui/globalview.svg" alt="Open Drawer" />
+      <ButtonAboutWrapper onClick={e => click()}>
+        <div>i</div>
       </ButtonAboutWrapper>
     );
   }

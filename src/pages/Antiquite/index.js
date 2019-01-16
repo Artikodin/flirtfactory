@@ -4,7 +4,9 @@ import {
   Page,
   DragAndDrop,
   BackgroundVideo,
-  InterestTag
+  InterestTag,
+  ButtonIA,
+  ProgressContext
 } from "../../components";
 
 class Antiquite extends React.Component {
@@ -61,18 +63,30 @@ class Antiquite extends React.Component {
     const { number, loop } = this.state;
     return (
       <Page>
-        <DragAndDrop
-          dragEnd={this.handleEndDrag}
-          mouseDown={this.playSecondVideo}
-          mouseUp={this.playFourthVideo}
-          dragging={this.handleDrag}
-        />
-        <InterestTag title="Les sérénades" xPos="200px" yPos="200px">
-          La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à
-          l'image chantait son amour sous le balcon de sa Juliette. Mais
-          auparavant, il devait effectuer d’incessants allers-retours dans la
-          rue pour attirer son attention. Pas très discret mais efficace…
-        </InterestTag>
+        <ButtonIA />
+        <ProgressContext.Consumer>
+          {({ ages, selectAges }) => {
+            return (
+              <>
+                <DragAndDrop
+                  dragEnd={this.handleEndDrag}
+                  mouseUp={() => selectAges("antiquite")}
+                  mouseDown={this.playFourthVideo}
+                  dragging={this.handleDrag}
+                />
+                {ages.antiquite && (
+                  <InterestTag title="Les sérénades" xPos="200px" yPos="200px">
+                    La mode était aux sérénades. Pour déclarer sa flamme, le
+                    prétendant, à l'image chantait son amour sous le balcon de
+                    sa Juliette. Mais auparavant, il devait effectuer
+                    d’incessants allers-retours dans la rue pour attirer son
+                    attention. Pas très discret mais efficace…
+                  </InterestTag>
+                )}
+              </>
+            );
+          }}
+        </ProgressContext.Consumer>
         <BackgroundVideo path="antiquite" number={number} loop={loop} />
         <button type="button" onClick={this.addOne}>
           {number}

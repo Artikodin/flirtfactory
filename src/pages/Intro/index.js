@@ -9,7 +9,6 @@ const Intro = () => (
     <BackgroundImage>
       <h1>Bonjour tu es sur la Flirt Factory</h1>
       <SyncDragAndDrop />
-      {/* <Link to="/antiquite">Démarrer</Link> */}
     </BackgroundImage>
   </Page>
 );

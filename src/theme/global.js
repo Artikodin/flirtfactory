@@ -16,16 +16,15 @@ const GlobalStyle = createGlobalStyle`
           url('../assets/fonts/GT-Cinetype-Regular.ttf') format('woff'), /* Modern Browsers */
           url('../assets/fonts/GT-Cinetype-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
   }
-  
-  canvas {
-    top:0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
   html, body{
     font-family: "avenir";
     cursor: none;
+  }
+  #root {
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
   }
   /* normalize */
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
