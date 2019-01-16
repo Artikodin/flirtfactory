@@ -34,43 +34,47 @@ class SyncDragAndDrop extends React.Component {
   }
 
   videoLoaded = () => {
-    // this.initCanvas();
   };
 
   // DRAG AND DROP
 
   onDragStart = () => {
-    this.raf = true;
-    this.update();
+    this.videoElement.current.play();
+    // this.raf = true;
+    // this.update();
   };
 
   onDragEnd = () => {
-    this.raf = false;
-    // this.videoElement.current.pause();
+    // this.raf = false;
+    this.videoElement.current.pause();
   };
 
   onDrag = x => {
-    this.raf = true;
+    // this.raf = true;
     if (this.mounted) {
-      if (x > this.prevx) {
-        // console.log(this.videoElement.current.currentTime);
-        this.targetTime = (this.videoElement.current.duration / 400) * x;
-      } else {
-        // this.videoElement.current.currentTime += -0.1;
-      }
-      // this.frameTotal = this.videoElement.current.duration * 25;
-      // console.log("nombre de frames : ", this.frameTotal)
-      // this.frame = Math.round((this.frameTotal / 400) * x)
-      // console.log("frames a afficher : ", this.frame)
-      // this.progressionDrag = x / 400;
-      // this.progressionVideo = this.videoElement.current.currentTime;
-      // console.log(this.videoElement.current.duration)
-      // this.frame = this.videoElement.current.duration / 400;
-      // console.log(this.progressionVideo, "% video");
-      // console.log(this.progressionDrag, "% drag");
-      // this.frameVideo();
-      // this.prevx = x
+      console.log("frame");
+      // this.targetTime = (this.videoElement.current.duration / 400) * x;
+      // this.update();
     }
+
+    // if (x > this.prevx) {
+    // console.log(this.videoElement.current.currentTime);
+    // this.targetTime = (this.videoElement.current.duration / 400) * x;
+    // } else {
+    // this.videoElement.current.currentTime += -0.1;
+    // }
+    // this.frameTotal = this.videoElement.current.duration * 25;
+    // console.log("nombre de frames : ", this.frameTotal)
+    // this.frame = Math.round((this.frameTotal / 400) * x)
+    // console.log("frames a afficher : ", this.frame)
+    // this.progressionDrag = x / 400;
+    // this.progressionVideo = this.videoElement.current.currentTime;
+    // console.log(this.videoElement.current.duration)
+    // this.frame = this.videoElement.current.duration / 400;
+    // console.log(this.progressionVideo, "% video");
+    // console.log(this.progressionDrag, "% drag");
+    // this.frameVideo();
+    // this.prevx = x
   };
 
   componentDidUpdate = () => {
@@ -80,9 +84,12 @@ class SyncDragAndDrop extends React.Component {
   };
 
   update() {
+    console.log("raf")
     this.currentTime += (this.targetTime - this.currentTime) * 0.1;
-    ReactDOM.findDOMNode(this.videoElement.current).currentTime =
+    this.videoElement.current.currentTime =
       Math.floor(this.currentTime * 1000) / 1000;
+    // ReactDOM.findDOMNode(this.videoElement.current).currentTime =
+    //   Math.floor(this.currentTime * 1000) / 1000;
     if (this.raf) {
       requestAnimationFrame(this.update.bind(this));
     }

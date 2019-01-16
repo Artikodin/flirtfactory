@@ -5,6 +5,8 @@ export const Wrapper = styled.li`
   flex: 1 1 0;
   transform: translate3d(0, 0, 0);
   font-weight: 200;
+  width: 100%;
+  max-width: 215px;
   margin-right: -1px;
   transition: all 0.4s ease;
   &:hover img {
@@ -19,6 +21,7 @@ export const Wrapper = styled.li`
 
 export const TextContainer = styled.span`
   border: 1px solid #fff;
+  height: 50px;
   text-align: center;
   padding: 4px;
   font-size: 14px;

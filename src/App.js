@@ -17,6 +17,7 @@ import {
   Page2
 } from "./pages";
 import {
+  ButtonAbout,
   Cursor,
   TextProvider,
   ProgressProvider,
@@ -89,6 +90,7 @@ const App = () => (
               <NavBar.NavItem imgSrc="./assets/img/img7.jpeg" pathTo="/futur">
                 Futur
               </NavBar.NavItem>
+              <ButtonAbout />
             </NavBar>
           </>
         </Router>

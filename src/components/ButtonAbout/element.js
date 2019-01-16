@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ButtonGlobalViewWrapper = styled.div`
+export const ButtonAboutWrapper = styled.div`
   width: auto;
   height: 100%;
   /* margin-bottom: -3px; */
