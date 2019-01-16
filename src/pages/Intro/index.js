@@ -1,33 +1,49 @@
 import React from "react";
 // import PropTypes from "prop-types";
-import styled from "styled-components";
+// import styled from "styled-components";
 
-import { Page, SyncDragAndDrop } from "../../components";
+import { Page, CanvasVideo, SyncDragAndDrop } from "../../components";
 
-const Intro = () => (
-  <Page backgroundColor="#c4e6f1">
-    <BackgroundImage>
-      <h1>Bonjour tu es sur la Flirt Factory</h1>
-      <SyncDragAndDrop />
-    </BackgroundImage>
-  </Page>
-);
+class Intro extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  // }
 
-Intro.propTypes = {
-  // history: PropTypes.object.isRequired
-};
+  state = {
+    raf: false,
+    frame: 0,
+    frameTotal: 167
+  };
+
+  switchRaf = () => {
+    const { raf } = this.state;
+    this.setState({
+      raf: !raf
+    });
+  };
+
+  updateFrame = x => {
+    this.setState({
+      frame: x
+    });
+  };
+
+  render() {
+    const { raf, frame, frameTotal } = this.state;
+    return (
+      <Page backgroundColor="#c4e6f1">
+        {/* <BackgroundImage> */}
+        <h1>Bonjour tu es sur la Flirt Factory</h1>
+        <CanvasVideo frame={frame} raf={raf} />
+        <SyncDragAndDrop
+          frameTotal={frameTotal}
+          switchRaf={this.switchRaf}
+          updateFrame={{ x: this.updateFrame }}
+        />
+        {/* </BackgroundImage> */}
+      </Page>
+    );
+  }
+}
 
 export default Intro;
-
-export const BackgroundImage = styled.div`
-  /* background-image: url("./assets/img/start.jpg"); */
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
