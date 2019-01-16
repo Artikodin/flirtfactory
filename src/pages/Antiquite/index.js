@@ -6,7 +6,8 @@ import {
   BackgroundVideo,
   InterestTag,
   ButtonIA,
-  ProgressContext
+  ProgressContext,
+  MagneticButton
 } from "../../components";
 
 class Antiquite extends React.Component {
