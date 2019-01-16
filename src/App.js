@@ -22,7 +22,8 @@ import {
   TextProvider,
   ProgressProvider,
   NavBar,
-  Logo
+  Logo,
+  MagneticButton
 } from "./components";
 
 const App = () => (
@@ -32,6 +33,7 @@ const App = () => (
       <ProgressProvider>
         <Router>
           <>
+            <MagneticButton />
             <Cursor />
             <Logo />
             <Switch>
