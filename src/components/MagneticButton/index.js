@@ -45,6 +45,9 @@ class MagneticButton extends React.Component {
     window.addEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
+    window.addEventListener("resize", this.handleScreenResize, {
+      passive: true
+    });
     this.magnetProperty = this.magnet.current.getBoundingClientRect();
     this.update();
   }
@@ -53,8 +56,15 @@ class MagneticButton extends React.Component {
     window.removeEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
+    window.removeEventListener("resize", this.handleScreenResize, {
+      passive: true
+    });
     window.cancelAnimationFrame(this.framID);
   }
+
+  handleScreenResize = () => {
+    this.magnetProperty = this.magnet.current.getBoundingClientRect();
+  };
 
   // This function check if the cursor is close to the magnetic element or not
   isMagnetic = (x, y) => {
