@@ -9,10 +9,11 @@ import {
   Wrapper,
   Container,
   Icon,
-  GlobalContainer
+  GlobalContainer,
+  IconContainer
 } from "./element";
 
-class InterestTag extends React.Component {
+class GenericTag extends React.Component {
   state = {
     showed: false
   };
@@ -22,6 +23,7 @@ class InterestTag extends React.Component {
     ease: PropTypes.number,
     children: PropTypes.string,
     title: PropTypes.string,
+    index: PropTypes.bool,
     xPos: PropTypes.string,
     yPos: PropTypes.string
   };
@@ -31,6 +33,7 @@ class InterestTag extends React.Component {
     ease: 0.09,
     children: "",
     title: "",
+    index: false,
     xPos: "0px",
     yPos: "0px"
   };
@@ -147,21 +150,22 @@ class InterestTag extends React.Component {
   };
 
   render() {
-    const { xPos, yPos, children, title } = this.props;
+    const { xPos, yPos, children, title, index } = this.props;
     const { showed } = this.state;
+    const src = index === true ? "./assets/ui/Index.svg" : "./assets/ui/+.svg";
     return (
       <GlobalContainer ref={this.magnet} xPos={xPos} yPos={yPos}>
         <AnimatedWrapper
+          pose={showed ? "isOpen" : "isClose"}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-          pose={showed ? "isOpen" : "isClose"}
         >
-          <Icon src="./assets/ui/PointDinteret.svg" alt="" />
+          <IconContainer>
+            <Icon src={src} alt="" />
+          </IconContainer>
+          <AnimatedTitle>{title}</AnimatedTitle>
           <AnimatedContainer>
-            <div>
-              <Title>{title}</Title>
-              <Paragraph>{children}</Paragraph>
-            </div>
+            <Paragraph>{children}</Paragraph>
           </AnimatedContainer>
         </AnimatedWrapper>
       </GlobalContainer>
@@ -173,14 +177,18 @@ const AnimatedWrapper = posed(Wrapper)({
   isClose: { width: 45, background: "rgba(255, 255, 255, 0)", delay: 280 },
   isOpen: {
     width: 300,
-    background: "rgba(255, 255, 255, 0.2)",
-    delayChildren: 280
+    background: "rgba(255, 255, 255, 0.2)"
   }
+});
+
+const AnimatedTitle = posed(Title)({
+  isClose: { scaleX: 0, opacity: 0, delay: 280, transition: { duration: 270 } },
+  isOpen: { scaleX: 1, opacity: 1, transition: { duration: 300 } }
 });
 
 const AnimatedContainer = posed(Container)({
   isClose: { scaleY: 0, opacity: 0 },
-  isOpen: { scaleY: 1, opacity: 1 }
+  isOpen: { scaleY: 1, opacity: 1, delay: 280 }
 });
 
-export default InterestTag;
+export default GenericTag;
