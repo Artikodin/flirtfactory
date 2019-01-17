@@ -10,7 +10,6 @@ class Cursor extends React.Component {
 
   render() {
     const { cursor } = this.state;
-    console.log(cursor);
     return (
       <Pointer>
         <Default />

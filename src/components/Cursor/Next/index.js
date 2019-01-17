@@ -116,10 +116,8 @@ class Next extends React.Component {
     }
     if (this.isMouseDown) {
       this.animationClick.direction = 1;
-      console.log("down");
     } else {
       this.animationClick.direction = -1;
-      console.log("up");
     }
     const elapsed = this.animationClick.elapsed;
     this.animationClick.elapsed = performance.now() - this.animationClick.start;
@@ -137,7 +135,6 @@ class Next extends React.Component {
     this.innerBg.current.style.transform = `scale(${scale})`;
     if (this.animationClick.progress >= 1 || this.animationClick.progress <= 0) {
       window.cancelAnimationFrame(this.animationLongClick);
-      console.log("finish");
     } else {
       this.animationLongClick = window.requestAnimationFrame(this.longClick);
     }

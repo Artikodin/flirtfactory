@@ -5,7 +5,6 @@ import { ProgressContext } from "..";
 const TestClick = () => (
   <ProgressContext.Consumer>
     {({ ages, selectAges }) => {
-      console.log("ages", ages);
       return (
         <button
           onClick={() => selectAges("futur")}

@@ -26,7 +26,7 @@ class DragAndDrop extends React.Component {
   };
 
   onDrag = x => {
-    console.log(x);
+    // console.log(x);
   };
 
   render() {

@@ -21,13 +21,9 @@ class Video extends React.Component {
   }
 
   loadVideo = () => {
-    console.log("video loaded is loaded")
     this.setState({ videoLoaded: "loaded" });
   };
 
- componentDidMount() {
-    console.log("page chargée")
-  }
 
   render() {
     const { path, number } = this.props;

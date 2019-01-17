@@ -61,7 +61,7 @@ class SyncDragAndDrop extends React.Component {
     if (this.frame === this.frameTotal) {
       alert("tu as bien drag")
     } else {
-      console.log(this)      
+      // console.log(this)      
     }
     this.raf = false;
   };

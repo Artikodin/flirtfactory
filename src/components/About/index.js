@@ -4,7 +4,7 @@ import { ButtonAbout, AboutDrawer } from "../index";
 
 class About extends React.Component {
   state = {
-    showed: true
+    showed: false
   };
 
   handleClick = () => {

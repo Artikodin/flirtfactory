@@ -37,12 +37,12 @@ class Antiquite extends React.Component {
         <ProgressContext.Consumer>
           {({ ages, selectAges }) => (
             <>
-              <DragAndDrop
+              {/* <DragAndDrop
                 dragEnd={this.handleEndDrag}
                 mouseUp={() => selectAges("antiquite")}
                 mouseDown={this.playFourthVideo}
                 dragging={this.handleDrag}
-              />
+              /> */}
               <GenericTag title="Les sérénades" xPos="200px" yPos="200px">
                 La mode était aux sérénades. Pour déclarer sa flamme, le
                 prétendant, à l'image chantait son amour sous le balcon de sa

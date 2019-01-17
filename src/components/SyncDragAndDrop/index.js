@@ -43,14 +43,12 @@ class SyncDragAndDrop extends React.Component {
 
   onDragEnd = () => {
     const { switchRaf } = this.props;
-    console.log(this.drag.current);
     this.drag.current.transform = "translateX(0)";
     switchRaf();
   };
 
   endDragAndDrop = () => {
     this.dragend = true;
-    console.log(this.dragend);
   };
 
   onDrag = x => {
