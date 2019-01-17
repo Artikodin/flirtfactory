@@ -2,7 +2,7 @@ import React from "react";
 // import PropTypes from "prop-types";
 // import styled from "styled-components";
 
-import { InteractionDragAndDrop } from "../../components";
+import { InteractionDragAndDrop, ButtonIA } from "../../components";
 
 /* eslint-disable */
 
@@ -12,7 +12,7 @@ class Intro extends React.Component {
       <div>
         <InteractionDragAndDrop age={"antiquite"} />
         bienvenue sur la Flirt Factory 
-
+        <ButtonIA></ButtonIA>
       </div>
     );
   }

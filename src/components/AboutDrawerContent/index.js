@@ -7,10 +7,10 @@ import { DrawerLayout, AboutLayout, About } from "./element";
 
 const AboutDrawerContent = () => (
   <DrawerLayout id="Drawer-layout">
-    <div class="line line__top" />
-    <div class="line line__bottom" />
-    <div class="line line__right" />
-    <div class="line line__left" />
+    <div className="line line__top" />
+    <div className="line line__bottom" />
+    <div className="line line__right" />
+    <div className="line line__left" />
     <marquee scrollamount="10">
       About About About About About About About About About About About About About About About
       About About About About About About About About About About About About About About About
