@@ -4,10 +4,9 @@ import {
   Page,
   DragAndDrop,
   BackgroundVideo,
-  InterestTag,
+  GenericTag,
   ButtonIA,
-  ProgressContext,
-  MagneticButton
+  ProgressContext
 } from "../../components";
 
 class Antiquite extends React.Component {
@@ -46,14 +45,21 @@ class Antiquite extends React.Component {
                   mouseDown={this.playFourthVideo}
                   dragging={this.handleDrag}
                 />
+                <GenericTag title="Les sérénades" xPos="200px" yPos="200px">
+                  La mode était aux sérénades. Pour déclarer sa flamme, le
+                  prétendant, à l'image chantait son amour sous le balcon de sa
+                  Juliette. Mais auparavant, il devait effectuer d’incessants
+                  allers-retours dans la rue pour attirer son attention. Pas
+                  très discret mais efficace…
+                </GenericTag>
                 {ages.antiquite && (
-                  <InterestTag title="Les sérénades" xPos="200px" yPos="200px">
+                  <GenericTag title="Les sérénades" xPos="200px" yPos="200px">
                     La mode était aux sérénades. Pour déclarer sa flamme, le
                     prétendant, à l'image chantait son amour sous le balcon de
                     sa Juliette. Mais auparavant, il devait effectuer
                     d’incessants allers-retours dans la rue pour attirer son
                     attention. Pas très discret mais efficace…
-                  </InterestTag>
+                  </GenericTag>
                 )}
               </>
             );

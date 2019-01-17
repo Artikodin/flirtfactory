@@ -11,15 +11,8 @@ export const GlobalContainer = styled.div`
 
 export const Wrapper = styled.div`
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  position: relative;
-
-  height: 45px;
-  width: 45px;
-
-  border: solid 1px white;
+  align-items: flex-start;
+  justify-content: flex-start;
 `;
 
 export const Container = styled.div`
@@ -27,11 +20,11 @@ export const Container = styled.div`
   transform-origin: top center;
   position: absolute;
   top: 100%;
-  left: -1px;
-  right: -1px;
+  left: 0;
+  right: 0;
   text-align: justify;
-  padding: 25px 40px;
   border: solid 1px white;
+  border-top: none;
   &:after {
     content: "";
     background-image: url("./assets/img/noise.gif");
@@ -50,17 +43,35 @@ export const Title = styled.div`
   color: #fff;
   font-size: 14px;
   font-weight: 700;
-  padding-bottom: 10px;
+  position: absolute;
+  width: 242px;
+  border: solid 1px white;
+  border-left: none;
+  height: 45px;
+  line-height: 45px;
+  padding-left: 10px;
+  left: 47px;
+  transform-origin: center left;
 `;
 
 export const Paragraph = styled.div`
   color: #fff;
   font-size: 14px;
+
+  padding: 25px 40px;
+  max-height: 260px;
+  overflow: auto;
 `;
 
-export const Icon = styled.img`
-  position: absolute;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  left: 22px;
+export const IconContainer = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 45px;
+  min-width: 45px;
+
+  border: solid 1px white;
 `;
+
+export const Icon = styled.img``;
