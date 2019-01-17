@@ -7,7 +7,8 @@ import {
   GenericTag,
   ButtonIA,
   ProgressContext,
-  InteractionDragAndDrop
+  InteractionDragAndDrop,
+  DragAndDrop
 } from "../../components";
 
 class Antiquite extends React.Component {
@@ -33,7 +34,7 @@ class Antiquite extends React.Component {
     const { number, loop } = this.state;
     return (
       <Page>
-        <ButtonIA id="button__ia" />
+        {/* <ButtonIA /> */}
         <ProgressContext.Consumer>
           {({ ages, selectAges }) => (
             <>
