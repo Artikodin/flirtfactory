@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {
   Page,
   BackgroundVideo,
-  InterestTag,
+  GenericTag,
   ButtonIA,
   ProgressContext,
   InteractionDragAndDrop
@@ -37,21 +37,28 @@ class Antiquite extends React.Component {
         <ProgressContext.Consumer>
           {({ ages, selectAges }) => (
             <>
+              <DragAndDrop
+                dragEnd={this.handleEndDrag}
+                mouseUp={() => selectAges("antiquite")}
+                mouseDown={this.playFourthVideo}
+                dragging={this.handleDrag}
+              />
+              <GenericTag title="Les sérénades" xPos="200px" yPos="200px">
+                La mode était aux sérénades. Pour déclarer sa flamme, le
+                prétendant, à l'image chantait son amour sous le balcon de sa
+                Juliette. Mais auparavant, il devait effectuer d’incessants
+                allers-retours dans la rue pour attirer son attention. Pas très
+                discret mais efficace…
+              </GenericTag>
               {ages.antiquite && (
-                <InterestTag title="Les sérénades" xPos="200px" yPos="200px">
+                <GenericTag title="Les sérénades" xPos="200px" yPos="200px">
                   La mode était aux sérénades. Pour déclarer sa flamme, le
                   prétendant, à l'image chantait son amour sous le balcon de sa
                   Juliette. Mais auparavant, il devait effectuer d’incessants
                   allers-retours dans la rue pour attirer son attention. Pas
                   très discret mais efficace…
-                </InterestTag>
+                </GenericTag>
               )}
-              {/* <DragAndDrop
-                dragEnd={this.handleEndDrag}
-                mouseUp={() => selectAges("antiquite")}
-                mouseDown={this.playFourthVideo}
-                dragging={this.handleDrag}
-              /> */}
             </>
           )}
         </ProgressContext.Consumer>
