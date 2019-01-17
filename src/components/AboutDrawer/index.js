@@ -2,26 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import posed, { PoseGroup } from "react-pose";
 
-import { Wrapper } from "./element";
+import { Wrapper, ButtonAboutClose } from "./element";
+import { AboutDrawerContent } from "../index";
 
-const AboutDrawer = ({ children, showed }) => (
+const AboutDrawer = ({ showed, click }) => (
   <PoseGroup id="AboutDrawer">
     {showed && (
       <AnimatedWrapper key="wrapper">
-        test test
-        {children}
+        <ButtonAboutClose onClick={click}>
+          <img src="../assets/ui/Close.svg" alt="close about" />
+        </ButtonAboutClose>
+        <AboutDrawerContent />
       </AnimatedWrapper>
     )}
   </PoseGroup>
 );
 
 AboutDrawer.propTypes = {
-  children: PropTypes.node,
-  showed: PropTypes.bool.isRequired
+  showed: PropTypes.bool.isRequired,
+  click: PropTypes.func
 };
 
 AboutDrawer.defaultProps = {
-  children: ""
+  click: () => {}
 };
 
 const AnimatedWrapper = posed(Wrapper)({

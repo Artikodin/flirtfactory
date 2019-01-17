@@ -44,24 +44,6 @@ class Video extends React.Component {
           onCanPlay={this.loadVideo}
         />
         <video
-          style={{ display: number === 2?'block' : 'none' }}
-          src={`./assets/videos/${path}/${path}2.mp4`}
-          type="video/mp4"
-          autoPlay
-          playsInline
-          muted
-          onCanPlay={this.loadVideo}
-        />
-        <video
-          style={{ display: number === 3?'block' : 'none' }}
-          src={`./assets/videos/${path}/${path}3.mp4`}
-          type="video/mp4"
-          autoPlay
-          playsInline
-          muted
-          onCanPlay={this.loadVideo}
-        />
-        <video
           style={{ display: number === 4?'block' : 'none' }}
           src={`./assets/videos/${path}/${path}4.mp4`}
           type="video/mp4"

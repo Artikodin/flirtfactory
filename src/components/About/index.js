@@ -1,11 +1,10 @@
 import React from "react";
 
-import AboutDrawer from "../AboutDrawer";
-import ButtonAbout from "../ButtonAbout";
+import { ButtonAbout, AboutDrawer } from "../index";
 
 class About extends React.Component {
   state = {
-    showed: false
+    showed: true
   };
 
   handleClick = () => {
@@ -20,7 +19,7 @@ class About extends React.Component {
     return (
       <div id="About">
         <ButtonAbout click={this.handleClick} />
-        <AboutDrawer showed={showed} />
+        <AboutDrawer showed={showed} click={this.handleClick} />
       </div>
     );
   }

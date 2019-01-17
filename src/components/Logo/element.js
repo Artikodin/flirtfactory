@@ -8,7 +8,7 @@ export const LogoWrapper = styled.div`
   padding: 30px;
   max-width: 40px;
   height: auto;
-  z-index: 4;
+  z-index: 50;
   svg {
     width: 100%;
     height: auto;

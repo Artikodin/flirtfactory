@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BackgroundVideoWrapper = styled.div`
+export const BackgroundWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -11,9 +11,9 @@ export const BackgroundVideoWrapper = styled.div`
     z-index: 50;
   }
   video {
-    position: fixed;
+    /* position: fixed;
     min-width: 100%;
-    min-height: 100vh;
+    min-height: 100vh; */
     /* right: 0;
     bottom: 0;
     width: 100%;

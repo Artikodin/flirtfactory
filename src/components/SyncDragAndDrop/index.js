@@ -23,9 +23,11 @@ class SyncDragAndDrop extends React.Component {
 
   constructor(props) {
     super(props);
+    this.drag = React.createRef();
     this.mounted = false;
     this.prevFrame = 0;
     this.ctx = null;
+    this.dragend = false;
   }
 
   componentDidMount() {
@@ -37,23 +39,29 @@ class SyncDragAndDrop extends React.Component {
   onDragStart = () => {
     const { switchRaf } = this.props;
     switchRaf();
-    // update
   };
 
   onDragEnd = () => {
     const { switchRaf } = this.props;
-    // if x = 400
-    // alert("tu as bien drag");
+    console.log(this.drag.current);
+    this.drag.current.transform = "translateX(0)";
     switchRaf();
   };
 
+  endDragAndDrop = () => {
+    this.dragend = true;
+    console.log(this.dragend);
+  };
+
   onDrag = x => {
-    let { frame, frameTotal, updateFrame } = this.props;
+    const { frame, frameTotal, updateFrame } = this.props;
     updateFrame(Math.round((frameTotal / 400) * x));
     if (this.mounted) {
       if (this.prevFrame !== frame) {
+        if (x === 400) {
+          this.endDragAndDrop();
+        }
         this.prevFrame = frame;
-        // update
       }
     }
   };
@@ -62,6 +70,8 @@ class SyncDragAndDrop extends React.Component {
     return (
       <DragAndDropContainer>
         <DraggableRound
+          style={{ display: this.dragend ? "none" : "block" }}
+          ref={this.drag}
           onDragStart={this.onDragStart}
           onDragEnd={this.onDragEnd}
           onValueChange={{ x: this.onDrag }}
@@ -75,5 +85,4 @@ const DraggableRound = posed(Round)({
   draggable: "x",
   dragBounds: { left: 0, right: 400 }
 });
-
 export default SyncDragAndDrop;
