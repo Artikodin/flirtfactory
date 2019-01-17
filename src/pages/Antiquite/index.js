@@ -20,36 +20,7 @@ class Antiquite extends React.Component {
     loop: true
   };
 
-  handleDrag = x => {
-    if (x > 100) {
-      this.setState({
-        number: 3
-      });
-    } else if (x === 400) {
-      this.setState({
-        number: 4
-      });
-    }
-  };
-
-  playSecondVideo = () => {
-    this.setState({
-      number: 2
-    });
-  };
-
-  playFourthVideo = () => {
-    // jouer la video de zoom à l'envers
-  };
-
   // DEBUG & TEST
-  handleClick = () => {
-    this.setState({
-      number: 2,
-      loop: false
-    });
-  };
-
   addOne = () => {
     this.setState(preState => {
       return {

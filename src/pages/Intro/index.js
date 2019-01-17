@@ -5,18 +5,7 @@ import React from "react";
 import { InteractionDragAndDrop } from  "../../components";
 
 class Intro extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
-  state = {
-    raf: false,
-    frame: 0,
-    frameTotal: 167
-  };
-
   render() {
-    const { raf, frame, frameTotal } = this.state;
     return (
       <div>
         <InteractionDragAndDrop age={"antiquite"} />
