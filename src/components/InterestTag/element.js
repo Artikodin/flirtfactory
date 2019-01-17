@@ -1,15 +1,20 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+export const GlobalContainer = styled.div`
+  display: inline-block;
 
   position: absolute;
   z-index: 999;
   top: ${({ yPos }) => yPos};
   left: ${({ xPos }) => xPos};
-  /* mix-blend-mode: soft-light; */
+`;
+
+export const Wrapper = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
 
   height: 45px;
   width: 45px;
