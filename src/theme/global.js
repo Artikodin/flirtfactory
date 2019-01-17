@@ -60,6 +60,22 @@ const GlobalStyle = createGlobalStyle`
     transition: opacity 0.2s ease-in;
   }
 
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px white;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+  }
+
   /* normalize */
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 

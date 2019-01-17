@@ -23,8 +23,10 @@ export const Container = styled.div`
   left: 0;
   right: 0;
   text-align: justify;
+  line-height: 1.5;
   border: solid 1px white;
   border-top: none;
+
   &:after {
     content: "";
     background-image: url("./assets/img/noise.gif");
@@ -57,10 +59,13 @@ export const Title = styled.div`
 export const Paragraph = styled.div`
   color: #fff;
   font-size: 14px;
-
   padding: 25px 40px;
   max-height: 260px;
   overflow: auto;
+
+  p {
+    margin-bottom: 10px;
+  }
 `;
 
 export const IconContainer = styled.div`

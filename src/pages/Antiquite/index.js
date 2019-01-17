@@ -4,10 +4,9 @@ import {
   Page,
   BackgroundVideo,
   GenericTag,
-  ButtonIA,
+  // ButtonIA,
   ProgressContext,
-  InteractionDragAndDrop,
-  DragAndDrop
+  InteractionDragAndDrop
 } from "../../components";
 
 class Antiquite extends React.Component {
@@ -43,12 +42,32 @@ class Antiquite extends React.Component {
                 mouseDown={this.playFourthVideo}
                 dragging={this.handleDrag}
               /> */}
-              <GenericTag title="Les sérénades" xPos="200px" yPos="200px" index>
-                La mode était aux sérénades. Pour déclarer sa flamme, le
-                prétendant, à l'image chantait son amour sous le balcon de sa
-                Juliette. Mais auparavant, il devait effectuer d’incessants
-                allers-retours dans la rue pour attirer son attention. Pas très
-                discret mais efficace…
+              <GenericTag title="Antiquité" xPos="200px" yPos="200px" index>
+                <p>
+                  Les orgies représentées dans les tableaux de l’Antiquité
+                  Grecque sont exactement l’état d’esprit de l’époque.
+                  <strong> La sexualité était totalement débridée !</strong>
+                </p>
+
+                <p>
+                  <strong>
+                    Les hommes dominaient totalement la relation amoureuse, au
+                    détriment des femmes.
+                  </strong>
+                  Il était courant d'avoir des partenaires multiples, ainsi ils
+                  pouvaient coucher avec toutes femmes non-mariées (coucher avec
+                  une femme mariée était considéré comme une offense). Les
+                  Romains ont une morale sexuelle simple : à condition de ne
+                  s'attaquer ni aux femmes ni aux enfants des citoyens,
+                  <strong>tout est permis</strong>
+                </p>
+
+                <p>
+                  Les Romains découvrent la séduction avec des femmes
+                  affranchies, des esclaves ou des étrangères: seules
+                  représentantes de la gent féminine qui pouvaient se refuser à
+                  eux.
+                </p>
               </GenericTag>
               {ages.antiquite && (
                 <GenericTag title="Les sérénades" xPos="200px" yPos="200px">
