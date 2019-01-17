@@ -2,7 +2,7 @@ import React from "react";
 // import PropTypes from "prop-types";
 // import styled from "styled-components";
 
-import { Page, CanvasVideo, SyncDragAndDrop } from "../../components";
+import { InteractionDragAndDrop } from  "../../components";
 
 class Intro extends React.Component {
   // constructor(props) {
@@ -15,33 +15,14 @@ class Intro extends React.Component {
     frameTotal: 167
   };
 
-  switchRaf = () => {
-    const { raf } = this.state;
-    this.setState({
-      raf: !raf
-    });
-  };
-
-  updateFrame = x => {
-    this.setState({
-      frame: x
-    });
-  };
-
   render() {
     const { raf, frame, frameTotal } = this.state;
     return (
-      <Page backgroundColor="#c4e6f1">
-        {/* <BackgroundImage> */}
-        <h1>Bonjour tu es sur la Flirt Factory</h1>
-        <CanvasVideo frame={frame} raf={raf} />
-        <SyncDragAndDrop
-          frameTotal={frameTotal}
-          switchRaf={this.switchRaf}
-          updateFrame={{ x: this.updateFrame }}
-        />
-        {/* </BackgroundImage> */}
-      </Page>
+      <div>
+        <InteractionDragAndDrop age={"antiquite"} />
+        bienvenue sur la Flirt Factory 
+
+      </div>
     );
   }
 }

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const DragAndDropContainer = styled.div`
+  position: relative;
   border: 2px solid green;
   width: 100%;
   height: 100%;

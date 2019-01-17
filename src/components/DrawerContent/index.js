@@ -6,6 +6,8 @@ import { DrawerLayout, MainContent, MainContentLayout } from "./element";
 
 import { Markup } from "interweave";
 
+/* eslint-disable */
+
 const DrawerContent = ({ number }) => (
   <DrawerLayout id="Drawer-layout">
     <DrawerHeader />

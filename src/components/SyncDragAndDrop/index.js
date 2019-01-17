@@ -8,15 +8,17 @@ import { DragAndDropContainer, Round } from "./element";
 
 class SyncDragAndDrop extends React.Component {
   static propTypes = {
-    // frameTotal: PropTypes.number,
-    // switchRaf: PropTypes.function,
-    // updateFrame: PropTypes.function
+    frame: PropTypes.number,
+    frameTotal: PropTypes.number,
+    switchRaf: PropTypes.func,
+    updateFrame: PropTypes.func
   };
 
   static defaultProps = {
-    // frameTotal: 0,
-    // switchRaf: () => {},
-    // updateFrame: () => {}
+    frame: 0,
+    frameTotal: 0,
+    switchRaf: () => {},
+    updateFrame: () => {}
   };
 
   constructor(props) {
@@ -26,31 +28,32 @@ class SyncDragAndDrop extends React.Component {
     this.ctx = null;
   }
 
+  componentDidMount() {
+    this.mounted = true;
+  }
+
   // DRAG AND DROP
 
   onDragStart = () => {
-    this.raf = true;
-    this.update();
+    const { switchRaf } = this.props;
+    switchRaf();
+    // update
   };
 
   onDragEnd = () => {
-    if (this.frame === this.frameTotal) {
-      alert("tu as bien drag");
-    } else {
-      console.log(this);
-    }
-    this.raf = false;
+    const { switchRaf } = this.props;
+    // if x = 400
+    // alert("tu as bien drag");
+    switchRaf();
   };
 
   onDrag = x => {
-    this.frame = Math.round((this.frameTotal / 400) * x);
+    let { frame, frameTotal, updateFrame } = this.props;
+    updateFrame(Math.round((frameTotal / 400) * x));
     if (this.mounted) {
-      if (this.prevFrame !== this.frame) {
-        this.image.src = `./assets/frames/antiquite/antiquite${this.frame}.jpg`;
-        if (this.image.complete && this.image.naturalHeight !== 0) {
-          this.update();
-          this.prevFrame = this.frame;
-        }
+      if (this.prevFrame !== frame) {
+        this.prevFrame = frame;
+        // update
       }
     }
   };

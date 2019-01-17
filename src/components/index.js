@@ -11,6 +11,7 @@ export { default as AboutDrawer } from "./AboutDrawer";
 export { default as DrawerContent } from "./DrawerContent";
 export { default as EndingButton } from "./EndingButton";
 export { default as InterestTag } from "./InterestTag";
+export { default as InteractionDragAndDrop } from "./InteractionDragAndDrop";
 export { default as Logo } from "./Logo";
 export { default as MagneticButton } from "./MagneticButton";
 export { default as NavBar } from "./NavBar";
