@@ -35,7 +35,6 @@ export const IntroWrapper = styled.div`
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  border: 2px solid red;
   background-image: url("./assets/img/start.jpg");
   background-size: cover;
   background-repeat: no-repeat;

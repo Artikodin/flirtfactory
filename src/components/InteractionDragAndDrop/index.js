@@ -7,23 +7,25 @@ import { CanvasVideo, SyncDragAndDrop } from "..";
 class InteractionDragAndDrop extends React.Component {
   static propTypes = {
     age: PropTypes.string,
-    frameTotal: PropTypes.number
+    frameTotal: PropTypes.number,
+    unlockAge: PropTypes.func
   };
 
   static defaultProps = {
     age: "",
-    frameTotal: 0
+    frameTotal: 0,
+    unlockAge: () => {}
   };
 
   state = {
-    raf: false,
+    show: false,
     frame: 0
   };
 
-  switchRaf = () => {
-    const { raf } = this.state;
+  switchCanvas = () => {
+    const { show } = this.state;
     this.setState({
-      raf: !raf
+      show: !show
     });
   };
 
@@ -34,15 +36,16 @@ class InteractionDragAndDrop extends React.Component {
   };
 
   render() {
-    const { raf, frame } = this.state;
-    const { age, frameTotal } = this.props;
+    const { show, frame } = this.state;
+    const { age, frameTotal, unlockAge } = this.props;
     return (
       <div>
-        <CanvasVideo frame={frame} raf={raf} age={age} />
+        <CanvasVideo frame={frame} show={show} age={age} />
         <SyncDragAndDrop
           frame={frame}
           frameTotal={frameTotal}
-          switchRaf={this.switchRaf}
+          unlockAge={unlockAge}
+          switchCanvas={this.switchCanvas}
           updateFrame={this.updateFrame}
         />
       </div>

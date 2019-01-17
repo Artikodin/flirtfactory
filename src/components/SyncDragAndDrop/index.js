@@ -10,15 +10,17 @@ class SyncDragAndDrop extends React.Component {
   static propTypes = {
     frame: PropTypes.number,
     frameTotal: PropTypes.number,
-    switchRaf: PropTypes.func,
-    updateFrame: PropTypes.func
+    switchCanvas: PropTypes.func,
+    updateFrame: PropTypes.func,
+    unlockAge: PropTypes.func
   };
 
   static defaultProps = {
     frame: 0,
     frameTotal: 0,
-    switchRaf: () => {},
-    updateFrame: () => {}
+    switchCanvas: () => {},
+    updateFrame: () => {},
+    unlockAge: () => {}
   };
 
   constructor(props) {
@@ -37,18 +39,27 @@ class SyncDragAndDrop extends React.Component {
   // DRAG AND DROP
 
   onDragStart = () => {
-    const { switchRaf } = this.props;
-    switchRaf();
+    const { switchCanvas } = this.props;
+    switchCanvas();
   };
 
   onDragEnd = () => {
-    const { switchRaf } = this.props;
+    const { switchCanvas } = this.props;
+    let { frame } = this.props;
     this.drag.current.transform = "translateX(0)";
-    switchRaf();
+    switchCanvas();
+    do {
+      frame -= 1;
+    } while (frame > 0);
   };
 
-  endDragAndDrop = () => {
-    this.dragend = true;
+  next = () => {
+    const { unlockAge } = this.props;
+    unlockAge();
+    const sound = new Audio("./assets/sound/antiquite2.wav");
+    sound.oncanplay = () => {
+      sound.play();
+    };
   };
 
   onDrag = x => {
@@ -57,7 +68,7 @@ class SyncDragAndDrop extends React.Component {
     if (this.mounted) {
       if (this.prevFrame !== frame) {
         if (x === 400) {
-          this.endDragAndDrop();
+          this.next();
         }
         this.prevFrame = frame;
       }
@@ -68,7 +79,6 @@ class SyncDragAndDrop extends React.Component {
     return (
       <DragAndDropContainer>
         <DraggableRound
-          style={{ display: this.dragend ? "none" : "block" }}
           ref={this.drag}
           onDragStart={this.onDragStart}
           onDragEnd={this.onDragEnd}

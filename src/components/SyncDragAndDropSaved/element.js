@@ -11,7 +11,7 @@ export const DragAndDropContainer = styled.div`
   canvas {
     /* display: none; */
     position: absolute;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   > video {
