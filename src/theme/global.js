@@ -26,6 +26,40 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     overflow: hidden;
   }
+
+  /* WRAPPER DU CANVAS ET DE LA BACKGROUND VIDEO */
+  .background__wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    box-sizing: border-box; 
+  }
+
+  .background {
+    box-sizing: border-box;
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+  }
+
+  .background__video {
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+
+  .background__canvas {
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+  }
+
   /* normalize */
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 

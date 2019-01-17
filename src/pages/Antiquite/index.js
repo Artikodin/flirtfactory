@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 import {
   Page,
@@ -44,7 +43,7 @@ class Antiquite extends React.Component {
                 mouseDown={this.playFourthVideo}
                 dragging={this.handleDrag}
               /> */}
-              <GenericTag title="Les sérénades" xPos="200px" yPos="200px">
+              <GenericTag title="Les sérénades" xPos="200px" yPos="200px" index>
                 La mode était aux sérénades. Pour déclarer sa flamme, le
                 prétendant, à l'image chantait son amour sous le balcon de sa
                 Juliette. Mais auparavant, il devait effectuer d’incessants
@@ -63,14 +62,14 @@ class Antiquite extends React.Component {
             </>
           )}
         </ProgressContext.Consumer>
-        <BackgroundWrapper id="background__wrapper">
+        <div className="background__wrapper">
           <BackgroundVideo path="antiquite" number={number} loop={loop} />
           <InteractionDragAndDrop
+            className="drag_and_drop"
             age="antiquite"
             frameTotal={167}
-            id="draganddrop"
           />
-        </BackgroundWrapper>
+        </div>
         {/* <button type="button" onClick={this.addOne}>
           {number}
         </button> */}
@@ -80,30 +79,3 @@ class Antiquite extends React.Component {
 }
 
 export default Antiquite;
-
-export const BackgroundWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  video {
-    position: fixed;
-    min-width: 100%;
-    min-height: 100vh;
-    /* right: 0;
-    bottom: 0;
-    width: 100%;
-    min-width: 100%;
-    min-height: 100vh;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, 0%); */
-
-    @media (max-width: 1200px) {
-      height: 100%;
-      width: auto;
-    }
-  }
-`;

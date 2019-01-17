@@ -1,6 +1,3 @@
 import styled from "styled-components";
 
-export const Canvas = styled.canvas`
-  /* display: none; */
-  position: absolute;
-`;
+export const Canvas = styled.canvas``;

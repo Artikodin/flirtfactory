@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 4;
+  z-index: 10;
 
   &:after {
     content: "";

@@ -38,8 +38,8 @@ class CanvasVideo extends React.Component {
     const canvas = this.canvas.current;
     this.ctx = canvas.getContext("2d");
     this.ctx.imageSmoothingEnabled = false;
-    this.ctx.canvas.width = window.innerWidth;
-    this.ctx.canvas.height = window.innerHeight;
+    // this.ctx.canvas.width = window.innerWidth;
+    // this.ctx.canvas.height = window.innerHeight;
     this.ctx.drawImage(
       this.image,
       0,
@@ -66,7 +66,13 @@ class CanvasVideo extends React.Component {
   };
 
   render() {
-    return <Canvas ref={this.canvas} onClick={this.update} />;
+    return (
+      <Canvas
+        className="background background__canvas"
+        ref={this.canvas}
+        onClick={this.update}
+      />
+    );
   }
 }
 

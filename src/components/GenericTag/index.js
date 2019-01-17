@@ -29,7 +29,7 @@ class GenericTag extends React.Component {
   };
 
   static defaultProps = {
-    threshold: 30,
+    threshold: 45,
     ease: 0.09,
     children: "",
     title: "",

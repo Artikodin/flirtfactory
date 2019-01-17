@@ -4,7 +4,7 @@ export const GlobalContainer = styled.div`
   display: inline-block;
 
   position: absolute;
-  z-index: 999;
+  z-index: 5;
   top: ${({ yPos }) => yPos};
   left: ${({ xPos }) => xPos};
 `;

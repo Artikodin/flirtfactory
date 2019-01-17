@@ -21,21 +21,20 @@ class BackgroundVideo extends React.Component {
   };
 
   componentDidMount() {
-    this.parallax = new Parallax(this.scene);
+    // this.parallax = new Parallax(this.scene);
   }
 
   componentWillUnmount() {
-    this.parallax.disable();
+    // this.parallax.disable();
   }
 
   render() {
-    const { path, number, loop} = this.props;
+    const { path, number, loop } = this.props;
     return (
-      <BackgroundVideoWrapper ref={el => (this.scene = el)}>
+      <BackgroundVideoWrapper className="background background__video">
+        {/* <BackgroundVideoWrapper className="background background__video" ref={el => (this.scene = el)}> */}
         {/* <div data-depth="0.2"> */}
-        <div>
-          <Video path={path} number={number} loop={loop} />
-        </div>
+        <Video path={path} number={number} loop={loop} />
       </BackgroundVideoWrapper>
     );
   }
