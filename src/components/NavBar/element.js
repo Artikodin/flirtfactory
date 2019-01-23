@@ -12,6 +12,6 @@ export const Wrapper = styled.ul`
   display: flex;
   align-items: flex-end;
   max-width: 1100px;
-  width: 100%;
+  width: calc(100% - 80px);
   z-index: 1;
 `;

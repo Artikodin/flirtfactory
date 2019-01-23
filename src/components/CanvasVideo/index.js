@@ -27,12 +27,15 @@ class CanvasVideo extends React.Component {
   render() {
     const { age, frame, show } = this.props;
     return (
-      <img
-        style={show ? { opacity: 1 } : { opacity: 0 }}
-        src={`./assets/frames/${age}/${age}${frame}.jpg`}
-        className="background background__canvas"
-        alt={age}
-      />
+      <div>
+        <img
+          style={show ? { opacity: 1 } : { opacity: 0 }}
+          src={`./assets/frames/${age}/${age}${frame}.jpg`}
+          className="background background__canvas"
+          alt={age}
+        />
+        <div></div>
+      </div>
     );
   }
 }
