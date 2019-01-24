@@ -7,7 +7,8 @@ import {
   // ButtonIA,
   ProgressContext,
   TextContext,
-  InteractionDragAndDrop
+  InteractionDragAndDrop,
+  CanvasVideo
 } from "../../components";
 
 import { Markup } from "interweave";
@@ -19,10 +20,31 @@ class Antiquite extends React.Component {
   }
 
   state = {
-    numberage: 0,
+    age: "antiquite",
+    numberage: 0, // antiquite
     number: 1,
-    loop: true
+    loop: true,
+    frame: 1
   };
+
+  componentDidMount = () => {
+    // requestAnimationFrame(this.loop);
+  }
+
+  loop = () => {
+    const { frame } = this.state;
+    if (frame < 168) {
+      this.setState({
+        frame: frame+1
+       });
+    } else {
+      this.setState({
+        frame: 0
+       });
+    }
+   
+    requestAnimationFrame(this.loop);
+  }
 
   // DEBUG & TEST
   addOne = () => {
@@ -33,7 +55,7 @@ class Antiquite extends React.Component {
   // END
 
   render() {
-    const { number, loop, numberage } = this.state;
+    const { age, number, loop, frame, numberage } = this.state;
     return (
       <Page>
         {/* <ButtonIA /> */}
@@ -51,11 +73,12 @@ class Antiquite extends React.Component {
                   </GenericTag>
                 )}
                 <div className="background__wrapper">
-                  <BackgroundVideo path="antiquite" number={number} loop={loop} />
+                  <BackgroundVideo path={age} number={number} loop={loop} />
+                  {/* <CanvasVideo frame={frame} show={true} age={age} /> */}
                   <InteractionDragAndDrop
                     className="drag_and_drop"
-                    unlockAge={() => selectAges("antiquite")}
-                    age="antiquite"
+                    unlockAge={() => selectAges(age)}
+                    age={age}
                     frameTotal={167}
                   />
                 </div>

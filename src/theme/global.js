@@ -44,21 +44,59 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .background__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     video {
+      display: block;
       position: absolute;
-      top: 0;
-      left: 0;
-      object-fit: cover;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+
+      @media screen and (max-aspect-ratio: 1920/1080) {
+        height: 100%;
+      }
+      @media screen and (min-aspect-ratio: 1920/1080) {
+        width: 100%;
+      }
     }
   }
 
   .background__canvas {
-    opacity: 0;
-    -webkit-transition: opacity 0.2s ease-in;
-    -moz-transition: opacity 0.2s ease-in;
-    -o-transition: opacity 0.2s ease-in;
-    transition: opacity 0.2s ease-in;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    img {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+
+      @media screen and (max-aspect-ratio: 1920/1080) {
+        height: 100%;
+      }
+      @media screen and (min-aspect-ratio: 1920/1080) {
+        width: 100%;
+      }
+    }
   }
+  // .background__canvas {
+  //   width: 100vw;
+  //   height: auto;
+  //   opacity: 0;
+  //   -webkit-transition: opacity 0.2s ease-in;
+  //   -moz-transition: opacity 0.2s ease-in;
+  //   -o-transition: opacity 0.2s ease-in;
+  //   transition: opacity 0.2s ease-in;
+  // }
 
   ::-webkit-scrollbar {
     width: 5px;
