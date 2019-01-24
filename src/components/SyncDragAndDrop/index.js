@@ -12,7 +12,8 @@ class SyncDragAndDrop extends React.Component {
     frameTotal: PropTypes.number,
     switchCanvas: PropTypes.func,
     updateFrame: PropTypes.func,
-    unlockAge: PropTypes.func
+    unlockAge: PropTypes.func,
+    increaseVideo: PropTypes.func
   };
 
   static defaultProps = {
@@ -20,7 +21,8 @@ class SyncDragAndDrop extends React.Component {
     frameTotal: 0,
     switchCanvas: () => {},
     updateFrame: () => {},
-    unlockAge: () => {}
+    unlockAge: () => {},
+    increaseVideo: () => {}
   };
 
   constructor(props) {
@@ -30,6 +32,7 @@ class SyncDragAndDrop extends React.Component {
     this.prevFrame = 0;
     this.ctx = null;
     this.dragend = false;
+    this.unlocked = true
   }
 
   componentDidMount() {
@@ -44,17 +47,18 @@ class SyncDragAndDrop extends React.Component {
   };
 
   onDragEnd = () => {
-    const { switchCanvas } = this.props;
-    let { frame } = this.props;
-    this.drag.current.transform = "translateX(0)";
-    switchCanvas();
-    do {
-      frame -= 1;
-    } while (frame > 0);
+    const { switchCanvas, updateFrame } = this.props;
+    updateFrame(0);
+    // ici remettre la position du drag and drop à zéro
+    if (this.unlocked) {
+      switchCanvas();
+    }
   };
 
   next = () => {
-    const { unlockAge } = this.props;
+    const { unlockAge, increaseVideo, switchCanvas } = this.props;
+    switchCanvas();
+    increaseVideo();
     unlockAge();
     const sound = new Audio("./assets/sound/antiquite2.wav");
     sound.oncanplay = () => {
@@ -67,8 +71,9 @@ class SyncDragAndDrop extends React.Component {
     updateFrame(Math.round((frameTotal / 400) * x));
     if (this.mounted) {
       if (this.prevFrame !== frame) {
-        if (x === 400) {
+        if (x === 400 & this.unlocked) {
           this.next();
+          this.unlocked = false;
         }
         this.prevFrame = frame;
       }

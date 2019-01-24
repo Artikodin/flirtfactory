@@ -39,16 +39,13 @@ const GlobalStyle = createGlobalStyle`
   .background {
     box-sizing: border-box;
     position: absolute;
-    /* width: 100%;
-    height: 100%; */
-  }
-
-  .background__video {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+  }
+
+  .background__video {
     video {
       display: block;
       position: absolute;
@@ -67,11 +64,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .background__canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
     img {
       display: block;
       position: absolute;
@@ -88,16 +80,7 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
-  // .background__canvas {
-  //   width: 100vw;
-  //   height: auto;
-  //   opacity: 0;
-  //   -webkit-transition: opacity 0.2s ease-in;
-  //   -moz-transition: opacity 0.2s ease-in;
-  //   -o-transition: opacity 0.2s ease-in;
-  //   transition: opacity 0.2s ease-in;
-  // }
-
+  
   ::-webkit-scrollbar {
     width: 5px;
   }

@@ -1,9 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
-
-/* eslint-disable */
 
 import { DrawerLayout, AboutLayout, About } from "./element";
+
+/* eslint-disable */
 
 const AboutDrawerContent = () => (
   <DrawerLayout id="Drawer-layout">
@@ -39,13 +38,5 @@ const AboutDrawerContent = () => (
     </AboutLayout>
   </DrawerLayout>
 );
-
-AboutDrawerContent.propTypes = {
-  number: PropTypes.number
-};
-
-AboutDrawerContent.defaultProps = {
-  number: 0
-};
 
 export default AboutDrawerContent;

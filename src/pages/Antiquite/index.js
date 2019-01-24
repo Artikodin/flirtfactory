@@ -4,11 +4,10 @@ import {
   Page,
   BackgroundVideo,
   GenericTag,
-  // ButtonIA,
+  ButtonIA,
   ProgressContext,
   TextContext,
-  InteractionDragAndDrop,
-  CanvasVideo
+  InteractionDragAndDrop
 } from "../../components";
 
 import { Markup } from "interweave";
@@ -16,49 +15,27 @@ import { Markup } from "interweave";
 class Antiquite extends React.Component {
   constructor(props) {
     super(props);
-    this.addOne = this.addOne.bind(this);
   }
 
   state = {
     age: "antiquite",
     numberage: 0, // antiquite
     number: 1,
-    loop: true,
-    frame: 1
+    loop: true
   };
 
-  componentDidMount = () => {
-    // requestAnimationFrame(this.loop);
-  }
-
-  loop = () => {
-    const { frame } = this.state;
-    if (frame < 168) {
-      this.setState({
-        frame: frame+1
-       });
-    } else {
-      this.setState({
-        frame: 0
-       });
-    }
-   
-    requestAnimationFrame(this.loop);
-  }
-
-  // DEBUG & TEST
-  addOne = () => {
-    this.setState(preState => ({
-      number: preState.number + 1
-    }));
+  increaseVideo = () => {
+    const { number } = this.state;
+    this.setState({
+      number: number+1
+    });
   };
-  // END
 
   render() {
-    const { age, number, loop, frame, numberage } = this.state;
+    const { age, number, loop, numberage } = this.state;
     return (
       <Page>
-        {/* <ButtonIA /> */}
+        <ButtonIA />
         <TextContext.Consumer>
         {value => (
           <ProgressContext.Consumer>
@@ -73,11 +50,11 @@ class Antiquite extends React.Component {
                   </GenericTag>
                 )}
                 <div className="background__wrapper">
-                  <BackgroundVideo path={age} number={number} loop={loop} />
-                  {/* <CanvasVideo frame={frame} show={true} age={age} /> */}
+                  <BackgroundVideo path={age} number={number} loop={loop} increaseVideo={this.increaseVideo} />
                   <InteractionDragAndDrop
                     className="drag_and_drop"
                     unlockAge={() => selectAges(age)}
+                    increaseVideo={this.increaseVideo}
                     age={age}
                     frameTotal={167}
                   />

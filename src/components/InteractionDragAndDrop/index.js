@@ -8,13 +8,15 @@ class InteractionDragAndDrop extends React.Component {
   static propTypes = {
     age: PropTypes.string,
     frameTotal: PropTypes.number,
-    unlockAge: PropTypes.func
+    unlockAge: PropTypes.func,
+    increaseVideo: PropTypes.func
   };
 
   static defaultProps = {
     age: "",
     frameTotal: 0,
-    unlockAge: () => {}
+    unlockAge: () => {},
+    increaseVideo: () => {}
   };
 
   state = {
@@ -37,13 +39,14 @@ class InteractionDragAndDrop extends React.Component {
 
   render() {
     const { show, frame } = this.state;
-    const { age, frameTotal, unlockAge } = this.props;
+    const { age, frameTotal, unlockAge, increaseVideo } = this.props;
     return (
       <div>
         <CanvasVideo frame={frame} show={show} age={age} />
         <SyncDragAndDrop
           frame={frame}
           frameTotal={frameTotal}
+          increaseVideo={increaseVideo}
           unlockAge={unlockAge}
           switchCanvas={this.switchCanvas}
           updateFrame={this.updateFrame}
