@@ -8,6 +8,7 @@ import { DragAndDropContainer, Round } from "./element";
 
 class SyncDragAndDrop extends React.Component {
   static propTypes = {
+    age: PropTypes.string,
     frame: PropTypes.number,
     frameTotal: PropTypes.number,
     switchCanvas: PropTypes.func,
@@ -17,6 +18,7 @@ class SyncDragAndDrop extends React.Component {
   };
 
   static defaultProps = {
+    age: "",
     frame: 0,
     frameTotal: 0,
     switchCanvas: () => {},
@@ -32,7 +34,7 @@ class SyncDragAndDrop extends React.Component {
     this.prevFrame = 0;
     this.ctx = null;
     this.dragend = false;
-    this.unlocked = true
+    this.locked = true
   }
 
   componentDidMount() {
@@ -50,17 +52,17 @@ class SyncDragAndDrop extends React.Component {
     const { switchCanvas, updateFrame } = this.props;
     updateFrame(0);
     // ici remettre la position du drag and drop à zéro
-    if (this.unlocked) {
+    if (this.locked) {
       switchCanvas();
     }
   };
 
   next = () => {
-    const { unlockAge, increaseVideo, switchCanvas } = this.props;
+    const { unlockAge, increaseVideo, switchCanvas, age } = this.props;
     switchCanvas();
     increaseVideo();
     unlockAge();
-    const sound = new Audio("./assets/sound/antiquite2.wav");
+    const sound = new Audio(`./assets/sound/${age}2.jpg`);
     sound.oncanplay = () => {
       sound.play();
     };
@@ -68,12 +70,12 @@ class SyncDragAndDrop extends React.Component {
 
   onDrag = x => {
     const { frame, frameTotal, updateFrame } = this.props;
-    updateFrame(Math.round((frameTotal / 400) * x));
     if (this.mounted) {
+      updateFrame(Math.round((frameTotal / 400) * x));
       if (this.prevFrame !== frame) {
-        if (x === 400 & this.unlocked) {
+        if (x === 400 & this.locked) {
           this.next();
-          this.unlocked = false;
+          this.locked = false;
         }
         this.prevFrame = frame;
       }

@@ -21,7 +21,7 @@ class Antiquite extends React.Component {
     age: "antiquite",
     numberage: 0, // antiquite
     number: 1,
-    loop: true
+    frameTotal: 93
   };
 
   increaseVideo = () => {
@@ -32,7 +32,7 @@ class Antiquite extends React.Component {
   };
 
   render() {
-    const { age, number, loop, numberage } = this.state;
+    const { age, number, numberage, frameTotal } = this.state;
     return (
       <Page>
         <ButtonIA />
@@ -50,13 +50,13 @@ class Antiquite extends React.Component {
                   </GenericTag>
                 )}
                 <div className="background__wrapper">
-                  <BackgroundVideo path={age} number={number} loop={loop} increaseVideo={this.increaseVideo} />
+                  <BackgroundVideo path={age} number={number} increaseVideo={this.increaseVideo} />
                   <InteractionDragAndDrop
                     className="drag_and_drop"
                     unlockAge={() => selectAges(age)}
                     increaseVideo={this.increaseVideo}
                     age={age}
-                    frameTotal={167}
+                    frameTotal={frameTotal}
                   />
                 </div>
               </>

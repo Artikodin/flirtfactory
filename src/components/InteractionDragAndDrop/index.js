@@ -44,6 +44,7 @@ class InteractionDragAndDrop extends React.Component {
       <div>
         <CanvasVideo frame={frame} show={show} age={age} />
         <SyncDragAndDrop
+          age={age}
           frame={frame}
           frameTotal={frameTotal}
           increaseVideo={increaseVideo}

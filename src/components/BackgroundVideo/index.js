@@ -9,14 +9,12 @@ class BackgroundVideo extends React.Component {
   static propTypes = {
     path: PropTypes.string,
     number: PropTypes.number,
-    loop: PropTypes.bool,
     increaseVideo: PropTypes.func
   };
 
   static defaultProps = {
     path: "",
     number: 1,
-    loop: true,
     increaseVideo: () => {}
   };
 
@@ -29,12 +27,12 @@ class BackgroundVideo extends React.Component {
   }
 
   render() {
-    const { path, number, loop, increaseVideo } = this.props;
+    const { path, number, increaseVideo } = this.props;
     return (
       <BackgroundVideoWrapper className="background background__video">
         {/* <BackgroundVideoWrapper className="background background__video" ref={el => (this.scene = el)}> */}
         {/* <div data-depth="0.2"> */}
-        <Video increaseVideo={increaseVideo} path={path} number={number} loop={loop} />
+        <Video path={path} number={number} increaseVideo={increaseVideo} />
       </BackgroundVideoWrapper>
     );
   }

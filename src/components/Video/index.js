@@ -22,9 +22,6 @@ class Video extends React.Component {
     this.setState({ videoLoaded: "loaded" });
   };
 
- componentDidMount() {
-  }
-
   render() {
     const { path, number, increaseVideo } = this.props;
     return (
