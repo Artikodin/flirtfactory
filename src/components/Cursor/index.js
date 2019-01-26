@@ -4,12 +4,14 @@ import { Pointer } from "./element";
 import Default from "./Default";
 
 class Cursor extends React.Component {
-  state = {
-    cursor: "default"
-  };
+  // state = {
+  //   cursor: "default"
+  // };
+
+  componentDidMount() {}
 
   render() {
-    const { cursor } = this.state;
+    // const { cursor } = this.state;
     return (
       <Pointer>
         <Default />

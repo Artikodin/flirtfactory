@@ -9,6 +9,7 @@ export { default as ButtonIA } from "./ButtonIA";
 export { default as ButtonAbout } from "./ButtonAbout";
 export { default as CanvasVideo } from "./CanvasVideo";
 export { default as Cursor } from "./Cursor";
+export { default as DragNDrop } from "./DragNDrop";
 export { default as EndingButton } from "./EndingButton";
 export { default as GenericTag } from "./GenericTag";
 export { default as InteractionDragAndDrop } from "./InteractionDragAndDrop";

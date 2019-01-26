@@ -34,7 +34,7 @@ class SyncDragAndDrop extends React.Component {
     this.prevFrame = 0;
     this.ctx = null;
     this.dragend = false;
-    this.locked = true
+    this.locked = true;
   }
 
   componentDidMount() {
@@ -73,7 +73,7 @@ class SyncDragAndDrop extends React.Component {
     if (this.mounted) {
       updateFrame(Math.round((frameTotal / 400) * x));
       if (this.prevFrame !== frame) {
-        if (x === 400 & this.locked) {
+        if (x === 400 && this.locked) {
           this.next();
           this.locked = false;
         }
