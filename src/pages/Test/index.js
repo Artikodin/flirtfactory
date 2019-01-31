@@ -8,7 +8,6 @@ class Test extends React.Component {
   testDiv = React.createRef();
 
   handleDrag = t => {
-    console.log(t);
     this.testDiv.current.style.background = `
       rgba(255, 3, 34, ${t})
     `;
