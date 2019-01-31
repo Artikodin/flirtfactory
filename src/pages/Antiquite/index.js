@@ -45,7 +45,6 @@ class Antiquite extends React.Component {
                   >
                     <Markup content={value.epoques[numberage].description} />
                   </GenericTag>
-                  )}
                   <div className="background__wrapper">
                     <BackgroundVideo
                       path={age}
