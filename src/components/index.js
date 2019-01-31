@@ -24,5 +24,3 @@ export { default as ScrollHandler } from "./ScrollHandler";
 export { default as SyncDragAndDrop } from "./SyncDragAndDrop";
 export { default as TextProvider, TextContext } from "./TextProvider";
 export { default as Video } from "./Video";
-
-export { default as TestClick } from "./TestClick";

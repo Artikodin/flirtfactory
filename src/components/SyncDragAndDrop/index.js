@@ -84,7 +84,7 @@ class SyncDragAndDrop extends React.Component {
 
   render() {
     return (
-      <DragAndDropContainer>
+      <DragAndDropContainer className="drag_and_drop">
         <DraggableRound
           ref={this.drag}
           onDragStart={this.onDragStart}

@@ -21,7 +21,7 @@ class Antiquite extends React.Component {
     age: "antiquite",
     numberage: 0, // antiquite
     number: 1,
-    frameTotal: 93
+    frameTotal: 54
   };
 
   increaseVideo = () => {
@@ -50,9 +50,12 @@ class Antiquite extends React.Component {
                   </GenericTag>
                 )}
                 <div className="background__wrapper">
-                  <BackgroundVideo path={age} number={number} increaseVideo={this.increaseVideo} />
+                  <BackgroundVideo path={age} 
+                  number={ages.antiquite ? 3 : number }
+                  // number={number}
+                  increaseVideo={this.increaseVideo} />
                   <InteractionDragAndDrop
-                    className="drag_and_drop"
+                    style={ages.antiquite ? { display: "none" } : { display: "block" }}
                     unlockAge={() => selectAges(age)}
                     increaseVideo={this.increaseVideo}
                     age={age}
