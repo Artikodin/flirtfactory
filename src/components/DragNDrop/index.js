@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Svg } from "./element";
 
@@ -9,32 +10,44 @@ class DragNDrop extends React.Component {
 
   dragCircle = React.createRef();
 
-  deltaDrag = 0;
-
-  goToEnd = false;
-
-  pathPos = {
-    start: {
+  state = {
+    elStart: {
       x: 0,
       y: 0
     },
-    end: {
+    elEnd: {
       x: 0,
       y: 0
     }
   };
 
+  deltaDrag = 0;
+
+  goToEnd = false;
+
+  static propTypes = {
+    pathDraw: PropTypes.string,
+    handleDrag: PropTypes.func,
+    handleDragEnd: PropTypes.func
+  };
+
+  static defaultProps = {
+    pathDraw: "M 150 300 L 350 300",
+    handleDrag: () => {},
+    handleDragEnd: () => {}
+  };
+
   componentDidMount() {
-    this.pathPos = {
-      start: {
+    this.setState({
+      elStart: {
         x: this.coordValueAlongPath("x", 0),
         y: this.coordValueAlongPath("y", 0)
       },
-      end: {
+      elEnd: {
         x: this.coordValueAlongPath("x", 1),
         y: this.coordValueAlongPath("y", 1)
       }
-    };
+    });
 
     window.addEventListener("mouseup", this.handleDragEnd, {
       passive: true
@@ -45,6 +58,7 @@ class DragNDrop extends React.Component {
     window.removeEventListener("mouseup", this.handleDragEnd, {
       passive: true
     });
+    cancelAnimationFrame(this.moveStar);
   }
 
   mathSquare = number => number ** 2;
@@ -83,7 +97,8 @@ class DragNDrop extends React.Component {
   };
 
   handleMouseMove = e => {
-    const { start, end } = this.pathPos;
+    const { handleDrag } = this.props;
+    const { elStart, elEnd } = this.state;
 
     const mousePosinSvgElement = {
       x: e.clientX - this.svgRef.current.getBoundingClientRect().x,
@@ -91,15 +106,15 @@ class DragNDrop extends React.Component {
     };
 
     const distanceCursorFromOrigine = this.distanceBtwPoints(
-      start.x,
-      start.y,
+      elStart.x,
+      elStart.y,
       mousePosinSvgElement.x,
       mousePosinSvgElement.y
     );
 
     const distanceCursorFromEnd = this.distanceBtwPoints(
-      end.x,
-      end.y,
+      elEnd.x,
+      elEnd.y,
       mousePosinSvgElement.x,
       mousePosinSvgElement.y
     );
@@ -108,8 +123,8 @@ class DragNDrop extends React.Component {
       (distanceCursorFromOrigine + distanceCursorFromEnd);
 
     const dragElementPos = {
-      x: this.coordValueAlongPath("x", this.deltaDrag, start.x),
-      y: this.coordValueAlongPath("y", this.deltaDrag, start.y)
+      x: this.coordValueAlongPath("x", this.deltaDrag, elStart.x),
+      y: this.coordValueAlongPath("y", this.deltaDrag, elStart.y)
     };
 
     this.dragCircle.current.style.transform = `
@@ -119,6 +134,8 @@ class DragNDrop extends React.Component {
         0
       )
     `;
+
+    handleDrag(this.deltaDrag);
 
     if (this.deltaDrag > 0.9) {
       this.goToEnd = true;
@@ -140,7 +157,8 @@ class DragNDrop extends React.Component {
   };
 
   moveStar = () => {
-    const { start } = this.pathPos;
+    const { handleDrag, handleDragEnd } = this.props;
+    const { elStart } = this.state;
 
     const ease = 0.07;
 
@@ -153,8 +171,8 @@ class DragNDrop extends React.Component {
     }
 
     const elementPos = {
-      x: this.coordValueAlongPath("x", this.deltaDrag, start.x),
-      y: this.coordValueAlongPath("y", this.deltaDrag, start.y)
+      x: this.coordValueAlongPath("x", this.deltaDrag, elStart.x),
+      y: this.coordValueAlongPath("y", this.deltaDrag, elStart.y)
     };
 
     this.dragCircle.current.style.transform = `
@@ -165,11 +183,17 @@ class DragNDrop extends React.Component {
       )
     `;
 
+    handleDrag(Math.min(1, Math.max(0, this.deltaDrag)));
+
     if (this.deltaDrag !== 1 && this.deltaDrag !== 0)
       requestAnimationFrame(this.moveStar);
+
+    if (this.deltaDrag === 1) handleDragEnd();
   };
 
   render() {
+    const { pathDraw } = this.props;
+    const { elStart, elEnd } = this.state;
     return (
       <>
         <Svg
@@ -182,24 +206,24 @@ class DragNDrop extends React.Component {
         >
           <path
             ref={this.path}
-            d="M 150 300 Q 200 250 250 300 Q 300 350 400 300 Q 450 250 450 200"
+            d={pathDraw}
             fill="transparent"
-            stroke="black"
-            strokeWidth="4"
+            stroke="white"
+            strokeWidth="2"
             strokeDasharray="8 3"
             id="wire"
           />
 
+          <circle cx={elEnd.x} cy={elEnd.y} r="5" fill="white" />
+
           <circle
             ref={this.dragCircle}
-            draggable
-            id="circle1"
-            cx="150"
-            cy="300"
+            cx={elStart.x}
+            cy={elStart.y}
             r="15"
-            fill="blue"
-            stroke="blue"
-            strokeWidth="5"
+            fill="transparent"
+            stroke="white"
+            strokeWidth="1"
             onMouseDown={() => this.handleDragStart()}
           />
         </Svg>
