@@ -3,32 +3,27 @@ import PropTypes from "prop-types";
 
 // import { Canvas } from "./element";
 
-class CanvasVideo extends React.Component {
-  static propTypes = {
-    frame: PropTypes.number,
-    age: PropTypes.string,
-    show: PropTypes.bool
-  };
+const CanvasVideo = ({ age, frame, show }) => (
+  <div className="background background__canvas">
+    {/* <div style={ { backgroundImage: `url(./assets/frames/${age}/${age}${frame}.jpg)` } }> */}
+    <img
+      style={show ? { opacity: 1 } : { opacity: 0 }}
+      src={`./assets/frames/${age}/${age}${frame}.jpg`}
+      alt={age}
+    />
+  </div>
+);
 
-  static defaultProps = {
-    frame: 0,
-    age: "",
-    show: false
-  };
+CanvasVideo.propTypes = {
+  frame: PropTypes.number,
+  age: PropTypes.string,
+  show: PropTypes.bool
+};
 
-  render() {
-    const { age, frame, show } = this.props;
-    return (
-      <div className="background background__canvas">
-        {/* <div style={ { backgroundImage: `url(./assets/frames/${age}/${age}${frame}.jpg)` } }> */}
-        <img
-          style={show ? { opacity: 1 } : { opacity: 0 }}
-          src={`./assets/frames/${age}/${age}${frame}.jpg`}
-          alt={age}
-        />
-      </div>
-    );
-  }
-}
+CanvasVideo.defaultProps = {
+  frame: 0,
+  age: "",
+  show: false
+};
 
 export default CanvasVideo;

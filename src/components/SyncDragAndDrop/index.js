@@ -1,10 +1,12 @@
 import React from "react";
-import posed from "react-pose";
+// import posed from "react-pose";
 import PropTypes from "prop-types";
 
 // import PropTypes from "prop-types";
 
-import { DragAndDropContainer, Round } from "./element";
+import { DragNDrop } from "..";
+
+// import { DragAndDropContainer, Round } from "./element";
 
 class SyncDragAndDrop extends React.Component {
   static propTypes = {
@@ -34,7 +36,7 @@ class SyncDragAndDrop extends React.Component {
     this.prevFrame = 0;
     this.ctx = null;
     this.dragend = false;
-    this.locked = true
+    this.locked = true;
   }
 
   componentDidMount() {
@@ -69,11 +71,12 @@ class SyncDragAndDrop extends React.Component {
   };
 
   onDrag = x => {
+    const xPos = x * 400;
     const { frame, frameTotal, updateFrame } = this.props;
     if (this.mounted) {
-      updateFrame(Math.round((frameTotal / 400) * x));
+      updateFrame(Math.round((frameTotal / 400) * xPos));
       if (this.prevFrame !== frame) {
-        if (x === 400 & this.locked) {
+        if (xPos === 400 && this.locked) {
           this.next();
           this.locked = false;
         }
@@ -84,20 +87,30 @@ class SyncDragAndDrop extends React.Component {
 
   render() {
     return (
-      <DragAndDropContainer className="drag_and_drop">
-        <DraggableRound
-          ref={this.drag}
-          onDragStart={this.onDragStart}
-          onDragEnd={this.onDragEnd}
-          onValueChange={{ x: this.onDrag }}
+      <>
+        <DragNDrop
+          pathDraw="M 70 400 Q 40 220 200 250 "
+          handleDragStart={this.onDragStart}
+          handleDrag={this.onDrag}
+          handleDragEnd={this.onDragEnd}
+          top="57%"
+          left="45%"
         />
-      </DragAndDropContainer>
+        {/* <DragAndDropContainer className="drag_and_drop">
+          <DraggableRound
+            ref={this.drag}
+            onDragStart={this.onDragStart}
+            onDragEnd={this.onDragEnd}
+            onValueChange={{ x: this.onDrag }}
+          />
+        </DragAndDropContainer> */}
+      </>
     );
   }
 }
 
-const DraggableRound = posed(Round)({
-  draggable: "x",
-  dragBounds: { left: 0, right: 400 }
-});
+// const DraggableRound = posed(Round)({
+//   draggable: "x",
+//   dragBounds: { left: 0, right: 400 }
+// });
 export default SyncDragAndDrop;

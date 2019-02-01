@@ -1,18 +1,8 @@
 import React from "react";
 
-import {
-  Page,
-  BackgroundVideo,
-  ButtonIA,
-  ProgressContext,
-  TextContext,
-} from "../../components";
+import { Page, BackgroundVideo, ButtonIA } from "../../components";
 
 class FlirtFactory extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   state = {
     age: "flirtfactory",
     number: 1
@@ -23,19 +13,9 @@ class FlirtFactory extends React.Component {
     return (
       <Page>
         <ButtonIA />
-        <TextContext.Consumer>
-        {value => (
-          <ProgressContext.Consumer>
-            {({ ages, selectAges }) => (
-              <>
-                <div className="background__wrapper">
-                  <BackgroundVideo path={age} number={number} />
-                </div>
-              </>
-            )}
-          </ProgressContext.Consumer>
-        )}
-        </TextContext.Consumer>
+        <div className="background__wrapper">
+          <BackgroundVideo path={age} number={number} />
+        </div>
       </Page>
     );
   }

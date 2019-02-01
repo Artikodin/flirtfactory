@@ -14,8 +14,10 @@ import {
   Moderne,
   MoyenAge,
   Renaissance,
-  FlirtFactory
+  FlirtFactory,
+  Test
 } from "./pages";
+
 import {
   About,
   Cursor,
@@ -45,6 +47,7 @@ const App = () => (
               <Route exact path="/moyen-age" component={MoyenAge} />
               <Route exact path="/renaissance" component={Renaissance} />
               <Route exact path="/flirtfactory" component={FlirtFactory} />
+              <Route exact path="/test" component={Test} />
               <Route path="*" component={Error} />
             </Switch>
             <NavBar>
