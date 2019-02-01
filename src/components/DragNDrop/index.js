@@ -27,14 +27,24 @@ class DragNDrop extends React.Component {
 
   static propTypes = {
     pathDraw: PropTypes.string,
+    left: PropTypes.string,
+    top: PropTypes.string,
+    height: PropTypes.string,
+    width: PropTypes.string,
     handleDrag: PropTypes.func,
-    handleDragEnd: PropTypes.func
+    handleDragEnd: PropTypes.func,
+    handleDragStart: PropTypes.func
   };
 
   static defaultProps = {
     pathDraw: "M 150 300 L 350 300",
+    left: "0",
+    top: "0",
+    height: "500",
+    width: "500",
     handleDrag: () => {},
-    handleDragEnd: () => {}
+    handleDragEnd: () => {},
+    handleDragStart: () => {}
   };
 
   componentDidMount() {
@@ -144,6 +154,8 @@ class DragNDrop extends React.Component {
   };
 
   handleDragStart = () => {
+    const { handleDragStart } = this.props;
+    handleDragStart();
     window.addEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
@@ -192,7 +204,7 @@ class DragNDrop extends React.Component {
   };
 
   render() {
-    const { pathDraw } = this.props;
+    const { pathDraw, height, width, top, left } = this.props;
     const { elStart, elEnd } = this.state;
     return (
       <>
@@ -200,9 +212,11 @@ class DragNDrop extends React.Component {
           ref={this.svgRef}
           version="1.1"
           baseProfile="full"
-          width="500"
-          height="500"
+          width={height}
+          height={width}
           xmlns="http://www.w3.org/2000/svg"
+          top={top}
+          left={left}
         >
           <path
             ref={this.path}

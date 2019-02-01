@@ -4,8 +4,9 @@ export const TestDiv = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  border: solid 1px;
-  height: 100px;
-  width: 100px;
-  background: rgba(255, 3, 34, 0);
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 3, 34, 1);
+  z-index: -1;
+  opacity: 0;
 `;

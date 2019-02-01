@@ -5,12 +5,7 @@ export const Svg = styled.svg`
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
-  border: solid 1px;
+  z-index: 10;
+  top: ${({ top }) => top};
+  left: ${({ left }) => left};
 `;
-
-// export const Circle = styled.circle`
-//   &:hover {
-//     transform: scale(1.5);
-//   }
-//   transition: transform 0.25s ease-out;
-// `;
