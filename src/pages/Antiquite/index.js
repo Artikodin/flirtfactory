@@ -49,7 +49,6 @@ class Antiquite extends React.Component {
                     <BackgroundVideo
                       path={age}
                       number={ages.antiquite ? 3 : number}
-                      // number={number}
                       increaseVideo={this.increaseVideo}
                     />
                     <InteractionDragAndDrop
