@@ -15,7 +15,7 @@ import { Markup } from "interweave";
 class MoyenAge extends React.Component {
   state = {
     age: "moyenage",
-    numberage: 1, // antiquite
+    numberage: 1, // moyenage
     number: 1,
     frameTotal: 93
   };

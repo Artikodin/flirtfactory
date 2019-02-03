@@ -12,9 +12,22 @@ const ages = {
   futur: false
 };
 
+const agesvid = {
+  antiquite: 1,
+  moyenage: 1,
+  renaissance: 1,
+  lumiere: 1,
+  belleepoque: 1,
+  moderne: 1,
+  erenumerique: 1,
+  futur: 1
+};
+
 export const ProgressContext = React.createContext({
   ages,
-  selectAges: () => {}
+  agesvid,
+  selectAges: () => {},
+  updateVideo: () => {}
 });
 
 class ProgressProvider extends React.Component {
@@ -23,7 +36,7 @@ class ProgressProvider extends React.Component {
   };
 
   /* eslint-disable */
-  selectAges = (age) => {
+  selectAges = age => {
     this.setState(prevState => ({
       ages: {
         ...prevState.ages,
@@ -32,9 +45,20 @@ class ProgressProvider extends React.Component {
     }));
   };
 
+  updateVideo = age => {
+    this.setState(prevState => ({
+      agesvid: {
+        ...prevState.agesvid,
+        [age]: this.state.agesvid[age] + 1
+      }
+    }));
+  };
+
   state = {
     ages: ages,
-    selectAges: this.selectAges
+    agesvid: agesvid,
+    selectAges: this.selectAges,
+    updateVideo: this.updateVideo
   };
   /* eslint-enable */
 

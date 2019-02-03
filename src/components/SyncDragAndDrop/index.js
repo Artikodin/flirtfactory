@@ -54,7 +54,6 @@ class SyncDragAndDrop extends React.Component {
   // DRAG AND DROP
 
   onDragStart = () => {
-    console.log("drag start switch canvas");
     const { switchCanvas } = this.props;
     switchCanvas();
   };
@@ -63,7 +62,6 @@ class SyncDragAndDrop extends React.Component {
     const { switchCanvas, updateFrame } = this.props;
     updateFrame(0);
     if (this.locked) {
-      console.log("drag end switch canvas");
       switchCanvas();
     }
   };
@@ -74,10 +72,6 @@ class SyncDragAndDrop extends React.Component {
     increaseVideo();
     unlockAge();
     console.log(age);
-    // const sound = new Audio(`./assets/sound/${age}2.jpg`);
-    // sound.oncanplay = () => {
-    //   sound.play();
-    // };
   };
 
   onDrag = x => {
