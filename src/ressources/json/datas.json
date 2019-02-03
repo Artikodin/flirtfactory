@@ -4,19 +4,22 @@
       "name": "Antiquité",
       "date": "-52 - 476",
       "short": "Sexualité débridée",
-      "description": "<p>Les orgies représentées dans les tableaux de l’Antiquité Grecque sont exactement l’état d’esprit de l’époque. <strong>La sexualité était totalement débridée !</strong></p><p><strong>Les hommes dominaient totalement la relation amoureuse, au détriment des femmes.</strong>Il était courant davoir des partenaires multiples, ainsi ils pouvaient coucher avec toutes femmes non-mariées (coucher avec une femme mariée était considéré comme une offense). Les Romains ont une morale sexuelle simple : à condition de ne sattaquer ni aux femmes ni aux enfants des citoyens, tout est permis !La sexualité était totalement débridée !</p><p>Les Romains découvrent la séduction avec des femmes affranchies, des esclaves ou des étrangères: seules représentantes de la gent féminine qui pouvaient se refuser à eux.</p>",
+      "interaction": "Verse le flacon pour relancer la machine. Je te conseille d'enfiler des gants.",
+      "reinitialisation": "Système réinitialisé. Les orgies romaines ont retrouvé une moyenne de 7 personnes.",
+      "summary": "<p>A l'antiquité, la sexualité était totalement débridée. Les hommes dominaient la relation amoureuse et la femme était soumise. La séduction n'existait pas.</p>",
+      "description": "<p>Les orgies représentées dans les tableaux de l’Antiquité Grecque sont exactement l’état d’esprit de l’époque. <strong>La sexualité était totalement débridée ! </strong></p><p><strong>Les hommes dominaient totalement la relation amoureuse, au détriment des femmes.</strong> Il était courant davoir des partenaires multiples, ainsi ils pouvaient coucher avec toutes femmes non-mariées (coucher avec une femme mariée était considéré comme une offense). Les Romains ont une morale sexuelle simple : à condition de ne sattaquer ni aux femmes ni aux enfants des citoyens, tout est permis !La sexualité était totalement débridée !</p><p>Les Romains découvrent la séduction avec des femmes affranchies, des esclaves ou des étrangères: seules représentantes de la gent féminine qui pouvaient se refuser à eux.</p>",
       "symbols": [
         {
-          "name": "Tournois",
-          "description": "Des tournois étaient souvent organisés par les seigneurs. En plus d'entraîner leurs chevaliers, les tournois étaient l'occasion pour ces derniers de prouver leurs bravoures auprès des dames."
+          "name": "Stimentos",
+          "description": "Le « Stimentos » est une pilule aphrodisiaque, mélange d’huile d’olive et de sueur de gladiateur récupérée juste après leur entraînement. Elle était utilisée par les Romaines pour séduire (on ne doute pas de son efficacité)"
         },
         {
-          "name": "Fleurs",
-          "description": "L’Eglise très stricte empêchait aux couples d’afficher publiquement leur affection, les fleurs devennaient alors un moyen de faire passer ses sentiments. Selon sa composition et son arrangement, le bouquet pouvait délivrer un message en toute discrétion."
+          "name": "Dionysos",
+          "description": "Dans la mythologie grecque, Dionysos est le Dieu de la Séduction et du Vin."
         },
         {
-          "name": "Serenades",
-          "description": "La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à l'image chantait son amour sous le balcon de sa Juliette. Mais auparavant, il devait effectuer d’incessants allers-retours dans la rue pour attirer son attention. Pas très discret mais efficace…"
+          "name": "Cupidon",
+          "description": "Dans la mythologie romaine, Cupidon fils de Vénus, possède le moyen de séduction ultime. Dôté d'un arc et d'un carquois, il envoyait des flèches en or dans le cœur des dieux et des hommes et quiconque était touché tombait amoureux de la première personne qu’elle voyait après avoir été touchée."
         }
       ]
     },

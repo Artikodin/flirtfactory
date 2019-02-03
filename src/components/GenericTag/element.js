@@ -13,6 +13,10 @@ export const Wrapper = styled.div`
   display: inline-flex;
   align-items: flex-start;
   justify-content: flex-start;
+
+  .hide {
+    display: none;
+  }
 `;
 
 export const Container = styled.div`
@@ -26,10 +30,11 @@ export const Container = styled.div`
   line-height: 1.5;
   border: solid 1px white;
   border-top: none;
+  background: rgba(255, 255, 255, 1);
 
   &:after {
     content: "";
-    background-image: url("./assets/img/noise.gif");
+    /* background-image: url("./assets/img/noise.gif"); */
     opacity: 0.1;
     background-size: 80px;
     top: 0;
@@ -57,7 +62,7 @@ export const Title = styled.div`
 `;
 
 export const Paragraph = styled.div`
-  color: #fff;
+  color: #000;
   font-size: 14px;
   padding: 25px 40px;
   max-height: 260px;
@@ -72,11 +77,16 @@ export const IconContainer = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
+  /* background: white; */
+  border: solid 1px white;
   height: 45px;
   min-width: 45px;
+  transition: all 0.5s ease-in;
 
-  border: solid 1px white;
+  &:hover {
+    border: solid 1px white;
+    /* background: rgba(255, 255, 255, 0.3); */
+  }
 `;
 
 export const Icon = styled.img``;

@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+const unlockAll = false;
+
 const ages = {
   antiquite: false,
   moyenage: false,
@@ -26,6 +28,7 @@ const agesvid = {
 export const ProgressContext = React.createContext({
   ages,
   agesvid,
+  unlockAll,
   selectAges: () => {},
   updateVideo: () => {}
 });
@@ -43,6 +46,18 @@ class ProgressProvider extends React.Component {
         [age]: true
       }
     }));
+    if (this.state.ages.antiquite &&
+      this.state.ages.moyenage &&
+      this.state.ages.renaissance &&
+      this.state.ages.belleepoque &&
+      this.state.ages.lumieres &&
+      this.state.ages.moderne &&
+      this.state.ages.erenumerique &&
+      this.state.ages.futur) {
+        this.setState({
+          unlockAll: true
+        });
+      }
   };
 
   updateVideo = age => {
@@ -57,6 +72,7 @@ class ProgressProvider extends React.Component {
   state = {
     ages: ages,
     agesvid: agesvid,
+    unlockAll: false,
     selectAges: this.selectAges,
     updateVideo: this.updateVideo
   };

@@ -93,6 +93,43 @@ const GlobalStyle = createGlobalStyle`
       } 
   }
 
+  #globalview--question {
+    position: absolute; 
+    bottom: 10%;
+    z-index: 50;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    left: 0;
+    right: 0;
+
+    h2 {
+      font-family: GTCinetype;
+      font-size: 2em;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.07;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff; 
+    }
+
+    &:after {
+      content: '';
+      opacity: 0.5;
+      position: absolute; 
+      background: white;
+      height: 1px;
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+      top: -10px;
+      left: 0;
+      right: 0;
+    }
+  }
+
   .dragndrop--hide {
     visibility: hidden; 
     opacity: 0 !important;

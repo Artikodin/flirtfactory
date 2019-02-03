@@ -24,6 +24,7 @@ class GenericTag extends React.Component {
     children: PropTypes.string,
     title: PropTypes.string,
     index: PropTypes.bool,
+    global: PropTypes.bool,
     xPos: PropTypes.string,
     yPos: PropTypes.string
   };
@@ -34,6 +35,7 @@ class GenericTag extends React.Component {
     children: "",
     title: "",
     index: false,
+    global: false,
     xPos: "0px",
     yPos: "0px"
   };
@@ -150,7 +152,7 @@ class GenericTag extends React.Component {
   };
 
   render() {
-    const { xPos, yPos, children, title, index } = this.props;
+    const { xPos, yPos, children, title, index, global } = this.props;
     const { showed } = this.state;
     const src = index === true ? "./assets/ui/Index.svg" : "./assets/ui/+.svg";
     return (
@@ -164,7 +166,7 @@ class GenericTag extends React.Component {
             <Icon src={src} alt="" />
           </IconContainer>
           <AnimatedTitle>{title}</AnimatedTitle>
-          <AnimatedContainer>
+          <AnimatedContainer className={global ? "hide" : ""}>
             <Paragraph>{children}</Paragraph>
           </AnimatedContainer>
         </AnimatedWrapper>
