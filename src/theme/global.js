@@ -79,6 +79,18 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
       }
     }
+
+    /* empty div between so the img can't be touched */
+
+    &:after { 
+        content:''; 
+        display:block; 
+        position:absolute; 
+        width:100%; 
+        height:100%;
+        z-index:1; 
+        top:0;
+      } 
   }
   
   ::-webkit-scrollbar {

@@ -54,9 +54,9 @@ class SyncDragAndDrop extends React.Component {
     const { switchCanvas, updateFrame } = this.props;
     updateFrame(0);
     // ici remettre la position du drag and drop à zéro
-    if (this.locked) {
-      switchCanvas();
-    }
+    // if (this.locked) {
+    switchCanvas();
+    // }
   };
 
   next = () => {

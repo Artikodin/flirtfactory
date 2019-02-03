@@ -223,20 +223,25 @@ class DragNDrop extends React.Component {
             d={pathDraw}
             fill="transparent"
             stroke="white"
-            strokeWidth="2"
-            strokeDasharray="8 3"
+            strokeWidth="1"
+            strokeDasharray="1 7"
             id="wire"
           />
 
-          <circle cx={elEnd.x} cy={elEnd.y} r="5" fill="white" />
+          <circle
+            cx={elEnd.x}
+            cy={elEnd.y}
+            r="20"
+            fill="transparent"
+            stroke="white"
+          />
 
           <circle
             ref={this.dragCircle}
             cx={elStart.x}
             cy={elStart.y}
-            r="15"
-            fill="transparent"
-            stroke="white"
+            r="10"
+            fill="white"
             strokeWidth="1"
             onMouseDown={() => this.handleDragStart()}
           />
