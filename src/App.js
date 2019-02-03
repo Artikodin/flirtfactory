@@ -24,7 +24,8 @@ import {
   TextProvider,
   ProgressProvider,
   NavBar,
-  Logo
+  Logo,
+  ProgressContext
 } from "./components";
 
 const App = () => (
@@ -34,67 +35,119 @@ const App = () => (
       <ProgressProvider>
         <Router>
           <>
-            <Cursor />
-            <Logo />
-            <Switch>
-              <Route exact path="/" component={Intro} />
-              <Route exact path="/antiquite" component={Antiquite} />
-              <Route exact path="/belle-epoque" component={BelleEpoque} />
-              <Route exact path="/ere-numerique" component={EreNumerique} />
-              <Route exact path="/futur" component={Futur} />
-              <Route exact path="/lumieres" component={Lumieres} />
-              <Route exact path="/moderne" component={Moderne} />
-              <Route exact path="/moyen-age" component={MoyenAge} />
-              <Route exact path="/renaissance" component={Renaissance} />
-              <Route exact path="/flirtfactory" component={FlirtFactory} />
-              <Route exact path="/test" component={Test} />
-              <Route path="*" component={Error} />
-            </Switch>
-            <NavBar>
-              <NavBar.NavItem
-                imgSrc="./assets/img/img1.jpeg"
-                pathTo="/antiquite"
-              >
-                antiquité
-              </NavBar.NavItem>
-              <NavBar.NavItem
-                imgSrc="./assets/img/img2.jpeg"
-                pathTo="/moyen-age"
-              >
-                moyen-âge
-              </NavBar.NavItem>
-              <NavBar.NavItem
-                imgSrc="./assets/img/img8.jpeg"
-                pathTo="/renaissance"
-              >
-                renaissance
-              </NavBar.NavItem>
-              <NavBar.NavItem
-                imgSrc="./assets/img/img3.jpeg"
-                pathTo="/lumieres"
-              >
-                lumière
-              </NavBar.NavItem>
-              <NavBar.NavItem
-                imgSrc="./assets/img/img4.jpeg"
-                pathTo="/belle-epoque"
-              >
-                belle-époque
-              </NavBar.NavItem>
-              <NavBar.NavItem imgSrc="./assets/img/img5.jpeg" pathTo="/moderne">
-                moderne
-              </NavBar.NavItem>
-              <NavBar.NavItem
-                imgSrc="./assets/img/img6.gif"
-                pathTo="/ere-numerique"
-              >
-                ère-numérique
-              </NavBar.NavItem>
-              <NavBar.NavItem imgSrc="./assets/img/img7.jpeg" pathTo="/futur">
-                futur
-              </NavBar.NavItem>
-            </NavBar>
-            <About />
+            <ProgressContext.Consumer>
+              {({ ages }) => (
+                <>
+                  <Cursor />
+                  <Logo />
+                  <Switch>
+                    <Route exact path="/" component={Intro} />
+                    <Route exact path="/antiquite" component={Antiquite} />
+                    <Route exact path="/belle-epoque" component={BelleEpoque} />
+                    <Route
+                      exact
+                      path="/ere-numerique"
+                      component={EreNumerique}
+                    />
+                    <Route exact path="/futur" component={Futur} />
+                    <Route exact path="/lumieres" component={Lumieres} />
+                    <Route exact path="/moderne" component={Moderne} />
+                    <Route exact path="/moyen-age" component={MoyenAge} />
+                    <Route exact path="/renaissance" component={Renaissance} />
+                    <Route
+                      exact
+                      path="/flirtfactory"
+                      component={FlirtFactory}
+                    />
+                    <Route exact path="/test" component={Test} />
+                    <Route path="*" component={Error} />
+                  </Switch>
+                  <NavBar>
+                    <NavBar.NavItem
+                      imgSrc={
+                        ages.antiquite
+                          ? "./assets/img/img1.jpeg"
+                          : "./assets/img/img2.jpeg"
+                      }
+                      pathTo="/antiquite"
+                    >
+                      antiquité
+                    </NavBar.NavItem>
+                    <NavBar.NavItem
+                      imgSrc={
+                        ages.moyenage
+                          ? "./assets/img/img1.jpeg"
+                          : "./assets/img/img2.jpeg"
+                      }
+                      pathTo="/moyen-age"
+                    >
+                      moyen-âge
+                    </NavBar.NavItem>
+                    <NavBar.NavItem
+                      imgSrc={
+                        ages.renaissance
+                          ? "./assets/img/img1.jpeg"
+                          : "./assets/img/img2.jpeg"
+                      }
+                      pathTo="/renaissance"
+                    >
+                      renaissance
+                    </NavBar.NavItem>
+                    <NavBar.NavItem
+                      imgSrc={
+                        ages.lumieres
+                          ? "./assets/img/img1.jpeg"
+                          : "./assets/img/img2.jpeg"
+                      }
+                      pathTo="/lumieres"
+                    >
+                      lumière
+                    </NavBar.NavItem>
+                    <NavBar.NavItem
+                      imgSrc={
+                        ages.belleepoque
+                          ? "./assets/img/img1.jpeg"
+                          : "./assets/img/img2.jpeg"
+                      }
+                      pathTo="/belle-epoque"
+                    >
+                      belle-époque
+                    </NavBar.NavItem>
+                    <NavBar.NavItem
+                      imgSrc={
+                        ages.moderne
+                          ? "./assets/img/img1.jpeg"
+                          : "./assets/img/img2.jpeg"
+                      }
+                      pathTo="/moderne"
+                    >
+                      moderne
+                    </NavBar.NavItem>
+                    <NavBar.NavItem
+                      imgSrc={
+                        ages.erenumerique
+                          ? "./assets/img/img1.jpeg"
+                          : "./assets/img/img2.jpeg"
+                      }
+                      pathTo="/ere-numerique"
+                    >
+                      ère-numérique
+                    </NavBar.NavItem>
+                    <NavBar.NavItem
+                      imgSrc={
+                        ages.futur
+                          ? "./assets/img/img1.jpeg"
+                          : "./assets/img/img2.jpeg"
+                      }
+                      pathTo="/futur"
+                    >
+                      futur
+                    </NavBar.NavItem>
+                  </NavBar>
+                  <About />
+                </>
+              )}
+            </ProgressContext.Consumer>
           </>
         </Router>
       </ProgressProvider>

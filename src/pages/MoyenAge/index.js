@@ -14,62 +14,71 @@ import { Markup } from "interweave";
 
 class MoyenAge extends React.Component {
   state = {
-    age: "moyenage",
-    numberage: 1, // moyenage
-    number: 1,
+    agestr: "moyenage",
+    agenbr: 1, // moyenage
     frameTotal: 93
   };
 
-  increaseVideo = () => {
-    const { number } = this.state;
-    this.setState({
-      number: number + 1
-    });
-  };
-
   render() {
-    const { age, number, numberage, frameTotal } = this.state;
+    const { agestr, agenbr, frameTotal } = this.state;
     return (
       <Page>
         <ButtonIA />
         <TextContext.Consumer>
           {value => (
             <ProgressContext.Consumer>
-              {({ ages, selectAges }) => (
+              {({ ages, selectAges, agesvid, updateVideo }) => (
                 <>
                   <GenericTag
-                    title={value.epoques[numberage].name}
+                    title={value.epoques[agenbr].name}
                     xPos="200px"
                     yPos="200px"
                     index
                   >
-                    <Markup content={value.epoques[numberage].description} />
+                    <Markup content={value.epoques[agenbr].description} />
                   </GenericTag>
                   {ages.moyenage && (
-                    <GenericTag
-                      title={value.epoques[numberage].symbols[0].name}
-                      xPos="500px"
-                      yPos="200px"
-                    >
-                      <Markup
-                        content={
-                          value.epoques[numberage].symbols[0].description
-                        }
-                      />
-                    </GenericTag>
+                    <>
+                      <GenericTag
+                        title={value.epoques[agenbr].symbols[0].name}
+                        xPos="800px"
+                        yPos="300px"
+                      >
+                        <Markup
+                          content={value.epoques[agenbr].symbols[0].description}
+                        />
+                      </GenericTag>
+                      <GenericTag
+                        title={value.epoques[agenbr].symbols[1].name}
+                        xPos="800px"
+                        yPos="100px"
+                      >
+                        <Markup
+                          content={value.epoques[agenbr].symbols[1].description}
+                        />
+                      </GenericTag>
+                      <GenericTag
+                        title={value.epoques[agenbr].symbols[2].name}
+                        xPos="500px"
+                        yPos="700px"
+                      >
+                        <Markup
+                          content={value.epoques[agenbr].symbols[2].description}
+                        />
+                      </GenericTag>
+                    </>
                   )}
                   <div className="background__wrapper">
                     <BackgroundVideo
-                      path={age}
-                      number={number}
-                      increaseVideo={this.increaseVideo}
+                      path={agestr}
+                      number={agesvid.moyenage}
+                      increaseVideo={() => updateVideo(agestr)}
                     />
                     <InteractionDragAndDrop
                       display={ages.moyenage}
-                      className="drag_and_drop"
-                      unlockAge={() => selectAges(age)}
-                      increaseVideo={this.increaseVideo}
-                      age={age}
+                      unlockAge={() => selectAges(agestr)}
+                      increaseVideo={() => updateVideo(agestr)}
+                      age={agestr}
                       frameTotal={frameTotal}
                       pathDraw="M 450 450 A 50 50 0 1 1 450 300"
                       top="60%"
