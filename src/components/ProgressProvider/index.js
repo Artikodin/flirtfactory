@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 
 const ages = {
   antiquite: false,
-  moyenAge: false,
+  moyenage: false,
   renaissance: false,
   lumiere: false,
-  belleEpoque: false,
+  belleepoque: false,
   moderne: false,
-  ereNumerique: false,
+  erenumerique: false,
   futur: false
 };
 

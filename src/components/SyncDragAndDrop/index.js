@@ -11,22 +11,30 @@ import { DragNDrop } from "..";
 class SyncDragAndDrop extends React.Component {
   static propTypes = {
     age: PropTypes.string,
+    display: PropTypes.bool,
     frame: PropTypes.number,
     frameTotal: PropTypes.number,
     switchCanvas: PropTypes.func,
     updateFrame: PropTypes.func,
     unlockAge: PropTypes.func,
-    increaseVideo: PropTypes.func
+    increaseVideo: PropTypes.func,
+    pathDraw: PropTypes.string,
+    top: PropTypes.string,
+    left: PropTypes.string
   };
 
   static defaultProps = {
     age: "",
+    display: true,
     frame: 0,
     frameTotal: 0,
     switchCanvas: () => {},
     updateFrame: () => {},
     unlockAge: () => {},
-    increaseVideo: () => {}
+    increaseVideo: () => {},
+    pathDraw: "",
+    top: "",
+    left: ""
   };
 
   constructor(props) {
@@ -46,6 +54,7 @@ class SyncDragAndDrop extends React.Component {
   // DRAG AND DROP
 
   onDragStart = () => {
+    console.log("drag start switch canvas");
     const { switchCanvas } = this.props;
     switchCanvas();
   };
@@ -53,10 +62,10 @@ class SyncDragAndDrop extends React.Component {
   onDragEnd = () => {
     const { switchCanvas, updateFrame } = this.props;
     updateFrame(0);
-    // ici remettre la position du drag and drop à zéro
-    // if (this.locked) {
-    switchCanvas();
-    // }
+    if (this.locked) {
+      console.log("drag end switch canvas");
+      switchCanvas();
+    }
   };
 
   next = () => {
@@ -64,10 +73,11 @@ class SyncDragAndDrop extends React.Component {
     switchCanvas();
     increaseVideo();
     unlockAge();
-    const sound = new Audio(`./assets/sound/${age}2.jpg`);
-    sound.oncanplay = () => {
-      sound.play();
-    };
+    console.log(age);
+    // const sound = new Audio(`./assets/sound/${age}2.jpg`);
+    // sound.oncanplay = () => {
+    //   sound.play();
+    // };
   };
 
   onDrag = x => {
@@ -86,31 +96,21 @@ class SyncDragAndDrop extends React.Component {
   };
 
   render() {
+    const { pathDraw, top, left, display } = this.props;
     return (
       <>
         <DragNDrop
-          pathDraw="M 70 400 Q 40 220 200 250 "
+          display={display}
+          pathDraw={pathDraw}
           handleDragStart={this.onDragStart}
           handleDrag={this.onDrag}
           handleDragEnd={this.onDragEnd}
-          top="57%"
-          left="45%"
+          top={top}
+          left={left}
         />
-        {/* <DragAndDropContainer className="drag_and_drop">
-          <DraggableRound
-            ref={this.drag}
-            onDragStart={this.onDragStart}
-            onDragEnd={this.onDragEnd}
-            onValueChange={{ x: this.onDrag }}
-          />
-        </DragAndDropContainer> */}
       </>
     );
   }
 }
 
-// const DraggableRound = posed(Round)({
-//   draggable: "x",
-//   dragBounds: { left: 0, right: 400 }
-// });
 export default SyncDragAndDrop;

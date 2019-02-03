@@ -62,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
-
+  
   .background__canvas {
     img {
       display: block;
@@ -91,6 +91,11 @@ const GlobalStyle = createGlobalStyle`
         z-index:1; 
         top:0;
       } 
+  }
+
+  .dragndrop--hide {
+    visibility: hidden; 
+    opacity: 0 !important;
   }
   
   ::-webkit-scrollbar {

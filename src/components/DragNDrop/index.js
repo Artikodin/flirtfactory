@@ -23,9 +23,12 @@ class DragNDrop extends React.Component {
 
   deltaDrag = 0;
 
+  dragging = false;
+
   goToEnd = false;
 
   static propTypes = {
+    display: PropTypes.bool,
     pathDraw: PropTypes.string,
     left: PropTypes.string,
     top: PropTypes.string,
@@ -37,6 +40,7 @@ class DragNDrop extends React.Component {
   };
 
   static defaultProps = {
+    display: true,
     pathDraw: "M 150 300 L 350 300",
     left: "0",
     top: "0",
@@ -59,13 +63,13 @@ class DragNDrop extends React.Component {
       }
     });
 
-    window.addEventListener("mouseup", this.handleDragEnd, {
+    this.svgRef.current.addEventListener("mouseup", this.handleDragEnd, {
       passive: true
     });
   }
 
   componentWillUnmount() {
-    window.removeEventListener("mouseup", this.handleDragEnd, {
+    this.svgRef.current.removeEventListener("mouseup", this.handleDragEnd, {
       passive: true
     });
     cancelAnimationFrame(this.moveStar);
@@ -156,13 +160,14 @@ class DragNDrop extends React.Component {
   handleDragStart = () => {
     const { handleDragStart } = this.props;
     handleDragStart();
-    window.addEventListener("mousemove", this.handleMouseMove, {
+    this.dragging = true;
+    this.svgRef.current.addEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
   };
 
   handleDragEnd = () => {
-    window.removeEventListener("mousemove", this.handleMouseMove, {
+    this.svgRef.current.removeEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
     this.moveStar();
@@ -197,19 +202,26 @@ class DragNDrop extends React.Component {
 
     handleDrag(Math.min(1, Math.max(0, this.deltaDrag)));
 
-    if (this.deltaDrag !== 1 && this.deltaDrag !== 0)
+    if (this.deltaDrag !== 1 && this.deltaDrag !== 0) {
       requestAnimationFrame(this.moveStar);
+    } else {
+      if (this.dragging) {
+        handleDragEnd();
+      }
+      this.dragging = false;
+    }
 
     if (this.deltaDrag === 1) handleDragEnd();
   };
 
   render() {
-    const { pathDraw, height, width, top, left } = this.props;
+    const { pathDraw, height, width, top, left, display } = this.props;
     const { elStart, elEnd } = this.state;
     return (
       <>
         <Svg
           ref={this.svgRef}
+          className={display ? "dragndrop--hide" : ""}
           version="1.1"
           baseProfile="full"
           width={height}

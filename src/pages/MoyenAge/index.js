@@ -45,7 +45,7 @@ class MoyenAge extends React.Component {
                   >
                     <Markup content={value.epoques[numberage].description} />
                   </GenericTag>
-                  {ages.antiquite && (
+                  {ages.moyenage && (
                     <GenericTag
                       title={value.epoques[numberage].symbols[0].name}
                       xPos="500px"
@@ -65,11 +65,15 @@ class MoyenAge extends React.Component {
                       increaseVideo={this.increaseVideo}
                     />
                     <InteractionDragAndDrop
+                      display={ages.moyenage}
                       className="drag_and_drop"
                       unlockAge={() => selectAges(age)}
                       increaseVideo={this.increaseVideo}
                       age={age}
                       frameTotal={frameTotal}
+                      pathDraw="M 450 450 A 50 50 0 1 1 450 300"
+                      top="60%"
+                      left="10%"
                     />
                   </div>
                 </>
