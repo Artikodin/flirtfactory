@@ -7,6 +7,9 @@ export const GlobalContainer = styled.div`
   z-index: 5;
   top: ${({ yPos }) => yPos};
   left: ${({ xPos }) => xPos};
+
+  opacity: 0.5;
+  transition: opacity 0.25s ease;
 `;
 
 export const Wrapper = styled.div`
