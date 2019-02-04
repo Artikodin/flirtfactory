@@ -1,15 +1,31 @@
 import React from "react";
 
-import { Page, BackgroundVideo, ButtonIA, GenericTag } from "../../components";
+import {
+  Page,
+  BackgroundVideo,
+  ButtonIA,
+  GenericTag,
+  Catchphrase
+} from "../../components";
 
 class FlirtFactory extends React.Component {
   state = {
     age: "flirtfactory",
-    number: 1
+    number: 1,
+    json: 0,
+    showed: false
+  };
+
+  displayCatchphrase = param => {
+    const { showed } = this.state;
+    this.setState({
+      showed: !showed,
+      json: param
+    });
   };
 
   render() {
-    const { age, number } = this.state;
+    const { age, number, showed, json } = this.state;
     return (
       <Page>
         <ButtonIA />
@@ -19,40 +35,20 @@ class FlirtFactory extends React.Component {
         <div className="background__wrapper">
           <BackgroundVideo path={age} number={number} />
           <GenericTag
+            catchphrase={() => this.displayCatchphrase(0)}
             title="antiquité"
             xPos="200px"
             yPos="200px"
             global
-            index
           />
           <GenericTag
+            catchphrase={() => this.displayCatchphrase(1)}
             title="moyen-âge"
             xPos="100px"
             yPos="400px"
             global
-            index
           />
-          <GenericTag
-            title="antiquité"
-            xPos="200px"
-            yPos="200px"
-            global
-            index
-          />
-          <GenericTag
-            title="antiquité"
-            xPos="200px"
-            yPos="200px"
-            global
-            index
-          />
-          <GenericTag
-            title="antiquité"
-            xPos="200px"
-            yPos="200px"
-            global
-            index
-          />
+          <Catchphrase showed={showed} json={json} />
         </div>
       </Page>
     );

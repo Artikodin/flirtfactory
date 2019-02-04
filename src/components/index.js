@@ -7,6 +7,7 @@ export { default as BackgroundVideo } from "./BackgroundVideo";
 // export { default as BackgroundWrapper } from "./BackgroundWrapper";
 export { default as ButtonIA } from "./ButtonIA";
 export { default as ButtonAbout } from "./ButtonAbout";
+export { default as Catchphrase } from "./Catchphrase";
 export { default as CanvasVideo } from "./CanvasVideo";
 export { default as Cursor } from "./Cursor";
 export { default as DragNDrop } from "./DragNDrop";

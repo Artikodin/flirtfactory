@@ -26,7 +26,8 @@ class GenericTag extends React.Component {
     index: PropTypes.bool,
     global: PropTypes.bool,
     xPos: PropTypes.string,
-    yPos: PropTypes.string
+    yPos: PropTypes.string,
+    catchphrase: PropTypes.func
   };
 
   static defaultProps = {
@@ -37,7 +38,8 @@ class GenericTag extends React.Component {
     index: false,
     global: false,
     xPos: "0px",
-    yPos: "0px"
+    yPos: "0px",
+    catchphrase: () => {}
   };
 
   magnet = React.createRef();
@@ -152,7 +154,15 @@ class GenericTag extends React.Component {
   };
 
   render() {
-    const { xPos, yPos, children, title, index, global } = this.props;
+    const {
+      xPos,
+      yPos,
+      children,
+      title,
+      index,
+      global,
+      catchphrase
+    } = this.props;
     const { showed } = this.state;
     const src = index === true ? "./assets/ui/Index.svg" : "./assets/ui/+.svg";
     return (
@@ -161,6 +171,7 @@ class GenericTag extends React.Component {
           pose={showed ? "isOpen" : "isClose"}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
+          onClick={catchphrase}
         >
           <IconContainer>
             <Icon src={src} alt="" />
