@@ -8,7 +8,6 @@ import {
   Paragraph,
   Wrapper,
   Container,
-  Icon,
   GlobalContainer,
   IconContainer
 } from "./element";
@@ -196,9 +195,6 @@ class GenericTag extends React.Component {
       pictonumber
     } = this.props;
     const { showed } = this.state;
-    // const src =
-    //   index === true ? "./assets/ui/Index.svg" : `./assets/ui/${picto}.svg`;
-    // const src = index === true ? "./assets/ui/Index.svg" : "./assets/ui/+.svg";
     return (
       <GlobalContainer ref={this.magnet} xPos={xPos} yPos={yPos}>
         <AnimatedWrapper

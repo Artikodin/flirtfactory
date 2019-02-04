@@ -38,6 +38,8 @@ export const DrawerLayout = styled.div`
   }
   marquee {
     position: absolute;
+    /* left: 100vw; */
+    /* width: 200vw; */
     z-index: 0;
     font-family: GTCinetype;
     font-size: 200px;

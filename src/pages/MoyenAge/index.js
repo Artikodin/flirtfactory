@@ -37,6 +37,8 @@ class MoyenAge extends React.Component {
                         xPos="200px"
                         yPos="200px"
                         index
+                        age={agestr}
+                        pictonumber={0}
                       >
                         <Markup content={value.epoques[agenbr].description} />
                       </GenericTag>
@@ -44,6 +46,8 @@ class MoyenAge extends React.Component {
                         title={value.epoques[agenbr].symbols[0].name}
                         xPos="800px"
                         yPos="300px"
+                        age={agestr}
+                        pictonumber={0}
                       >
                         <Markup
                           content={value.epoques[agenbr].symbols[0].description}
@@ -53,6 +57,8 @@ class MoyenAge extends React.Component {
                         title={value.epoques[agenbr].symbols[1].name}
                         xPos="800px"
                         yPos="100px"
+                        age={agestr}
+                        pictonumber={1}
                       >
                         <Markup
                           content={value.epoques[agenbr].symbols[1].description}
@@ -62,6 +68,8 @@ class MoyenAge extends React.Component {
                         title={value.epoques[agenbr].symbols[2].name}
                         xPos="500px"
                         yPos="700px"
+                        age={agestr}
+                        pictonumber={2}
                       >
                         <Markup
                           content={value.epoques[agenbr].symbols[2].description}
