@@ -20,8 +20,9 @@ class GenericTag extends React.Component {
 
   static propTypes = {
     threshold: PropTypes.number,
+    thresholdVisible: PropTypes.number,
     ease: PropTypes.number,
-    children: PropTypes.string,
+    children: PropTypes.node,
     title: PropTypes.string,
     index: PropTypes.bool,
     global: PropTypes.bool,
@@ -33,6 +34,7 @@ class GenericTag extends React.Component {
 
   static defaultProps = {
     threshold: 45,
+    thresholdVisible: 120,
     ease: 0.09,
     children: "",
     title: "",
@@ -51,6 +53,10 @@ class GenericTag extends React.Component {
   framID = null;
 
   isHover = false;
+
+  isVisible = false;
+
+  show = false;
 
   mousePos = {
     x: 0,
@@ -98,7 +104,7 @@ class GenericTag extends React.Component {
   // This function check if the cursor is close to the magnetic element or not
   isMagnetic = (x, y) => {
     // Distance where the element is starting to get attract by cursor
-    const { threshold } = this.props;
+    const { threshold, thresholdVisible } = this.props;
 
     const centerX = this.magnetProperty.left + this.magnetProperty.width / 2;
     const centerY = this.magnetProperty.top + this.magnetProperty.height / 2;
@@ -113,6 +119,7 @@ class GenericTag extends React.Component {
     // true if cursor distance from center of btn is
     // equal to btn radius + threshold
     this.isHover = c < this.magnetProperty.width / 2 + threshold;
+    this.isVisible = c < this.magnetProperty.width / 2 + thresholdVisible;
   };
 
   update = () => {
@@ -129,6 +136,25 @@ class GenericTag extends React.Component {
         (this.magnetProperty.y + this.magnetProperty.width / 2);
     }
 
+    if (this.isVisible) {
+      if (!this.show) {
+        console.log("visible");
+        this.show = true;
+        this.magnet.current.style.opacity = `
+        1
+        `;
+      }
+    } else {
+      // eslint-disable-next-line no-lonely-if
+      if (this.show) {
+        console.log("hidden");
+        this.show = false;
+        this.magnet.current.style.opacity = `
+          0.5
+        `;
+      }
+    }
+
     this.elPos.x += (elPos.x - this.elPos.x) * ease;
     this.elPos.y += (elPos.y - this.elPos.y) * ease;
 
@@ -140,7 +166,7 @@ class GenericTag extends React.Component {
         )
     `;
 
-    this.framID = window.requestAnimationFrame(this.update);
+    requestAnimationFrame(this.update);
   };
 
   handleMouseEnter = () => {
