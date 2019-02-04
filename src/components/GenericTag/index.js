@@ -27,7 +27,8 @@ class GenericTag extends React.Component {
     global: PropTypes.bool,
     xPos: PropTypes.string,
     yPos: PropTypes.string,
-    catchphrase: PropTypes.func
+    catchphrase: PropTypes.func,
+    picto: PropTypes.string
   };
 
   static defaultProps = {
@@ -35,6 +36,7 @@ class GenericTag extends React.Component {
     ease: 0.09,
     children: "",
     title: "",
+    picto: "",
     index: false,
     global: false,
     xPos: "0px",
@@ -161,10 +163,13 @@ class GenericTag extends React.Component {
       title,
       index,
       global,
-      catchphrase
+      catchphrase,
+      picto
     } = this.props;
     const { showed } = this.state;
-    const src = index === true ? "./assets/ui/Index.svg" : "./assets/ui/+.svg";
+    const src =
+      index === true ? "./assets/ui/Index.svg" : `./assets/ui/${picto}.svg`;
+    // const src = index === true ? "./assets/ui/Index.svg" : "./assets/ui/+.svg";
     return (
       <GlobalContainer ref={this.magnet} xPos={xPos} yPos={yPos}>
         <AnimatedWrapper

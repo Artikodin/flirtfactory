@@ -17,7 +17,7 @@ class Antiquite extends React.Component {
     agestr: "antiquite",
     agenbr: 0, // antiquite
     frameTotal: 54,
-    waitFor: 4000 // sec
+    waitFor: 2000 // sec
   };
 
   render() {
@@ -30,18 +30,19 @@ class Antiquite extends React.Component {
             <ProgressContext.Consumer>
               {({ ages, selectAges, agesvid, updateVideo }) => (
                 <>
-                  <GenericTag
-                    title={value.epoques[agenbr].name}
-                    xPos="200px"
-                    yPos="200px"
-                    index
-                  >
-                    <Markup content={value.epoques[agenbr].description} />
-                  </GenericTag>
                   {ages.antiquite && (
                     <>
                       <GenericTag
+                        title={value.epoques[agenbr].name}
+                        xPos="200px"
+                        yPos="200px"
+                        index
+                      >
+                        <Markup content={value.epoques[agenbr].description} />
+                      </GenericTag>
+                      <GenericTag
                         title={value.epoques[agenbr].symbols[0].name}
+                        picto={value.epoques[agenbr].symbols[0].name}
                         xPos="500px"
                         yPos="200px"
                       >
@@ -51,6 +52,7 @@ class Antiquite extends React.Component {
                       </GenericTag>
                       <GenericTag
                         title={value.epoques[agenbr].symbols[1].name}
+                        picto={value.epoques[agenbr].symbols[1].name}
                         xPos="800px"
                         yPos="100px"
                       >
@@ -60,6 +62,7 @@ class Antiquite extends React.Component {
                       </GenericTag>
                       <GenericTag
                         title={value.epoques[agenbr].symbols[2].name}
+                        picto={value.epoques[agenbr].symbols[2].name}
                         xPos="500px"
                         yPos="700px"
                       >

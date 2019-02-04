@@ -51,7 +51,6 @@ class InteractionDragAndDrop extends React.Component {
   componentWillMount = () => {
     const { waitFor } = this.props;
     setTimeout(() => {
-      console.log("set time out");
       this.setState({
         waited: false
       });

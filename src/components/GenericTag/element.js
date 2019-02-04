@@ -89,4 +89,6 @@ export const IconContainer = styled.div`
   }
 `;
 
-export const Icon = styled.img``;
+export const Icon = styled.img`
+  height: 60%;
+`;
