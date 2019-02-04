@@ -28,7 +28,11 @@
       "name": "Moyen-Âge",
       "date": "476 - 1492",
       "short": "Courtoisie",
-      "description": "<p>Au Moyen-Âge apparaît une nouvelle forme de séduction: la<strong>courtoisie</strong>. A cette époque, la norme est au mariage arrangé. Le vrai amour se déroule hors-mariage et doit rester secret, sous peine de très lourdes conséquences.</p><p>Les relations sont donc très compliquées et mêlent passion, désespoir, plaisir et souffrance. Un <strong>coup de foudre</strong> peut alors durer toute une vie, les deux amoureux ne vivant que l'un pour l'autre ! <br />L’amour courtois est un amour <strong>purement sentimental</strong> et ne suppose pas forcément de relation physique. Mais il s'exprime par des actes : il fallait <strong>prouver sa bravoure auprès de sa dame, à l'image des chevaliers gagnant une bataille ou délivrant leurs princesses.</p>",
+      "interaction": "Le manège ne fonctionne plus. Tourne la manivelle.",
+      "reinitialisation": "Système réinitialisé. 72 joutes de chevaliers se déroulent en ce moment même.",
+      "summary": "<p>La plupart de relations de l'époque sont des mariages arrangés, le vrai amour se déroule hors-mariage et doit donc rester secret. Apparaît l'amour courtois, un amour purement sentimental qui consiste à prouver sa bravoure pour gagner le coeur de sa dame.</p>",
+      "catchphrase": "En catchana baby tu dead ça",
+      "description": "<p>Au Moyen-Âge apparaît une nouvelle forme de séduction: la <strong>courtoisie</strong>. A cette époque, la norme est au mariage arrangé. Le vrai amour se déroule hors-mariage et doit rester secret, sous peine de très lourdes conséquences.</p> <p>Les relations sont donc très compliquées et mêlent passion, désespoir, plaisir et souffrance. Un <strong>coup de foutre</strong> peut alors durer toute une vie, les deux amoureux ne vivant que l'un pour l'autre !</p> <p>L’amour courtois est un amour <strong>purement sentimental</strong>  et ne suppose pas forcément de relation physique. Mais il s'exprime par des actes : il fallait prouver sa bravoure auprès de sa dame, à l'image des chevaliers gagnant une bataille ou délivrant leurs princesses.</p>",
       "symbols": [
         {
           "name": "Tournois",
@@ -36,10 +40,10 @@
         },
         {
           "name": "Fleurs",
-          "description": "L’Eglise très stricte empêchait aux couples d’afficher publiquement leur affection, les fleurs devennaient alors un moyen de faire passer ses sentiments. Selon sa composition et son arrangement, le bouquet pouvait délivrer un message en toute discrétion."
+          "description": "L’Eglise très stricte empêchait aux couples d’afficher publiquement leur affection, les fleurs deviennent alors un moyen de faire passer ses sentiments. Selon sa composition et son arrangement, le bouquet pouvait délivrer un message en toute discrétion."
         },
         {
-          "name": "Serenades",
+          "name": "Sénérades",
           "description": "La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à l'image chantait son amour sous le balcon de sa Juliette. Mais auparavant, il devait effectuer d’incessants allers-retours dans la rue pour attirer son attention. Pas très discret mais efficace…"
         }
       ]
@@ -47,12 +51,20 @@
     {
       "name": "Renaissance",
       "date": "1300 – 1600",
-      "short": "Courtoisie",
-      "description": "<p>C’est à partir du XVIIème siècle que la <strong>galanterie</strong> fait son apparition. Les codes changent et deviennent plus légers et moins dramatiques que ceux de la courtoisie.</p><p>La femme, au centre des échanges galants, commence à être davantage considérée. Les histoires d'amour laissent plus de place aux sentiments, à la sincérité, au désir et à la jalousie…</p><p>C’est aussi l’époque des <strong>relations épistolaires</strong>. On s'écrivait, on faisait des vers et des rimes pour <strong>déclarer sa flamme</strong>. On raffolait des salons où l'on parle de poésie et de littérature.</p>",      
+      "short": "Galanterie",
+      "interaction": "Presse le vaporisateur de parfum, les lettres ne vont pas s'écrire toutes seules.",
+      "reinitialisation": "Système réinitialisé. 3,1 L d'encre viennent d'être utilisés pour produire 4262 mots.",
+      "summary": "<p>La galanterie apparaît. Les codes changent et la séduction devient quelque chose de plus léger et moins dramatique. La femme commence à être davantage considérée.</p>",
+      "catchphrase": "En catchana baby tu dead ça",
+      "description": "<p>C’est à partir du XVIIème siècle que la <strong>galanterie</strong> fait son apparition. Les codes changent et deviennent plus légers et moins dramatiques que ceux de la courtoisie.</p> <p>La femme, au centre des échanges galants, commence à être davantage considérée. Les histoires d'amour laissent plus de place aux sentiments, à la sincérité, au désir et à la jalousie…</p> <p>C’est aussi l’époque des <strong>relations épistolaires</strong>. On s'écrivait, on faisait des vers et des rimes pour <strong>déclarer sa flamme</strong>.  On raffolait des salons où l'on parle de poésie et de littérature.</p>      ",
       "symbols": [
         {
           "name": "Parfum",
           "description": "Il était courant de parfumer ses lettres avant de les envoyer à l’être aimé."
+        },
+        {
+          "name": "Salons",
+          "description": "Les salons étaient très appréciés des femmes où l'on y parlait littérature mais pas que..."
         }
       ]
     },
@@ -60,7 +72,11 @@
       "name": "Les Lumières",
       "date": "1715 - 1789",
       "short": "Faire la cour",
-      "description": "<p>Le XVIIIème siècle va <strong>théâtraliser la séduction amoureuse</strong>. L’utilisation des décorations à l'excès, comme les mouches, les coiffures pimpées et la poudre blanche est un bel exemple. Les tenues sont plus excentriques. <strong>C’est le Siècle des Lumières, on ose beaucoup plus de choses !</strong></strong></p><p>Les mœurs se sont progressivement libérées et les hommes s'essaient au <strong>libertinage</strong> (quand ce n’est pas la grosse débauche comme à la cour de Louis XV). On ose exprimer son désir charnel.</p><p><strong>Faire la cour</strong> était une activité milimétrée. L'homme avait à sa disposition tout un tas de de règles: servir sa dame, multiplier les petites attentions, faire des compliments, savoir manier les mots... pour parvenir à ses fins.</p>",
+      "interaction": "Baisse le levier pour déployer le paon.",
+      "reinitialisation": "Système réinitialisé. Les éventails sont agités à une vitesse moyenne de 3 km/h.",
+      "summary": "<p>Les moeurs se sont libérées et la séduction devient un jeu théatral poussé à l'excès. On se coiffe, on s'habille, on se maquille... tout est bon pour se faire remarquer par son prétendant !</p>",
+      "catchphrase": "En catchana baby tu dead ça",
+      "description": "<p>Le XVIIIème siècle va <strong>théâtraliser la séduction amoureuse</strong>. L’utilisation des décorations à l'excès, comme les mouches, les coiffures pimpées et la poudre blanche est un bel exemple. Les tenues sont plus excentriques. <strong>C’est le Siècle des Lumières, on ose beaucoup plus de choses !</strong></p> <p>Les mœurs se sont progressivement libérées et les hommes s'essaient au libertinage (quand ce n’est pas la grosse débauche comme à la cour de Louis XV). On ose exprimer son désir charnel.</p> <p><strong>Faire la cour</strong> était une activité milimétrée. L'homme avait à sa disposition tout un tas de de règles: servir sa dame, multiplier les petites attentions, faire des compliments, savoir manier les mots... pour parvenir à ses fins.</p>",
       "symbols": [
         {
           "name": "Peacocking",
@@ -71,8 +87,76 @@
           "description": "L'Eventail est un véritable langage de société dont tous les mouvements sont codifiés. Selon ses positions et ses orientations il pouvait exprimer l’amour, l’indifférence, le dédain ou la jalousie."
         },
         {
-          "name": "Bel Masqué",
+          "name": "Bal Masqué",
           "description": "La cour du roi aimait s'amuser. Une des soirée préférée était les bals masqués et un vrai contexte érotique propice à la séduction."
+        }
+      ]
+    },
+    {
+      "name": "Belle Epoque",
+      "date": "1800 - 1950",
+      "short": "Flirt",
+      "interaction": "Actionne le bras du bandit-manchos.",
+      "reinitialisation": "Système réinitialisé. 146 petites annonces sont en attentes de publication.",
+      "summary": "<p>Après la Révolution française, les rapports homme / femme deviennent plus égalitaires. Mais la Première Guerre mondiale va marquer un tounant dans l'histoire de la séduction, faisant  émerger de nouveaux types de relations.</p>",
+      "catchphrase": "En catchana baby tu dead ça",
+      "description": "<p>Après la Révolution française, on observe des rapports peu à peu plus égalitaires entre les deux sexes, dans lesquels l'union amoureuse nécessite l’accord des deux parties. Les gens font ce qui leur plaît : de plus en plus, ils se choisissent en fonction de leurs désirs, de leurs attractions passionnelles. <strong>C'est le siècle du Romantisme, on explore la profondeur des sentiments.</strong></p> <p>En parallèle le <strong>flirt</strong>, venu des Anglo-Saxons, accorde une nouvelle liberté aux jeunes filles qui deviennent un peu plus entreprenantes. Toutefois, il ne fallait pas se permettre plus qu'un tendre effleurement ou un chaste baiser.</p> <p>Le XIXe siècle est aussi celui de la naissance du concept de la <strong>virilité</strong>. De nouvelles figures masculines apparaîssent telles que le militaire ou le sportif coureur de jupons.</p> <p>Plus tard, l'entre-deux guerres est une <strong>période contrastée</strong>, où la séduction prend place dans une société transformée. <strong>Les plus âgés cherchent à tourner la page de leur partenaire perdu au combat. Pour les jeunes, séduire, c'est s'amuser pour se changer les esprits face à la crise économique omniprésente. </strong></p>",
+      "symbols": [
+        {
+          "name": "Petites annonces",
+          "description": "Le journal Le Chasseur français a publié pas moins de 450 000 petites annonces. Des parents cherchant à marier leur fille, à la jeune femme cherchant un homme très très riche en passant par des divorcés ou blessés de guerres, ces petites annonces étaient un vrai reflet des moeurs de la société."
+        },
+        {
+          "name": "Agence matrimoniale",
+          "description": "La première agence matrimoniale a été créée en 1825 par un aristocrate nommé M. de Foy. Le fonctionnement était simple : il suffisait de s'inscrire sur ses registres et de laisser agir le directeur. Et si le mariage aboutissait, l’agence se réservait 5% de la dot."
+        },
+        {
+          "name": "Rallye",
+          "description": "Les premiers rallyes apparaissent au début du XXe siècle, organisés par quelques mères de la très bonne société ayant chacune une fille à marier. Ils apparaissent en conséquences aux mariages arrangés, qui deviennent de plus en plus difficiles à imposer."
+        }
+      ]
+    },
+    {
+      "name": "Moderne",
+      "date": "1950 - 2000",
+      "short": "Drague",
+      "interaction": "Tourne la manivelle pour commencer la production.",
+      "reinitialisation": "Système réinitialisé. 2538 personnes sont connectés sur le chat du Minitel.",
+      "summary": "<p>La société évolue et se modernise. Les lieux de rencontre mixtes se multiplient et les avancées tehnologies rendent la drague plus facile ! Mais surtout, la révolution sexuelle permet à la femme d'être libre et de pouvoir pour la première fois être actrice de la séduction.</p>",
+      "catchphrase": "En catchana baby tu dead ça",
+      "description": "<p>Au début du XXème siècle, le <strong>date</strong> (rendez-vous amoureux) venu d’Amérique vient remplacer le bal. On organise des dates au bowling, dans un café ou au cinéma. L’arrivée de l’automobile permet aussi de s’isoler : avant on courtisait à domicile. Désormais on sort sa conquête et on s’affiche en public !</p> <p>Des lieux de rencontre sont apparus tout au long du siècle (mixité dans les classes, clubs de vacances, boums...) et ont accéléré l’apparition de la <strong>drague</strong>. A l'image des speed-dating: on multiplie les conquêtes ! Et on exploite les technologies nouvelles : on échange son numéro de téléphone, on tchat sur Minitel et on se rencontre en ligne. </p><p>Mais l’apparition de la drague est surtout liée à la <strong>libération de la femme</strong>, sexuellement grâce à la pilule, mais aussi à une plus grande tolérance de sa vie sentimentale. Pour la première fois, la conquête amoureuse n’est plus réservée aux hommes.</p>",
+      "symbols": [
+        {
+          "name": "Petites annonces",
+          "description": "Le journal Le Chasseur français a publié pas moins de 450 000 petites annonces. Des parents cherchant à marier leur fille, à la jeune femme cherchant un homme très très riche en passant par des divorcés ou blessés de guerres, ces petites annonces étaient un vrai reflet des moeurs de la société."
+        },
+        {
+          "name": "Agence matrimoniale",
+          "description": "La première agence matrimoniale a été créée en 1825 par un aristocrate nommé M. de Foy. Le fonctionnement était simple : il suffisait de s'inscrire sur ses registres et de laisser agir le directeur. Et si le mariage aboutissait, l’agence se réservait 5% de la dot."
+        },
+        {
+          "name": "Rallye",
+          "description": "Les premiers rallyes apparaissent au début du XXe siècle, organisés par quelques mères de la très bonne société ayant chacune une fille à marier. Ils apparaissent en conséquences aux mariages arrangés, qui deviennent de plus en plus difficiles à imposer."
+        }
+      ]
+    },
+    {
+      "name": "Contemporain",
+      "date": "2000+",
+      "short": "Match",
+      "interaction": "Mouline pour transformer les aubergines.",
+      "reinitialisation": "Système réinitialisé. 16 074 personnes ont swippé à droite sur Tinder.",
+      "summary": "<p>La séduction est aujourd'hui mobile : l'omniprésence et la spécificité des apps de rencontre permettent la multiplication des rencontres.</p>",
+      "catchphrase": "En catchana baby tu dead ça",
+      "description": "<p>C'est aujourd'hui les <strong>applications mobiles</strong> qui dominent le marché de la rencontre amoureuse. Pour draguer, il suffit de tapoter sur son smartphone ! Ces apps sont d'ailleurs de plus en plus performantes et de plus en plus spécifiques : algorithmes, filtres, géolocalisation... Tout est fait pour nous rendre plus exigeant. Liker et matcher sont ainsi devenus des actes de séduction à part entiers.</p> <p>Dans cette société de consommation, la rencontre devient alors un bien facilement accessible qu'il faut consommer rapidement. Le Romantisme laisse ainsi place aux <strong>relations fast food</strong> : des liaisons légères sans engagement sur le long terme.",
+      "symbols": [
+        {
+          "name": "Télé-réalité",
+          "description": "La séduction est extrêmement présente à la télévision, notamment dans les émissions de télé-réalité qui ont utilisé la drague et la rencontre amoureuse à toutes les sauces : Tournez Manège, l'Amour est dans le Pré, Qui veut épouser mon fils, Le Bachelor, L'Île de la tentation, l'Amour est Aveugle, Les Princes de l'Amour... Il y en a pour tous les goûts."
+        },
+        {
+          "name": "Netflix & Chill",
+          "description": "L'expression Netflix and Chill qui s'est popularisée à l'aide de Twitter en 2014 n'est en fait pas si innocente... Vous allez regarder Netflix tous les deux... et plus si affinité."
         }
       ]
     }

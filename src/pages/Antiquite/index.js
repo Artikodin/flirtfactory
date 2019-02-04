@@ -38,6 +38,7 @@ class Antiquite extends React.Component {
                         yPos="200px"
                         index
                       >
+                        <Markup content={value.epoques[agenbr].date} />
                         <Markup content={value.epoques[agenbr].description} />
                       </GenericTag>
                       <GenericTag

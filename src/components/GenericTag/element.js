@@ -89,6 +89,7 @@ export const IconContainer = styled.div`
   }
 `;
 
-export const Icon = styled.img`
+export const Icon = styled.svg`
   height: 60%;
+  fill: #7080B2;
 `;
