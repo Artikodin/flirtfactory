@@ -16,11 +16,12 @@ class Antiquite extends React.Component {
   state = {
     agestr: "antiquite",
     agenbr: 0, // antiquite
-    frameTotal: 54
+    frameTotal: 54,
+    waitFor: 4000 // sec
   };
 
   render() {
-    const { agestr, agenbr, frameTotal } = this.state;
+    const { agestr, agenbr, frameTotal, waitFor } = this.state;
     return (
       <Page>
         <ButtonIA />
@@ -80,6 +81,7 @@ class Antiquite extends React.Component {
                       increaseVideo={() => updateVideo(agestr)}
                       age={agestr}
                       frameTotal={frameTotal}
+                      waitFor={waitFor}
                       pathDraw="M 450 150 C 350 200 450 250 350 300"
                       top="25%"
                       left="65%"

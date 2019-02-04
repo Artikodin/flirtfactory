@@ -16,11 +16,12 @@ class MoyenAge extends React.Component {
   state = {
     agestr: "moyenage",
     agenbr: 1, // moyenage
-    frameTotal: 93
+    frameTotal: 93,
+    waitFor: 4000 // sec
   };
 
   render() {
-    const { agestr, agenbr, frameTotal } = this.state;
+    const { agestr, agenbr, frameTotal, waitFor } = this.state;
     return (
       <Page>
         <ButtonIA />
@@ -29,16 +30,16 @@ class MoyenAge extends React.Component {
             <ProgressContext.Consumer>
               {({ ages, selectAges, agesvid, updateVideo }) => (
                 <>
-                  <GenericTag
-                    title={value.epoques[agenbr].name}
-                    xPos="200px"
-                    yPos="200px"
-                    index
-                  >
-                    <Markup content={value.epoques[agenbr].description} />
-                  </GenericTag>
                   {ages.moyenage && (
                     <>
+                      <GenericTag
+                        title={value.epoques[agenbr].name}
+                        xPos="200px"
+                        yPos="200px"
+                        index
+                      >
+                        <Markup content={value.epoques[agenbr].description} />
+                      </GenericTag>
                       <GenericTag
                         title={value.epoques[agenbr].symbols[0].name}
                         xPos="800px"
@@ -80,6 +81,7 @@ class MoyenAge extends React.Component {
                       increaseVideo={() => updateVideo(agestr)}
                       age={agestr}
                       frameTotal={frameTotal}
+                      waitFor={waitFor}
                       pathDraw="M 450 450 A 50 50 0 1 1 450 300"
                       top="60%"
                       left="10%"

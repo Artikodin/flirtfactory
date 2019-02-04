@@ -30,8 +30,30 @@ export const CatchphraseContainer = styled.div`
 
   .catchphrase--img {
     img {
+      max-height: 200px;
       height: 100%;
       border-radius: 50%;
     }
+  }
+
+  .catchphrase--catchphrase {
+    font-family: GTCinetype;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+  }
+
+  .catchphrase--catchphrase {
+    font-family: GTCinetype;
+    font-size: 40px;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    color: #ffffff;
   }
 `;

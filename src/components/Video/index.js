@@ -5,22 +5,26 @@ import PropTypes from "prop-types";
 class Video extends React.Component {
   static propTypes = {
     path: PropTypes.string,
-    number: PropTypes.number
+    number: PropTypes.number,
+    increaseVideo: PropTypes.func
   };
 
   static defaultProps = {
     path: "",
-    number: 1
+    number: 1,
+    increaseVideo: () => {}
   };
 
   constructor(props) {
     super(props);
-    this.state = { videoLoaded: "loading" };
   }
 
   loadVideo = () => {
-    this.setState({ videoLoaded: "loaded" });
-  };
+  }
+
+  ended = () => {
+    alert("video over")
+  }
 
   render() {
     const { path, number, increaseVideo } = this.props;
@@ -32,7 +36,7 @@ class Video extends React.Component {
           type="video/mp4"
           autoPlay
           playsInline
-          loop
+          // loop
           muted
           onCanPlay={this.loadVideo}
         />

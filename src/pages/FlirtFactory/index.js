@@ -13,7 +13,7 @@ class FlirtFactory extends React.Component {
     age: "flirtfactory",
     number: 1,
     json: 0,
-    showed: false
+    showed: true
   };
 
   displayCatchphrase = param => {

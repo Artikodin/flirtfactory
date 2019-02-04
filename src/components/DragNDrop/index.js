@@ -29,6 +29,7 @@ class DragNDrop extends React.Component {
 
   static propTypes = {
     display: PropTypes.bool,
+    waited: PropTypes.bool,
     pathDraw: PropTypes.string,
     left: PropTypes.string,
     top: PropTypes.string,
@@ -41,6 +42,7 @@ class DragNDrop extends React.Component {
 
   static defaultProps = {
     display: true,
+    waited: true,
     pathDraw: "M 150 300 L 350 300",
     left: "0",
     top: "0",
@@ -215,13 +217,14 @@ class DragNDrop extends React.Component {
   };
 
   render() {
-    const { pathDraw, height, width, top, left, display } = this.props;
+    const { pathDraw, height, width, top, left, display, waited } = this.props;
     const { elStart, elEnd } = this.state;
     return (
       <>
         <Svg
           ref={this.svgRef}
-          className={display ? "dragndrop--hide" : ""}
+          // className={display ? "dragndrop--hide" : ""}
+          className={waited || display ? "dragndrop--hide" : ""}
           version="1.1"
           baseProfile="full"
           width={height}

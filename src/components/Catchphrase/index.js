@@ -37,6 +37,9 @@ class Catchphrase extends React.Component {
                   <div className="catchphrase--summary">
                     <Markup content={value.epoques[json].summary} />
                   </div>
+                  <div className="catchphrase--catchphrase">
+                    <Markup content={value.epoques[json].catchphrase} />
+                  </div>
                 </CatchphraseContainer>
               </CatchphraseWrapper>
             )}
