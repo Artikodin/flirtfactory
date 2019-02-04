@@ -13,7 +13,8 @@ export const Wrapper = styled.li`
   &:hover img {
     transform: translate3d(0, 0, 0) scale(1);
     opacity: 1;
-    margin-right: 1px;
+    /* margin-right: 1px; */
+    position: absolute;
   }
   &:hover span {
     opacity: 1;
@@ -35,11 +36,11 @@ export const TextContainer = styled.span`
 export const ImgContainer = styled.img`
   z-index: 11;
   display: block;
-  width: 100%;
-  bottom: 45px;
+  width: calc(100% - 2px);
+  bottom: 40px;
   border: 1px solid #fff;
   margin-bottom: -1px;
-  transform: translate3d(0, 0, 0) scale(0);
+  transform: translate3d(0, 5px, 0) scale(0);
   opacity: 0;
   transition: all 0.25s ease;
   transform-origin: bottom center;
