@@ -15,6 +15,7 @@ export { default as EndingButton } from "./EndingButton";
 export { default as GenericTag } from "./GenericTag";
 export { default as InteractionDragAndDrop } from "./InteractionDragAndDrop";
 export { default as Logo } from "./Logo";
+export { default as Picto } from "./Picto";
 export { default as MagneticButton } from "./MagneticButton";
 export { default as NavBar } from "./NavBar";
 export { default as Page } from "./Page";

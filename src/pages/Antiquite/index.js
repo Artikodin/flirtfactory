@@ -17,7 +17,7 @@ class Antiquite extends React.Component {
     agestr: "antiquite",
     agenbr: 0, // antiquite
     frameTotal: 54,
-    waitFor: 2000 // sec
+    waitFor: 0 // sec
   };
 
   render() {
@@ -37,13 +37,16 @@ class Antiquite extends React.Component {
                         xPos="200px"
                         yPos="200px"
                         index
+                        age={agestr}
+                        pictonumber={0}
                       >
                         <Markup content={value.epoques[agenbr].date} />
                         <Markup content={value.epoques[agenbr].description} />
                       </GenericTag>
                       <GenericTag
                         title={value.epoques[agenbr].symbols[0].name}
-                        picto={`${agestr}${0}`}
+                        age={agestr}
+                        pictonumber={0}
                         xPos="500px"
                         yPos="200px"
                       >
@@ -53,7 +56,8 @@ class Antiquite extends React.Component {
                       </GenericTag>
                       <GenericTag
                         title={value.epoques[agenbr].symbols[1].name}
-                        picto={`${agestr}${1}`}
+                        age={agestr}
+                        pictonumber={1}
                         xPos="800px"
                         yPos="100px"
                       >
@@ -63,7 +67,8 @@ class Antiquite extends React.Component {
                       </GenericTag>
                       <GenericTag
                         title={value.epoques[agenbr].symbols[2].name}
-                        picto={`${agestr}${2}`}
+                        age={agestr}
+                        pictonumber={2}
                         xPos="500px"
                         yPos="700px"
                       >

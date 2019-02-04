@@ -13,6 +13,8 @@ import {
   IconContainer
 } from "./element";
 
+import { Picto } from "..";
+
 class GenericTag extends React.Component {
   state = {
     showed: false
@@ -29,7 +31,8 @@ class GenericTag extends React.Component {
     xPos: PropTypes.string,
     yPos: PropTypes.string,
     catchphrase: PropTypes.func,
-    picto: PropTypes.string
+    age: PropTypes.string,
+    pictonumber: PropTypes.number
   };
 
   static defaultProps = {
@@ -38,7 +41,8 @@ class GenericTag extends React.Component {
     ease: 0.09,
     children: "",
     title: "",
-    picto: "",
+    age: "",
+    pictonumber: 1,
     index: false,
     global: false,
     xPos: "0px",
@@ -138,7 +142,6 @@ class GenericTag extends React.Component {
 
     if (this.isVisible) {
       if (!this.show) {
-        console.log("visible");
         this.show = true;
         this.magnet.current.style.opacity = `
         1
@@ -147,10 +150,9 @@ class GenericTag extends React.Component {
     } else {
       // eslint-disable-next-line no-lonely-if
       if (this.show) {
-        console.log("hidden");
         this.show = false;
         this.magnet.current.style.opacity = `
-          0.5
+          0.1
         `;
       }
     }
@@ -190,11 +192,12 @@ class GenericTag extends React.Component {
       index,
       global,
       catchphrase,
-      picto
+      age,
+      pictonumber
     } = this.props;
     const { showed } = this.state;
-    const src =
-      index === true ? "./assets/ui/Index.svg" : `./assets/ui/${picto}.svg`;
+    // const src =
+    //   index === true ? "./assets/ui/Index.svg" : `./assets/ui/${picto}.svg`;
     // const src = index === true ? "./assets/ui/Index.svg" : "./assets/ui/+.svg";
     return (
       <GlobalContainer ref={this.magnet} xPos={xPos} yPos={yPos}>
@@ -205,7 +208,7 @@ class GenericTag extends React.Component {
           onClick={catchphrase}
         >
           <IconContainer>
-            <Icon src={src} alt="" />
+            <Picto age={age} pictonumber={pictonumber} index={index} />
           </IconContainer>
           <AnimatedTitle>{title}</AnimatedTitle>
           <AnimatedContainer className={global ? "hide" : ""}>
