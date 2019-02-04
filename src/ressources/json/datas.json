@@ -127,16 +127,16 @@
       "description": "<p>Au début du XXème siècle, le <strong>date</strong> (rendez-vous amoureux) venu d’Amérique vient remplacer le bal. On organise des dates au bowling, dans un café ou au cinéma. L’arrivée de l’automobile permet aussi de s’isoler : avant on courtisait à domicile. Désormais on sort sa conquête et on s’affiche en public !</p> <p>Des lieux de rencontre sont apparus tout au long du siècle (mixité dans les classes, clubs de vacances, boums...) et ont accéléré l’apparition de la <strong>drague</strong>. A l'image des speed-dating: on multiplie les conquêtes ! Et on exploite les technologies nouvelles : on échange son numéro de téléphone, on tchat sur Minitel et on se rencontre en ligne. </p><p>Mais l’apparition de la drague est surtout liée à la <strong>libération de la femme</strong>, sexuellement grâce à la pilule, mais aussi à une plus grande tolérance de sa vie sentimentale. Pour la première fois, la conquête amoureuse n’est plus réservée aux hommes.</p>",
       "symbols": [
         {
-          "name": "Petites annonces",
-          "description": "Le journal Le Chasseur français a publié pas moins de 450 000 petites annonces. Des parents cherchant à marier leur fille, à la jeune femme cherchant un homme très très riche en passant par des divorcés ou blessés de guerres, ces petites annonces étaient un vrai reflet des moeurs de la société."
+          "name": "3615 Minitel",
+          "description": "3615 Minitel: c'est le numéro qu’il fallait entrer pour accéder au premier chat en ligne créé par le Minitel. En 1990, les messageries roses représentent 50% des appels du Minitel. En 1986, les utilisateurs du 3615 sur Minitel passent en moyenne 1 heure par jour à draguer."
         },
         {
-          "name": "Agence matrimoniale",
-          "description": "La première agence matrimoniale a été créée en 1825 par un aristocrate nommé M. de Foy. Le fonctionnement était simple : il suffisait de s'inscrire sur ses registres et de laisser agir le directeur. Et si le mariage aboutissait, l’agence se réservait 5% de la dot."
+          "name": "Sites de rencontre",
+          "description": "Les sites de rencontre, nés aux Etats-Unis, sont apparus en France début 1997 avec Netclub. Ils se sont popularisés grâce à la publicité des médias et ont séduit un public de plus en plus important. Ils sont par la suite devenus de plus en plus ciblées: rencontres pour catholiques, rencontres entre riches, rencontres extra-conjugales, rencontre pour végétariens...."
         },
         {
-          "name": "Rallye",
-          "description": "Les premiers rallyes apparaissent au début du XXe siècle, organisés par quelques mères de la très bonne société ayant chacune une fille à marier. Ils apparaissent en conséquences aux mariages arrangés, qui deviennent de plus en plus difficiles à imposer."
+          "name": "Speed dating",
+          "description": "Le premier speed dating a eu lieu au Peet's Café de Beverly Hills en 1998. Ce concept innovant inspiré du jeu des « chaises musicales », dure à l'origine 7 minutes, avec 7 hommes et 7 femmes. Selon une étude, c’est en seulement 30 secondes d'interaction que 45% des femmes et 22% des hommes font leurs choix."
         }
       ]
     },

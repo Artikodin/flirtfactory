@@ -43,7 +43,7 @@ class Antiquite extends React.Component {
                       </GenericTag>
                       <GenericTag
                         title={value.epoques[agenbr].symbols[0].name}
-                        picto={value.epoques[agenbr].symbols[0].name}
+                        picto={`${agestr}${0}`}
                         xPos="500px"
                         yPos="200px"
                       >
@@ -53,7 +53,7 @@ class Antiquite extends React.Component {
                       </GenericTag>
                       <GenericTag
                         title={value.epoques[agenbr].symbols[1].name}
-                        picto={value.epoques[agenbr].symbols[1].name}
+                        picto={`${agestr}${1}`}
                         xPos="800px"
                         yPos="100px"
                       >
@@ -63,7 +63,7 @@ class Antiquite extends React.Component {
                       </GenericTag>
                       <GenericTag
                         title={value.epoques[agenbr].symbols[2].name}
-                        picto={value.epoques[agenbr].symbols[2].name}
+                        picto={`${agestr}${2}`}
                         xPos="500px"
                         yPos="700px"
                       >
