@@ -78,7 +78,7 @@ class SyncDragAndDrop extends React.Component {
       this.nextFrame = Math.round((frameTotal / 400) * xPos);
       if (this.nextFrame !== frame) {
         updateFrame(this.nextFrame);
-        if (xPos === 400 && this.locked) {
+        if (xPos > 390 && this.locked) {
           this.next();
           this.locked = false;
         }
