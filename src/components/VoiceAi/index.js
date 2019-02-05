@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import posed from "react-pose";
 
 import { Wrapper } from "./element";
 
@@ -11,6 +12,7 @@ class VoiceAi extends React.Component {
   dragCircle = React.createRef();
 
   state = {
+    isVisible: true,
     elStart: {
       x: 0,
       y: 0
@@ -34,17 +36,15 @@ class VoiceAi extends React.Component {
   once = false;
 
   static propTypes = {
-    pathDraw: PropTypes.string,
     handleDragStart: PropTypes.func,
-    handleAnswer: PropTypes.func,
-    handleHangUp: PropTypes.func
+    onAnswer: PropTypes.func,
+    onHangUp: PropTypes.func
   };
 
   static defaultProps = {
-    pathDraw: "M 30 22 L 270 22",
     handleDragStart: () => {},
-    handleAnswer: () => {},
-    handleHangUp: () => {}
+    onAnswer: () => {},
+    onHangUp: () => {}
   };
 
   componentDidMount() {
@@ -175,8 +175,19 @@ class VoiceAi extends React.Component {
     this.moveStar();
   };
 
+  handleAnswer = () => {
+    const { onAnswer } = this.props;
+    this.setState({ isVisible: false });
+    onAnswer();
+  };
+
+  handleHangUp = () => {
+    const { onHangUp } = this.props;
+    this.setState({ isVisible: false });
+    onHangUp();
+  };
+
   moveStar = () => {
-    const { handleAnswer, handleHangUp } = this.props;
     const { elCenter } = this.state;
 
     const ease = 0.07;
@@ -213,21 +224,20 @@ class VoiceAi extends React.Component {
     }
 
     if (this.auMillieme(this.deltaDrag) === 1 && !this.once) {
-      handleAnswer();
+      this.handleAnswer();
       this.once = true;
     }
     if (this.auMillieme(this.deltaDrag) === 0 && !this.once) {
-      handleHangUp();
+      this.handleHangUp();
       this.once = true;
     }
   };
 
   render() {
-    const { pathDraw } = this.props;
-    const { elCenter } = this.state;
+    const { elCenter, isVisible } = this.state;
     return (
       <>
-        <Wrapper>
+        <WrapperAnimated pose={isVisible ? "visible" : "hidden"}>
           <svg
             ref={this.svgRef}
             version="1.1"
@@ -238,7 +248,7 @@ class VoiceAi extends React.Component {
           >
             <path
               ref={this.path}
-              d={pathDraw}
+              d="M 30 22 L 270 22"
               fill="transparent"
               stroke="white"
               strokeWidth="1"
@@ -269,10 +279,23 @@ class VoiceAi extends React.Component {
               onMouseDown={() => this.handleDragStart()}
             />
           </svg>
-        </Wrapper>
+        </WrapperAnimated>
       </>
     );
   }
 }
+
+const WrapperAnimated = posed(Wrapper)({
+  visible: {
+    opacity: 1,
+    scaleX: 1,
+    transition: { duration: 350 }
+  },
+  hidden: {
+    opacity: 0,
+    scaleX: 0,
+    transition: { duration: 350 }
+  }
+});
 
 export default VoiceAi;
