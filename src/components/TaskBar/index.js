@@ -12,18 +12,20 @@ import { TaskBarWrapper, TaskBarContainer } from "./element";
 class TaskBar extends React.Component {
   static propTypes = {
     age: PropTypes.string,
-    datas: PropTypes.object
+    datas: PropTypes.object,
+    progress: PropTypes.array
   };
 
   static defaultProps = {
     age: "",
-    datas: {}
+    datas: {},
+    progress: []
   };
 
   state = {};
 
   render() {
-    const { age, datas } = this.props;
+    const { age, datas, progress } = this.props;
     return (
       <TaskBarWrapper>
         <TaskBarContainer>
@@ -31,7 +33,7 @@ class TaskBar extends React.Component {
           <IndexTag title={datas.name} age={age}>
             <Markup content={datas.description} />
           </IndexTag>
-          <HeartCounter />
+          <HeartCounter progress={progress} />
         </TaskBarContainer>
       </TaskBarWrapper>
     );

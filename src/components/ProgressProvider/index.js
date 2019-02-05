@@ -26,7 +26,8 @@ export const ProgressContext = React.createContext({
   ages,
   unlockAll,
   selectAges: () => {},
-  updateVideo: () => {}
+  updateVideo: () => {},
+  unlockPoints: () => {}
 });
 
 class ProgressProvider extends React.Component {
@@ -65,7 +66,12 @@ class ProgressProvider extends React.Component {
         ...prevState.ages,
         [age]: {
           ...prevState.ages[age],
-          [points.number]: true
+          points: [...prevState.ages[age].points].map((point, index) => {
+            if (index === number) {
+              return true
+            }
+            return point
+          })
         }
       }
     }));
@@ -73,9 +79,9 @@ class ProgressProvider extends React.Component {
 
   state = {
     ages: ages,
-    unlockAll: false,
     selectAges: this.selectAges,
-    updateVideo: this.updateVideo
+    updateVideo: this.updateVideo,
+    unlockPoints: this.unlockPoints
   };
   /* eslint-enable */
 

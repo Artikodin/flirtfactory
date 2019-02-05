@@ -29,11 +29,16 @@ class Antiquite extends React.Component {
             <ProgressContext.Consumer>
               {({ ages, selectAges, updateVideo, unlockPoints }) => (
                 <>
-                  <TaskBar age={agestr} datas={value.epoques[agenbr]} />
+                  <TaskBar
+                    progress={ages.antiquite.points}
+                    age={agestr}
+                    datas={value.epoques[agenbr]}
+                  />
                   {ages.antiquite.lock && (
                     <>
                       <GenericTag
-                        increaseVideo={() => unlockPoints(agestr)}
+                        lock={ages.antiquite.points[0]}
+                        unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         age={agestr}
                         pictonumber={0}
@@ -45,6 +50,8 @@ class Antiquite extends React.Component {
                         />
                       </GenericTag>
                       <GenericTag
+                        unlocked={ages.antiquite.points[1]}
+                        unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
                         age={agestr}
                         pictonumber={1}
@@ -56,6 +63,8 @@ class Antiquite extends React.Component {
                         />
                       </GenericTag>
                       <GenericTag
+                        lock={ages.antiquite.points[2]}
+                        unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         age={agestr}
                         pictonumber={2}

@@ -62,6 +62,10 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
+
+  .interestpoint__show {
+    opacity: 1 !important;
+  }
   
   .background__canvas {
     img {

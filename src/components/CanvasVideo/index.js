@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 
 const CanvasVideo = ({ age, frame, show }) => (
   <div className="background background__canvas">
-    {/* <div style={ { backgroundImage: `url(./assets/frames/${age}/${age}${frame}.jpg)` } }> */}
     <img
       style={show ? { opacity: 1 } : { opacity: 0 }}
       src={`./assets/frames/${age}/${age}${frame}.jpg`}

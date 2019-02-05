@@ -1,11 +1,31 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { HeartCounterContainer } from "./element";
 
 /* eslint-disable */
 
 class HeartCounter extends React.Component {
+  static propTypes = {
+    progress: PropTypes.array
+  };
+
+  static defaultProps = {
+    progress: []
+  };
+
+  state = {
+    progression: 0
+  };
+
   render() {
+    let { progression } = this.state;
+    const { progress } = this.props;
+    progress.forEach(function(point) {
+      if (point) {
+        progression = progression+1
+      }
+    });
     return (
       <HeartCounterContainer>
         <svg viewBox="0 0 25 25">
@@ -15,7 +35,7 @@ class HeartCounter extends React.Component {
           />
         </svg>
         <p>
-          1 / 3
+          {progression} / 3
         </p>
       </HeartCounterContainer>
     );

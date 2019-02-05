@@ -8,8 +8,7 @@ export const GlobalContainer = styled.div`
   top: ${({ yPos }) => yPos};
   left: ${({ xPos }) => xPos};
 
-  opacity: 0.5;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.5s ease;
 `;
 
 export const Wrapper = styled.div`

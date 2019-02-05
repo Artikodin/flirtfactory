@@ -30,6 +30,8 @@ class GenericTag extends React.Component {
     xPos: PropTypes.string,
     yPos: PropTypes.string,
     catchphrase: PropTypes.func,
+    unlocked: PropTypes.bool,
+    unlockPoint: PropTypes.func,
     age: PropTypes.string,
     pictonumber: PropTypes.number
   };
@@ -42,11 +44,13 @@ class GenericTag extends React.Component {
     title: "",
     age: "",
     pictonumber: 1,
+    unlocked: false,
     index: false,
     global: false,
     xPos: "0px",
     yPos: "0px",
-    catchphrase: () => {}
+    catchphrase: () => {},
+    unlockPoint: () => {}
   };
 
   magnet = React.createRef();
@@ -149,7 +153,7 @@ class GenericTag extends React.Component {
     } else {
       // eslint-disable-next-line no-lonely-if
       if (this.show) {
-        this.show = false;
+        this.show = true;
         this.magnet.current.style.opacity = `
           0.1
         `;
@@ -171,6 +175,8 @@ class GenericTag extends React.Component {
   };
 
   handleMouseEnter = () => {
+    const { unlockPoint } = this.props;
+    unlockPoint();
     this.setState({
       showed: true
     });
