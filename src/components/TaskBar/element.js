@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const TaskBarWrapper = styled.div`
+  width: 400px;
   position: absolute;
   width: fit-content;
   height: auto;

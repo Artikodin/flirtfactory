@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HeartCounterContainer = styled.div`
   display: inline-block;
   position: relative;
+  margin-right: 0;
   box-sizing: border-box;
   z-index: 5;
   opacity: 1;

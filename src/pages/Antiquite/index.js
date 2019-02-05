@@ -27,12 +27,13 @@ class Antiquite extends React.Component {
         <TextContext.Consumer>
           {value => (
             <ProgressContext.Consumer>
-              {({ ages, selectAges, updateVideo }) => (
+              {({ ages, selectAges, updateVideo, unlockPoints }) => (
                 <>
                   <TaskBar age={agestr} datas={value.epoques[agenbr]} />
                   {ages.antiquite.lock && (
                     <>
                       <GenericTag
+                        increaseVideo={() => unlockPoints(agestr)}
                         title={value.epoques[agenbr].symbols[0].name}
                         age={agestr}
                         pictonumber={0}

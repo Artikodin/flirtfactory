@@ -70,9 +70,10 @@ class IndexTag extends React.Component {
 }
 
 const AnimatedWrapper = posed(Wrapper)({
-  isClose: { width: 45, delay: 280 },
+  isClose: { width: 45, height: 45, delay: 280 },
   isOpen: {
-    width: 300
+    width: 300,
+    height: "auto"
   }
 });
 
