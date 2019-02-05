@@ -27,7 +27,7 @@ class FlirtFactory extends React.Component {
   render() {
     const { age, number, showed, json } = this.state;
     return (
-      <Page>
+      <Page navbar={false}>
         <ButtonIA />
         <div id="globalview--question">
           <h2>A quelle époque aurais-tu voulu séduire ?</h2>
