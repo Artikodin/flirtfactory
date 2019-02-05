@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Svg = styled.svg`
+export const Wrapper = styled.div`
   visibility: visible;
   opacity: 1;
   transition: all 1s ease-out;
@@ -9,6 +9,7 @@ export const Svg = styled.svg`
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   z-index: 10;
-  top: ${({ top }) => top};
-  left: ${({ left }) => left};
+  border: solid 1px white;
+  height: 45px;
+  width: 300px;
 `;
