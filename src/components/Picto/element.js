@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
 export const Svg = styled.svg`
-  height: 100%;
+  width: 20px;
+  height: 20px;
+  path {
+    fill: white;
+  }
 `;

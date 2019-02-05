@@ -1,12 +1,7 @@
 import React from "react";
-// import posed from "react-pose";
 import PropTypes from "prop-types";
 
-// import PropTypes from "prop-types";
-
 import { DragNDrop } from "..";
-
-// import { DragAndDropContainer, Round } from "./element";
 
 class SyncDragAndDrop extends React.Component {
   static propTypes = {

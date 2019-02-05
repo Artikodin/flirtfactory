@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import text from "../../ressources/json/datas.json";
 
 export const TextContext = React.createContext();
-
+console.log(text);
 const TextProvider = ({ children }) => (
   <TextContext.Provider value={text}>{children}</TextContext.Provider>
 );

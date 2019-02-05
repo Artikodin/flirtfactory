@@ -4,8 +4,16 @@ import PropTypes from "prop-types";
 const unlockAll = false;
 
 const ages = {
-  antiquite: false,
-  moyenage: false,
+  antiquite: {
+    lock: false,
+    video: 1,
+    points: [false, false, false]
+  },
+  moyenage: {
+    lock: false,
+    video: 1,
+    points: [false, false, false]
+  },
   renaissance: false,
   lumieres: false,
   belleepoque: false,
@@ -14,20 +22,8 @@ const ages = {
   futur: false
 };
 
-const agesvid = {
-  antiquite: 1,
-  moyenage: 1,
-  renaissance: 1,
-  lumieres: 1,
-  belleepoque: 1,
-  moderne: 1,
-  erenumerique: 1,
-  futur: 1
-};
-
 export const ProgressContext = React.createContext({
   ages,
-  agesvid,
   unlockAll,
   selectAges: () => {},
   updateVideo: () => {}
@@ -40,39 +36,43 @@ class ProgressProvider extends React.Component {
 
   /* eslint-disable */
   selectAges = age => {
-    console.log("func select ages")
     this.setState(prevState => ({
       ages: {
         ...prevState.ages,
-        [age]: true
+        [age]: {
+          ...prevState.ages[age],
+          lock: true
+        }
       }
     }));
-    if (this.state.ages.antiquite &&
-      this.state.ages.moyenage &&
-      this.state.ages.renaissance &&
-      this.state.ages.belleepoque &&
-      this.state.ages.lumieres &&
-      this.state.ages.moderne &&
-      this.state.ages.erenumerique &&
-      this.state.ages.futur) {
-        this.setState({
-          unlockAll: true
-        });
-      }
   };
 
   updateVideo = age => {
     this.setState(prevState => ({
-      agesvid: {
-        ...prevState.agesvid,
-        [age]: this.state.agesvid[age] + 1
+      ages: {
+        ...prevState.ages,
+        [age]: {
+          ...prevState.ages[age],
+          video: this.state.ages[age].video + 1
+        }
+      }
+    }));
+  };
+
+  unlockPoints = (age, number) => {
+    this.setState(prevState => ({
+      ages: {
+        ...prevState.ages,
+        [age]: {
+          ...prevState.ages[age],
+          [points.number]: true
+        }
       }
     }));
   };
 
   state = {
     ages: ages,
-    agesvid: agesvid,
     unlockAll: false,
     selectAges: this.selectAges,
     updateVideo: this.updateVideo

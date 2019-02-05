@@ -31,9 +31,7 @@ const rotate = keyframes`
 `;
 
 export const ButtonIAWrapper = styled.div`
-  position: absolute;
-  right: 20px;
-  top: 20px;
+  position: relative;
   background-color: rgba(255, 255, 255, 0.2);
   width: 45px;
   height: 45px;

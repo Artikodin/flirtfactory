@@ -13,9 +13,11 @@ export { default as Cursor } from "./Cursor";
 export { default as DragNDrop } from "./DragNDrop";
 export { default as EndingButton } from "./EndingButton";
 export { default as GenericTag } from "./GenericTag";
+export { default as HeartCounter } from "./HeartCounter";
 export { default as InteractionDragAndDrop } from "./InteractionDragAndDrop";
 export { default as Logo } from "./Logo";
 export { default as Picto } from "./Picto";
+export { default as IndexTag } from "./IndexTag";
 export { default as MagneticButton } from "./MagneticButton";
 export { default as NavBar } from "./NavBar";
 export { default as Page } from "./Page";
@@ -25,5 +27,6 @@ export {
 } from "./ProgressProvider";
 export { default as ScrollHandler } from "./ScrollHandler";
 export { default as SyncDragAndDrop } from "./SyncDragAndDrop";
+export { default as TaskBar } from "./TaskBar";
 export { default as TextProvider, TextContext } from "./TextProvider";
 export { default as Video } from "./Video";

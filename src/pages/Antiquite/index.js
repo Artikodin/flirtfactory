@@ -4,10 +4,10 @@ import {
   Page,
   BackgroundVideo,
   GenericTag,
-  ButtonIA,
   ProgressContext,
   TextContext,
-  InteractionDragAndDrop
+  InteractionDragAndDrop,
+  TaskBar
 } from "../../components";
 
 import { Markup } from "interweave";
@@ -24,25 +24,14 @@ class Antiquite extends React.Component {
     const { agestr, agenbr, frameTotal, waitFor } = this.state;
     return (
       <Page>
-        <ButtonIA />
         <TextContext.Consumer>
           {value => (
             <ProgressContext.Consumer>
-              {({ ages, selectAges, agesvid, updateVideo }) => (
+              {({ ages, selectAges, updateVideo }) => (
                 <>
-                  {ages.antiquite && (
+                  <TaskBar age={agestr} datas={value.epoques[agenbr]} />
+                  {ages.antiquite.lock && (
                     <>
-                      <GenericTag
-                        title={value.epoques[agenbr].name}
-                        xPos="200px"
-                        yPos="200px"
-                        index
-                        age={agestr}
-                        pictonumber={0}
-                      >
-                        <Markup content={value.epoques[agenbr].date} />
-                        <Markup content={value.epoques[agenbr].description} />
-                      </GenericTag>
                       <GenericTag
                         title={value.epoques[agenbr].symbols[0].name}
                         age={agestr}
@@ -81,11 +70,11 @@ class Antiquite extends React.Component {
                   <div className="background__wrapper">
                     <BackgroundVideo
                       path={agestr}
-                      number={agesvid.antiquite}
+                      number={ages.antiquite.video}
                       increaseVideo={() => updateVideo(agestr)}
                     />
                     <InteractionDragAndDrop
-                      display={ages.antiquite}
+                      display={ages.antiquite.lock}
                       unlockAge={() => selectAges(agestr)}
                       increaseVideo={() => updateVideo(agestr)}
                       age={agestr}
