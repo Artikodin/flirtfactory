@@ -15,15 +15,7 @@ class Video extends React.Component {
     increaseVideo: () => {}
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   loadVideo = () => {
-  }
-
-  ended = () => {
-    alert("video over")
   }
 
   render() {

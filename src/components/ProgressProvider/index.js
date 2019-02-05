@@ -40,6 +40,7 @@ class ProgressProvider extends React.Component {
 
   /* eslint-disable */
   selectAges = age => {
+    console.log("func select ages")
     this.setState(prevState => ({
       ages: {
         ...prevState.ages,
