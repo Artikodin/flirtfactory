@@ -27,9 +27,11 @@ class VoiceAi extends React.Component {
 
   deltaDrag = 0;
 
-  dragging = false;
-
   goToEnd = false;
+
+  goToStart = false;
+
+  once = false;
 
   static propTypes = {
     pathDraw: PropTypes.string,
@@ -37,9 +39,9 @@ class VoiceAi extends React.Component {
     top: PropTypes.string,
     height: PropTypes.string,
     width: PropTypes.string,
-    handleDrag: PropTypes.func,
-    handleDragEnd: PropTypes.func,
-    handleDragStart: PropTypes.func
+    handleDragStart: PropTypes.func,
+    handleAnswer: PropTypes.func,
+    handleHangUp: PropTypes.func
   };
 
   static defaultProps = {
@@ -48,9 +50,9 @@ class VoiceAi extends React.Component {
     top: "0",
     height: "500",
     width: "500",
-    handleDrag: () => {},
-    handleDragEnd: () => {},
-    handleDragStart: () => {}
+    handleDragStart: () => {},
+    handleAnswer: () => {},
+    handleHangUp: () => {}
   };
 
   componentDidMount() {
@@ -91,6 +93,8 @@ class VoiceAi extends React.Component {
   easing = (startValue, endValue, ease) =>
     startValue + (endValue - startValue) * ease;
 
+  auMillieme = nombre => Math.round(1000 * nombre) / 1000;
+
   /**
    *
    * Get a coordinate value in the path at a specific position
@@ -117,7 +121,6 @@ class VoiceAi extends React.Component {
   };
 
   handleMouseMove = e => {
-    const { handleDrag } = this.props;
     const { elStart, elCenter, elEnd } = this.state;
 
     const mousePosinSvgElement = {
@@ -156,10 +159,11 @@ class VoiceAi extends React.Component {
       )
     `;
 
-    handleDrag(this.deltaDrag);
-
     if (this.deltaDrag > 0.9) {
       this.goToEnd = true;
+      this.handleDragEnd();
+    } else if (this.deltaDrag < 0.1) {
+      this.goToStart = true;
       this.handleDragEnd();
     }
   };
@@ -167,7 +171,6 @@ class VoiceAi extends React.Component {
   handleDragStart = () => {
     const { handleDragStart } = this.props;
     handleDragStart();
-    this.dragging = true;
     this.svgRef.current.addEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
@@ -181,7 +184,7 @@ class VoiceAi extends React.Component {
   };
 
   moveStar = () => {
-    const { handleDrag, handleDragEnd } = this.props;
+    const { handleAnswer, handleHangUp } = this.props;
     const { elCenter } = this.state;
 
     const ease = 0.07;
@@ -189,6 +192,9 @@ class VoiceAi extends React.Component {
     if (this.goToEnd) {
       this.deltaDrag =
         this.deltaDrag < 1 ? this.easing(this.deltaDrag, 1.1, ease) : 1;
+    } else if (this.goToStart) {
+      this.deltaDrag =
+        this.deltaDrag > 0 ? this.easing(this.deltaDrag, -0.1, ease) : 0;
     } else {
       this.deltaDrag = this.easing(this.deltaDrag, 0.5, ease);
     }
@@ -206,18 +212,22 @@ class VoiceAi extends React.Component {
       )
     `;
 
-    handleDrag(Math.min(1, Math.max(0, this.deltaDrag)));
-
-    if (this.deltaDrag !== 1 && this.deltaDrag !== 0) {
+    if (
+      this.auMillieme(this.deltaDrag) !== 1 &&
+      this.auMillieme(this.deltaDrag) !== 0 &&
+      this.auMillieme(this.deltaDrag) !== 0.5
+    ) {
       requestAnimationFrame(this.moveStar);
-    } else {
-      if (this.dragging) {
-        handleDragEnd();
-      }
-      this.dragging = false;
     }
 
-    if (this.deltaDrag === 1) handleDragEnd();
+    if (this.auMillieme(this.deltaDrag) === 1 && !this.once) {
+      handleAnswer();
+      this.once = true;
+    }
+    if (this.auMillieme(this.deltaDrag) === 0 && !this.once) {
+      handleHangUp();
+      this.once = true;
+    }
   };
 
   render() {
