@@ -7,7 +7,7 @@ export const GlobalContainer = styled.div`
   z-index: 5;
   top: ${({ yPos }) => yPos};
   left: ${({ xPos }) => xPos};
-
+  opacity: 0.1;
   transition: opacity 0.5s ease;
 `;
 
@@ -65,7 +65,7 @@ export const Title = styled.div`
 export const Paragraph = styled.div`
   color: #000;
   font-size: 14px;
-  padding: 25px 40px;
+  padding: 15px 15px;
   max-height: 260px;
   overflow: auto;
 
@@ -86,9 +86,10 @@ export const IconContainer = styled.div`
   &:hover {
     border: solid 1px white;
   }
+  color: #000;
 `;
 
 export const Icon = styled.img`
+  color: #000;
   height: 60%;
-  fill: #7080b2;
 `;
