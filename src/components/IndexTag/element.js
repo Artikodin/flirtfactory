@@ -9,6 +9,7 @@ export const GlobalContainer = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  height: 45px;
   /* display: inline-flex;
   flex-direction: row-reverse;
   align-items: flex-start;
