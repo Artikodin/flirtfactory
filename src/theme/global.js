@@ -29,22 +29,22 @@ const GlobalStyle = createGlobalStyle`
 
   /* TRANSITIONS */
 
-  .fade-enter {
+  .transition-enter {
     opacity: 0.01;
   }
 
-  .fade-enter.fade-enter-active {
-      opacity: 1;
-      transition: opacity 300ms ease-in;
+  .transition-enter.transition-enter-active {
+    opacity: 1;
+    transition: opacity 5s ease-in;
   }
 
-  .fade-exit {
-      opacity: 1;
+  .transition-exit {
+    opacity: 1;
   }
 
-  .fade-exit.fade-exit-active {
+  .transition-exit.transition-exit-active {
       opacity: 0.01;
-      transition: opacity 300ms ease-in;
+      transition: opacity 5s ease-in;
   }
 
   /* WRAPPER DU CANVAS ET DE LA BACKGROUND VIDEO */
@@ -188,7 +188,8 @@ html {
    ========================================================================== */
 
 body {
-  background-color: #c4e6f1;
+  overflow: hidden;
+  background-color: #EFB4BF;
   margin: 0;
   padding: 0; 
 }

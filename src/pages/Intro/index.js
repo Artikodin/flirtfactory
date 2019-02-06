@@ -2,7 +2,7 @@ import React from "react";
 // import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { ButtonIA } from "../../components";
+import { ButtonIA, Page } from "../../components";
 
 /* eslint-disable */
 
@@ -14,14 +14,14 @@ class Intro extends React.Component {
 
   render() {
     return (
-      <div>
+      <Page navbar={false}>
         <IntroWrapper>
           <ButtonIA />
           <button type="button" onClick={this.playSound}>
              Démarrer la Flirt Factory
           </button>
         </IntroWrapper>
-      </div>
+      </Page>
     );
   }
 }

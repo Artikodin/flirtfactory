@@ -19,7 +19,13 @@ import {
   Test
 } from "./pages";
 
-import { Cursor, TextProvider, ProgressProvider, Logo } from "./components";
+import {
+  Cursor,
+  TextProvider,
+  ProgressProvider,
+  Logo,
+  Transition
+} from "./components";
 
 const App = () => (
   <>
@@ -27,31 +33,53 @@ const App = () => (
     <TextProvider>
       <ProgressProvider>
         <Router>
-          <>
-            <Cursor />
-            <Logo />
-            <TransitionGroup>
-              <CSSTransition
-                timeout={{ enter: 300, exit: 300 }}
-                classNames="fade"
-              >
-                <Switch>
-                  <Route exact path="/" component={Intro} />
-                  <Route exact path="/antiquite" component={Antiquite} />
-                  <Route exact path="/belle-epoque" component={BelleEpoque} />
-                  <Route exact path="/ere-numerique" component={EreNumerique} />
-                  <Route exact path="/futur" component={Futur} />
-                  <Route exact path="/lumieres" component={Lumieres} />
-                  <Route exact path="/moderne" component={Moderne} />
-                  <Route exact path="/moyen-age" component={MoyenAge} />
-                  <Route exact path="/renaissance" component={Renaissance} />
-                  <Route exact path="/flirtfactory" component={FlirtFactory} />
-                  <Route exact path="/test" component={Test} />
-                  <Route path="*" component={Error} />
-                </Switch>
-              </CSSTransition>
-            </TransitionGroup>
-          </>
+          <Route
+            render={({ location }) => (
+              <>
+                <Cursor />
+                <Logo />
+                <TransitionGroup>
+                  <CSSTransition
+                    key={location.key}
+                    timeout={{ enter: 10000, exit: 2000 }}
+                    classNames="transition"
+                  >
+                    <Switch location={location}>
+                      <Route exact path="/" component={Intro} />
+                      <Route exact path="/antiquite" component={Antiquite} />
+                      <Route
+                        exact
+                        path="/belle-epoque"
+                        component={BelleEpoque}
+                      />
+                      <Route
+                        exact
+                        path="/ere-numerique"
+                        component={EreNumerique}
+                      />
+                      <Route exact path="/futur" component={Futur} />
+                      <Route exact path="/lumieres" component={Lumieres} />
+                      <Route exact path="/moderne" component={Moderne} />
+                      <Route exact path="/moyen-age" component={MoyenAge} />
+                      <Route
+                        exact
+                        path="/renaissance"
+                        component={Renaissance}
+                      />
+                      <Route
+                        exact
+                        path="/flirtfactory"
+                        component={FlirtFactory}
+                      />
+                      <Route exact path="/test" component={Test} />
+                      <Route path="*" component={Error} />
+                    </Switch>
+                  </CSSTransition>
+                </TransitionGroup>
+                <Transition />
+              </>
+            )}
+          />
         </Router>
       </ProgressProvider>
     </TextProvider>

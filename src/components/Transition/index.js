@@ -1,16 +1,10 @@
 import React from "react";
-/* eslint-disable */
+import { TransitionWrapper } from "./element";
 
 class Transition extends React.Component {
-  static propTypes = {
-  };
-
-  static defaultProps = {
-  };
-
   render() {
     return (
-      <div>
+      <TransitionWrapper id="transition">
         <video
           src={`./assets/videos/transition/transition1.mp4`}
           type="video/mp4"
@@ -20,7 +14,7 @@ class Transition extends React.Component {
           muted
           onCanPlay={this.loadVideo}
         />
-      </div>
+      </TransitionWrapper>
     );
   }
 }
