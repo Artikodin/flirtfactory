@@ -37,7 +37,7 @@ class Antiquite extends React.Component {
                   {ages.antiquite.lock && (
                     <>
                       <GenericTag
-                        lock={ages.antiquite.points[0]}
+                        unlocked={ages.antiquite.points[0]}
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         age={agestr}
@@ -63,7 +63,7 @@ class Antiquite extends React.Component {
                         />
                       </GenericTag>
                       <GenericTag
-                        lock={ages.antiquite.points[2]}
+                        unlocked={ages.antiquite.points[2]}
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         age={agestr}

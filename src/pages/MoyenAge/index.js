@@ -37,7 +37,7 @@ class MoyenAge extends React.Component {
                   {ages.moyenage.lock && (
                     <>
                       <GenericTag
-                        lock={ages.moyenage.points[0]}
+                        unlocked={ages.moyenage.points[0]}
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         age={agestr}
@@ -63,7 +63,7 @@ class MoyenAge extends React.Component {
                         />
                       </GenericTag>
                       <GenericTag
-                        lock={ages.moyenage.points[2]}
+                        unlocked={ages.moyenage.points[2]}
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         age={agestr}

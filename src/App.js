@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { hot } from "react-hot-loader";
-import { TransitionGroup } from "react-transition-group";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import GlobalStyle from "./theme/global";
 import {
@@ -31,20 +31,25 @@ const App = () => (
             <Cursor />
             <Logo />
             <TransitionGroup>
-              <Switch>
-                <Route exact path="/" component={Intro} />
-                <Route exact path="/antiquite" component={Antiquite} />
-                <Route exact path="/belle-epoque" component={BelleEpoque} />
-                <Route exact path="/ere-numerique" component={EreNumerique} />
-                <Route exact path="/futur" component={Futur} />
-                <Route exact path="/lumieres" component={Lumieres} />
-                <Route exact path="/moderne" component={Moderne} />
-                <Route exact path="/moyen-age" component={MoyenAge} />
-                <Route exact path="/renaissance" component={Renaissance} />
-                <Route exact path="/flirtfactory" component={FlirtFactory} />
-                <Route exact path="/test" component={Test} />
-                <Route path="*" component={Error} />
-              </Switch>
+              <CSSTransition
+                timeout={{ enter: 300, exit: 300 }}
+                classNames="fade"
+              >
+                <Switch>
+                  <Route exact path="/" component={Intro} />
+                  <Route exact path="/antiquite" component={Antiquite} />
+                  <Route exact path="/belle-epoque" component={BelleEpoque} />
+                  <Route exact path="/ere-numerique" component={EreNumerique} />
+                  <Route exact path="/futur" component={Futur} />
+                  <Route exact path="/lumieres" component={Lumieres} />
+                  <Route exact path="/moderne" component={Moderne} />
+                  <Route exact path="/moyen-age" component={MoyenAge} />
+                  <Route exact path="/renaissance" component={Renaissance} />
+                  <Route exact path="/flirtfactory" component={FlirtFactory} />
+                  <Route exact path="/test" component={Test} />
+                  <Route path="*" component={Error} />
+                </Switch>
+              </CSSTransition>
             </TransitionGroup>
           </>
         </Router>
