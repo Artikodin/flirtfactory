@@ -57,8 +57,6 @@ class GenericTag extends React.Component {
 
   magnetProperty = {};
 
-  framID = null;
-
   isHover = false;
 
   isVisible = false;
@@ -74,6 +72,8 @@ class GenericTag extends React.Component {
     x: 0,
     y: 0
   };
+
+  animationRun = false;
 
   handleMouseMove = throttle(10, e => {
     this.mousePos = {
@@ -91,7 +91,6 @@ class GenericTag extends React.Component {
       passive: true
     });
     this.magnetProperty = this.magnet.current.getBoundingClientRect();
-    this.update();
   }
 
   componentWillUnmount() {
@@ -101,7 +100,7 @@ class GenericTag extends React.Component {
     window.removeEventListener("resize", this.handleScreenResize, {
       passive: true
     });
-    window.cancelAnimationFrame(this.framID);
+    window.cancelAnimationFrame(this.update);
   }
 
   handleScreenResize = () => {
@@ -127,10 +126,17 @@ class GenericTag extends React.Component {
     // equal to btn radius + threshold
     this.isHover = c < this.magnetProperty.width / 2 + threshold;
     this.isVisible = c < this.magnetProperty.width / 2 + thresholdVisible;
+
+    if (this.isVisible && !this.animationRun) {
+      this.update();
+      this.animationRun = true;
+    }
   };
 
+  auMillieme = nombre => Math.round(1000 * nombre) / 1000;
+
   update = () => {
-    const { ease } = this.props;
+    const { ease, unlocked } = this.props;
 
     const elPos = { x: 0, y: 0 };
 
@@ -143,7 +149,7 @@ class GenericTag extends React.Component {
         (this.magnetProperty.y + this.magnetProperty.width / 2);
     }
 
-    if (this.isVisible) {
+    if (this.isVisible || unlocked) {
       if (!this.show) {
         this.show = true;
         this.magnet.current.style.opacity = `
@@ -153,7 +159,7 @@ class GenericTag extends React.Component {
     } else {
       // eslint-disable-next-line no-lonely-if
       if (this.show) {
-        this.show = true;
+        this.show = false;
         this.magnet.current.style.opacity = `
           0.1
         `;
@@ -171,7 +177,17 @@ class GenericTag extends React.Component {
         )
     `;
 
-    requestAnimationFrame(this.update);
+    console.log("this.elPos.x", this.auMillieme(this.elPos.x));
+    console.log("this.elPos.y", this.auMillieme(this.elPos.y));
+    if (
+      (this.auMillieme(this.elPos.x) !== 0 &&
+        this.auMillieme(this.elPos.y) !== 0) ||
+      this.isVisible
+    ) {
+      requestAnimationFrame(this.update);
+    } else {
+      this.animationRun = false;
+    }
   };
 
   handleMouseEnter = () => {
