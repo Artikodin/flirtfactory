@@ -2,15 +2,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Page } from "../../components";
+import { Page, Transition } from "../../components";
 
 class Renaissance extends React.Component {
-  handleClick = () => {   
-  };
-
   render() {
     return (
       <Page>
+        <Transition />
       </Page>
     );
   }

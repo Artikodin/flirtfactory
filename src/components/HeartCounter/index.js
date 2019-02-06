@@ -27,7 +27,7 @@ class HeartCounter extends React.Component {
               d="M11.608,20.997 C-11.039,8.643 5.34,-6.716 11.608,3.628 C17.877,-6.716 34.257,8.643 11.608,20.997 Z"
               fill="none"
               stroke="#FFFFFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </>
         );
@@ -38,7 +38,7 @@ class HeartCounter extends React.Component {
               d="M11.608,20.997 C-11.039,8.643 5.34,-6.716 11.608,3.628 C17.877,-6.716 34.257,8.643 11.608,20.997 Z"
               fill="none"
               stroke="#FFFFFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <polygon
               fill="#FFFFFF"
@@ -84,11 +84,18 @@ class HeartCounter extends React.Component {
         progression = progression + 1;
       }
     });
-    console.log(progression)
     return (
       <HeartCounterContainer>
         {/* <svg viewBox="0 0 35 35" preserveAspectRatio="none">{this.renderPath(progression)}</svg> */}
-        <svg>{this.renderPath(progression)}</svg>
+        {/* <svg>{this.renderPath(progression)}</svg> */}
+        <svg viewBox="0 0 25 25" preserveAspectRatio="none">
+          <g>
+            <path
+              d="M11.608,21.997c-22.647-12.354-6.268-27.713,0-17.369C17.877-5.716,34.257,9.643,11.608,21.997z"
+              fill="#FFFFFF"
+            />
+          </g>
+        </svg>
         <p>{progression} / 3</p>
       </HeartCounterContainer>
     );

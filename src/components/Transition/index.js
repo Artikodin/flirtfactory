@@ -15,6 +15,7 @@ class Transition extends React.Component {
           src={`./assets/videos/transition/transition1.mp4`}
           type="video/mp4"
           autoPlay
+          loop
           playsInline
           muted
           onCanPlay={this.loadVideo}
@@ -23,4 +24,4 @@ class Transition extends React.Component {
     );
   }
 }
-export default Video;
+export default Transition;
