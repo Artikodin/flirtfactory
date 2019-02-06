@@ -1,8 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import DragSwitch from "./DragSwitch";
 import PhoneCube from "./PhoneCube";
 import { Wrapper } from "./element";
+
+import { IndexTag } from "..";
+
+import { Markup } from "interweave";
 
 class VoiceAi extends React.Component {
   testDiv = React.createRef();
@@ -10,6 +15,16 @@ class VoiceAi extends React.Component {
   state = {
     isAnswered: false,
     isHangedUp: false
+  };
+
+  static propTypes = {
+    age: PropTypes.string,
+    datas: PropTypes.object
+  };
+
+  static defaultProps = {
+    age: "",
+    datas: {}
   };
 
   handleHangUp = () => {
@@ -24,11 +39,16 @@ class VoiceAi extends React.Component {
 
   render() {
     const { isAnswered, isHangedUp } = this.state;
+    const { age, datas } = this.props;
     return (
       <Wrapper>
         <DragSwitch onHangUp={this.handleHangUp} onAnswer={this.handleAnswer} />
-        {isAnswered && <PhoneCube icon="decroche" />}
         {isHangedUp && <PhoneCube icon="raccroche" />}
+        {isAnswered && (
+          <IndexTag title={datas.name} age={age}>
+            <Markup content={datas.description} />
+          </IndexTag>
+        )}
       </Wrapper>
     );
   }

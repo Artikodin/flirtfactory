@@ -288,7 +288,7 @@ class DragSwitch extends React.Component {
 const WrapperAnimated = posed(Wrapper)({
   visible: {
     opacity: 1,
-    width: 300,
+    width: 298,
     transition: {
       opacity: { ease: "easeOut", duration: 250, delay: 250 },
       width: { ease: "easeOut", duration: 250 }
@@ -296,12 +296,11 @@ const WrapperAnimated = posed(Wrapper)({
   },
   hidden: {
     opacity: 0,
-    width: 45,
+    width: 43,
     transition: {
       opacity: { ease: "easeOut", duration: 250, delay: 250 },
       width: { ease: "easeOut", duration: 250 }
-    },
-    applyAtEnd: { display: "none" }
+    }
   }
 });
 
