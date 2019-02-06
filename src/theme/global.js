@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* TRANSITIONS */
 
-  .transition-enter {
+  /* .transition-enter {
     opacity: 0.01;
   }
 
@@ -45,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
   .transition-exit.transition-exit-active {
       opacity: 0.01;
       transition: opacity 5s ease-in;
-  }
+  } */
 
   /* WRAPPER DU CANVAS ET DE LA BACKGROUND VIDEO */
   .background__wrapper {

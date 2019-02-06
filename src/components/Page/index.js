@@ -20,14 +20,6 @@ class Page extends React.Component {
     navbar: true
   };
 
-  componentDidMount = () => {
-    console.log("did mount");
-  };
-
-  componentWillMount = () => {
-    console.log("will mount");
-  };
-
   render() {
     const { children, backgroundColor, navbar } = this.props;
     return (

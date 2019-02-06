@@ -4,8 +4,8 @@ export const TransitionWrapper = styled.div`
   box-sizing: border-box;
   position: absolute;
   width: 100vw;
-  height: 0;
-  top: 0;
+  height: 100vh;
+  /* top: 0; */
   left: 0;
   right: 0;
   bottom: 0;
