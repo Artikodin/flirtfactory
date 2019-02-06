@@ -16,7 +16,7 @@ class Antiquite extends React.Component {
   state = {
     agestr: "antiquite",
     agenbr: 0, // antiquite
-    frameTotal: 83,
+    frameTotal: 41,
     waitFor: 0 // sec
   };
 
