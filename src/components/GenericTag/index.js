@@ -176,9 +176,6 @@ class GenericTag extends React.Component {
             0
         )
     `;
-
-    console.log("this.elPos.x", this.auMillieme(this.elPos.x));
-    console.log("this.elPos.y", this.auMillieme(this.elPos.y));
     if (
       (this.auMillieme(this.elPos.x) !== 0 &&
         this.auMillieme(this.elPos.y) !== 0) ||
