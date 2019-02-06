@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const GlobalContainer = styled.div`
-  display: inline-block;
   position: relative;
   box-sizing: border-box;
   z-index: 5;
@@ -10,10 +9,6 @@ export const GlobalContainer = styled.div`
 
 export const Wrapper = styled.div`
   height: 45px;
-  /* display: inline-flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  justify-content: flex-start; */
 `;
 
 export const IconContainer = styled.div`

@@ -45,7 +45,7 @@ class VoiceAi extends React.Component {
         <DragSwitch onHangUp={this.handleHangUp} onAnswer={this.handleAnswer} />
         {isHangedUp && <PhoneCube icon="raccroche" />}
         {isAnswered && (
-          <IndexTag title={datas.name} age={age}>
+          <IndexTag title="Assistance I.A." age={age}>
             <Markup content={datas.description} />
           </IndexTag>
         )}

@@ -27,7 +27,7 @@ class TaskBar extends React.Component {
   render() {
     const { age, datas, progress } = this.props;
     return (
-      <Wrapper>
+      <Wrapper className="taskbar">
         <VoiceAi {...this.props} />
         {/* <ButtonIA /> */}
         <IndexTag title={datas.name} age={age}>
