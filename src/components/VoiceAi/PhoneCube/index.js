@@ -3,14 +3,16 @@ import PropTypes from "prop-types";
 
 import { Wrapper } from "./element";
 
-const PhoneCube = ({ icon }) => (
+import { Picto } from "../..";
+
+const PhoneCube = ({ name }) => (
   <Wrapper>
-    <img src={`./assets/ui/${icon}.svg`} alt="" />
+    <Picto name={name} />
   </Wrapper>
 );
 
 PhoneCube.propTypes = {
-  icon: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 };
 
 export default PhoneCube;

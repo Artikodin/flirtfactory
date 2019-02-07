@@ -28,6 +28,7 @@ class Antiquite extends React.Component {
               {({ ages, selectAges, updateVideo, unlockPoints }) => (
                 <>
                   <TaskBar
+                    name="antiquite"
                     progress={ages.antiquite.points}
                     unlocked={ages.antiquite.lock}
                     age={agestr}
