@@ -49,15 +49,28 @@ class VoiceAi extends React.Component {
     let aiText;
 
     if (age === "intro") {
-      console.log("intro");
-    }
-
-    if (unlocked) {
-      console.log(unlocked)
-      aiText = <p>{datas.reinitialisation}</p>;
+      if (unlocked) {
+        aiText = (
+          <p>
+            Quelque chose a mal fonctionné. 0 sur 8 parties fonctionnent
+            correctement. J'enclenche la réinitialisation du système.
+          </p>
+        );
+      } else {
+        aiText = (
+          <p>
+            Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer la
+            Flirt Factory. J'attends tes instructions.
+          </p>
+        );
+      }
     } else {
+      if (unlocked) {
+        aiText = <p>{datas.reinitialisation}</p>;
+      }
       aiText = <p>{datas.interaction}</p>;
     }
+
     return (
       <Wrapper>
         <DragSwitch onHangUp={this.handleHangUp} onAnswer={this.handleAnswer} />

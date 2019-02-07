@@ -12,17 +12,17 @@ class Intro extends React.Component {
   state = {
     agestr: "intro",
     frameTotal: 35,
-    waitFor: 2000 // sec
+    waitFor: 0 // sec
   };
 
   render() {
     const { agestr, frameTotal, waitFor } = this.state;
     return (
-      <Page>
+      <Page navbar={false}>
         <ProgressContext.Consumer>
           {({ ages, selectAges, updateVideo }) => (
             <>
-              <TaskBar age={agestr} />
+              <TaskBar age={agestr} unlocked={ages.intro.lock} />
               <div className="background__wrapper">
                 <BackgroundVideo
                   path={agestr}
@@ -30,7 +30,7 @@ class Intro extends React.Component {
                   increaseVideo={() => updateVideo(agestr)}
                 />
                 <InteractionDragAndDrop
-                  display={ages.antiquite.lock}
+                  display={ages.intro.lock}
                   unlockAge={() => selectAges(agestr)}
                   increaseVideo={() => updateVideo(agestr)}
                   age={agestr}
