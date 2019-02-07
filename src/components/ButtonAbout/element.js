@@ -10,6 +10,8 @@ export const ButtonAboutWrapper = styled.div`
   width: 30px;
   height: 30px;
   margin-right: 30px;
+  transition: all 0.4s ease;
+  opacity: 0.45;
 
   &:hover {
     cursor: pointer;
@@ -20,8 +22,8 @@ export const ButtonAboutWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0.45;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
+    padding-top: 4px;
   }
 `;

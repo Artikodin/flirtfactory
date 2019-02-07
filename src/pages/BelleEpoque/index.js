@@ -41,8 +41,8 @@ class BelleEpoque extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         name="belleepoque1"
-                        xPos="500px"
-                        yPos="200px"
+                        xPos="52vw"
+                        yPos="72vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
@@ -51,8 +51,8 @@ class BelleEpoque extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
                         name="belleepoque2"
-                        xPos="800px"
-                        yPos="100px"
+                        xPos="72vw"
+                        yPos="30vh"
                       >
                         {value.epoques[agenbr].symbols[1].description}
                       </GenericTag>
@@ -61,8 +61,8 @@ class BelleEpoque extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         name="belleepoque3"
-                        xPos="500px"
-                        yPos="700px"
+                        xPos="42vw"
+                        yPos="16vh"
                       >
                         {value.epoques[agenbr].symbols[2].description}
                       </GenericTag>

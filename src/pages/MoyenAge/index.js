@@ -78,9 +78,9 @@ class MoyenAge extends React.Component {
                       increaseVideo={() => updateVideo(agestr)}
                       age={agestr}
                       waitFor={waitFor}
-                      pathDraw="M 400 250 A 50 50 0 1 1 400 100"
-                      top="80vh"
-                      left="20vw"
+                      pathDraw="M 100 200 A 50 50 0 1 1 100 50"
+                      top="60vh"
+                      left="25vw"
                     />
                   </div>
                 </>

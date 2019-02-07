@@ -41,8 +41,8 @@ class Lumieres extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         name="lumieres1"
-                        xPos="500px"
-                        yPos="200px"
+                        xPos="32vw"
+                        yPos="30vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
@@ -51,8 +51,8 @@ class Lumieres extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
                         name="lumieres2"
-                        xPos="800px"
-                        yPos="100px"
+                        xPos="62vw"
+                        yPos="15vh"
                       >
                         {value.epoques[agenbr].symbols[1].description}
                       </GenericTag>
@@ -61,8 +61,8 @@ class Lumieres extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         name="lumieres3"
-                        xPos="500px"
-                        yPos="700px"
+                        xPos="70vw"
+                        yPos="55vh"
                       >
                         {value.epoques[agenbr].symbols[2].description}
                       </GenericTag>
@@ -81,9 +81,9 @@ class Lumieres extends React.Component {
                       age={agestr}
                       frameTotal={frameTotal}
                       waitFor={waitFor}
-                      pathDraw="M 450 150 C 350 200 450 250 350 300"
-                      top="25%"
-                      left="30%"
+                      pathDraw="M 50 50 Q 150 100 150 200"
+                      top="58vh"
+                      left="90vw"
                     />
                   </div>
                 </>

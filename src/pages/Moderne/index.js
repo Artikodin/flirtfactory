@@ -41,8 +41,8 @@ class Moderne extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         name="moderne1"
-                        xPos="500px"
-                        yPos="200px"
+                        xPos="32vw"
+                        yPos="25vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
@@ -51,8 +51,8 @@ class Moderne extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
                         name="moderne2"
-                        xPos="800px"
-                        yPos="100px"
+                        xPos="74vw"
+                        yPos="55vh"
                       >
                         {value.epoques[agenbr].symbols[1].description}
                       </GenericTag>
@@ -61,8 +61,8 @@ class Moderne extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         name="moderne3"
-                        xPos="500px"
-                        yPos="700px"
+                        xPos="10vw"
+                        yPos="40vh"
                       >
                         {value.epoques[agenbr].symbols[2].description}
                       </GenericTag>
@@ -81,9 +81,9 @@ class Moderne extends React.Component {
                       age={agestr}
                       frameTotal={frameTotal}
                       waitFor={waitFor}
-                      pathDraw="M 450 150 C 350 200 450 250 350 300"
-                      top="25%"
-                      left="30%"
+                      pathDraw="M 50 50 A 50 50 0 1 1 50 100"
+                      top="50vh"
+                      left="90vw"
                     />
                   </div>
                 </>
