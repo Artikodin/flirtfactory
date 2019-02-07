@@ -15,25 +15,24 @@ class Video extends React.Component {
     increaseVideo: () => {}
   };
 
-  loadVideo = () => {
-  }
+  loadVideo = () => {};
 
   render() {
     const { path, number, increaseVideo } = this.props;
     return (
       <div>
         <video
-          style={{ display: number === 1?'block' : 'none' }}
+          style={{ display: number === 1 ? "block" : "none" }}
           src={`./assets/videos/${path}/${path}1.mp4`}
           type="video/mp4"
           autoPlay
           playsInline
-          // loop
+          loop={path === "flirtfactory" ? true : false}
           muted
           onCanPlay={this.loadVideo}
         />
         <video
-          style={{ display: number === 2?'block' : 'none' }}
+          style={{ display: number === 2 ? "block" : "none" }}
           src={`./assets/videos/${path}/${path}2.mp4`}
           type="video/mp4"
           autoPlay
@@ -43,7 +42,7 @@ class Video extends React.Component {
           onEnded={increaseVideo}
         />
         <video
-          style={{ display: number === 3?'block' : 'none' }}
+          style={{ display: number === 3 ? "block" : "none" }}
           src={`./assets/videos/${path}/${path}3.mp4`}
           type="video/mp4"
           autoPlay

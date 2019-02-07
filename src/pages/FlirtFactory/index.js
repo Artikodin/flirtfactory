@@ -5,7 +5,6 @@ import { Page, BackgroundVideo, Catchphrase } from "../../components";
 class FlirtFactory extends React.Component {
   state = {
     age: "flirtfactory",
-    number: 1,
     json: 0,
     showed: false
   };
@@ -19,14 +18,14 @@ class FlirtFactory extends React.Component {
   };
 
   render() {
-    const { age, number, showed, json } = this.state;
+    const { age, showed, json } = this.state;
     return (
       <Page navbar={false}>
         <div id="globalview--question">
           <h2>A quelle époque aurais-tu voulu séduire ?</h2>
         </div>
         <div className="background__wrapper">
-          <BackgroundVideo path={age} number={number} />
+          <BackgroundVideo path={age} number={1} />
           <Catchphrase showed={showed} json={json} />
         </div>
       </Page>

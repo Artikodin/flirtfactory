@@ -12,3 +12,10 @@ export const Svg = styled.svg`
   top: ${({ top }) => top};
   left: ${({ left }) => left};
 `;
+
+export const Circle = styled.circle`
+  &:hover {
+    transition: all 200ms ease-in;
+    fill: white;
+  }
+`;
