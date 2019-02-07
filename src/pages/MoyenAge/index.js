@@ -38,8 +38,8 @@ class MoyenAge extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         name="joute"
-                        xPos="500px"
-                        yPos="200px"
+                        xPos="38vw"
+                        yPos="30vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
@@ -48,8 +48,8 @@ class MoyenAge extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
                         name="bouquet"
-                        xPos="800px"
-                        yPos="100px"
+                        xPos="75vw"
+                        yPos="52vh"
                       >
                         {value.epoques[agenbr].symbols[1].description}
                       </GenericTag>
@@ -58,8 +58,8 @@ class MoyenAge extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         name="serenade"
-                        xPos="500px"
-                        yPos="700px"
+                        xPos="15vw"
+                        yPos="50vh"
                       >
                         {value.epoques[agenbr].symbols[2].description}
                       </GenericTag>

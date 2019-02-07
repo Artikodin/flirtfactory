@@ -8,12 +8,11 @@ export const Wrapper = styled.li`
   font-weight: 200;
   width: 100%;
   max-width: 215px;
-  margin-right: -1px;
+  box-sizing: border-box;
   transition: all 0.4s ease;
   &:hover img {
     transform: translate3d(0, 0, 0) scale(1);
     opacity: 1;
-    /* margin-right: 1px; */
     position: absolute;
   }
   &:hover span {
@@ -34,9 +33,10 @@ export const TextContainer = styled.span`
 `;
 
 export const ImgContainer = styled.img`
+  box-sizing: border-box;
   z-index: 11;
   display: block;
-  width: calc(100% - 2px);
+  width: 100%;
   bottom: 40px;
   border: 1px solid #fff;
   margin-bottom: -1px;
@@ -47,6 +47,7 @@ export const ImgContainer = styled.img`
 `;
 
 export const StyledLink = styled(Link)`
+  box-sizing: border-box;
   cursor: none;
   display: flex;
   flex-direction: column;

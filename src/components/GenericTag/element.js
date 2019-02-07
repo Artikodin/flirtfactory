@@ -28,7 +28,7 @@ export const Container = styled.div`
   top: 94%;
   left: 0;
   right: 0;
-  text-align: justify;
+  text-align: left;
   line-height: 1.5;
   border: solid 1px white;
   border-top: none;

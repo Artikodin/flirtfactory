@@ -29,9 +29,10 @@ export const Container = styled.div`
   position: relative;
   width: 300px;
   box-sizing: border-box;
-  text-align: justify;
+  text-align: left;
   line-height: 1.5;
   border: solid 1px white;
+  box-sizing: border-box;
   border-top: none;
 `;
 
@@ -64,6 +65,8 @@ export const Paragraph = styled.div`
   color: #ffffff;
   padding: 5%;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   /* padding: 25px 40px; */
   max-height: 260px;
   width: 100%;
