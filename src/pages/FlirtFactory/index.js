@@ -6,7 +6,7 @@ class FlirtFactory extends React.Component {
   state = {
     age: "flirtfactory",
     json: 0,
-    showed: false
+    showed: true
   };
 
   displayCatchphrase = param => {
@@ -26,8 +26,8 @@ class FlirtFactory extends React.Component {
         </div>
         <div className="background__wrapper">
           <BackgroundVideo path={age} number={1} />
-          <Catchphrase showed={showed} json={json} />
         </div>
+        <Catchphrase showed={showed} json={json} />
       </Page>
     );
   }

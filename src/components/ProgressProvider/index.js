@@ -18,12 +18,36 @@ const ages = {
     video: 1,
     points: [false, false, false]
   },
-  renaissance: false,
-  lumieres: false,
-  belleepoque: false,
-  moderne: false,
-  contemporain: false,
-  futur: false
+  renaissance: {
+    lock: false,
+    video: 1,
+    points: [false, false]
+  },
+  lumieres: {
+    lock: false,
+    video: 1,
+    points: [false, false, false]
+  },
+  belleepoque: {
+    lock: false,
+    video: 1,
+    points: [false, false, false]
+  },
+  moderne: {
+    lock: false,
+    video: 1,
+    points: [false, false, false]
+  },
+  contemporain: {
+    lock: false,
+    video: 1,
+    points: [false, false]
+  },
+  futur: {
+    lock: false,
+    video: 1,
+    points: [false, false, false, false]
+  }
 };
 
 export const ProgressContext = React.createContext({

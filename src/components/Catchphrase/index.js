@@ -6,7 +6,11 @@ import { TextContext } from "../index";
 
 import { Markup } from "interweave";
 
-import { CatchphraseWrapper, CatchphraseContainer } from "./element";
+import {
+  CatchphraseWrapper,
+  CatchphraseContainer,
+  CatchphraseVideoContainer
+} from "./element";
 
 class Catchphrase extends React.Component {
   static propTypes = {
@@ -41,6 +45,16 @@ class Catchphrase extends React.Component {
                     <Markup content={value.epoques[json].catchphrase} />
                   </div>
                 </CatchphraseContainer>
+                <CatchphraseVideoContainer>
+                  <video
+                    src="./assets/videos/flirtfactory/catchphrase.mp4"
+                    autoPlay
+                    playsInline
+                    loop
+                    type="video/mp4"
+                    muted
+                  />
+                </CatchphraseVideoContainer>
               </CatchphraseWrapper>
             )}
           </TextContext.Consumer>

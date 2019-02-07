@@ -102,11 +102,7 @@ class Page extends React.Component {
                       contemporain
                     </NavBar.NavItem>
                     <NavBar.NavItem
-                      imgSrc={
-                        ages.futur.lock
-                          ? "./assets/nav/futuron.gif"
-                          : "./assets/nav/futuroff.gif"
-                      }
+                      imgSrc="./assets/img/noise.gif"
                       pathTo="/futur"
                     >
                       futur
