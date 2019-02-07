@@ -33,9 +33,9 @@ class Page extends React.Component {
                   <NavBar>
                     <NavBar.NavItem
                       imgSrc={
-                        ages.antiquite
-                          ? "./assets/img/img1.jpeg"
-                          : "./assets/img/img2.jpeg"
+                        ages.antiquite.lock
+                          ? "./assets/nav/antiquiteon.gif"
+                          : "./assets/nav/antiquiteoff.gif"
                       }
                       pathTo="/antiquite"
                     >
@@ -43,9 +43,9 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       imgSrc={
-                        ages.moyenage
-                          ? "./assets/img/img1.jpeg"
-                          : "./assets/img/img2.jpeg"
+                        ages.moyenage.lock
+                          ? "./assets/nav/antiquiteon.gif"
+                          : "./assets/nav/antiquiteoff.gif"
                       }
                       pathTo="/moyen-age"
                     >
@@ -53,9 +53,9 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       imgSrc={
-                        ages.renaissance
-                          ? "./assets/img/img1.jpeg"
-                          : "./assets/img/img2.jpeg"
+                        ages.renaissance.lock
+                          ? "./assets/nav/antiquiteon.gif"
+                          : "./assets/nav/antiquiteoff.gif"
                       }
                       pathTo="/renaissance"
                     >
@@ -63,9 +63,9 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       imgSrc={
-                        ages.lumieres
-                          ? "./assets/img/img1.jpeg"
-                          : "./assets/img/img2.jpeg"
+                        ages.lumieres.lock
+                          ? "./assets/nav/antiquiteon.gif"
+                          : "./assets/nav/antiquiteoff.gif"
                       }
                       pathTo="/lumieres"
                     >
@@ -73,9 +73,9 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       imgSrc={
-                        ages.belleepoque
-                          ? "./assets/img/img1.jpeg"
-                          : "./assets/img/img2.jpeg"
+                        ages.belleepoque.lock
+                          ? "./assets/nav/antiquiteon.gif"
+                          : "./assets/nav/antiquiteoff.gif"
                       }
                       pathTo="/belle-epoque"
                     >
@@ -83,9 +83,9 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       imgSrc={
-                        ages.moderne
-                          ? "./assets/img/img1.jpeg"
-                          : "./assets/img/img2.jpeg"
+                        ages.moderne.lock
+                          ? "./assets/nav/antiquiteon.gif"
+                          : "./assets/nav/antiquiteoff.gif"
                       }
                       pathTo="/moderne"
                     >
@@ -93,9 +93,9 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       imgSrc={
-                        ages.erenumerique
-                          ? "./assets/img/img1.jpeg"
-                          : "./assets/img/img2.jpeg"
+                        ages.erenumerique.lock
+                          ? "./assets/nav/antiquiteon.gif"
+                          : "./assets/nav/antiquiteoff.gif"
                       }
                       pathTo="/ere-numerique"
                     >
@@ -103,9 +103,9 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       imgSrc={
-                        ages.futur
-                          ? "./assets/img/img1.jpeg"
-                          : "./assets/img/img2.jpeg"
+                        ages.futur.lock
+                          ? "./assets/nav/antiquiteon.gif"
+                          : "./assets/nav/antiquiteoff.gif"
                       }
                       pathTo="/futur"
                     >

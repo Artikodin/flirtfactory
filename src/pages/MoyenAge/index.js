@@ -90,9 +90,9 @@ class MoyenAge extends React.Component {
                       age={agestr}
                       frameTotal={frameTotal}
                       waitFor={waitFor}
-                      pathDraw="M 450 150 C 350 200 450 250 350 300"
-                      top="25%"
-                      left="65%"
+                      pathDraw="M 400 250 A 50 50 0 1 1 400 100"
+                      top="80vh"
+                      left="20vw"
                     />
                   </div>
                 </>

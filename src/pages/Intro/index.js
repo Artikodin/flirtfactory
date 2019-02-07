@@ -1,41 +1,66 @@
 import React from "react";
-// import PropTypes from "prop-types";
-import styled from "styled-components";
 
-import { ButtonIA, Page } from "../../components";
+import {
+  Page,
+  BackgroundVideo,
+  GenericTag,
+  ProgressContext,
+  TextContext,
+  InteractionDragAndDrop,
+  TaskBar
+} from "../../components";
 
-/* eslint-disable */
+import { Markup } from "interweave";
 
 class Intro extends React.Component {
-  playSound = () => {
-    const audio2 = new Audio("./assets/sound/intro2.wav");
-    audio2.play();
+  state = {
+    agestr: "antiquite",
+    agenbr: 0, // antiquite
+    frameTotal: 41,
+    waitFor: 0 // sec
   };
 
   render() {
+    const { agestr, agenbr, frameTotal, waitFor } = this.state;
     return (
-      <Page navbar={false}>
-        <IntroWrapper>
-          <ButtonIA />
-          <button type="button" onClick={this.playSound}>
-             Démarrer la Flirt Factory
-          </button>
-        </IntroWrapper>
+      <Page>
+        <TextContext.Consumer>
+          {value => (
+            <ProgressContext.Consumer>
+              {({ ages, selectAges, updateVideo, unlockPoints }) => (
+                <>
+                  <TaskBar
+                    progress={ages.antiquite.points}
+                    unlocked={ages.antiquite.lock}
+                    age={agestr}
+                    datas={value.epoques[agenbr]}
+                  />
+                  <div className="background__wrapper">
+                    <BackgroundVideo
+                      path={agestr}
+                      number={ages.antiquite.video}
+                      increaseVideo={() => updateVideo(agestr)}
+                    />
+                    <InteractionDragAndDrop
+                      display={ages.antiquite.lock}
+                      unlockAge={() => selectAges(agestr)}
+                      increaseVideo={() => updateVideo(agestr)}
+                      age={agestr}
+                      frameTotal={frameTotal}
+                      waitFor={waitFor}
+                      pathDraw="M 450 150 C 350 200 450 250 350 300"
+                      top="25%"
+                      left="65%"
+                    />
+                  </div>
+                </>
+              )}
+            </ProgressContext.Consumer>
+          )}
+        </TextContext.Consumer>
       </Page>
     );
   }
 }
 
 export default Intro;
-
-export const IntroWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("./assets/img/start.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-`;

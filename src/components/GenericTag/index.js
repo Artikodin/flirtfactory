@@ -136,7 +136,7 @@ class GenericTag extends React.Component {
   auMillieme = nombre => Math.round(1000 * nombre) / 1000;
 
   update = () => {
-    const { ease, unlocked } = this.props;
+    const { ease, unlocked, global } = this.props;
 
     const elPos = { x: 0, y: 0 };
 
@@ -147,6 +147,13 @@ class GenericTag extends React.Component {
       elPos.y =
         this.mousePos.y -
         (this.magnetProperty.y + this.magnetProperty.width / 2);
+    }
+
+    if (global) {
+      this.show = true;
+      this.magnet.current.style.opacity = `
+      1
+      `;
     }
 
     if (this.isVisible || unlocked) {
