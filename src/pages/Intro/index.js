@@ -3,14 +3,11 @@ import React from "react";
 import {
   Page,
   BackgroundVideo,
-  GenericTag,
   ProgressContext,
   TextContext,
   InteractionDragAndDrop,
   TaskBar
 } from "../../components";
-
-import { Markup } from "interweave";
 
 class Intro extends React.Component {
   state = {
@@ -27,7 +24,7 @@ class Intro extends React.Component {
         <TextContext.Consumer>
           {value => (
             <ProgressContext.Consumer>
-              {({ ages, selectAges, updateVideo, unlockPoints }) => (
+              {({ ages, selectAges, updateVideo }) => (
                 <>
                   <TaskBar
                     progress={ages.antiquite.points}

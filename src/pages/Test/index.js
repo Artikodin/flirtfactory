@@ -6,14 +6,6 @@ import { Wrapper } from "./element";
 class Test extends React.Component {
   testDiv = React.createRef();
 
-  handleHangUp = () => {
-    console.log("handleHangUp");
-  };
-
-  handleAnswer = () => {
-    console.log("handleAnswer");
-  };
-
   render() {
     return (
       <Page>

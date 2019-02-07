@@ -1,7 +1,7 @@
 import React from "react";
 import { TransitionWrapper } from "./element";
 import PropTypes from "prop-types";
-import posed, { PoseGroup } from "react-pose";
+import { PoseGroup } from "react-pose";
 
 class Transition extends React.Component {
   static propTypes = {
@@ -20,7 +20,7 @@ class Transition extends React.Component {
           {visible && (
             <TransitionWrapper key="transition" ref={this.transition}>
               <video
-                src={`./assets/videos/transition/transition1.mp4`}
+                src="./assets/videos/transition/transition1.mp4"
                 type="video/mp4"
                 autoPlay
                 loop
