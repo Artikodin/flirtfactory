@@ -14,12 +14,11 @@ class MoyenAge extends React.Component {
   state = {
     agestr: "moyenage",
     agenbr: 1, // moyenage
-    frameTotal: 45,
     waitFor: 2000 // sec
   };
 
   render() {
-    const { agestr, agenbr, frameTotal, waitFor } = this.state;
+    const { agestr, agenbr, waitFor } = this.state;
     return (
       <Page>
         <TextContext.Consumer>
@@ -77,7 +76,6 @@ class MoyenAge extends React.Component {
                       unlockAge={() => selectAges(agestr)}
                       increaseVideo={() => updateVideo(agestr)}
                       age={agestr}
-                      frameTotal={frameTotal}
                       waitFor={waitFor}
                       pathDraw="M 400 250 A 50 50 0 1 1 400 100"
                       top="80vh"

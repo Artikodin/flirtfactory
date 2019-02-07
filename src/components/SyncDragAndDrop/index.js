@@ -8,7 +8,6 @@ class SyncDragAndDrop extends React.Component {
     display: PropTypes.bool,
     waited: PropTypes.bool,
     frame: PropTypes.number,
-    frameTotal: PropTypes.number,
     switchCanvas: PropTypes.func,
     updateFrame: PropTypes.func,
     unlockAge: PropTypes.func,
@@ -22,7 +21,6 @@ class SyncDragAndDrop extends React.Component {
     display: true,
     waited: true,
     frame: 0,
-    frameTotal: 0,
     switchCanvas: () => {},
     updateFrame: () => {},
     unlockAge: () => {},
@@ -68,9 +66,9 @@ class SyncDragAndDrop extends React.Component {
 
   onDrag = x => {
     const xPos = x * 400;
-    const { frame, frameTotal, updateFrame } = this.props;
+    const { frame, updateFrame } = this.props;
     if (this.mounted) {
-      this.nextFrame = Math.round((frameTotal / 400) * xPos);
+      this.nextFrame = Math.round((40 / 400) * xPos);
       if (this.nextFrame !== frame) {
         updateFrame(this.nextFrame);
         if (xPos > 390 && this.locked) {

@@ -40,8 +40,8 @@ class Antiquite extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         name="antiquite1"
-                        xPos="500px"
-                        yPos="200px"
+                        xPos="42vw"
+                        yPos="75vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
@@ -50,8 +50,8 @@ class Antiquite extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
                         name="antiquite2"
-                        xPos="800px"
-                        yPos="100px"
+                        xPos="80vw"
+                        yPos="56vh"
                       >
                         {value.epoques[agenbr].symbols[1].description}
                       </GenericTag>
@@ -60,8 +60,8 @@ class Antiquite extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         name="antiquite3"
-                        xPos="500px"
-                        yPos="700px"
+                        xPos="15vh"
+                        yPos="16vw"
                       >
                         {value.epoques[agenbr].symbols[2].description}
                       </GenericTag>
@@ -81,8 +81,8 @@ class Antiquite extends React.Component {
                       frameTotal={frameTotal}
                       waitFor={waitFor}
                       pathDraw="M 450 150 C 350 200 450 250 350 300"
-                      top="25%"
-                      left="65%"
+                      top="30vh"
+                      left="60vw"
                     />
                   </div>
                 </>

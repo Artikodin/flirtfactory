@@ -80,9 +80,9 @@ class BelleEpoque extends React.Component {
                       age={agestr}
                       frameTotal={frameTotal}
                       waitFor={waitFor}
-                      pathDraw="M 450 150 C 350 200 450 250 350 300"
-                      top="25%"
-                      left="30%"
+                      pathDraw="M 450 150 A 50 50 0 1 1 300 100"
+                      top="70vh"
+                      left="70vw"
                     />
                   </div>
                 </>

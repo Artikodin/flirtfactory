@@ -8,7 +8,6 @@ export const Wrapper = styled.ul`
   left: 50%;
   bottom: 30px;
   transform: translateX(-50%);
-  z-index: 10;
   display: flex;
   align-items: flex-end;
   max-width: 1100px;
