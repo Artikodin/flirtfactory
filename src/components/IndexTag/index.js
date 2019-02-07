@@ -21,17 +21,13 @@ class IndexTag extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     title: PropTypes.string,
-    index: PropTypes.bool,
-    age: PropTypes.string,
-    pictonumber: PropTypes.number
+    name: PropTypes.string
   };
 
   static defaultProps = {
     children: "",
     title: "",
-    age: "",
-    pictonumber: 1,
-    index: false
+    name: ""
   };
 
   handleMouseEnter = () => {
@@ -47,7 +43,7 @@ class IndexTag extends React.Component {
   };
 
   render() {
-    const { children, title, index, age, pictonumber } = this.props;
+    const { children, title, name } = this.props;
     const { showed } = this.state;
     return (
       <GlobalContainer ref={this.magnet}>
@@ -57,7 +53,7 @@ class IndexTag extends React.Component {
           onMouseLeave={this.handleMouseLeave}
         >
           <IconContainer>
-            <Picto age={age} pictonumber={pictonumber} index={index} />
+            <Picto name={name} />
           </IconContainer>
           <AnimatedTitle>{title}</AnimatedTitle>
           <AnimatedContainer>
