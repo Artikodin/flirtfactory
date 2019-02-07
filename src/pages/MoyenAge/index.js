@@ -10,8 +10,6 @@ import {
   InteractionDragAndDrop
 } from "../../components";
 
-import { Markup } from "interweave";
-
 class MoyenAge extends React.Component {
   state = {
     agestr: "moyenage",
@@ -44,9 +42,7 @@ class MoyenAge extends React.Component {
                         xPos="500px"
                         yPos="200px"
                       >
-                        <Markup
-                          content={value.epoques[agenbr].symbols[0].description}
-                        />
+                        {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
                       <GenericTag
                         unlocked={ages.moyenage.points[1]}
@@ -56,9 +52,7 @@ class MoyenAge extends React.Component {
                         xPos="800px"
                         yPos="100px"
                       >
-                        <Markup
-                          content={value.epoques[agenbr].symbols[1].description}
-                        />
+                        {value.epoques[agenbr].symbols[1].description}
                       </GenericTag>
                       <GenericTag
                         unlocked={ages.moyenage.points[2]}
@@ -68,9 +62,7 @@ class MoyenAge extends React.Component {
                         xPos="500px"
                         yPos="700px"
                       >
-                        <Markup
-                          content={value.epoques[agenbr].symbols[2].description}
-                        />
+                        {value.epoques[agenbr].symbols[2].description}
                       </GenericTag>
                     </>
                   )}

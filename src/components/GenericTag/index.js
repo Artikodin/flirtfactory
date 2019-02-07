@@ -3,6 +3,8 @@ import posed from "react-pose";
 import PropTypes from "prop-types";
 import { throttle } from "throttle-debounce";
 
+import { Markup } from "interweave";
+
 import {
   Title,
   Paragraph,
@@ -228,7 +230,9 @@ class GenericTag extends React.Component {
           </IconContainer>
           <AnimatedTitle>{title}</AnimatedTitle>
           <AnimatedContainer className={global ? "hide" : ""}>
-            <Paragraph>{children}</Paragraph>
+            <Paragraph>
+              <Markup content={children} />
+            </Paragraph>
           </AnimatedContainer>
         </AnimatedWrapper>
       </GlobalContainer>
