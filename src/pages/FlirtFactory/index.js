@@ -24,7 +24,7 @@ class FlirtFactory extends React.Component {
         <div id="globalview--question">
           <h2>A quelle époque aurais-tu voulu séduire ?</h2>
         </div>
-        <div className="background__wrapper">
+        <div className="globalview background__wrapper">
           <BackgroundVideo path={age} number={1} />
         </div>
         <Catchphrase showed={showed} json={json} />

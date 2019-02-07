@@ -13,7 +13,7 @@ export const CatchphraseWrapper = styled.div`
 `;
 
 export const CatchphraseContainer = styled.div`
-  width: 40%;
+  flex-grow: 1;
   position: relative;
   box-sizing: border-box;
   text-align: center;
@@ -21,9 +21,12 @@ export const CatchphraseContainer = styled.div`
 `;
 
 export const CatchphraseVideoContainer = styled.div`
-  flex-grow: 1;
-  border: 1px solid yellow;
-  width: 60%;
+  width: 100vh;
+  height: 100vh;
   position: relative;
   box-sizing: border-box;
+
+  video {
+    height: 100%;
+  }
 `;

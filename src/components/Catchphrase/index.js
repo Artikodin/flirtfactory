@@ -30,19 +30,19 @@ class Catchphrase extends React.Component {
         {showed && (
           <TextContext.Consumer>
             {value => (
-              <CatchphraseWrapper>
+              <CatchphraseWrapper className="globalview--catchphrase">
                 <CatchphraseContainer>
-                  <h1 className="catchphrase--title">
-                    {value.epoques[json].name}
-                  </h1>
-                  <div className="catchphrase--img">
-                    <img src={`../assets/img/global/${json}.jpg`} alt="" />
-                  </div>
-                  <div className="catchphrase--summary">
-                    <Markup content={value.epoques[json].summary} />
-                  </div>
-                  <div className="catchphrase--catchphrase">
-                    <Markup content={value.epoques[json].catchphrase} />
+                  <button type="button">retour à la vue globale</button>
+                  <div>
+                    <div className="catchphrase--catchphrase">
+                      <Markup content={value.epoques[json].catchphrase} />
+                    </div>
+                    <h1 className="catchphrase--title">
+                      {value.epoques[json].name}
+                    </h1>
+                    <div className="catchphrase--summary">
+                      <Markup content={value.epoques[json].summary} />
+                    </div>
                   </div>
                 </CatchphraseContainer>
                 <CatchphraseVideoContainer>
