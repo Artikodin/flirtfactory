@@ -37,7 +37,7 @@ class TaskBar extends React.Component {
     } else {
       index = (
         <>
-          <IndexTag title={datas.name} age={age} isLoggedIn={false}>
+          <IndexTag title={datas.name} name="antiquite2" isLoggedIn={false}>
             <Markup content={datas.description} />
           </IndexTag>
         </>

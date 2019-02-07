@@ -21,13 +21,13 @@ class IndexTag extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     title: PropTypes.string,
-    name: PropTypes.bool
+    name: PropTypes.string
   };
 
   static defaultProps = {
     children: "",
     title: "",
-    name: false
+    name: ""
   };
 
   handleMouseEnter = () => {
