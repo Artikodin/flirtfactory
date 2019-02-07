@@ -28,13 +28,32 @@ class TaskBar extends React.Component {
 
   render() {
     const { age, datas, progress } = this.props;
+    let index;
+    let heart;
+
+    if (age === "intro") {
+      console.log("intro");
+      index = null;
+      heart = null;
+    } else {
+      index = (
+        <>
+          <IndexTag title={datas.name} age={age} isLoggedIn={false}>
+            <Markup content={datas.description} />
+          </IndexTag>
+        </>
+      );
+
+      heart = <HeartCounter progress={progress} />;
+    }
     return (
       <Wrapper className="taskbar">
         <VoiceAi {...this.props} />
-        <IndexTag title={datas.name} age={age}>
+        { index }
+        { heart }
+        {/* <IndexTag title={datas.name} age={age} isLoggedIn={false}>
           <Markup content={datas.description} />
-        </IndexTag>
-        <HeartCounter progress={progress} />
+        </IndexTag> */}
       </Wrapper>
     );
   }

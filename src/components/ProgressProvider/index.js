@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 const unlockAll = false;
 
 const ages = {
+  intro: {
+    lock: false,
+    video: 1
+  },
   antiquite: {
     lock: false,
     video: 1,

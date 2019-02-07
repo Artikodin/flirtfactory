@@ -16,7 +16,7 @@ class MoyenAge extends React.Component {
   state = {
     agestr: "moyenage",
     agenbr: 1, // moyenage
-    frameTotal: 93,
+    frameTotal: 45,
     waitFor: 2000 // sec
   };
 
