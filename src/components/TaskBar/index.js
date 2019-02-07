@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ButtonIA, VoiceAi, IndexTag, HeartCounter } from "..";
+import { VoiceAi, IndexTag, HeartCounter } from "..";
 
 import { Markup } from "interweave";
 
