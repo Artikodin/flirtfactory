@@ -16,15 +16,15 @@ class VoiceAi extends React.Component {
   };
 
   static propTypes = {
-    age: PropTypes.string,
     datas: PropTypes.object,
-    unlocked: PropTypes.bool
+    unlocked: PropTypes.bool,
+    age: PropTypes.string
   };
 
   static defaultProps = {
-    age: "",
     datas: {},
-    unlocked: false
+    unlocked: false,
+    age: ""
   };
 
   handleHangUp = () => {
@@ -76,7 +76,7 @@ class VoiceAi extends React.Component {
         <DragSwitch onHangUp={this.handleHangUp} onAnswer={this.handleAnswer} />
         {isHangedUp && <PhoneCube icon="raccroche" />}
         {isAnswered && (
-          <IndexTag title="Assistance I.A." age={age}>
+          <IndexTag title="Assistance I.A." name="decroche">
             {aiText}
           </IndexTag>
         )}

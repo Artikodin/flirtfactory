@@ -10,8 +10,6 @@ import {
   InteractionDragAndDrop
 } from "../../components";
 
-import { Markup } from "interweave";
-
 class MoyenAge extends React.Component {
   state = {
     agestr: "moyenage",
@@ -40,40 +38,31 @@ class MoyenAge extends React.Component {
                         unlocked={ages.moyenage.points[0]}
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
-                        age={agestr}
-                        pictonumber={0}
+                        name="joute"
                         xPos="500px"
                         yPos="200px"
                       >
-                        <Markup
-                          content={value.epoques[agenbr].symbols[0].description}
-                        />
+                        {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
                       <GenericTag
                         unlocked={ages.moyenage.points[1]}
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
-                        age={agestr}
-                        pictonumber={1}
+                        name="bouquet"
                         xPos="800px"
                         yPos="100px"
                       >
-                        <Markup
-                          content={value.epoques[agenbr].symbols[1].description}
-                        />
+                        {value.epoques[agenbr].symbols[1].description}
                       </GenericTag>
                       <GenericTag
                         unlocked={ages.moyenage.points[2]}
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
-                        age={agestr}
-                        pictonumber={2}
+                        name="serenade"
                         xPos="500px"
                         yPos="700px"
                       >
-                        <Markup
-                          content={value.epoques[agenbr].symbols[2].description}
-                        />
+                        {value.epoques[agenbr].symbols[2].description}
                       </GenericTag>
                     </>
                   )}
