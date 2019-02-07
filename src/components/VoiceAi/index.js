@@ -67,8 +67,9 @@ class VoiceAi extends React.Component {
     } else {
       if (unlocked) {
         aiText = <p>{datas.reinitialisation}</p>;
+      } else {
+        aiText = <p>{datas.interaction}</p>;
       }
-      aiText = <p>{datas.interaction}</p>;
     }
 
     return (

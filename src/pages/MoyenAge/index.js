@@ -31,6 +31,7 @@ class MoyenAge extends React.Component {
                     progress={ages.moyenage.points}
                     age={agestr}
                     datas={value.epoques[agenbr]}
+                    unlocked={ages.moyenage.lock}
                   />
                   {ages.moyenage.lock && (
                     <>
