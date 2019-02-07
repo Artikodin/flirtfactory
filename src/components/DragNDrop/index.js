@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Svg, Circle } from "./element";
+import { Svg, Circle, Gear } from "./element";
 
 class DragNDrop extends React.Component {
   path = React.createRef();
@@ -9,6 +9,8 @@ class DragNDrop extends React.Component {
   svgRef = React.createRef();
 
   dragCircle = React.createRef();
+
+  dragGear = React.createRef();
 
   state = {
     elStart: {
@@ -18,7 +20,9 @@ class DragNDrop extends React.Component {
     elEnd: {
       x: 0,
       y: 0
-    }
+    },
+    hover: false,
+    clicked: false
   };
 
   deltaDrag = 0;
@@ -151,11 +155,34 @@ class DragNDrop extends React.Component {
       )
     `;
 
+    this.dragGear.current.style.transform = `
+      translate3d(
+        ${dragElementPos.x}px,
+        ${dragElementPos.y}px,
+        0
+      )
+    `;
+
     handleDrag(this.deltaDrag);
 
     if (this.deltaDrag > 0.9) {
       this.goToEnd = true;
       this.handleDragEnd();
+    }
+  };
+
+  handleMouseEnter = () => {
+    this.setState({
+      hover: true
+    });
+  };
+
+  handleMouseLeave = () => {
+    const { clicked } = this.state;
+    if (!clicked) {
+      this.setState({
+        hover: false
+      });
     }
   };
 
@@ -166,11 +193,18 @@ class DragNDrop extends React.Component {
     this.svgRef.current.addEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
+    this.setState({
+      clicked: true
+    });
   };
 
   handleDragEnd = () => {
     this.svgRef.current.removeEventListener("mousemove", this.handleMouseMove, {
       passive: true
+    });
+    this.setState({
+      clicked: false,
+      hover: false
     });
     this.moveStar();
   };
@@ -202,6 +236,14 @@ class DragNDrop extends React.Component {
       )
     `;
 
+    this.dragGear.current.style.transform = `
+      translate3d(
+        ${elementPos.x}px,
+        ${elementPos.y}px,
+        0
+      )
+    `;
+
     handleDrag(Math.min(1, Math.max(0, this.deltaDrag)));
 
     if (this.deltaDrag !== 1 && this.deltaDrag !== 0) {
@@ -218,7 +260,11 @@ class DragNDrop extends React.Component {
 
   render() {
     const { pathDraw, height, width, top, left, display, waited } = this.props;
-    const { elStart, elEnd } = this.state;
+    const { elStart, elEnd, hover } = this.state;
+    const gearPos = {
+      x: -4.268 + elStart.x,
+      y: 0 + elStart.y
+    };
     return (
       <>
         <Svg
@@ -231,14 +277,16 @@ class DragNDrop extends React.Component {
           xmlns="http://www.w3.org/2000/svg"
           top={top}
           left={left}
+          viewBox="0 0 512 512"
         >
           <path
             ref={this.path}
             d={pathDraw}
             fill="transparent"
             stroke="white"
-            strokeWidth="1"
-            strokeDasharray="1 7"
+            strokeWidth="2"
+            strokeDasharray="1 5"
+            strokeLinecap="round"
             id="wire"
           />
 
@@ -248,8 +296,8 @@ class DragNDrop extends React.Component {
             r="25"
             fill="transparent"
             stroke="white"
-            strokeWidth="1"
-            strokeDasharray="0 6"
+            strokeWidth="2"
+            strokeDasharray="0 4"
             strokeLinecap="round"
           />
 
@@ -258,27 +306,24 @@ class DragNDrop extends React.Component {
             cx={elStart.x}
             cy={elStart.y}
             r="25"
-            fill="transparent"
+            fill={hover ? "white" : "transparent"}
             stroke="white"
             onMouseDown={() => this.handleDragStart()}
-          >
-            <g>
-              <svg>
-                <path
-                  fill="white"
-                  d="M144.61,255c0-61.12,49.65-110.67,110.89-110.67S366.39,193.88,366.39,255S316.74,365.67,255.5,365.67
-	c-29.41,0-57.61-11.66-78.41-32.41C156.29,312.5,144.61,284.35,144.61,255z M211.91,500.13c28.83,5.16,58.35,5.16,87.19,0
-	l15.59-57.27c11.02-3.47,21.72-7.9,31.96-13.26l51.67,29.53c24.03-16.78,44.92-37.64,61.73-61.62l-29.59-51.57
-	c5.36-10.22,9.81-20.89,13.29-31.88l57.39-15.56c5.17-28.77,5.17-58.24,0-87.01l-57.39-15.56c-3.48-11-7.92-21.68-13.28-31.9
-	l29.59-51.57c-16.81-23.98-37.71-44.83-61.74-61.6L346.63,80.4c-10.24-5.35-20.93-9.79-31.95-13.26L299.09,9.87
-	c-28.83-5.16-58.35-5.16-87.19,0l-15.59,57.27c-11.02,3.47-21.72,7.9-31.96,13.25l-51.67-29.53C88.66,67.64,67.77,88.5,50.96,112.48
-	l29.59,51.57c-5.36,10.22-9.81,20.89-13.29,31.88L9.87,211.49c-5.17,28.77-5.17,58.24,0,87.01l57.39,15.57
-	c3.48,11,7.92,21.68,13.28,31.9l-29.59,51.57c16.81,23.98,37.71,44.83,61.74,61.6l51.67-29.53c10.24,5.35,20.93,9.79,31.95,13.26
-	L211.91,500.13z"
-                />
-              </svg>
-            </g>
-          </Circle>
+            onMouseEnter={() => this.handleMouseEnter()}
+            onMouseLeave={() => this.handleMouseLeave()}
+          />
+
+          <Gear
+            onMouseDown={() => this.handleDragStart()}
+            onMouseEnter={() => this.handleMouseEnter()}
+            onMouseLeave={() => this.handleMouseLeave()}
+            ref={this.dragGear}
+            fill={hover ? "#68759f" : "white"}
+            d={`m
+            ${gearPos.x}
+            ${gearPos.y}
+            c0-2.354 1.912-4.262 4.271-4.262s4.271 1.908 4.271 4.262-1.912 4.262-4.271 4.262c-1.133 0-2.219-.449-3.02-1.248a4.258 4.258 0 0 1-1.251-3.014zm2.592 9.44a9.531 9.531 0 0 0 3.358 0l.6-2.206c.424-.134.836-.304 1.231-.511l1.99 1.137a9.652 9.652 0 0 0 2.377-2.373l-1.14-1.986a7.553 7.553 0 0 0 .512-1.228l2.21-.599c.199-1.108.199-2.243 0-3.351l-2.21-.599c-.134-.424-.305-.835-.511-1.229l1.14-1.986a9.643 9.643 0 0 0-2.378-2.372l-1.991 1.138a7.562 7.562 0 0 0-1.23-.511l-.6-2.206a9.531 9.531 0 0 0-3.358 0l-.6 2.206c-.424.134-.836.304-1.231.51l-1.99-1.137a9.657 9.657 0 0 0-2.377 2.373l1.14 1.986a7.553 7.553 0 0 0-.512 1.228l-2.21.599a9.474 9.474 0 0 0 0 3.351l2.21.6c.134.424 .305.835 .511 1.229l-1.14 1.986a9.643 9.643 0 0 0 2.378 2.372l1.99-1.137c.394.206 .806.377 1.23.511l.601 2.205z`}
+          />
         </Svg>
       </>
     );
