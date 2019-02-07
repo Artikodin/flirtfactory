@@ -28,6 +28,7 @@ class Lumieres extends React.Component {
               {({ ages, selectAges, updateVideo, unlockPoints }) => (
                 <>
                   <TaskBar
+                    name="lumieres"
                     progress={ages.lumieres.points}
                     unlocked={ages.lumieres.lock}
                     age={agestr}
