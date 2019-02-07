@@ -25,15 +25,13 @@ class GenericTag extends React.Component {
     ease: PropTypes.number,
     children: PropTypes.node,
     title: PropTypes.string,
-    index: PropTypes.bool,
+    name: PropTypes.string,
     global: PropTypes.bool,
     xPos: PropTypes.string,
     yPos: PropTypes.string,
     catchphrase: PropTypes.func,
     unlocked: PropTypes.bool,
-    unlockPoint: PropTypes.func,
-    age: PropTypes.string,
-    pictonumber: PropTypes.number
+    unlockPoint: PropTypes.func
   };
 
   static defaultProps = {
@@ -42,10 +40,8 @@ class GenericTag extends React.Component {
     ease: 0.09,
     children: "",
     title: "",
-    age: "",
-    pictonumber: 1,
     unlocked: false,
-    index: false,
+    name: "",
     global: false,
     xPos: "0px",
     yPos: "0px",
@@ -214,11 +210,9 @@ class GenericTag extends React.Component {
       yPos,
       children,
       title,
-      index,
+      name,
       global,
-      catchphrase,
-      age,
-      pictonumber
+      catchphrase
     } = this.props;
     const { showed } = this.state;
     return (
@@ -230,7 +224,7 @@ class GenericTag extends React.Component {
           onClick={catchphrase}
         >
           <IconContainer>
-            <Picto age={age} pictonumber={pictonumber} index={index} />
+            <Picto name={name} />
           </IconContainer>
           <AnimatedTitle>{title}</AnimatedTitle>
           <AnimatedContainer className={global ? "hide" : ""}>

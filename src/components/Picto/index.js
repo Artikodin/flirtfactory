@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 
 import { pictoPath } from "./pictoPath";
 
+import { Path } from "./element";
+
 /* eslint-disable */
 
 const Picto = ({ color, name, width, height }) => {
@@ -15,7 +17,7 @@ const Picto = ({ color, name, width, height }) => {
       height={height}
       viewBox="0 0 512 512"
     >
-      <path fill={color} fillRule="evenodd" d={pictoPath[name]} />
+      <Path fill={color} fillRule="evenodd" d={pictoPath[name]} />
     </svg>
   );
 };

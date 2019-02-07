@@ -41,8 +41,7 @@ class Antiquite extends React.Component {
                         unlocked={ages.antiquite.points[0]}
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
-                        age={agestr}
-                        pictonumber={0}
+                        name="antiquite1"
                         xPos="500px"
                         yPos="200px"
                       >
@@ -54,8 +53,7 @@ class Antiquite extends React.Component {
                         unlocked={ages.antiquite.points[1]}
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
-                        age={agestr}
-                        pictonumber={1}
+                        name="antiquite2"
                         xPos="800px"
                         yPos="100px"
                       >
@@ -67,8 +65,7 @@ class Antiquite extends React.Component {
                         unlocked={ages.antiquite.points[2]}
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
-                        age={agestr}
-                        pictonumber={2}
+                        name="antiquite3"
                         xPos="500px"
                         yPos="700px"
                       >
