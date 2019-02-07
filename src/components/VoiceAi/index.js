@@ -19,34 +19,49 @@ class VoiceAi extends React.Component {
 
   static propTypes = {
     age: PropTypes.string,
-    datas: PropTypes.object
+    datas: PropTypes.object,
+    unlocked: PropTypes.bool
   };
 
   static defaultProps = {
     age: "",
-    datas: {}
+    datas: {},
+    unlocked: false
   };
 
   handleHangUp = () => {
-    console.log("handleHangUp");
     setTimeout(() => this.setState({ isHangedUp: true }), 250);
   };
 
   handleAnswer = () => {
-    console.log("handleAnswer");
     setTimeout(() => this.setState({ isAnswered: true }), 250);
+  };
+
+  StateInteraction = () => {
+    const { unlocked, datas } = this.props;
+    if (unlocked) {
+      return <p>{datas.reinitialisation}</p>;
+    }
+    return <p>{datas.interaction}</p>;
   };
 
   render() {
     const { isAnswered, isHangedUp } = this.state;
-    const { age, datas } = this.props;
+    const { age, unlocked, datas } = this.props;
+    let aiText;
+
+    if (unlocked) {
+      aiText = <p>{datas.reinitialisation}</p>;
+    } else {
+      aiText = <p>{datas.interaction}</p>;
+    }
     return (
       <Wrapper>
         <DragSwitch onHangUp={this.handleHangUp} onAnswer={this.handleAnswer} />
         {isHangedUp && <PhoneCube icon="raccroche" />}
         {isAnswered && (
           <IndexTag title="Assistance I.A." age={age}>
-            <Markup content={datas.description} />
+            {aiText}
           </IndexTag>
         )}
       </Wrapper>

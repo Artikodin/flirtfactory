@@ -31,6 +31,7 @@ class Antiquite extends React.Component {
                 <>
                   <TaskBar
                     progress={ages.antiquite.points}
+                    unlocked={ages.antiquite.lock}
                     age={agestr}
                     datas={value.epoques[agenbr]}
                   />

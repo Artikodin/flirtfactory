@@ -13,13 +13,15 @@ class TaskBar extends React.Component {
   static propTypes = {
     age: PropTypes.string,
     datas: PropTypes.object,
-    progress: PropTypes.array
+    progress: PropTypes.array,
+    unlocked: PropTypes.bool
   };
 
   static defaultProps = {
     age: "",
     datas: {},
-    progress: []
+    progress: [],
+    unlocked: false
   };
 
   state = {};
@@ -29,7 +31,6 @@ class TaskBar extends React.Component {
     return (
       <Wrapper className="taskbar">
         <VoiceAi {...this.props} />
-        {/* <ButtonIA /> */}
         <IndexTag title={datas.name} age={age}>
           <Markup content={datas.description} />
         </IndexTag>
