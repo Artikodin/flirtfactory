@@ -14,6 +14,7 @@ export { default as DragNDrop } from "./DragNDrop";
 export { default as EndingButton } from "./EndingButton";
 export { default as GenericTag } from "./GenericTag";
 export { default as HeartCounter } from "./HeartCounter";
+export { default as Icon } from "./Icon";
 export { default as InteractionDragAndDrop } from "./InteractionDragAndDrop";
 export { default as Logo } from "./Logo";
 export { default as Picto } from "./Picto";

@@ -1,8 +1,7 @@
 import React from "react";
 
-import { Page, GenericTag, ProgressContext } from "../../components";
-
-import { Markup } from "interweave";
+import { Page, Picto } from "../../components";
+import { Wrapper } from "./element";
 
 class Test extends React.Component {
   testDiv = React.createRef();
@@ -18,21 +17,9 @@ class Test extends React.Component {
   render() {
     return (
       <Page>
-        <ProgressContext.Consumer>
-          {({ ages, unlockPoints }) => (
-            <GenericTag
-              unlocked={ages.antiquite.points[0]}
-              unlockPoint={() => unlockPoints("antiquite", 0)}
-              title="Michel"
-              age="antiquite"
-              pictonumber={0}
-              xPos="20%"
-              yPos="20%"
-            >
-              <Markup content="oidshguroeshgurowhghrheoh" />
-            </GenericTag>
-          )}
-        </ProgressContext.Consumer>
+        <Wrapper>
+          <Picto name="renaissance1" color="white" height="30" width="30" />
+        </Wrapper>
       </Page>
     );
   }

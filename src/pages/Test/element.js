@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export const TestDiv = styled.div`
+export const Wrapper = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(255, 3, 34, 1);
-  z-index: -1;
-  opacity: 0;
+  top: 50%;
+  left: 50%;
+  height: 45px;
+  width: 45px;
+  border: solid 1px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
