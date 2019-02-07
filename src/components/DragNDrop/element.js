@@ -14,8 +14,9 @@ export const Svg = styled.svg`
 `;
 
 export const Circle = styled.circle`
-  &:hover {
-    transition: all 200ms ease-in;
-    fill: white;
-  }
+  transition: fill 0.35s ease-out;
+`;
+
+export const Gear = styled.path`
+  transition: fill 0.35s ease-out;
 `;
