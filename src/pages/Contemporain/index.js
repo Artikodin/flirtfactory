@@ -4,15 +4,15 @@ import PropTypes from "prop-types";
 
 import { Page } from "../../components";
 
-const EreNumerique = () => {
+const Contemporain = () => {
   return (
     <Page backgroundColor="#c4e6f1">
     </Page>
   );
 };
 
-EreNumerique.propTypes = {
+Contemporain.propTypes = {
   history: PropTypes.object.isRequired
 };
 
-export default EreNumerique;
+export default Contemporain;

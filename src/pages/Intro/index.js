@@ -4,7 +4,6 @@ import {
   Page,
   BackgroundVideo,
   ProgressContext,
-  TextContext,
   InteractionDragAndDrop,
   TaskBar
 } from "../../components";

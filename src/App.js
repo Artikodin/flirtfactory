@@ -13,7 +13,7 @@ import {
   Intro,
   Antiquite,
   BelleEpoque,
-  EreNumerique,
+  Contemporain,
   Futur,
   Error,
   Lumieres,
@@ -88,8 +88,8 @@ class App extends React.Component {
                           />
                           <Route
                             exact
-                            path="/ere-numerique"
-                            component={EreNumerique}
+                            path="/contemporain"
+                            component={Contemporain}
                           />
                           <Route exact path="/futur" component={Futur} />
                           <Route exact path="/lumieres" component={Lumieres} />

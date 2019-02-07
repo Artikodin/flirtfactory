@@ -22,7 +22,7 @@ const ages = {
   lumieres: false,
   belleepoque: false,
   moderne: false,
-  erenumerique: false,
+  contemporain: false,
   futur: false
 };
 

@@ -32,7 +32,6 @@ class TaskBar extends React.Component {
     let heart;
 
     if (age === "intro") {
-      console.log("intro");
       index = null;
       heart = null;
     } else {

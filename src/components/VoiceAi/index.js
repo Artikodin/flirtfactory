@@ -48,7 +48,12 @@ class VoiceAi extends React.Component {
     const { age, unlocked, datas } = this.props;
     let aiText;
 
+    if (age === "intro") {
+      console.log("intro");
+    }
+
     if (unlocked) {
+      console.log(unlocked)
       aiText = <p>{datas.reinitialisation}</p>;
     } else {
       aiText = <p>{datas.interaction}</p>;

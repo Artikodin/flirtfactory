@@ -44,8 +44,8 @@ class Page extends React.Component {
                     <NavBar.NavItem
                       imgSrc={
                         ages.moyenage.lock
-                          ? "./assets/nav/antiquiteon.gif"
-                          : "./assets/nav/antiquiteoff.gif"
+                          ? "./assets/nav/moyenageon.gif"
+                          : "./assets/nav/moyenageoff.gif"
                       }
                       pathTo="/moyen-age"
                     >
@@ -54,8 +54,8 @@ class Page extends React.Component {
                     <NavBar.NavItem
                       imgSrc={
                         ages.renaissance.lock
-                          ? "./assets/nav/antiquiteon.gif"
-                          : "./assets/nav/antiquiteoff.gif"
+                          ? "./assets/nav/renaissanceon.gif"
+                          : "./assets/nav/renaissanceoff.gif"
                       }
                       pathTo="/renaissance"
                     >
@@ -64,8 +64,8 @@ class Page extends React.Component {
                     <NavBar.NavItem
                       imgSrc={
                         ages.lumieres.lock
-                          ? "./assets/nav/antiquiteon.gif"
-                          : "./assets/nav/antiquiteoff.gif"
+                          ? "./assets/nav/lumiereson.gif"
+                          : "./assets/nav/lumieresoff.gif"
                       }
                       pathTo="/lumieres"
                     >
@@ -74,8 +74,8 @@ class Page extends React.Component {
                     <NavBar.NavItem
                       imgSrc={
                         ages.belleepoque.lock
-                          ? "./assets/nav/antiquiteon.gif"
-                          : "./assets/nav/antiquiteoff.gif"
+                          ? "./assets/nav/belleepoqueon.gif"
+                          : "./assets/nav/belleepoqueoff.gif"
                       }
                       pathTo="/belle-epoque"
                     >
@@ -84,8 +84,8 @@ class Page extends React.Component {
                     <NavBar.NavItem
                       imgSrc={
                         ages.moderne.lock
-                          ? "./assets/nav/antiquiteon.gif"
-                          : "./assets/nav/antiquiteoff.gif"
+                          ? "./assets/nav/moderneon.gif"
+                          : "./assets/nav/moderneoff.gif"
                       }
                       pathTo="/moderne"
                     >
@@ -93,19 +93,19 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       imgSrc={
-                        ages.erenumerique.lock
-                          ? "./assets/nav/antiquiteon.gif"
-                          : "./assets/nav/antiquiteoff.gif"
+                        ages.contemporain.lock
+                          ? "./assets/nav/contemporainon.gif"
+                          : "./assets/nav/contemporainoff.gif"
                       }
-                      pathTo="/ere-numerique"
+                      pathTo="/contemporain"
                     >
-                      ère-numérique
+                      contemporain
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       imgSrc={
                         ages.futur.lock
-                          ? "./assets/nav/antiquiteon.gif"
-                          : "./assets/nav/antiquiteoff.gif"
+                          ? "./assets/nav/futuron.gif"
+                          : "./assets/nav/futuroff.gif"
                       }
                       pathTo="/futur"
                     >
