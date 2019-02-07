@@ -12,6 +12,7 @@ import { Wrapper } from "./element";
 class TaskBar extends React.Component {
   static propTypes = {
     age: PropTypes.string,
+    name: PropTypes.string,
     datas: PropTypes.object,
     progress: PropTypes.array,
     unlocked: PropTypes.bool
@@ -19,6 +20,7 @@ class TaskBar extends React.Component {
 
   static defaultProps = {
     age: "",
+    name: "",
     datas: {},
     progress: [],
     unlocked: false
@@ -27,7 +29,7 @@ class TaskBar extends React.Component {
   state = {};
 
   render() {
-    const { age, datas, progress } = this.props;
+    const { age, name, datas, progress } = this.props;
     let index;
     let heart;
 
@@ -37,7 +39,7 @@ class TaskBar extends React.Component {
     } else {
       index = (
         <>
-          <IndexTag title={datas.name} name="antiquite2" isLoggedIn={false}>
+          <IndexTag title={datas.name} name={name} isLoggedIn={false}>
             <Markup content={datas.description} />
           </IndexTag>
         </>
