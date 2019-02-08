@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  browserHistory
-} from "react-router-dom";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { hot } from "react-hot-loader";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -59,7 +54,7 @@ class App extends React.Component {
         <GlobalStyle />
         <TextProvider>
           <ProgressProvider>
-            <Router history={browserHistory}>
+            <BrowserRouter>
               <Route
                 render={({ location }) => (
                   <>
@@ -114,7 +109,7 @@ class App extends React.Component {
                   </>
                 )}
               />
-            </Router>
+            </BrowserRouter>
           </ProgressProvider>
         </TextProvider>
       </>

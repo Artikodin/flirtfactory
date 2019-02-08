@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import posed, { PoseGroup } from "react-pose";
 
 class DragSwitch extends React.Component {
   path = React.createRef();
@@ -283,10 +282,5 @@ class DragSwitch extends React.Component {
     );
   }
 }
-
-const SvgAnimated = posed.svg({
-  enter: { opacity: 1 },
-  exit: { opacity: 0 }
-});
 
 export default DragSwitch;
