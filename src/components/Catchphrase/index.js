@@ -29,6 +29,11 @@ class Catchphrase extends React.Component {
 
   videoCatchphrase = React.createRef();
 
+  componentDidMount() {
+    console.log(this.videoCatchphrase.current);
+    this.videoCatchphrase.current.play();
+  }
+
   render() {
     const {
       showed,
@@ -36,6 +41,7 @@ class Catchphrase extends React.Component {
       handleClick,
       updateAgeCatchphrase
     } = this.props;
+
     return (
       <>
         {showed && (
@@ -110,9 +116,9 @@ class Catchphrase extends React.Component {
                       <button
                         type="button"
                         className="catchphrase--btn prev"
-                        onClick={() => console.log("hello")}
+                        onClick={() => updateAgeCatchphrase(false)}
                       >
-                        <svg width="74px" height="74px" viewBox="0 0 74 74">
+                        <svg width="50px" height="50px" viewBox="0 0 80 80">
                           <g fill="none" strokeWidth="1">
                             <rect
                               className="rect"
@@ -138,7 +144,7 @@ class Catchphrase extends React.Component {
                         className="catchphrase--btn next"
                         onClick={() => updateAgeCatchphrase(true)}
                       >
-                        <svg width="74px" height="74px" viewBox="0 0 74 74">
+                        <svg width="50px" height="50px" viewBox="0 0 80 80">
                           <g transform="translate(-235.000000, -773.000000)">
                             <g transform="translate(151.000000, 773.000000)">
                               <g

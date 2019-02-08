@@ -9,21 +9,38 @@ class FlirtFactory extends React.Component {
   }
 
   state = {
-    ageCatchphrase: 1,
+    ageCatchphrase: 0,
     showed: true
   };
 
+  /* eslint-disable */
+
   updateAgeCatchphrase = next => {
-    console.log("updateAgeCatchphrase");
+    let { ageCatchphrase } = this.state;
     if (next) {
-      console.log("next");
+      if (ageCatchphrase === 7) {
+        this.setState({
+          ageCatchphrase: 0
+        });
+      } else {
+        this.setState({
+          ageCatchphrase: ageCatchphrase + 1
+        });
+      }
     } else {
-      console.log("prev");
+      if (ageCatchphrase === 0) {
+        this.setState({
+          ageCatchphrase: 7
+        });
+      } else {
+        this.setState({
+          ageCatchphrase: ageCatchphrase - 1
+        });
+      }
     }
   };
 
   handleClick = () => {
-    console.log("handle click");
     const { showed } = this.state;
     this.setState({
       showed: !showed

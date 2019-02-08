@@ -32,11 +32,13 @@ export const CatchphraseContainer = styled.div`
 
   #catchphrase--container {
     text-align: left;
+    height: 60%;
+    position: relative;
 
     .catchphrase--catchphrase {
       position: relative;
       font-family: GTCinetype;
-      font-size: 36px;
+      font-size: 2rem;
       font-weight: normal;
       font-style: italic;
       font-stretch: normal;
@@ -65,7 +67,7 @@ export const CatchphraseContainer = styled.div`
 
     .catchphrase--title {
       position: relative;
-      margin-top: 10vh;
+      margin-top: 5vh;
       display: flex;
       align-items: center;
       justify-content: space-around;
@@ -106,6 +108,8 @@ export const CatchphraseContainer = styled.div`
     }
 
     .catchphrase--nav {
+      position: absolute;
+      bottom: 0;
       margin-top: 10vh;
 
       .catchphrase--btn {

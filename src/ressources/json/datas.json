@@ -31,7 +31,7 @@
       "interaction": "Le manège ne fonctionne plus. Tourne la manivelle.",
       "reinitialisation": "Système réinitialisé. 72 joutes de chevaliers se déroulent en ce moment même.",
       "summary": "<p>La plupart de relations de l'époque sont des mariages arrangés, le vrai amour se déroule hors-mariage et doit donc rester secret. Apparaît l'amour courtois, un amour purement sentimental qui consiste à prouver sa bravoure pour gagner le coeur de sa dame.</p>",
-      "catchphrase": "En catchana baby tu dead ça",
+      "catchphrase": "Qui aux dames ne porte honneur c'est qu'il n'a point d'honneur au cœur",
       "description": "<p>Au Moyen-Âge apparaît une nouvelle forme de séduction: la <strong>courtoisie</strong>. A cette époque, la norme est au mariage arrangé. Le vrai amour se déroule hors-mariage et doit rester secret, sous peine de très lourdes conséquences.</p> <p>Les relations sont donc très compliquées et mêlent passion, désespoir, plaisir et souffrance. Un <strong>coup de foudre</strong> peut alors durer toute une vie, les deux amoureux ne vivant que l'un pour l'autre !</p> <p>L’amour courtois est un amour <strong>purement sentimental</strong>  et ne suppose pas forcément de relation physique. Mais il s'exprime par des actes : il fallait prouver sa bravoure auprès de sa dame, à l'image des chevaliers gagnant une bataille ou délivrant leurs princesses.</p>",
       "symbols": [
         {
@@ -147,6 +147,26 @@
       "interaction": "Mouline pour transformer les aubergines.",
       "reinitialisation": "Système réinitialisé. 16 074 personnes ont swippé à droite sur Tinder.",
       "summary": "<p>La séduction est aujourd'hui mobile : l'omniprésence et la spécificité des apps de rencontre permettent la multiplication des rencontres.</p>",
+      "catchphrase": "En catchana baby tu dead ça",
+      "description": "<p>C'est aujourd'hui les <strong>applications mobiles</strong> qui dominent le marché de la rencontre amoureuse. Pour draguer, il suffit de tapoter sur son smartphone ! Ces apps sont d'ailleurs de plus en plus performantes et de plus en plus spécifiques : algorithmes, filtres, géolocalisation... Tout est fait pour nous rendre plus exigeant. Liker et matcher sont ainsi devenus des actes de séduction à part entiers.</p> <p>Dans cette société de consommation, la rencontre devient alors un bien facilement accessible qu'il faut consommer rapidement. Le Romantisme laisse ainsi place aux <strong>relations fast food</strong> : des liaisons légères sans engagement sur le long terme.",
+      "symbols": [
+        {
+          "name": "Télé-réalité",
+          "description": "La séduction est extrêmement présente à la télévision, notamment dans les émissions de télé-réalité qui ont utilisé la drague et la rencontre amoureuse à toutes les sauces : Tournez Manège, l'Amour est dans le Pré, Qui veut épouser mon fils, Le Bachelor, L'Île de la tentation, l'Amour est Aveugle, Les Princes de l'Amour... Il y en a pour tous les goûts."
+        },
+        {
+          "name": "Netflix & Chill",
+          "description": "L'expression Netflix and Chill qui s'est popularisée à l'aide de Twitter en 2014 n'est en fait pas si innocente... Vous allez regarder Netflix tous les deux... et plus si affinité."
+        }
+      ]
+    },
+    {
+      "name": "Futur",
+      "date": "",
+      "short": "Futur",
+      "interaction": "Mouline pour transformer les aubergines.",
+      "reinitialisation": "Système réinitialisé. 16 074 personnes ont swippé à droite sur Tinder.",
+      "summary": "<p>???</p>",
       "catchphrase": "En catchana baby tu dead ça",
       "description": "<p>C'est aujourd'hui les <strong>applications mobiles</strong> qui dominent le marché de la rencontre amoureuse. Pour draguer, il suffit de tapoter sur son smartphone ! Ces apps sont d'ailleurs de plus en plus performantes et de plus en plus spécifiques : algorithmes, filtres, géolocalisation... Tout est fait pour nous rendre plus exigeant. Liker et matcher sont ainsi devenus des actes de séduction à part entiers.</p> <p>Dans cette société de consommation, la rencontre devient alors un bien facilement accessible qu'il faut consommer rapidement. Le Romantisme laisse ainsi place aux <strong>relations fast food</strong> : des liaisons légères sans engagement sur le long terme.",
       "symbols": [

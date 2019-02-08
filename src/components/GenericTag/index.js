@@ -31,7 +31,6 @@ class GenericTag extends React.Component {
     global: PropTypes.bool,
     xPos: PropTypes.string,
     yPos: PropTypes.string,
-    catchphrase: PropTypes.func,
     unlocked: PropTypes.bool,
     unlockPoint: PropTypes.func
   };
@@ -47,7 +46,6 @@ class GenericTag extends React.Component {
     global: false,
     xPos: "0px",
     yPos: "0px",
-    catchphrase: () => {},
     unlockPoint: () => {}
   };
 
@@ -207,15 +205,7 @@ class GenericTag extends React.Component {
   };
 
   render() {
-    const {
-      xPos,
-      yPos,
-      children,
-      title,
-      name,
-      global,
-      catchphrase
-    } = this.props;
+    const { xPos, yPos, children, title, name, global } = this.props;
     const { showed } = this.state;
     return (
       <GlobalContainer ref={this.magnet} xPos={xPos} yPos={yPos}>
@@ -223,7 +213,6 @@ class GenericTag extends React.Component {
           pose={showed ? "isOpen" : "isClose"}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-          onClick={() => catchphrase()}
         >
           <IconContainer>
             <Picto name={name} />
