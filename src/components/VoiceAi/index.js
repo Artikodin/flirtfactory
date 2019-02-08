@@ -7,6 +7,8 @@ import { Wrapper } from "./element";
 
 import { IndexTag } from "..";
 
+/* eslint-disable */
+
 class VoiceAi extends React.Component {
   testDiv = React.createRef();
 
@@ -35,42 +37,45 @@ class VoiceAi extends React.Component {
     setTimeout(() => this.setState({ isAnswered: true }), 250);
   };
 
-  StateInteraction = () => {
-    const { unlocked, datas } = this.props;
-    if (unlocked) {
-      return <p>{datas.reinitialisation}</p>;
+  setAIText = (age, unlocked, datas) => {
+    switch (age) {
+      case "intro":
+        if (unlocked) {
+          return (
+              <p>
+                Quelque chose a mal fonctionné. 0 sur 8 parties fonctionnent
+                correctement. J'enclenche la réinitialisation du système.
+              </p>
+          );
+        } else {
+          return (
+              <p>
+                Bonjour, je suis ton assistant personnel. Je suis prêt à
+                démarrer la Flirt Factory et à parcourir l'histoire de la
+                séduction au fil des époques. J'attends tes instructions.
+              </p>
+          );
+        }
+      case "flirtfactory":
+        return (
+            <p>
+              Toutes les machines ont bien été réinitialisées. Tu as bien
+              travaillé. En récompense, j'ai entendu que tu étais un séducteur,
+              je te propose 8 catchphrases pour séduire ta future conquête.
+            </p>
+        );
+      default:
+        if (unlocked) {
+          return <p>{datas.reinitialisation}</p>;
+        } else {
+          return <p>{datas.interaction}</p>;
+        }
     }
-    return <p>{datas.interaction}</p>;
   };
 
   render() {
     const { isAnswered, isHangedUp } = this.state;
     const { age, unlocked, datas } = this.props;
-    let aiText;
-
-    if (age === "intro") {
-      if (unlocked) {
-        aiText = (
-          <p>
-            Quelque chose a mal fonctionné. 0 sur 8 parties fonctionnent
-            correctement. J'enclenche la réinitialisation du système.
-          </p>
-        );
-      } else {
-        aiText = (
-          <p>
-            Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer la
-            Flirt Factory. J'attends tes instructions.
-          </p>
-        );
-      }
-    } else {
-      if (unlocked) {
-        aiText = <p>{datas.reinitialisation}</p>;
-      } else {
-        aiText = <p>{datas.interaction}</p>;
-      }
-    }
 
     return (
       <Wrapper>
@@ -78,7 +83,7 @@ class VoiceAi extends React.Component {
         {isHangedUp && <PhoneCube name="raccroche" />}
         {isAnswered && (
           <IndexTag title="Assistance I.A." name="decroche">
-            {aiText}
+            {this.setAIText(age, unlocked, datas)}
           </IndexTag>
         )}
       </Wrapper>

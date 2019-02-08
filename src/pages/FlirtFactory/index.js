@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Page, BackgroundVideo, Catchphrase } from "../../components";
+import { Page, BackgroundVideo, Catchphrase, TaskBar } from "../../components";
 
 class FlirtFactory extends React.Component {
   state = {
@@ -21,9 +21,7 @@ class FlirtFactory extends React.Component {
     const { age, showed, json } = this.state;
     return (
       <Page navbar={false}>
-        <div id="globalview--question">
-          <h2>A quelle époque aurais-tu voulu séduire ?</h2>
-        </div>
+        <TaskBar age={age} />
         <div className="globalview background__wrapper">
           <BackgroundVideo path={age} number={1} />
         </div>
