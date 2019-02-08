@@ -12,5 +12,4 @@ export const Wrapper = styled.ul`
   align-items: flex-end;
   max-width: 1100px;
   width: calc(100% - 80px);
-  z-index: 1;
 `;

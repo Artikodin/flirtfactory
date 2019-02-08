@@ -15,16 +15,25 @@ import {
 class Catchphrase extends React.Component {
   static propTypes = {
     showed: PropTypes.bool,
-    json: PropTypes.number
+    json: PropTypes.number,
+    displayCatchphrase: PropTypes.func
   };
 
   static defaultProps = {
     showed: false,
-    json: 0
+    json: 0,
+    displayCatchphrase: () => {}
+  };
+
+  handleClick = () => {
+    const { showed } = this.state;
+    this.setState({
+      showed: !showed
+    });
   };
 
   render() {
-    const { showed, json } = this.props;
+    const { showed, json, displayCatchphrase } = this.props;
     return (
       <>
         {showed && (
@@ -32,16 +41,115 @@ class Catchphrase extends React.Component {
             {value => (
               <CatchphraseWrapper className="globalview--catchphrase">
                 <CatchphraseContainer>
-                  <button type="button">retour à la vue globale</button>
-                  <div>
+                  <button type="button" onClick={displayCatchphrase}>
+                    <svg width="40px" height="40px" viewBox="0 0 40 40">
+                      <g
+                        id="Page-1"
+                        stroke="none"
+                        strokWidth="1"
+                        fill="none"
+                        fillRule="evenodd"
+                      >
+                        <g
+                          id="Artboard-Copy-53"
+                          transform="translate(-1761.000000, -565.000000)"
+                        >
+                          <g
+                            id="Close"
+                            transform="translate(1761.000000, 565.000000)"
+                          >
+                            <g
+                              id="Group-3"
+                              transform="translate(10.000000, 10.000000)"
+                              stroke="#516081"
+                            >
+                              <rect
+                                id="Rectangle"
+                                transform="translate(10.000000, 10.500000) rotate(-315.000000) translate(-10.000000, -10.500000) "
+                                x="8.5"
+                                y="-0.5"
+                                width="3"
+                                height="22"
+                              />
+                              <rect
+                                id="Rectangle-Copy-2"
+                                transform="translate(10.000000, 10.500000) rotate(-45.000000) translate(-10.000000, -10.500000) "
+                                x="8.5"
+                                y="-0.5"
+                                width="3"
+                                height="22"
+                              />
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </button>
+                  <div id="catchphrase--container">
                     <div className="catchphrase--catchphrase">
                       <Markup content={value.epoques[json].catchphrase} />
                     </div>
-                    <h1 className="catchphrase--title">
-                      {value.epoques[json].name}
-                    </h1>
+                    <div className="catchphrase--title">
+                      <div>
+                        <h1>{value.epoques[json].name}</h1>
+                      </div>
+                      <div className="catchphrase--line" />
+                    </div>
                     <div className="catchphrase--summary">
                       <Markup content={value.epoques[json].summary} />
+                    </div>
+                    <div className="catchphrase--nav">
+                      <div className="catchphrase--btn prev">
+                        <svg width="74px" height="74px" viewBox="0 0 74 74">
+                          <g fill="none" strokeWidth="1">
+                            <rect
+                              className="rect"
+                              stroke="#516081"
+                              fill="none"
+                              x="5.5"
+                              y="5.5"
+                              width="63"
+                              height="63"
+                            />
+                            <polyline
+                              className="polyline"
+                              stroke="#516081"
+                              strokeWidth="2"
+                              transform="translate(36.962191, 37.302579) rotate(-180.000000) translate(-36.962191, -37.302579) "
+                              points="33 44.605159 40.9243811 37.0540797 33 30"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                      <div className="catchphrase--btn next">
+                        <svg width="74px" height="74px" viewBox="0 0 74 74">
+                          <g transform="translate(-235.000000, -773.000000)">
+                            <g transform="translate(151.000000, 773.000000)">
+                              <g
+                                fill="none"
+                                transform="translate(84.000000, 0.000000)"
+                              >
+                                <rect
+                                  className="rect"
+                                  stroke="#516081"
+                                  fill="none"
+                                  x="5"
+                                  y="5"
+                                  width="64"
+                                  height="64"
+                                />
+                                <polyline
+                                  className="polyline"
+                                  fill="none"
+                                  stroke="#516081"
+                                  strokeWidth="2"
+                                  points="33 44.605159 40.9243811 37.0540797 33 30"
+                                />
+                              </g>
+                            </g>
+                          </g>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </CatchphraseContainer>
