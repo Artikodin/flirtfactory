@@ -29,10 +29,29 @@ class Catchphrase extends React.Component {
 
   videoCatchphrase = React.createRef();
 
+  constructor(props) {
+    super(props);
+    this.intervalRewind = 0;
+  }
+
   componentDidMount() {
     console.log(this.videoCatchphrase.current);
     this.videoCatchphrase.current.play();
   }
+
+  // playVideo = () => {
+  //   // requestAnimationFrame(this.moveStar);
+  //   intervalRewind = setInterval(() => {
+  //       video.playbackRate = 1.0;
+  //       if(video.currentTime == 0) {
+  //           clearInterval(intervalRewind);
+  //           video.pause();
+  //       }
+  //       else{
+  //           video.currentTime += -.1;
+  //       }
+  //   }, 30);
+  // };
 
   render() {
     const {
