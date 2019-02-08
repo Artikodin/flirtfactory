@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import posed from "react-pose";
 
 import DragSwitch from "./DragSwitch";
 import PhoneCube from "./PhoneCube";
@@ -13,6 +14,7 @@ class VoiceAi extends React.Component {
   testDiv = React.createRef();
 
   state = {
+    isVisible: true,
     isAnswered: false,
     isHangedUp: false
   };
@@ -30,11 +32,13 @@ class VoiceAi extends React.Component {
   };
 
   handleHangUp = () => {
-    setTimeout(() => this.setState({ isHangedUp: true }), 250);
+    this.setState({ isVisible: false });
+    setTimeout(() => this.setState({ isHangedUp: true }), 200);
   };
 
   handleAnswer = () => {
-    setTimeout(() => this.setState({ isAnswered: true }), 250);
+    this.setState({ isVisible: false });
+    setTimeout(() => this.setState({ isAnswered: true }), 200);
   };
 
   setAIText = (age, unlocked, datas) => {
@@ -74,21 +78,45 @@ class VoiceAi extends React.Component {
   };
 
   render() {
-    const { isAnswered, isHangedUp } = this.state;
+    const { isAnswered, isHangedUp, isVisible } = this.state;
     const { age, unlocked, datas } = this.props;
 
     return (
-      <Wrapper>
-        <DragSwitch onHangUp={this.handleHangUp} onAnswer={this.handleAnswer} />
+      <WrapperAnimated pose={isVisible ? "visible" : "hidden"}>
+        <DragSwitch
+          isVisible={isVisible}
+          onHangUp={this.handleHangUp}
+          onAnswer={this.handleAnswer}
+        />
         {isHangedUp && <PhoneCube name="raccroche" />}
         {isAnswered && (
-          <IndexTag title="Assistance I.A." name="decroche">
+          <IndexTag isAnswered={isAnswered} title="Assistance I.A." name="decroche">
             {this.setAIText(age, unlocked, datas)}
           </IndexTag>
         )}
-      </Wrapper>
+      </WrapperAnimated>
     );
   }
 }
+
+const WrapperAnimated = posed(Wrapper)({
+  visible: {
+    // opacity: 1,
+    width: 298,
+    transition: {
+      // opacity: { ease: "easeOut", duration: 250, delay: 250 },
+      width: { ease: "easeOut", duration: 250 }
+    }
+  },
+  hidden: {
+    // opacity: 0,
+    width: 43,
+    transition: {
+      // opacity: { ease: "easeOut", duration: 250, delay: 250 },
+      width: { ease: "easeOut", duration: 250 }
+    },
+    applyAtEnd: { width: "auto", height: "auto", border: "none" }
+  }
+});
 
 export default VoiceAi;

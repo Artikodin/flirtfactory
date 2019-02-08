@@ -1,5 +1,5 @@
 import React from "react";
-import posed from "react-pose";
+import posed, { PoseGroup } from "react-pose";
 import PropTypes from "prop-types";
 
 import {
@@ -30,6 +30,12 @@ class IndexTag extends React.Component {
     name: ""
   };
 
+  componentDidMount() {
+    // this.setState({
+    //   showed: true
+    // });
+  }
+
   handleMouseEnter = () => {
     this.setState({
       showed: true
@@ -55,10 +61,16 @@ class IndexTag extends React.Component {
           <IconContainer>
             <Picto name={name} />
           </IconContainer>
-          <AnimatedTitle>{title}</AnimatedTitle>
-          <AnimatedContainer>
-            <Paragraph>{children}</Paragraph>
-          </AnimatedContainer>
+          <PoseGroup>
+            {showed && (
+              <AnimatedTitle key="animatedTitle">{title}</AnimatedTitle>
+            )}
+            {showed && (
+              <AnimatedContainer key="animatedContainer">
+                <Paragraph>{children}</Paragraph>
+              </AnimatedContainer>
+            )}
+          </PoseGroup>
         </AnimatedWrapper>
       </GlobalContainer>
     );
@@ -66,7 +78,7 @@ class IndexTag extends React.Component {
 }
 
 const AnimatedWrapper = posed(Wrapper)({
-  isClose: { width: 45, height: 45, delay: 280 },
+  isClose: { width: 45, height: 45, delay: 450 },
   isOpen: {
     width: 300,
     height: "auto"
@@ -74,13 +86,13 @@ const AnimatedWrapper = posed(Wrapper)({
 });
 
 const AnimatedTitle = posed(Title)({
-  isClose: { scaleX: 0, opacity: 0, delay: 280, transition: { duration: 270 } },
-  isOpen: { scaleX: 1, opacity: 1, transition: { duration: 300 } }
+  exit: { scaleX: 0.5, opacity: 0, delay: 280, transition: { duration: 270 } },
+  enter: { scaleX: 1, opacity: 1, transition: { duration: 300 } }
 });
 
 const AnimatedContainer = posed(Container)({
-  isClose: { scaleY: 0, opacity: 0 },
-  isOpen: { scaleY: 1, opacity: 1, delay: 280 }
+  exit: { scaleY: 0, opacity: 0 },
+  enter: { scaleY: 1, opacity: 1, delay: 280 }
 });
 
 export default IndexTag;
