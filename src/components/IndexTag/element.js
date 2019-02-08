@@ -22,20 +22,6 @@ export const IconContainer = styled.div`
   transition: all 0.5s ease-in;
 `;
 
-export const Container = styled.div`
-  display: inline-block;
-  height: auto;
-  transform-origin: top center;
-  position: relative;
-  width: 300px;
-  box-sizing: border-box;
-  text-align: left;
-  line-height: 1.5;
-  border: solid 1px white;
-  box-sizing: border-box;
-  border-top: none;
-`;
-
 export const Title = styled.div`
   display: inline-block;
   text-align: left;
@@ -52,6 +38,21 @@ export const Title = styled.div`
   padding-left: 10px;
   right: 45px;
   transform-origin: center right;
+  user-select: none;
+`;
+
+export const Container = styled.div`
+  display: inline-block;
+  height: auto;
+  transform-origin: top center;
+  position: relative;
+  width: 300px;
+  box-sizing: border-box;
+  text-align: left;
+  line-height: 1.5;
+  border: solid 1px white;
+  box-sizing: border-box;
+  border-top: none;
 `;
 
 export const Paragraph = styled.div`
@@ -71,6 +72,7 @@ export const Paragraph = styled.div`
   max-height: 260px;
   width: 100%;
   overflow: auto;
+  user-select: none;
 
   p {
     margin-bottom: 10px;

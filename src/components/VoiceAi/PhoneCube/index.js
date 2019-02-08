@@ -7,7 +7,7 @@ import { Picto } from "../..";
 
 const PhoneCube = ({ name }) => (
   <Wrapper>
-    <Picto name={name} />
+    <Picto name={name} width="24" height="24" />
   </Wrapper>
 );
 
