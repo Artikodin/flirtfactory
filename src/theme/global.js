@@ -175,6 +175,33 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 10px;
   }
 
+
+
+  .form-control:focus {
+    outline: 0 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  button:focus {
+      outline: 0 !important;
+      border: none !important;
+        box-shadow: none !important;
+  }
+
+  button:hover,
+button:focus {
+    background: #0053ba;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
   /* normalize */
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 

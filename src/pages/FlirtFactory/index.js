@@ -3,32 +3,46 @@ import React from "react";
 import { Page, BackgroundVideo, Catchphrase, TaskBar } from "../../components";
 
 class FlirtFactory extends React.Component {
+  constructor(props) {
+    super(props);
+    this.catchphrase = {};
+  }
+
   state = {
-    age: "flirtfactory",
-    json: 0,
+    ageCatchphrase: 1,
     showed: true
   };
 
-  displayCatchphrase = param => {
+  updateAgeCatchphrase = next => {
+    console.log("updateAgeCatchphrase");
+    if (next) {
+      console.log("next");
+    } else {
+      console.log("prev");
+    }
+  };
+
+  handleClick = param => {
     const { showed } = this.state;
     this.setState({
       showed: !showed,
-      json: param
+      ageCatchphrase: param
     });
   };
 
   render() {
-    const { age, showed, json } = this.state;
+    const { ageCatchphrase, showed } = this.state;
     return (
       <Page navbar={false}>
-        <TaskBar age={age} />
+        <TaskBar age="flirtfactory" />
         <div className="globalview background__wrapper">
-          <BackgroundVideo path={age} number={1} />
+          <BackgroundVideo path="flirtfactory" number={1} />
         </div>
         <Catchphrase
           showed={showed}
-          json={json}
-          displayCatchphrase={this.displayCatchphrase}
+          ageCatchphrase={ageCatchphrase}
+          handleClick={this.handleClick}
+          updateAgeCatchphrase={this.updateAgeCatchphrase}
         />
       </Page>
     );

@@ -20,7 +20,7 @@ class Test extends React.Component {
     const { color } = this.state;
     return (
       <Page>
-        <Wrapper onClick={this.handleClick}>
+        <Wrapper onClick={() => this.handleClick}>
           <Picto name="renaissance1" color={color} height="30" width="30" />
         </Wrapper>
       </Page>

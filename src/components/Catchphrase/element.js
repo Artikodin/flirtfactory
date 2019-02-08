@@ -22,7 +22,7 @@ export const CatchphraseContainer = styled.div`
   justify-content: center;
   padding: 0 5%;
 
-  button {
+  #catchphrase--close {
     position: absolute;
     left: 0;
     top: 0;
@@ -79,11 +79,14 @@ export const CatchphraseContainer = styled.div`
         line-height: normal;
         letter-spacing: normal;
         color: #516081;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
       }
 
       .catchphrase--line {
         position: relative;
-        margin-left: 10%;
+        margin: 0 5%;
         width: 100%;
         height: 1px;
         background: #516081;
@@ -95,7 +98,7 @@ export const CatchphraseContainer = styled.div`
       font-family: GTCinetype;
       font-size: 14px;
       font-weight: normal;
-      font-style: italic;
+      /* font-style: italic; */
       font-stretch: normal;
       line-height: 1.5;
       letter-spacing: normal;
@@ -107,6 +110,8 @@ export const CatchphraseContainer = styled.div`
 
       .catchphrase--btn {
         display: inline-block;
+        background: none;
+        border: none;
 
         .rect {
           transition: all 0.2s ease-out;

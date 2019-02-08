@@ -15,15 +15,19 @@ import {
 class Catchphrase extends React.Component {
   static propTypes = {
     showed: PropTypes.bool,
-    json: PropTypes.number,
-    displayCatchphrase: PropTypes.func
+    ageCatchphrase: PropTypes.number,
+    handleClick: PropTypes.func,
+    updateAgeCatchphrase: PropTypes.func
   };
 
   static defaultProps = {
     showed: false,
-    json: 0,
-    displayCatchphrase: () => {}
+    ageCatchphrase: 0,
+    handleClick: () => {},
+    updateAgeCatchphrase: () => {}
   };
+
+  videoCatchphrase = React.createRef();
 
   handleClick = () => {
     const { showed } = this.state;
@@ -33,7 +37,12 @@ class Catchphrase extends React.Component {
   };
 
   render() {
-    const { showed, json, displayCatchphrase } = this.props;
+    const {
+      showed,
+      ageCatchphrase,
+      handleClick,
+      updateAgeCatchphrase
+    } = this.props;
     return (
       <>
         {showed && (
@@ -41,12 +50,16 @@ class Catchphrase extends React.Component {
             {value => (
               <CatchphraseWrapper className="globalview--catchphrase">
                 <CatchphraseContainer>
-                  <button type="button" onClick={displayCatchphrase}>
+                  <button
+                    id="catchphrase--close"
+                    type="button"
+                    onClick={() => handleClick}
+                  >
                     <svg width="40px" height="40px" viewBox="0 0 40 40">
                       <g
                         id="Page-1"
                         stroke="none"
-                        strokWidth="1"
+                        strokeWidth="1"
                         fill="none"
                         fillRule="evenodd"
                       >
@@ -87,19 +100,25 @@ class Catchphrase extends React.Component {
                   </button>
                   <div id="catchphrase--container">
                     <div className="catchphrase--catchphrase">
-                      <Markup content={value.epoques[json].catchphrase} />
+                      <Markup
+                        content={value.epoques[ageCatchphrase].catchphrase}
+                      />
                     </div>
                     <div className="catchphrase--title">
                       <div>
-                        <h1>{value.epoques[json].name}</h1>
+                        <h1>{value.epoques[ageCatchphrase].name}</h1>
                       </div>
                       <div className="catchphrase--line" />
                     </div>
                     <div className="catchphrase--summary">
-                      <Markup content={value.epoques[json].summary} />
+                      <Markup content={value.epoques[ageCatchphrase].summary} />
                     </div>
                     <div className="catchphrase--nav">
-                      <div className="catchphrase--btn prev">
+                      <button
+                        type="button"
+                        className="catchphrase--btn prev"
+                        onClick={() => console.log("hello")}
+                      >
                         <svg width="74px" height="74px" viewBox="0 0 74 74">
                           <g fill="none" strokeWidth="1">
                             <rect
@@ -120,8 +139,12 @@ class Catchphrase extends React.Component {
                             />
                           </g>
                         </svg>
-                      </div>
-                      <div className="catchphrase--btn next">
+                      </button>
+                      <button
+                        type="button"
+                        className="catchphrase--btn next"
+                        onClick={() => updateAgeCatchphrase(true)}
+                      >
                         <svg width="74px" height="74px" viewBox="0 0 74 74">
                           <g transform="translate(-235.000000, -773.000000)">
                             <g transform="translate(151.000000, 773.000000)">
@@ -149,16 +172,14 @@ class Catchphrase extends React.Component {
                             </g>
                           </g>
                         </svg>
-                      </div>
+                      </button>
                     </div>
                   </div>
                 </CatchphraseContainer>
                 <CatchphraseVideoContainer>
                   <video
+                    ref={this.videoCatchphrase}
                     src="./assets/videos/flirtfactory/catchphrase.mp4"
-                    autoPlay
-                    playsInline
-                    loop
                     type="video/mp4"
                     muted
                   />
