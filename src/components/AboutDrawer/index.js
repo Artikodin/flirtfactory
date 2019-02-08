@@ -9,7 +9,7 @@ const AboutDrawer = ({ showed, click }) => (
   <PoseGroup id="AboutDrawer">
     {showed && (
       <AnimatedWrapper key="wrapper">
-        <ButtonAboutClose onClick={() => click}>
+        <ButtonAboutClose onClick={() => click()}>
           <img src="../assets/ui/Close.svg" alt="close about" />
         </ButtonAboutClose>
         <AboutDrawerContent />

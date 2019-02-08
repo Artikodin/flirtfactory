@@ -29,13 +29,6 @@ class Catchphrase extends React.Component {
 
   videoCatchphrase = React.createRef();
 
-  handleClick = () => {
-    const { showed } = this.state;
-    this.setState({
-      showed: !showed
-    });
-  };
-
   render() {
     const {
       showed,
@@ -53,7 +46,7 @@ class Catchphrase extends React.Component {
                   <button
                     id="catchphrase--close"
                     type="button"
-                    onClick={() => handleClick}
+                    onClick={() => handleClick()}
                   >
                     <svg width="40px" height="40px" viewBox="0 0 40 40">
                       <g

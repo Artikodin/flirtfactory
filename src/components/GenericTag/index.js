@@ -223,7 +223,7 @@ class GenericTag extends React.Component {
           pose={showed ? "isOpen" : "isClose"}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-          onClick={() => catchphrase}
+          onClick={() => catchphrase()}
         >
           <IconContainer>
             <Picto name={name} />

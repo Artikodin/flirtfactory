@@ -22,11 +22,11 @@ class FlirtFactory extends React.Component {
     }
   };
 
-  handleClick = param => {
+  handleClick = () => {
+    console.log("handle click");
     const { showed } = this.state;
     this.setState({
-      showed: !showed,
-      ageCatchphrase: param
+      showed: !showed
     });
   };
 
