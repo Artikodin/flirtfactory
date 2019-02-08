@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import posed from "react-pose";
-
-import { Wrapper } from "./element";
+import posed, { PoseGroup } from "react-pose";
 
 class DragSwitch extends React.Component {
   path = React.createRef();
@@ -12,7 +10,6 @@ class DragSwitch extends React.Component {
   dragCircle = React.createRef();
 
   state = {
-    isVisible: true,
     elStart: {
       x: 0,
       y: 0
@@ -38,13 +35,15 @@ class DragSwitch extends React.Component {
   static propTypes = {
     handleDragStart: PropTypes.func,
     onAnswer: PropTypes.func,
-    onHangUp: PropTypes.func
+    onHangUp: PropTypes.func,
+    isVisible: PropTypes.bool
   };
 
   static defaultProps = {
     handleDragStart: () => {},
     onAnswer: () => {},
-    onHangUp: () => {}
+    onHangUp: () => {},
+    isVisible: true
   };
 
   componentDidMount() {
@@ -177,13 +176,11 @@ class DragSwitch extends React.Component {
 
   handleAnswer = () => {
     const { onAnswer } = this.props;
-    this.setState({ isVisible: false });
     onAnswer();
   };
 
   handleHangUp = () => {
     const { onHangUp } = this.props;
-    this.setState({ isVisible: false });
     onHangUp();
   };
 
@@ -234,11 +231,13 @@ class DragSwitch extends React.Component {
   };
 
   render() {
-    const { elCenter, isVisible } = this.state;
+    const { elCenter } = this.state;
+    const { isVisible } = this.props;
     return (
       <>
-        <WrapperAnimated pose={isVisible ? "visible" : "hidden"}>
+        {isVisible && (
           <svg
+            key="svg"
             ref={this.svgRef}
             version="1.1"
             baseProfile="full"
@@ -279,29 +278,15 @@ class DragSwitch extends React.Component {
               onMouseDown={() => this.handleDragStart()}
             />
           </svg>
-        </WrapperAnimated>
+        )}
       </>
     );
   }
 }
 
-const WrapperAnimated = posed(Wrapper)({
-  visible: {
-    opacity: 1,
-    width: 298,
-    transition: {
-      opacity: { ease: "easeOut", duration: 250, delay: 250 },
-      width: { ease: "easeOut", duration: 250 }
-    }
-  },
-  hidden: {
-    opacity: 0,
-    width: 43,
-    transition: {
-      opacity: { ease: "easeOut", duration: 250, delay: 250 },
-      width: { ease: "easeOut", duration: 250 }
-    }
-  }
+const SvgAnimated = posed.svg({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
 });
 
 export default DragSwitch;

@@ -1,28 +1,15 @@
 import React from "react";
 
-import { Page, Picto } from "../../components";
-import { Wrapper } from "./element";
+import { Page, IndexTag2 } from "../../components";
 
+// eslint-disable-next-line react/prefer-stateless-function
 class Test extends React.Component {
-  testDiv = React.createRef();
-
-  state = {
-    color: "red"
-  };
-
-  handleClick = () => {
-    this.setState({
-      color: "white"
-    });
-  };
-
   render() {
-    const { color } = this.state;
     return (
       <Page>
-        <Wrapper onClick={() => this.handleClick}>
-          <Picto name="renaissance1" color={color} height="30" width="30" />
-        </Wrapper>
+        <IndexTag2 title="test" name="antiquite">
+          jfdk ksdjf skdfj skdf lsdfj dlskfj sdlfjk dfljsdf lsdfjk sldfkjsd
+        </IndexTag2>
       </Page>
     );
   }
