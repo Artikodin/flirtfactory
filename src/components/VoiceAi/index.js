@@ -90,7 +90,7 @@ class VoiceAi extends React.Component {
         />
         {isHangedUp && <PhoneCube name="raccroche" />}
         {isAnswered && (
-          <IndexTag title="Assistance I.A." name="decroche">
+          <IndexTag isAnswered={isAnswered} title="Assistance I.A." name="decroche">
             {this.setAIText(age, unlocked, datas)}
           </IndexTag>
         )}
@@ -115,7 +115,7 @@ const WrapperAnimated = posed(Wrapper)({
       // opacity: { ease: "easeOut", duration: 250, delay: 250 },
       width: { ease: "easeOut", duration: 250 }
     },
-    applyAtEnd: { width: "auto", height: "auto" }
+    applyAtEnd: { width: "auto", height: "auto", border: "none" }
   }
 });
 

@@ -9,4 +9,5 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid 1px white;
 `;
