@@ -7,7 +7,7 @@ export const GlobalContainer = styled.div`
   z-index: 5;
   top: ${({ yPos }) => yPos};
   left: ${({ xPos }) => xPos};
-  opacity: 0.1;
+  opacity: ${({ unlocked }) => (unlocked ? "1" : "0.1")};
   transition: opacity 0.5s ease;
 `;
 

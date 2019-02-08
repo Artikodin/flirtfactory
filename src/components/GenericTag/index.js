@@ -205,10 +205,15 @@ class GenericTag extends React.Component {
   };
 
   render() {
-    const { xPos, yPos, children, title, name, global } = this.props;
+    const { xPos, yPos, children, title, name, global, unlocked } = this.props;
     const { showed } = this.state;
     return (
-      <GlobalContainer ref={this.magnet} xPos={xPos} yPos={yPos}>
+      <GlobalContainer
+        unlocked={unlocked}
+        ref={this.magnet}
+        xPos={xPos}
+        yPos={yPos}
+      >
         <AnimatedWrapper
           pose={showed ? "isOpen" : "isClose"}
           onMouseEnter={this.handleMouseEnter}
