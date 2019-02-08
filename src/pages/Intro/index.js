@@ -11,7 +11,7 @@ import {
 class Intro extends React.Component {
   state = {
     agestr: "intro",
-    frameTotal: 35,
+    frameTotal: 25,
     waitFor: 0 // sec
   };
 
@@ -36,9 +36,9 @@ class Intro extends React.Component {
                   age={agestr}
                   frameTotal={frameTotal}
                   waitFor={waitFor}
-                  pathDraw="M 400 50 L 400 200"
-                  top="60vh"
-                  left="40vw"
+                  pathDraw="M 50 200 L 50 50"
+                  top="70vh"
+                  left="50vw"
                 />
               </div>
             </>
