@@ -96,7 +96,9 @@ class HeartCounter extends React.Component {
             />
           </g>
         </svg>
-        <p>{progression} / {progress.length}</p>
+        <p>
+          {progression} / {progress.length}
+        </p>
       </HeartCounterContainer>
     );
   }

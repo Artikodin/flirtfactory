@@ -13,3 +13,5 @@ export const Wrapper = styled.div`
     margin-top: 15px;
   }
 `;
+
+export const HeartCounterToAnimate = styled.div``;

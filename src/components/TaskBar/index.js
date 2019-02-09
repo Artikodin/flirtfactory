@@ -1,13 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import posed, { PoseGroup } from "react-pose";
+import { easing } from "popmotion";
+
 import { VoiceAi, IndexTag, HeartCounter } from "..";
 
 import { Markup } from "interweave";
 
 /* eslint-disable */
 
-import { Wrapper } from "./element";
+import { Wrapper, HeartCounterToAnimate } from "./element";
 
 class TaskBar extends React.Component {
   static propTypes = {
@@ -27,22 +30,45 @@ class TaskBar extends React.Component {
   };
 
   render() {
-    const { age, name, datas, progress } = this.props;
+    const { age, name, datas, progress, unlocked } = this.props;
 
     return (
       <Wrapper className="taskbar">
         <VoiceAi {...this.props} />
-        {(age !== "intro" && age !== "flirtfactory") && (
+        {age !== "intro" && age !== "flirtfactory" && (
           <>
             <IndexTag title={datas.name} name={name} isLoggedIn={false}>
               <Markup content={datas.description} />
             </IndexTag>
-            <HeartCounter progress={progress} />
+            <PoseGroup id="HeartCounter">
+              {unlocked && (
+                <AnimatedHeartCounter key="heart-wrapper">
+                  <HeartCounter progress={progress} />
+                </AnimatedHeartCounter>
+              )}
+            </PoseGroup>
           </>
         )}
       </Wrapper>
     );
   }
 }
+
+const AnimatedHeartCounter = posed(HeartCounterToAnimate)({
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: 2000,
+      ease: easing.backOut
+    }
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 2000,
+      ease: easing.easeIn
+    }
+  }
+});
 
 export default TaskBar;

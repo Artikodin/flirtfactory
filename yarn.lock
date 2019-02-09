@@ -620,6 +620,16 @@
     hey-listen "^1.0.5"
     style-value-types "^3.0.7"
 
+"@popmotion/popcorn@^0.3.0":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@popmotion/popcorn/-/popcorn-0.3.1.tgz#f0f33fbf7ff66f2cd0bf28be24bee0b1d46b65e8"
+  integrity sha512-TRhDPxfzM4CrUff2ELyzDj6xSEp5fcmbnrTO0VkmrN/TxJrAzP2H/VfIDRQQy82Yn65Vwn1ohrIi8eZLqzrCMA==
+  dependencies:
+    "@popmotion/easing" "^1.0.1"
+    framesync "^4.0.1"
+    hey-listen "^1.0.5"
+    style-value-types "^3.0.7"
+
 "@types/anymatch@*":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.0.tgz#d1d55958d1fccc5527d4aba29fc9c4b942f563ff"
@@ -4123,6 +4133,19 @@ popmotion@^8.5.0:
     stylefire "^2.0.7"
     tslib "^1.9.1"
 
+popmotion@^8.6.2:
+  version "8.6.2"
+  resolved "https://registry.yarnpkg.com/popmotion/-/popmotion-8.6.2.tgz#9066f0b33c5aa03783dc5af55143f6ac5b5d4a49"
+  integrity sha512-t4kb78sl/gETCdnBKPguVYbL/BfBjax0Z7CQXMV9mEaxmBvIODCcJ2lPn8S0AAQS/bHYekA8TxMszwCF6NAcAA==
+  dependencies:
+    "@popmotion/easing" "^1.0.1"
+    "@popmotion/popcorn" "^0.3.0"
+    framesync "^4.0.0"
+    hey-listen "^1.0.5"
+    style-value-types "^3.0.6"
+    stylefire "^2.3.4"
+    tslib "^1.9.1"
+
 portfinder@^1.0.9:
   version "1.0.19"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.19.tgz#07e87914a55242dcda5b833d42f018d6875b595f"
@@ -5126,6 +5149,15 @@ styled-reboot@^3.0.2:
 stylefire@^2.0.7:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/stylefire/-/stylefire-2.3.2.tgz#a83b824fc7c4ada04849780f109ce6084e9ca307"
+  dependencies:
+    framesync "^4.0.0"
+    hey-listen "^1.0.4"
+    style-value-types "^3.0.6"
+
+stylefire@^2.3.4:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/stylefire/-/stylefire-2.4.0.tgz#1c52b82d951ac9f5046dbb359af7229d10c59007"
+  integrity sha512-soSvx0Xc4If/8EGmU/HrE0HHOOzQ+JEEyhj1xJFfOx5PCIy19veoN588e2QGJfOZJYJeAYQx/YzofbzWCAi6DA==
   dependencies:
     framesync "^4.0.0"
     hey-listen "^1.0.4"
