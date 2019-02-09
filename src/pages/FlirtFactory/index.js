@@ -1,6 +1,12 @@
 import React from "react";
 
-import { Page, BackgroundVideo, Catchphrase, TaskBar } from "../../components";
+import {
+  Page,
+  BackgroundVideo,
+  Catchphrase,
+  TaskBar,
+  FlirtFactoryTag
+} from "../../components";
 
 class FlirtFactory extends React.Component {
   constructor(props) {
@@ -10,20 +16,17 @@ class FlirtFactory extends React.Component {
 
   state = {
     ageCatchphrase: 0,
-    showed: true,
+    showed: false,
     forward: true
   };
 
-  /* eslint-disable */
-
   updateAgeCatchphrase = next => {
-
-    let { ageCatchphrase } = this.state;
+    const { ageCatchphrase } = this.state;
     if (next) {
       if (ageCatchphrase === 7) {
         this.setState({
           ageCatchphrase: 0,
-          forward: true          
+          forward: true
         });
       } else {
         this.setState({
@@ -46,9 +49,10 @@ class FlirtFactory extends React.Component {
     }
   };
 
-  handleClick = () => {
-    const { showed, forward } = this.state;
+  handleClick = ageNb => {
+    const { showed } = this.state;
     this.setState({
+      ageCatchphrase: ageNb,
       showed: !showed
     });
   };
@@ -61,6 +65,20 @@ class FlirtFactory extends React.Component {
         <div className="globalview background__wrapper">
           <BackgroundVideo path="flirtfactory" number={1} />
         </div>
+        <FlirtFactoryTag
+          name="renaissance"
+          agenb={2}
+          left="50vw"
+          top="20vh"
+          handleClick={this.handleClick}
+        />
+        <FlirtFactoryTag
+          name="antiquite"
+          agenb={0}
+          left="80vw"
+          top="10vh"
+          handleClick={this.handleClick}
+        />
         <Catchphrase
           forward={forward}
           showed={showed}

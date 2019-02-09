@@ -61,7 +61,7 @@ export const Paragraph = styled.div`
   font-size: 14px;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.71;
+  line-height: 2em;
   letter-spacing: normal;
   color: #ffffff;
   padding: 5%;

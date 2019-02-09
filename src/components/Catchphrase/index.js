@@ -55,16 +55,22 @@ class Catchphrase extends React.Component {
     ];
   }
 
-  componentDidMount() {
-    this.videoElement = this.videoCatchphraseForward;
-    this.mounted = true;
-    this.runRaf();
-  }
+  /* eslint-disable */
 
   componentDidUpdate(prevProps) {
-    const { ageCatchphrase, forward } = this.props;
+    const { ageCatchphrase, forward, showed } = this.props;
+    if (showed !== prevProps.showed && showed) {
+      this.videoCatchphraseForward.current.currentTime = this.expectedTimeValues[
+        ageCatchphrase
+      ][0];
+      this.videoCatchphraseBackward.current.currentTime = this.expectedTimeValues[
+        ageCatchphrase
+      ][1];
+      this.videoElement = this.videoCatchphraseForward;
+      this.runRaf();
+    }
     if (ageCatchphrase !== prevProps.ageCatchphrase) {
-      this.updateCatchphrase();
+      this.updateCatchphraseVideo();
     }
     if (forward) {
       this.videoElement = this.videoCatchphraseForward;
@@ -73,9 +79,9 @@ class Catchphrase extends React.Component {
     }
   }
 
-  updateCatchphrase = () => {
-    const { ageCatchphrase, forward } = this.props;
-    if (this.mounted) {
+  updateCatchphraseVideo = () => {
+    const { ageCatchphrase, forward, showed} = this.props;
+    if (showed) {
       this.videoCatchphraseForward.current.play();
       this.videoCatchphraseBackward.current.play();
       if (forward) {
@@ -90,11 +96,12 @@ class Catchphrase extends React.Component {
     }
   };
 
-  /* eslint-disable */
-
   runRaf = () => {
-    const { ageCatchphrase, forward } = this.props;
+    const { ageCatchphrase, forward, showed } = this.props;
     const { expectedTime } = this.state;
+    if (showed === false) {
+      return
+    }
     if (forward) {
       if (ageCatchphrase === 0) {
         if (
@@ -102,13 +109,17 @@ class Catchphrase extends React.Component {
           this.videoElement.current.currentTime < 0.05
         ) {
           this.videoCatchphraseForward.current.pause();
-          this.videoCatchphraseBackward.current.currentTime = this.expectedTimeValues[ageCatchphrase][1]
+          this.videoCatchphraseBackward.current.currentTime = this.expectedTimeValues[
+            ageCatchphrase
+          ][1];
           this.videoCatchphraseBackward.current.pause();
         }
       } else {
         if (this.videoElement.current.currentTime > expectedTime) {
           this.videoCatchphraseForward.current.pause();
-          this.videoCatchphraseBackward.current.currentTime = this.expectedTimeValues[ageCatchphrase][1]
+          this.videoCatchphraseBackward.current.currentTime = this.expectedTimeValues[
+            ageCatchphrase
+          ][1];
           this.videoCatchphraseBackward.current.pause();
         }
       }
@@ -119,13 +130,17 @@ class Catchphrase extends React.Component {
           this.videoElement.current.currentTime < 0.05
         ) {
           this.videoCatchphraseBackward.current.pause();
-          this.videoCatchphraseForward.current.currentTime = this.expectedTimeValues[ageCatchphrase][0]
+          this.videoCatchphraseForward.current.currentTime = this.expectedTimeValues[
+            ageCatchphrase
+          ][0];
           this.videoCatchphraseForward.current.pause();
         }
       } else {
         if (this.videoElement.current.currentTime > expectedTime) {
           this.videoCatchphraseBackward.current.pause();
-          this.videoCatchphraseForward.current.currentTime = this.expectedTimeValues[ageCatchphrase][0]
+          this.videoCatchphraseForward.current.currentTime = this.expectedTimeValues[
+            ageCatchphrase
+          ][0];
           this.videoCatchphraseForward.current.pause();
         }
       }

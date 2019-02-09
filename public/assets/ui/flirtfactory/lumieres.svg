@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="168" cy="447.072464" rx="35" ry="34.9275362"></ellipse>
+        <filter x="-12.9%" y="-8.6%" width="125.7%" height="125.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.143851902 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M164.584059,367.700546 C178.744345,367.700546 195.911393,333.55607 209.0484,330.264011 C281.990293,311.985188 336,246.112944 336,167.652174 C336,75.060435 260.783838,1.42108547e-14 168,1.42108547e-14 C75.216162,1.42108547e-14 1.77635684e-14,75.060435 1.77635684e-14,167.652174 C1.77635684e-14,242.461287 49.0993458,305.826377 116.893758,327.406113 C133.008942,332.53576 146.76454,367.700546 164.584059,367.700546 Z" id="path-3"></path>
+        <filter x="-4.0%" y="-2.0%" width="108.0%" height="107.3%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1171875 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboard-Copy-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(83.000000, 15.000000)">
+            <g id="Group-9">
+                <g id="Group-Copy-4">
+                    <g id="Group-3">
+                        <g id="Group-2"></g>
+                        <g id="Oval">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <g id="Oval-Copy">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="LUMIERE-Copy" transform="translate(110.000000, 74.000000)" fill="#415371" fill-rule="nonzero">
+                <path d="M58.5,0 C88.2261496,0 117,23.0476514 117,55.6457277 C117,97.942092 85.3123419,106.798699 85.3123419,136.409187 L31.6876581,136.409187 C31.6876581,106.798699 0,97.942092 0,55.6457277 C0,23.0476514 28.7738504,0 58.5,0 Z M68.2733965,18.7899589 C67.8788183,21.0116933 69.2560477,23.4229956 71.3731111,24.2078062 C83.2521889,28.6853973 92.1795188,39.1950353 94.452137,51.9908608 C94.9112134,54.5007383 97.6125559,56.3698767 100.127991,55.9111226 C102.639633,55.4523686 104.510085,52.7529233 104.051008,50.2392545 C101.171347,34.0387916 89.9448408,20.8259169 74.8749919,15.1464661 C72.0901809,14.0166421 68.7780012,16.3559085 68.2733965,18.7899589 Z M85.3161359,146.152971 L85.3161359,155.896755 L31.6876581,155.896755 L31.6876581,146.152971 L85.3161359,146.152971 Z M85.3161359,165.64054 C85.3161359,171.236581 80.7101952,175.384324 75.5655036,175.384324 L41.4382904,175.384324 C36.2935988,175.384324 31.6876581,171.240372 31.6876581,165.64054 L85.3161359,165.64054 Z M68.2506323,180.256216 C68.2506323,185.655106 63.902685,190 58.5,190 C53.097315,190 48.7493677,185.655106 48.7493677,180.256216 L68.2506323,180.256216 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

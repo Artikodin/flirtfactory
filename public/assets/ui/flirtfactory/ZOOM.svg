@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="168" cy="447.072464" rx="35" ry="34.9275362"></ellipse>
+        <filter x="-12.9%" y="-8.6%" width="125.7%" height="125.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.143851902 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M164.584059,367.700546 C178.744345,367.700546 195.911393,333.55607 209.0484,330.264011 C281.990293,311.985188 336,246.112944 336,167.652174 C336,75.060435 260.783838,1.42108547e-14 168,1.42108547e-14 C75.216162,1.42108547e-14 1.77635684e-14,75.060435 1.77635684e-14,167.652174 C1.77635684e-14,242.461287 49.0993458,305.826377 116.893758,327.406113 C133.008942,332.53576 146.76454,367.700546 164.584059,367.700546 Z" id="path-3"></path>
+        <filter x="-4.0%" y="-2.0%" width="108.0%" height="107.3%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1171875 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(83.000000, 15.000000)">
+            <g id="Group-9">
+                <g id="Group-Copy-4">
+                    <g id="Group-3">
+                        <g id="Group-2"></g>
+                        <g id="Oval">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <g id="Oval-Copy">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="ZOOM-Copy" transform="translate(76.000000, 92.000000)">
+                <circle id="Oval" stroke="#415371" stroke-width="16" cx="68" cy="68" r="68"></circle>
+                <path d="M183.830246,134.701032 L175.003835,148.5127 C174.68663,149.006241 174.03009,149.148321 173.543217,148.83051 L118.482347,112.77959 C117.995475,112.46178 117.851626,111.796248 118.168831,111.298968 L126.995242,97.4873002 C127.312447,96.9937593 127.968987,96.8516793 128.45586,97.1694897 L183.51673,133.22041 C184.007291,133.541959 184.147451,134.207491 183.830246,134.701032 Z" id="Path" fill="#415371"></path>
+                <path d="M69.6883993,94.4517683 L68.7015869,95 L67.6924315,94.4962195 C66.6199712,93.9591007 41.3910874,81.1497415 41.0038101,63.5174253 C40.8138952,54.8679592 47.747649,47.6779748 56.4613889,47.4890571 C60.6842014,47.3964504 64.7468895,49.0189199 67.7594603,51.9156575 C70.6416974,48.8929748 74.6299091,47.0964047 78.8527215,47.003798 C87.5627377,46.8148803 94.8055685,53.6974105 94.9954834,62.3505808 C95.3827607,79.9791928 70.7385167,93.866494 69.6883993,94.4517683 Z" id="Path" fill="#415371"></path>
+            </g>
+        </g>
+    </g>
+</svg>
