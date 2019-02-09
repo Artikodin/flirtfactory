@@ -14,6 +14,7 @@ import {
 
 class Catchphrase extends React.Component {
   static propTypes = {
+    forward: PropTypes.bool,
     showed: PropTypes.bool,
     ageCatchphrase: PropTypes.number,
     handleClick: PropTypes.func,
@@ -21,6 +22,7 @@ class Catchphrase extends React.Component {
   };
 
   static defaultProps = {
+    forward: true,
     showed: false,
     ageCatchphrase: 0,
     handleClick: () => {},
@@ -31,96 +33,109 @@ class Catchphrase extends React.Component {
     expectedTime: 0
   };
 
-  videoCatchphrase = React.createRef();
+  videoCatchphraseForward = React.createRef();
+
+  videoCatchphraseBackward = React.createRef();
 
   constructor(props) {
     super(props);
     this.mounted = false;
     this.intervalRewind = 0;
     this.raf = () => {};
+    this.videoElement = {};
+    this.expectedTimeValues = [
+      [0, 0],
+      [1.01, 7.01],
+      [2.01, 6.01],
+      [3.01, 5.01],
+      [4.01, 4.01],
+      [5.01, 3.01],
+      [6.01, 2.01],
+      [7.01, 1.01]
+    ];
   }
 
   componentDidMount() {
+    this.videoElement = this.videoCatchphraseForward;
     this.mounted = true;
     this.runRaf();
   }
 
   componentDidUpdate(prevProps) {
-    const { ageCatchphrase } = this.props;
+    const { ageCatchphrase, forward } = this.props;
     if (ageCatchphrase !== prevProps.ageCatchphrase) {
       this.updateCatchphrase();
+    }
+    if (forward) {
+      this.videoElement = this.videoCatchphraseForward;
+    } else {
+      this.videoElement = this.videoCatchphraseBackward;
     }
   }
 
   updateCatchphrase = () => {
-    const { ageCatchphrase } = this.props;
+    const { ageCatchphrase, forward } = this.props;
     if (this.mounted) {
-      switch (ageCatchphrase) {
-        case 0:
-          this.videoCatchphrase.current.play();
-          this.setState({
-            expectedTime: 0.05
-          });
-          break;
-        case 1:
-          this.videoCatchphrase.current.play();
-          this.setState({
-            expectedTime: 1.01
-          });
-          break;
-        case 2:
-          this.videoCatchphrase.current.play();
-          this.setState({
-            expectedTime: 2.02
-          });
-          break;
-        case 3:
-          this.videoCatchphrase.current.play();
-          this.setState({
-            expectedTime: 3.03
-          });
-          break;
-        case 4:
-          this.videoCatchphrase.current.play();
-          this.setState({
-            expectedTime: 4.04
-          });
-          break;
-        case 5:
-          this.videoCatchphrase.current.play();
-          this.setState({
-            expectedTime: 5.05
-          });
-          break;
-        case 6:
-          this.videoCatchphrase.current.play();
-          this.setState({
-            expectedTime: 6.06
-          });
-          break;
-        case 7:
-          this.videoCatchphrase.current.play();
-          this.setState({
-            expectedTime: 7.07
-          });
-          break;
-        default:
-          this.videoCatchphrase.current.currentTime = 0;
+      this.videoCatchphraseForward.current.play();
+      this.videoCatchphraseBackward.current.play();
+      if (forward) {
+        this.setState({
+          expectedTime: this.expectedTimeValues[ageCatchphrase][0]
+        });
+      } else {
+        this.setState({
+          expectedTime: this.expectedTimeValues[ageCatchphrase][1]
+        });
       }
     }
   };
 
+  /* eslint-disable */
+
   runRaf = () => {
-    // console.log(this.videoCatchphrase.current.currentTime);
+    const { ageCatchphrase, forward } = this.props;
     const { expectedTime } = this.state;
-    if (this.videoCatchphrase.current.currentTime > expectedTime) {
-      this.videoCatchphrase.current.pause();
+    if (forward) {
+      if (ageCatchphrase === 0) {
+        if (
+          this.videoElement.current.currentTime > 0 &&
+          this.videoElement.current.currentTime < 0.05
+        ) {
+          this.videoCatchphraseForward.current.pause();
+          this.videoCatchphraseBackward.current.currentTime = this.expectedTimeValues[ageCatchphrase][1]
+          this.videoCatchphraseBackward.current.pause();
+        }
+      } else {
+        if (this.videoElement.current.currentTime > expectedTime) {
+          this.videoCatchphraseForward.current.pause();
+          this.videoCatchphraseBackward.current.currentTime = this.expectedTimeValues[ageCatchphrase][1]
+          this.videoCatchphraseBackward.current.pause();
+        }
+      }
+    } else {
+      if (ageCatchphrase === 0) {
+        if (
+          this.videoElement.current.currentTime > 0 &&
+          this.videoElement.current.currentTime < 0.05
+        ) {
+          this.videoCatchphraseBackward.current.pause();
+          this.videoCatchphraseForward.current.currentTime = this.expectedTimeValues[ageCatchphrase][0]
+          this.videoCatchphraseForward.current.pause();
+        }
+      } else {
+        if (this.videoElement.current.currentTime > expectedTime) {
+          this.videoCatchphraseBackward.current.pause();
+          this.videoCatchphraseForward.current.currentTime = this.expectedTimeValues[ageCatchphrase][0]
+          this.videoCatchphraseForward.current.pause();
+        }
+      }
     }
     this.raf = window.requestAnimationFrame(this.runRaf);
   };
 
   render() {
     const {
+      forward,
       showed,
       ageCatchphrase,
       handleClick,
@@ -262,8 +277,17 @@ class Catchphrase extends React.Component {
                 </CatchphraseContainer>
                 <CatchphraseVideoContainer>
                   <video
-                    ref={this.videoCatchphrase}
-                    src="./assets/videos/flirtfactory/catchphrase.mp4"
+                    ref={this.videoCatchphraseForward}
+                    style={{ display: forward ? "block" : "none" }}
+                    src="./assets/videos/flirtfactory/catchphrase1.mp4"
+                    type="video/mp4"
+                    muted
+                    loop
+                  />
+                  <video
+                    ref={this.videoCatchphraseBackward}
+                    style={{ display: forward ? "none" : "block" }}
+                    src="./assets/videos/flirtfactory/catchphrase2.mp4"
                     type="video/mp4"
                     muted
                     loop

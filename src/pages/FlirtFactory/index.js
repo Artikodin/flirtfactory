@@ -10,45 +10,51 @@ class FlirtFactory extends React.Component {
 
   state = {
     ageCatchphrase: 0,
-    showed: true
+    showed: true,
+    forward: true
   };
 
   /* eslint-disable */
 
   updateAgeCatchphrase = next => {
+
     let { ageCatchphrase } = this.state;
     if (next) {
       if (ageCatchphrase === 7) {
         this.setState({
-          ageCatchphrase: 0
+          ageCatchphrase: 0,
+          forward: true          
         });
       } else {
         this.setState({
-          ageCatchphrase: ageCatchphrase + 1
+          ageCatchphrase: ageCatchphrase + 1,
+          forward: true
         });
       }
     } else {
       if (ageCatchphrase === 0) {
         this.setState({
-          ageCatchphrase: 7
+          ageCatchphrase: 7,
+          forward: false
         });
       } else {
         this.setState({
-          ageCatchphrase: ageCatchphrase - 1
+          ageCatchphrase: ageCatchphrase - 1,
+          forward: false
         });
       }
     }
   };
 
   handleClick = () => {
-    const { showed } = this.state;
+    const { showed, forward } = this.state;
     this.setState({
       showed: !showed
     });
   };
 
   render() {
-    const { ageCatchphrase, showed } = this.state;
+    const { ageCatchphrase, showed, forward } = this.state;
     return (
       <Page navbar={false}>
         <TaskBar age="flirtfactory" />
@@ -56,6 +62,7 @@ class FlirtFactory extends React.Component {
           <BackgroundVideo path="flirtfactory" number={1} />
         </div>
         <Catchphrase
+          forward={forward}
           showed={showed}
           ageCatchphrase={ageCatchphrase}
           handleClick={this.handleClick}

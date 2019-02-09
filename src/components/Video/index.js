@@ -31,26 +31,30 @@ class Video extends React.Component {
           muted
           onCanPlay={this.loadVideo}
         />
-        <video
-          style={{ display: number === 2 ? "block" : "none" }}
-          src={`./assets/videos/${path}/${path}2.mp4`}
-          type="video/mp4"
-          autoPlay
-          playsInline
-          muted
-          onCanPlay={this.loadVideo}
-          onEnded={increaseVideo}
-        />
-        <video
-          style={{ display: number === 3 ? "block" : "none" }}
-          src={`./assets/videos/${path}/${path}3.mp4`}
-          type="video/mp4"
-          autoPlay
-          playsInline
-          loop
-          muted
-          onCanPlay={this.loadVideo}
-        />
+        {path !== "flirtfactory" && (
+          <>
+            <video
+              style={{ display: number === 2 ? "block" : "none" }}
+              src={`./assets/videos/${path}/${path}2.mp4`}
+              type="video/mp4"
+              autoPlay
+              playsInline
+              muted
+              onCanPlay={this.loadVideo}
+              onEnded={increaseVideo}
+            />
+            <video
+              style={{ display: number === 3 ? "block" : "none" }}
+              src={`./assets/videos/${path}/${path}3.mp4`}
+              type="video/mp4"
+              autoPlay
+              playsInline
+              loop
+              muted
+              onCanPlay={this.loadVideo}
+            />
+          </>
+        )}
       </div>
     );
   }
