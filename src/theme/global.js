@@ -95,6 +95,7 @@ const GlobalStyle = createGlobalStyle`
       top: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
+      /* filter: contrast(95%) saturate(105%); */
 
       @media screen and (max-aspect-ratio: 1920/1080) {
         height: 100%;
