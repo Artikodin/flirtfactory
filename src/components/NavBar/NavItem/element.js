@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.li`
-  flex: 1 1 0;
+  /* flex: 1 1 0; */
   justify-content: center;
   transform: translate3d(0, 0, 0);
   font-weight: 200;
@@ -10,10 +10,13 @@ export const Wrapper = styled.li`
   max-width: 215px;
   box-sizing: border-box;
   transition: all 0.4s ease;
+  margin-left: -1px;
   &:hover img {
-    transform: translate3d(0, 0, 0) scale(1);
+    box-sizing: border-box;
+    transform: translate3d(0, 0, 0) scale(0.99);
+    height: auto;
+    visibility: visible;
     opacity: 1;
-    position: absolute;
   }
   &:hover span {
     opacity: 1;
@@ -29,18 +32,18 @@ export const TextContainer = styled.span`
   z-index: 12;
   opacity: 0.45;
   transition: all 0.25s ease;
-  transform: translate3d(0, 0, 0);
 `;
 
 export const ImgContainer = styled.img`
   box-sizing: border-box;
-  z-index: 11;
-  display: block;
+  border: 1px solid white;
+  margin-bottom: -1px;
+  visibility: hidden;
+  z-index: 13;
+  height: 0;
   width: 100%;
   bottom: 40px;
-  border: 1px solid #fff;
-  margin-bottom: -1px;
-  transform: translate3d(0, 5px, 0) scale(0);
+  transform: translate3d(0, 0px, 0) scale(0.5);
   opacity: 0;
   transition: all 0.25s ease;
   transform-origin: bottom center;
