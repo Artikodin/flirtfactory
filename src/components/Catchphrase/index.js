@@ -27,31 +27,97 @@ class Catchphrase extends React.Component {
     updateAgeCatchphrase: () => {}
   };
 
+  state = {
+    expectedTime: 0
+  };
+
   videoCatchphrase = React.createRef();
 
   constructor(props) {
     super(props);
+    this.mounted = false;
     this.intervalRewind = 0;
+    this.raf = () => {};
   }
 
   componentDidMount() {
-    console.log(this.videoCatchphrase.current);
-    this.videoCatchphrase.current.play();
+    this.mounted = true;
+    this.runRaf();
   }
 
-  // playVideo = () => {
-  //   // requestAnimationFrame(this.moveStar);
-  //   intervalRewind = setInterval(() => {
-  //       video.playbackRate = 1.0;
-  //       if(video.currentTime == 0) {
-  //           clearInterval(intervalRewind);
-  //           video.pause();
-  //       }
-  //       else{
-  //           video.currentTime += -.1;
-  //       }
-  //   }, 30);
-  // };
+  componentDidUpdate(prevProps) {
+    const { ageCatchphrase } = this.props;
+    if (ageCatchphrase !== prevProps.ageCatchphrase) {
+      this.updateCatchphrase();
+    }
+  }
+
+  updateCatchphrase = () => {
+    const { ageCatchphrase } = this.props;
+    if (this.mounted) {
+      switch (ageCatchphrase) {
+        case 0:
+          this.videoCatchphrase.current.play();
+          this.setState({
+            expectedTime: 0.05
+          });
+          break;
+        case 1:
+          this.videoCatchphrase.current.play();
+          this.setState({
+            expectedTime: 1.01
+          });
+          break;
+        case 2:
+          this.videoCatchphrase.current.play();
+          this.setState({
+            expectedTime: 2.02
+          });
+          break;
+        case 3:
+          this.videoCatchphrase.current.play();
+          this.setState({
+            expectedTime: 3.03
+          });
+          break;
+        case 4:
+          this.videoCatchphrase.current.play();
+          this.setState({
+            expectedTime: 4.04
+          });
+          break;
+        case 5:
+          this.videoCatchphrase.current.play();
+          this.setState({
+            expectedTime: 5.05
+          });
+          break;
+        case 6:
+          this.videoCatchphrase.current.play();
+          this.setState({
+            expectedTime: 6.06
+          });
+          break;
+        case 7:
+          this.videoCatchphrase.current.play();
+          this.setState({
+            expectedTime: 7.07
+          });
+          break;
+        default:
+          this.videoCatchphrase.current.currentTime = 0;
+      }
+    }
+  };
+
+  runRaf = () => {
+    // console.log(this.videoCatchphrase.current.currentTime);
+    const { expectedTime } = this.state;
+    if (this.videoCatchphrase.current.currentTime > expectedTime) {
+      this.videoCatchphrase.current.pause();
+    }
+    this.raf = window.requestAnimationFrame(this.runRaf);
+  };
 
   render() {
     const {
@@ -200,6 +266,7 @@ class Catchphrase extends React.Component {
                     src="./assets/videos/flirtfactory/catchphrase.mp4"
                     type="video/mp4"
                     muted
+                    loop
                   />
                 </CatchphraseVideoContainer>
               </CatchphraseWrapper>
