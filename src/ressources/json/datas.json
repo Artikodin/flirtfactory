@@ -7,7 +7,8 @@
       "interaction": "Verse le flacon pour relancer la machine. Je te conseille d'enfiler des gants.",
       "reinitialisation": "Système réinitialisé. Les orgies romaines ont retrouvé une moyenne de 7 personnes.",
       "summary": "<p>A l'antiquité, la sexualité était totalement débridée. Les hommes dominaient la relation amoureuse et la femme était soumise. La séduction n'existait pas.</p>",
-      "catchphrase": "En catchana baby tu dead ça",
+      "catchphrase": "Divinité puissante, dès que je vous ai vue je vous ai reconnue pour une déesse.",
+      "author": "Homère, L'hymne à Aphrodite",
       "description": "<p>Les orgies représentées dans les tableaux de l’Antiquité Grecque sont exactement l’état d’esprit de l’époque. <strong>La sexualité était totalement débridée ! </strong></p><p><strong>Les hommes dominaient totalement la relation amoureuse, au détriment des femmes.</strong> Il était courant davoir des partenaires multiples, ainsi ils pouvaient coucher avec toutes femmes non-mariées (coucher avec une femme mariée était considéré comme une offense). Les Romains ont une morale sexuelle simple : à condition de ne sattaquer ni aux femmes ni aux enfants des citoyens, tout est permis !La sexualité était totalement débridée !</p><p>Les Romains découvrent la séduction avec des femmes affranchies, des esclaves ou des étrangères: seules représentantes de la gent féminine qui pouvaient se refuser à eux.</p>",
       "symbols": [
         {
@@ -31,7 +32,8 @@
       "interaction": "Le manège ne fonctionne plus. Tourne la manivelle.",
       "reinitialisation": "Système réinitialisé. 72 joutes de chevaliers se déroulent en ce moment même.",
       "summary": "<p>La plupart de relations de l'époque sont des mariages arrangés, le vrai amour se déroule hors-mariage et doit donc rester secret. Apparaît l'amour courtois, un amour purement sentimental qui consiste à prouver sa bravoure pour gagner le coeur de sa dame.</p>",
-      "catchphrase": "Qui aux dames ne porte honneur c'est qu'il n'a point d'honneur au cœur",
+      "catchphrase": "L'histoire dira que notre amour a détruit le royaume.",
+      "author": "Tristan et Yseult",
       "description": "<p>Au Moyen-Âge apparaît une nouvelle forme de séduction: la <strong>courtoisie</strong>. A cette époque, la norme est au mariage arrangé. Le vrai amour se déroule hors-mariage et doit rester secret, sous peine de très lourdes conséquences.</p> <p>Les relations sont donc très compliquées et mêlent passion, désespoir, plaisir et souffrance. Un <strong>coup de foudre</strong> peut alors durer toute une vie, les deux amoureux ne vivant que l'un pour l'autre !</p> <p>L’amour courtois est un amour <strong>purement sentimental</strong>  et ne suppose pas forcément de relation physique. Mais il s'exprime par des actes : il fallait prouver sa bravoure auprès de sa dame, à l'image des chevaliers gagnant une bataille ou délivrant leurs princesses.</p>",
       "symbols": [
         {
@@ -55,7 +57,8 @@
       "interaction": "Presse le vaporisateur de parfum, les lettres ne vont pas s'écrire toutes seules.",
       "reinitialisation": "Système réinitialisé. 3,1 L d'encre viennent d'être utilisés pour produire 4262 mots.",
       "summary": "<p>La galanterie apparaît. Les codes changent et la séduction devient quelque chose de plus léger et moins dramatique. La femme commence à être davantage considérée.</p>",
-      "catchphrase": "En catchana baby tu dead ça",
+      "catchphrase": "D'une personne comme vous, madame, tout est des faveurs hors l'indifférence.",
+      "author": "La Princesse de Clèves",
       "description": "<p>C’est à partir du XVIIème siècle que la <strong>galanterie</strong> fait son apparition. Les codes changent et deviennent plus légers et moins dramatiques que ceux de la courtoisie.</p> <p>La femme, au centre des échanges galants, commence à être davantage considérée. Les histoires d'amour laissent plus de place aux sentiments, à la sincérité, au désir et à la jalousie…</p> <p>C’est aussi l’époque des <strong>relations épistolaires</strong>. On s'écrivait, on faisait des vers et des rimes pour <strong>déclarer sa flamme</strong>.  On raffolait des salons où l'on parle de poésie et de littérature.</p>      ",
       "symbols": [
         {
@@ -75,7 +78,8 @@
       "interaction": "Baisse le levier pour déployer le paon.",
       "reinitialisation": "Système réinitialisé. Les éventails sont agités à une vitesse moyenne de 3 km/h.",
       "summary": "<p>Les moeurs se sont libérées et la séduction devient un jeu théatral poussé à l'excès. On se coiffe, on s'habille, on se maquille... tout est bon pour se faire remarquer par son prétendant !</p>",
-      "catchphrase": "En catchana baby tu dead ça",
+      "catchphrase": "Ces mots tracés au crayon s'effaceront peut-être, mais jamais les sentiments gravés dans mon coeur.",
+      "author": "Les Liaisons Dangereuses",
       "description": "<p>Le XVIIIème siècle va <strong>théâtraliser la séduction amoureuse</strong>. L’utilisation des décorations à l'excès, comme les mouches, les coiffures pimpées et la poudre blanche est un bel exemple. Les tenues sont plus excentriques. <strong>C’est le Siècle des Lumières, on ose beaucoup plus de choses !</strong></p> <p>Les mœurs se sont progressivement libérées et les hommes s'essaient au libertinage (quand ce n’est pas la grosse débauche comme à la cour de Louis XV). On ose exprimer son désir charnel.</p> <p><strong>Faire la cour</strong> était une activité milimétrée. L'homme avait à sa disposition tout un tas de de règles: servir sa dame, multiplier les petites attentions, faire des compliments, savoir manier les mots... pour parvenir à ses fins.</p>",
       "symbols": [
         {
@@ -100,6 +104,7 @@
       "reinitialisation": "Système réinitialisé. 146 petites annonces sont en attentes de publication.",
       "summary": "<p>Après la Révolution française, les rapports homme / femme deviennent plus égalitaires. Mais la Première Guerre mondiale va marquer un tounant dans l'histoire de la séduction, faisant  émerger de nouveaux types de relations.</p>",
       "catchphrase": "En catchana baby tu dead ça",
+      "author": "Les paroles d'amour, qui sont toujours les mêmes, prennent le goût des lèvres dont elles sortent.",
       "description": "<p>Après la Révolution française, on observe des rapports peu à peu plus égalitaires entre les deux sexes, dans lesquels l'union amoureuse nécessite l’accord des deux parties. Les gens font ce qui leur plaît : de plus en plus, ils se choisissent en fonction de leurs désirs, de leurs attractions passionnelles. <strong>C'est le siècle du Romantisme, on explore la profondeur des sentiments.</strong></p> <p>En parallèle le <strong>flirt</strong>, venu des Anglo-Saxons, accorde une nouvelle liberté aux jeunes filles qui deviennent un peu plus entreprenantes. Toutefois, il ne fallait pas se permettre plus qu'un tendre effleurement ou un chaste baiser.</p> <p>Le XIXe siècle est aussi celui de la naissance du concept de la <strong>virilité</strong>. De nouvelles figures masculines apparaîssent telles que le militaire ou le sportif coureur de jupons.</p> <p>Plus tard, l'entre-deux guerres est une <strong>période contrastée</strong>, où la séduction prend place dans une société transformée. <strong>Les plus âgés cherchent à tourner la page de leur partenaire perdu au combat. Pour les jeunes, séduire, c'est s'amuser pour se changer les esprits face à la crise économique omniprésente. </strong></p>",
       "symbols": [
         {
@@ -157,6 +162,14 @@
         {
           "name": "Netflix & Chill",
           "description": "L'expression Netflix and Chill qui s'est popularisée à l'aide de Twitter en 2014 n'est en fait pas si innocente... Vous allez regarder Netflix tous les deux... et plus si affinité."
+        },
+        {
+          "name": "Tinder",
+          "description": "Tinder"
+        },
+        {
+          "name": "Géolocalisation",
+          "description": ""
         }
       ]
     },
@@ -164,19 +177,27 @@
       "name": "Futur",
       "date": "",
       "short": "Futur",
-      "interaction": "Mouline pour transformer les aubergines.",
-      "reinitialisation": "Système réinitialisé. 16 074 personnes ont swippé à droite sur Tinder.",
-      "summary": "<p>???</p>",
+      "interaction": "4 algorithmes ont été trouvés. Sélectionnez un des algorithme pour initialiser le système.",
+      "reinitialisation": "Système réinitialisé. Je ne possède pas assez d'information pour t'en dire plus sur le futur.",
+      "summary": "<p>Et à l'avenir, comment évoluera la séduction ?</p><p>Va-t-on créer de nouveaux outils de séductions utilisant la technologie à son maximum? Ou au contraire allons-nous revenir à un moyen plus tribal et plus naturel de choisir son partenaire?</p>",
       "catchphrase": "En catchana baby tu dead ça",
-      "description": "<p>C'est aujourd'hui les <strong>applications mobiles</strong> qui dominent le marché de la rencontre amoureuse. Pour draguer, il suffit de tapoter sur son smartphone ! Ces apps sont d'ailleurs de plus en plus performantes et de plus en plus spécifiques : algorithmes, filtres, géolocalisation... Tout est fait pour nous rendre plus exigeant. Liker et matcher sont ainsi devenus des actes de séduction à part entiers.</p> <p>Dans cette société de consommation, la rencontre devient alors un bien facilement accessible qu'il faut consommer rapidement. Le Romantisme laisse ainsi place aux <strong>relations fast food</strong> : des liaisons légères sans engagement sur le long terme.",
+      "description": "<p>Impossible de savoir à quoi la séduction ressemblera dans le futur. Cependant, certaines pistes nous permettent de l'envisager.</p> <p>On peut supposer que la séduction évoluera en corrélation avec la technologie, qui utilisera toujours plus d'outils et de moyens pour essayer au mieux de nous cibler.</p>",
       "symbols": [
         {
-          "name": "Télé-réalité",
-          "description": "La séduction est extrêmement présente à la télévision, notamment dans les émissions de télé-réalité qui ont utilisé la drague et la rencontre amoureuse à toutes les sauces : Tournez Manège, l'Amour est dans le Pré, Qui veut épouser mon fils, Le Bachelor, L'Île de la tentation, l'Amour est Aveugle, Les Princes de l'Amour... Il y en a pour tous les goûts."
+          "name": "Tests ADN",
+          "description": ""
         },
         {
-          "name": "Netflix & Chill",
-          "description": "L'expression Netflix and Chill qui s'est popularisée à l'aide de Twitter en 2014 n'est en fait pas si innocente... Vous allez regarder Netflix tous les deux... et plus si affinité."
+          "name": "Big data",
+          "description": ""
+        },
+        {
+          "name": "Robots sexuels",
+          "description": ""
+        },
+        {
+          "name": "Echanges virtuels",
+          "description": ""
         }
       ]
     }

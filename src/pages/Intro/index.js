@@ -38,7 +38,7 @@ class Intro extends React.Component {
                   waitFor={waitFor}
                   pathDraw="M 50 200 L 50 50"
                   top="36vh"
-                  left="14vw"
+                  left="30vw"
                 />
               </div>
             </>

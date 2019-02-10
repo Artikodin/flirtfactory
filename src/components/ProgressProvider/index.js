@@ -41,7 +41,7 @@ const ages = {
   contemporain: {
     lock: false,
     video: 1,
-    points: [false, false]
+    points: [false, false, false, false]
   },
   futur: {
     lock: false,
@@ -77,6 +77,8 @@ class ProgressProvider extends React.Component {
   };
 
   updateVideo = age => {
+    console.log(age)
+    console.log(this.state.ages[age])
     this.setState(prevState => ({
       ages: {
         ...prevState.ages,

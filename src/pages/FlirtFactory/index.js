@@ -66,17 +66,59 @@ class FlirtFactory extends React.Component {
           <BackgroundVideo path="flirtfactory" number={1} />
         </div>
         <FlirtFactoryTag
-          name="renaissance"
-          agenb={2}
-          left="50vw"
-          top="20vh"
+          name="antiquite"
+          agenb={0}
+          left="85vw"
+          top="25vh"
           handleClick={this.handleClick}
         />
         <FlirtFactoryTag
-          name="antiquite"
-          agenb={0}
-          left="80vw"
-          top="10vh"
+          name="moyenage"
+          agenb={1}
+          left="32vw"
+          top="40vh"
+          handleClick={this.handleClick}
+        />
+        <FlirtFactoryTag
+          name="renaissance"
+          agenb={2}
+          left="60vw"
+          top="15vh"
+          handleClick={this.handleClick}
+        />
+        <FlirtFactoryTag
+          name="lumieres"
+          agenb={3}
+          left="75vw"
+          top="50vh"
+          handleClick={this.handleClick}
+        />
+        <FlirtFactoryTag
+          name="belleepoque"
+          agenb={4}
+          left="25vw"
+          top="60vh"
+          handleClick={this.handleClick}
+        />
+        <FlirtFactoryTag
+          name="moderne"
+          agenb={5}
+          left="15vw"
+          top="25vh"
+          handleClick={this.handleClick}
+        />
+        <FlirtFactoryTag
+          name="contemporain"
+          agenb={6}
+          left="45vw"
+          top="75vh"
+          handleClick={this.handleClick}
+        />
+        <FlirtFactoryTag
+          name="futur"
+          agenb={7}
+          left="45vw"
+          top="15vh"
           handleClick={this.handleClick}
         />
         <Catchphrase
