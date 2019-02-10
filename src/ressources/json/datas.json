@@ -128,7 +128,8 @@
       "interaction": "Tourne la manivelle pour commencer la production.",
       "reinitialisation": "Système réinitialisé. 2538 personnes sont connectés sur le chat du Minitel.",
       "summary": "<p>La société évolue et se modernise. Les lieux de rencontre mixtes se multiplient et les avancées tehnologies rendent la drague plus facile ! Mais surtout, la révolution sexuelle permet à la femme d'être libre et de pouvoir pour la première fois être actrice de la séduction.</p>",
-      "catchphrase": "En catchana baby tu dead ça",
+      "catchphrase": "T'es moins tarte que t'en as l'air.",
+      "author": "Grease",
       "description": "<p>Au début du XXème siècle, le <strong>date</strong> (rendez-vous amoureux) venu d’Amérique vient remplacer le bal. On organise des dates au bowling, dans un café ou au cinéma. L’arrivée de l’automobile permet aussi de s’isoler : avant on courtisait à domicile. Désormais on sort sa conquête et on s’affiche en public !</p> <p>Des lieux de rencontre sont apparus tout au long du siècle (mixité dans les classes, clubs de vacances, boums...) et ont accéléré l’apparition de la <strong>drague</strong>. A l'image des speed-dating: on multiplie les conquêtes ! Et on exploite les technologies nouvelles : on échange son numéro de téléphone, on tchat sur Minitel et on se rencontre en ligne. </p><p>Mais l’apparition de la drague est surtout liée à la <strong>libération de la femme</strong>, sexuellement grâce à la pilule, mais aussi à une plus grande tolérance de sa vie sentimentale. Pour la première fois, la conquête amoureuse n’est plus réservée aux hommes.</p>",
       "symbols": [
         {
@@ -153,6 +154,7 @@
       "reinitialisation": "Système réinitialisé. 16 074 personnes ont swippé à droite sur Tinder.",
       "summary": "<p>La séduction est aujourd'hui mobile : l'omniprésence et la spécificité des apps de rencontre permettent la multiplication des rencontres.</p>",
       "catchphrase": "En catchana baby tu dead ça",
+      "author": "Aya",
       "description": "<p>C'est aujourd'hui les <strong>applications mobiles</strong> qui dominent le marché de la rencontre amoureuse. Pour draguer, il suffit de tapoter sur son smartphone ! Ces apps sont d'ailleurs de plus en plus performantes et de plus en plus spécifiques : algorithmes, filtres, géolocalisation... Tout est fait pour nous rendre plus exigeant. Liker et matcher sont ainsi devenus des actes de séduction à part entiers.</p> <p>Dans cette société de consommation, la rencontre devient alors un bien facilement accessible qu'il faut consommer rapidement. Le Romantisme laisse ainsi place aux <strong>relations fast food</strong> : des liaisons légères sans engagement sur le long terme.",
       "symbols": [
         {
@@ -169,7 +171,7 @@
         },
         {
           "name": "Géolocalisation",
-          "description": ""
+          "description": "Popularisée par l'application gay Grindr en 2009 qui a compris qu’il était fastidieux d’allumer son ordinateur pour chercher un rendez-vous, la géolocalisation est devenue une des fonctionnalité principale des applications de rencontres. Certaines applications telles que Happn utilisent d'ailleurs ce concept à fond et permettent de retrouver les personnes croisées dans la rue."
         }
       ]
     },
@@ -181,6 +183,7 @@
       "reinitialisation": "Système réinitialisé. Je ne possède pas assez d'information pour t'en dire plus sur le futur.",
       "summary": "<p>Et à l'avenir, comment évoluera la séduction ?</p><p>Va-t-on créer de nouveaux outils de séductions utilisant la technologie à son maximum? Ou au contraire allons-nous revenir à un moyen plus tribal et plus naturel de choisir son partenaire?</p>",
       "catchphrase": "En catchana baby tu dead ça",
+      "author": "Aya",
       "description": "<p>Impossible de savoir à quoi la séduction ressemblera dans le futur. Cependant, certaines pistes nous permettent de l'envisager.</p> <p>On peut supposer que la séduction évoluera en corrélation avec la technologie, qui utilisera toujours plus d'outils et de moyens pour essayer au mieux de nous cibler.</p>",
       "symbols": [
         {

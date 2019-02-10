@@ -221,6 +221,9 @@ class Catchphrase extends React.Component {
                         <Markup
                           content={value.epoques[ageCatchphrase].catchphrase}
                         />
+                        <div className="catchphrase--author">
+                          {value.epoques[ageCatchphrase].author}
+                        </div>
                       </div>
                       <div className="catchphrase--title">
                         <div>

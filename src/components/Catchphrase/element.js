@@ -65,6 +65,13 @@ export const CatchphraseContainer = styled.div`
       }
     }
 
+    .catchphrase--author {
+      text-align: right;
+      font-size: 0.7rem;
+      font-style: normal;
+      margin-right: 5%;
+    }
+
     .catchphrase--title {
       position: relative;
       margin-top: 5vh;
