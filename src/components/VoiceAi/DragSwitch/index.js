@@ -164,6 +164,7 @@ class DragSwitch extends React.Component {
     this.svgRef.current.addEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
+    console.log("test");
   };
 
   handleDragEnd = () => {
@@ -176,11 +177,17 @@ class DragSwitch extends React.Component {
   handleAnswer = () => {
     const { onAnswer } = this.props;
     onAnswer();
+    setTimeout(() => {
+      this.once = false;
+    }, 200);
   };
 
   handleHangUp = () => {
     const { onHangUp } = this.props;
     onHangUp();
+    setTimeout(() => {
+      this.once = false;
+    }, 200);
   };
 
   moveStar = () => {
@@ -232,6 +239,12 @@ class DragSwitch extends React.Component {
   render() {
     const { elCenter } = this.state;
     const { isVisible } = this.props;
+
+    const btnPhonePos = {
+      x: -0.1 + elCenter.x,
+      y: 16 + elCenter.y
+    };
+
     return (
       <>
         {isVisible && (
@@ -265,15 +278,21 @@ class DragSwitch extends React.Component {
               />
             </g>
 
-            <circle
+            <path
+              fill="#FFFFFF"
               ref={this.dragCircle}
+              onMouseDown={() => this.handleDragStart()}
+              d={`
+                m${btnPhonePos.x} ${btnPhonePos.y}
+                c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm-4.72-15.19c.51.63 2.27 2.74 4.13 4.07 1.26.89 2.28 1.24 2.42 1.28.47 .2.86 .24 1.17.24 .34 0 .56-.06.62-.09.52-.15.95-.48 1.35-.79.49-.39.88-.78 1.2-1.16.19-.24.27-.48.19-.75l-.02-.03c-.22-.52-1.7-1.79-1.71-1.8-.22-.18-.44-.38-.7-.54-.11-.07-.26-.16-.43-.19-.37-.06-.59.19-.74.35-.02.02-.05.05-.06.06-.09.09-.19.21-.3.33-.18.21-.53.63-.65.67-.18.03-.86-.37-1.2-.66-1.03-.85-1.93-1.76-2.32-2.33l-.01-.01c-.62-.87-.68-1.14-.67-1.2.04-.13.46-.49.67-.67.12-.1.24-.21.33-.3l.06-.06c.16-.15.42-.39.36-.76-.03-.16-.1-.31-.19-.43-.16-.25-.34-.48-.54-.7-.03 0-1.29-1.48-1.81-1.7l-.04-.01c-.25-.06-.51 0-.74.19-.39.33-.77.72-1.16 1.21-.33.4-.64.83-.79 1.36-.04.12-.24.8 .15 1.77.05 .17.37 1.34 1.43 2.65l0 0z
+              `}
+            />
+
+            <circle
               cx={elCenter.x}
               cy={elCenter.y}
-              r="17"
-              stroke="white"
-              strokeWidth="1"
-              fill="#ffffff"
-              fillOpacity="0.25"
+              r="15"
+              fillOpacity="0"
               onMouseDown={() => this.handleDragStart()}
             />
           </svg>
