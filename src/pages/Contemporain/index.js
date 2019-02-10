@@ -72,8 +72,8 @@ class Contemporain extends React.Component {
                       frameTotal={frameTotal}
                       waitFor={waitFor}
                       pathDraw="M 50 50 C 50 150 200 100 200 200"
-                      top="55vh"
-                      left="25vw"
+                      top="22vh"
+                      left="70vw"
                     />
                   </div>
                 </>

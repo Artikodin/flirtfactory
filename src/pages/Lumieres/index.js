@@ -82,8 +82,8 @@ class Lumieres extends React.Component {
                       frameTotal={frameTotal}
                       waitFor={waitFor}
                       pathDraw="M 50 50 Q 150 100 150 200"
-                      top="58vh"
-                      left="90vw"
+                      top="40vh"
+                      left="65vw"
                     />
                   </div>
                 </>

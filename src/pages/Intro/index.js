@@ -37,8 +37,8 @@ class Intro extends React.Component {
                   frameTotal={frameTotal}
                   waitFor={waitFor}
                   pathDraw="M 50 200 L 50 50"
-                  top="70vh"
-                  left="50vw"
+                  top="36vh"
+                  left="14vw"
                 />
               </div>
             </>

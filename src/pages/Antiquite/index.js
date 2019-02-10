@@ -82,8 +82,8 @@ class Antiquite extends React.Component {
                       frameTotal={frameTotal}
                       waitFor={waitFor}
                       pathDraw="M 150 50 C 150 150 50 100 50 200"
-                      top="30vh"
-                      left="60vw"
+                      top="8vh"
+                      left="40vw"
                     />
                   </div>
                 </>
