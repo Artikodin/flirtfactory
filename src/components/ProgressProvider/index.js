@@ -77,8 +77,6 @@ class ProgressProvider extends React.Component {
   };
 
   updateVideo = age => {
-    console.log(age)
-    console.log(this.state.ages[age])
     this.setState(prevState => ({
       ages: {
         ...prevState.ages,

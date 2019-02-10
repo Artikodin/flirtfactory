@@ -7,7 +7,8 @@ import {
   ProgressContext,
   TextContext,
   InteractionDragAndDrop,
-  TaskBar
+  TaskBar,
+  Tutorial
 } from "../../components";
 
 class Antiquite extends React.Component {
@@ -36,6 +37,7 @@ class Antiquite extends React.Component {
                   />
                   {ages.antiquite.lock && (
                     <>
+                      <Tutorial showed={ages.antiquite.lock} />
                       <GenericTag
                         unlocked={ages.antiquite.points[0]}
                         unlockPoint={() => unlockPoints(agestr, 0)}

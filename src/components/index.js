@@ -30,5 +30,6 @@ export { default as SyncDragAndDrop } from "./SyncDragAndDrop";
 export { default as TaskBar } from "./TaskBar";
 export { default as TextProvider, TextContext } from "./TextProvider";
 export { default as Transition } from "./Transition";
+export { default as Tutorial } from "./Tutorial";
 export { default as Video } from "./Video";
 export { default as VoiceAi } from "./VoiceAi";
