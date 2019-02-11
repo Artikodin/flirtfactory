@@ -19,73 +19,114 @@ class HeartCounter extends React.Component {
   };
 
   getProgression = (total, progression) => {
-    switch (total) {
-      case 2:
+    console.log(progression);
+    switch (progression) {
+      case 0:
         return (
-          <>
-            <path
-              d="M11.608,20.997 C-11.039,8.643 5.34,-6.716 11.608,3.628 C17.877,-6.716 34.257,8.643 11.608,20.997 Z"
-              fill="none"
-              stroke="#FFFFFF"
+          <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+            <g
+              transform="translate(-155.000000, -64.000000)"
+              stroke="#ffffff"
               strokeWidth="2"
-            />
-          </>
+            >
+              <path d="M167.608014,85.7766447 C144.961014,73.4226447 161.340014,58.0636447 167.608014,68.4076447 C173.877014,58.0636447 190.257014,73.4226447 167.608014,85.7766447 Z" />
+            </g>
+          </g>
         );
-      case 3:
-        switch (progression) {
-          case 0:
-            return (
-              <>
-                <path
-                  d="M11.608,20.997 C-11.039,8.643 5.34,-6.716 11.608,3.628 C17.877,-6.716 34.257,8.643 11.608,20.997 Z"
-                  fill="none"
-                  stroke="#FFFFFF"
-                  strokeWidth="2"
-                />
-              </>
-            );
-          case 1:
-            return (
-              <>
-                <path
-                  d="M11.608,20.997 C-11.039,8.643 5.34,-6.716 11.608,3.628 C17.877,-6.716 34.257,8.643 11.608,20.997 Z"
-                  fill="none"
-                  stroke="#FFFFFF"
-                  strokeWidth="2"
-                />
-                <polygon
-                  fill="#FFFFFF"
-                  points="11.6088821 20.7401246 2.75612655 13.9281622 21.0170855 13.9281622 15.20211 19.2051277"
-                />
-              </>
-            );
+      case 1:
+        switch (total) {
           case 2:
             return (
-              <>
-                <path
-                  d="M11.608,20.997 C-11.039,8.643 5.34,-6.716 11.608,3.628 C17.877,-6.716 34.257,8.643 11.608,20.997 Z"
-                  fill="none"
-                  stroke="#FFFFFF"
-                  strokeWidth="2"
-                />
-                <polygon
-                  id="Path-6"
-                  fill="#FFFFFF"
-                  points="11.7214222 21.1625794 2.44396401 13.9217537 1.49129191 11.7823096 0.157186012 7.94738486 23.065076 7.94738486 21.6009573 12.4860887 18.657881 16"
-                />
-              </>
+              <g
+                id="Page-1"
+                stroke="none"
+                strokeWidth="1"
+                fill="none"
+                fillRule="evenodd"
+              >
+                <g
+                  id="About-Copy-2"
+                  transform="translate(-289.ffffff, -64.ffffff)"
+                >
+                  <g id="Coeur1/2" transform="translate(290.ffffff, 65.ffffff)">
+                    <path
+                      d="M11.608,20.997 C-11.039,8.643 5.34,-6.716 11.608,3.628 C17.877,-6.716 34.257,8.643 11.608,20.997 Z"
+                      id="Path"
+                      stroke="#ffffff"
+                      strokeWidth="2"
+                    />
+                    <polygon
+                      id="Path-5"
+                      fill="#ffffff"
+                      points="11.6088821 20.7401246 4.37574578 16.1698931 0.554851539 11.5996615 22.4004676 11.5996615 15.20211 19.2051277"
+                    />
+                  </g>
+                </g>
+              </g>
             );
+            break;
           case 3:
             return (
-              <>
-                <path
-                  d="M197.245685,85.7766447 C174.598685,73.4226447 190.977685,58.0636447 197.245685,68.4076447 C203.514685,58.0636447 219.894685,73.4226447 197.245685,85.7766447 Z"
-                  fill="none"
-                />
-              </>
+              <g
+                id="Page-1"
+                stroke="none"
+                strokeWidth="1"
+                fill="none"
+                fillRule="evenodd"
+              >
+                <g
+                  id="About-Copy-2"
+                  transform="translate(-236.ffffff, -64.ffffff)"
+                >
+                  <g id="Coeur1/3" transform="translate(237.ffffff, 65.ffffff)">
+                    <path
+                      d="M11.608,20.997 C-11.039,8.643 5.34,-6.716 11.608,3.628 C17.877,-6.716 34.257,8.643 11.608,20.997 Z"
+                      id="Path"
+                      stroke="#ffffff"
+                      strokeWidth="2"
+                    />
+                    <polygon
+                      id="Path-5"
+                      fill="#ffffff"
+                      points="11.6088821 20.7401246 2.75612655 13.9281622 21.0170855 13.9281622 15.20211 19.2051277"
+                    />
+                  </g>
+                </g>
+              </g>
             );
+            break;
+          case 4:
+            return (
+              <g
+                id="Page-1"
+                stroke="none"
+                strokeWidth="1"
+                fill="none"
+                fillRule="evenodd"
+              >
+                <g
+                  id="About-Copy-2"
+                  transform="translate(-188.ffffff, -64.ffffff)"
+                >
+                  <g id="Coeur1/4" transform="translate(189.ffffff, 65.ffffff)">
+                    <path
+                      d="M11.608,20.997 C-11.039,8.643 5.34,-6.716 11.608,3.628 C17.877,-6.716 34.257,8.643 11.608,20.997 Z"
+                      id="Path"
+                      stroke="#ffffff"
+                      strokeWidth="2"
+                    />
+                    <polygon
+                      id="Path-5"
+                      fill="#ffffff"
+                      points="11.6088821 20.7401246 4.31843608 16.019659 18.8809874 16.019659 15.20211 19.2051277"
+                    />
+                  </g>
+                </g>
+              </g>
+            );
+            break;
           default:
-            console.log(progression);
+            console.log(total);
         }
         break;
       default:
@@ -103,15 +144,27 @@ class HeartCounter extends React.Component {
     });
     return (
       <HeartCounterContainer>
-        {/* <svg viewBox="0 0 35 35" preserveAspectRatio="none">{this.renderPath(progression)}</svg> */}
-        {/* <svg viewBox="0 0 35 35" preserveAspectRatio="none">{this.getProgression(progress.length, progression)}</svg> */}
-        <svg viewBox="0 0 25 25" preserveAspectRatio="none">
-          <g>
-            <path
-              d="M11.608,21.997c-22.647-12.354-6.268-27.713,0-17.369C17.877-5.716,34.257,9.643,11.608,21.997z"
-              fill="#FFFFFF"
-            />
-          </g>
+        {/* <svg
+          width="26px"
+          height="24px"
+          viewBox="0 0 25 24"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {this.getProgression(progress.length, progression)}
+        </svg> */}
+
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 27 25"
+        >
+          <path
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+            d="M13.61,22.78c-22.65-12.35-6.27-27.71,0-17.37C19.88-4.94,36.26,10.42,13.61,22.78z"
+          />
         </svg>
         <p>
           {progression} / {progress.length}

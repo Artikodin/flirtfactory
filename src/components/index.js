@@ -25,6 +25,7 @@ export {
   default as ProgressProvider,
   ProgressContext
 } from "./ProgressProvider";
+export { default as SoundControler } from "./SoundControler";
 export { default as ScrollHandler } from "./ScrollHandler";
 export { default as SyncDragAndDrop } from "./SyncDragAndDrop";
 export { default as TaskBar } from "./TaskBar";
