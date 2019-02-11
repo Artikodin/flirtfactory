@@ -161,167 +161,153 @@ class Catchphrase extends React.Component {
 
     return (
       <>
-      <PoseGroup id="CatchphraseContainer">
-        {showed && (
-          <AnimatedCatchphraseWrapper key="catchphrase" className="globalview--catchphrase">
-            <TextContext.Consumer>
-              {value => (
-                <>
-                  <CatchphraseContainer>
+        <PoseGroup id="CatchphraseContainer">
+          {showed && (
+            <AnimatedCatchphraseWrapper
+              key="catchphrase"
+              className="globalview--catchphrase"
+            >
+              <TextContext.Consumer>
+                {value => (
+                  <>
+                    <CatchphraseContainer>
+                      <div id="catchphrase--container">
+                        <div className="catchphrase--catchphrase">
+                          <Markup
+                            content={value.epoques[ageCatchphrase].catchphrase}
+                          />
+                          <div className="catchphrase--author">
+                            {value.epoques[ageCatchphrase].author}
+                          </div>
+                        </div>
+                        <div className="catchphrase--title">
+                          <div>
+                            <h1>{value.epoques[ageCatchphrase].name}</h1>
+                          </div>
+                          <div className="catchphrase--line" />
+                        </div>
+                        <div className="catchphrase--summary">
+                          <Markup
+                            content={value.epoques[ageCatchphrase].summary}
+                          />
+                        </div>
+                        <div className="catchphrase--nav">
+                          <button
+                            type="button"
+                            className="catchphrase--btn prev"
+                            onClick={() => updateAgeCatchphrase(false)}
+                          >
+                            <svg width="50px" height="50px" viewBox="0 0 80 80">
+                              <g fill="none" strokeWidth="1">
+                                <rect
+                                  className="rect"
+                                  stroke="#516081"
+                                  fill="none"
+                                  x="5.5"
+                                  y="5.5"
+                                  width="63"
+                                  height="63"
+                                />
+                                <polyline
+                                  className="polyline"
+                                  stroke="#516081"
+                                  strokeWidth="2"
+                                  transform="translate(36.962191, 37.302579) rotate(-180.000000) translate(-36.962191, -37.302579) "
+                                  points="33 44.605159 40.9243811 37.0540797 33 30"
+                                />
+                              </g>
+                            </svg>
+                          </button>
+                          <button
+                            type="button"
+                            className="catchphrase--btn next"
+                            onClick={() => updateAgeCatchphrase(true)}
+                          >
+                            <svg width="50px" height="50px" viewBox="0 0 80 80">
+                              <g transform="translate(-235.000000, -773.000000)">
+                                <g transform="translate(151.000000, 773.000000)">
+                                  <g
+                                    fill="none"
+                                    transform="translate(84.000000, 0.000000)"
+                                  >
+                                    <rect
+                                      className="rect"
+                                      stroke="#516081"
+                                      fill="none"
+                                      x="5"
+                                      y="5"
+                                      width="64"
+                                      height="64"
+                                    />
+                                    <polyline
+                                      className="polyline"
+                                      fill="none"
+                                      stroke="#516081"
+                                      strokeWidth="2"
+                                      points="33 44.605159 40.9243811 37.0540797 33 30"
+                                    />
+                                  </g>
+                                </g>
+                              </g>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </CatchphraseContainer>
+                    <CatchphraseVideoContainer>
+                      <video
+                        ref={this.videoCatchphraseForward}
+                        style={{ display: forward ? "block" : "none" }}
+                        src="./assets/videos/flirtfactory/catchphrase1.mp4"
+                        type="video/mp4"
+                        muted
+                        loop
+                      />
+                      <video
+                        ref={this.videoCatchphraseBackward}
+                        style={{ display: forward ? "none" : "block" }}
+                        src="./assets/videos/flirtfactory/catchphrase2.mp4"
+                        type="video/mp4"
+                        muted
+                        loop
+                      />
                     <button
-                      id="catchphrase--close"
-                      type="button"
-                      onClick={() => handleClick()}
-                    >
-                      <svg width="40px" height="40px" viewBox="0 0 40 40">
-                        <g
-                          id="Page-1"
-                          stroke="none"
-                          strokeWidth="1"
-                          fill="none"
-                          fillRule="evenodd"
+                        id="catchphrase--close"
+                        type="button"
+                        onClick={() => handleClick()}
+                      >
+                        <svg
+                          width="10px"
+                          height="10px"
+                          viewBox="0 0 20 20"
+                          version="1.1"
+                          fill="#516081"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
-                            id="Artboard-Copy-53"
-                            transform="translate(-1761.000000, -565.000000)"
+                            transform="translate(-1830.000000, -70.000000)"
                           >
                             <g
-                              id="Close"
-                              transform="translate(1761.000000, 565.000000)"
+                              id="Group-6"
+                              transform="translate(1790.000000, 30.000000)"
                             >
                               <g
-                                id="Group-3"
-                                transform="translate(10.000000, 10.000000)"
-                                stroke="#516081"
+                                id="Croix"
+                                transform="translate(40.000000, 40.000000)"
                               >
-                                <rect
-                                  id="Rectangle"
-                                  transform="translate(10.000000, 10.500000) rotate(-315.000000) translate(-10.000000, -10.500000) "
-                                  x="8.5"
-                                  y="-0.5"
-                                  width="3"
-                                  height="22"
-                                />
-                                <rect
-                                  id="Rectangle-Copy-2"
-                                  transform="translate(10.000000, 10.500000) rotate(-45.000000) translate(-10.000000, -10.500000) "
-                                  x="8.5"
-                                  y="-0.5"
-                                  width="3"
-                                  height="22"
-                                />
+                                <polygon points="16.8781393 2.98427949e-13 19.4419073 2.563768 2.563768 19.4419073 3.0375702e-13 16.8781393" />
+                                <polygon points="19.4419073 16.8781393 16.8781393 19.4419073 3.0908609e-13 2.563768 2.563768 2.89546165e-13" />
                               </g>
                             </g>
                           </g>
-                        </g>
-                      </svg>
-                    </button>
-                    <div id="catchphrase--container">
-                      <div className="catchphrase--catchphrase">
-                        <Markup
-                          content={value.epoques[ageCatchphrase].catchphrase}
-                        />
-                        <div className="catchphrase--author">
-                          {value.epoques[ageCatchphrase].author}
-                        </div>
-                      </div>
-                      <div className="catchphrase--title">
-                        <div>
-                          <h1>{value.epoques[ageCatchphrase].name}</h1>
-                        </div>
-                        <div className="catchphrase--line" />
-                      </div>
-                      <div className="catchphrase--summary">
-                        <Markup
-                          content={value.epoques[ageCatchphrase].summary}
-                        />
-                      </div>
-                      <div className="catchphrase--nav">
-                        <button
-                          type="button"
-                          className="catchphrase--btn prev"
-                          onClick={() => updateAgeCatchphrase(false)}
-                        >
-                          <svg width="50px" height="50px" viewBox="0 0 80 80">
-                            <g fill="none" strokeWidth="1">
-                              <rect
-                                className="rect"
-                                stroke="#516081"
-                                fill="none"
-                                x="5.5"
-                                y="5.5"
-                                width="63"
-                                height="63"
-                              />
-                              <polyline
-                                className="polyline"
-                                stroke="#516081"
-                                strokeWidth="2"
-                                transform="translate(36.962191, 37.302579) rotate(-180.000000) translate(-36.962191, -37.302579) "
-                                points="33 44.605159 40.9243811 37.0540797 33 30"
-                              />
-                            </g>
-                          </svg>
-                        </button>
-                        <button
-                          type="button"
-                          className="catchphrase--btn next"
-                          onClick={() => updateAgeCatchphrase(true)}
-                        >
-                          <svg width="50px" height="50px" viewBox="0 0 80 80">
-                            <g transform="translate(-235.000000, -773.000000)">
-                              <g transform="translate(151.000000, 773.000000)">
-                                <g
-                                  fill="none"
-                                  transform="translate(84.000000, 0.000000)"
-                                >
-                                  <rect
-                                    className="rect"
-                                    stroke="#516081"
-                                    fill="none"
-                                    x="5"
-                                    y="5"
-                                    width="64"
-                                    height="64"
-                                  />
-                                  <polyline
-                                    className="polyline"
-                                    fill="none"
-                                    stroke="#516081"
-                                    strokeWidth="2"
-                                    points="33 44.605159 40.9243811 37.0540797 33 30"
-                                  />
-                                </g>
-                              </g>
-                            </g>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  </CatchphraseContainer>
-                  <CatchphraseVideoContainer>
-                    <video
-                      ref={this.videoCatchphraseForward}
-                      style={{ display: forward ? "block" : "none" }}
-                      src="./assets/videos/flirtfactory/catchphrase1.mp4"
-                      type="video/mp4"
-                      muted
-                      loop
-                    />
-                    <video
-                      ref={this.videoCatchphraseBackward}
-                      style={{ display: forward ? "none" : "block" }}
-                      src="./assets/videos/flirtfactory/catchphrase2.mp4"
-                      type="video/mp4"
-                      muted
-                      loop
-                    />
-                  </CatchphraseVideoContainer>
-                </>
-              )}
-            </TextContext.Consumer>
-          </AnimatedCatchphraseWrapper>
-        )}
+                        </svg>
+                      </button>
+                    </CatchphraseVideoContainer>
+                  </>
+                )}
+              </TextContext.Consumer>
+            </AnimatedCatchphraseWrapper>
+          )}
         </PoseGroup>
       </>
     );

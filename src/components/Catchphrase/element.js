@@ -22,14 +22,6 @@ export const CatchphraseContainer = styled.div`
   justify-content: center;
   padding: 0 10%;
 
-  #catchphrase--close {
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: none;
-    border: none;
-  }
-
   #catchphrase--container {
     text-align: left;
     height: 60%;
@@ -151,6 +143,27 @@ export const CatchphraseVideoContainer = styled.div`
   height: 100vh;
   position: relative;
   box-sizing: border-box;
+
+  #catchphrase--close {
+    box-sizing: border-box;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    background: white;
+    border: none;
+    right: 30px;
+    top: 30px;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      transition: all 0.2s ease-out;
+      background: #516081;
+      svg {
+        fill: white;
+      }
+    }
+  }
 
   video {
     height: 100%;
