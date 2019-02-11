@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 // import posed from "react-pose";
+import { Transition } from "react-transition-group";
 
 import { Wrapper } from "./element";
 
-import { About, NavBar, ProgressContext, GlobalSound } from "..";
+import { About, NavBar, ProgressContext, Loader } from "..";
 
 class Page extends React.Component {
   state = {
-    globalSound: true
+    showed: false
   };
 
   static propTypes = {
@@ -23,24 +24,37 @@ class Page extends React.Component {
     navbar: true
   };
 
-  // componentDidMount = () => {
-  //   this.setState({
-  //     globalSound: true
-  //   });
-  // };
-
-  // componentWillUnmount = () => {
-  //   this.setState({
-  //     globalSound: false
-  //   });
-  // };
+  componentDidMount() {
+    this.setState({ showed: true });
+  }
 
   render() {
     const { globalSound } = this.state;
     const { children, backgroundColor, navbar } = this.props;
+    const { showed } = this.state;
     return (
       <Wrapper backgroundColor={backgroundColor} id="wrapper">
-        {/* <TransitionLayerAnimated /> */}
+        <Transition in={showed} timeout={10000} unmountOnExit>
+          {state => {
+            switch (state) {
+              case "entering":
+                console.log("Entering…");
+                return null;
+              case "entered":
+                console.log("Entered!");
+                return null;
+              case "exiting":
+                console.log("Exiting…");
+                return null;
+              case "exited":
+                console.log("Exited!");
+                return null;
+              default:
+                console.log("default!");
+                return null;
+            }
+          }}
+        </Transition>
         {children}
         {/* <GlobalSound playing={globalSound} /> */}
         <ProgressContext.Consumer>

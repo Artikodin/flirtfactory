@@ -23,35 +23,21 @@ class TransitionRoute extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({ showed: true }, () => {
-      this.stopTransition();
-    });
+    this.setState({ showed: true });
   }
 
-  // componentDidUpdate() {
-  //   const { showed } = this.state;
-  //   if (!showed) {
-  //     // when the state is updated (turned red),
-  //     // a timeout is triggered to switch it back off
-  //     this.turnOffRedTimeout = setTimeout(() => {
-  //       this.setState(() => ({ showed: true }));
-  //     }, 500);
-  //   }
-  // }
+  componentDidUpdate() {
+    const { showed } = this.state;
+    if (showed) {
+      this.showedimeout = setTimeout(() => {
+        this.setState(() => ({ showed: false }));
+      }, 2000);
+    }
+  }
 
-  // componentWillUnmount() {
-  //   // we set the timeout to this.turnOffRedTimeout so that we can
-  //   // clean it up when the component is unmounted.
-  //   // otherwise you could get your app trying to modify the state on an
-  //   // unmounted component, which will throw an error
-  //   clearTimeout(this.turnOffRedTimeout);
-  // }
-
-  stopTransition = () => {
-    setTimeout(() => {
-      this.setState({ showed: false });
-    }, 1200);
-  };
+  componentWillUnmount() {
+    clearTimeout(this.showedimeout);
+  }
 
   render() {
     const { component: Component, ...rest } = this.props;
