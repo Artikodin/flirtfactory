@@ -12,6 +12,7 @@ export { default as Cursor } from "./Cursor";
 export { default as DragNDrop } from "./DragNDrop";
 export { default as EndingButton } from "./EndingButton";
 export { default as FlirtFactoryTag } from "./FlirtFactoryTag";
+export { default as GlobalSound } from "./GlobalSound";
 export { default as GenericTag } from "./GenericTag";
 export { default as HeartCounter } from "./HeartCounter";
 export { default as InteractionDragAndDrop } from "./InteractionDragAndDrop";
@@ -25,7 +26,6 @@ export {
   default as ProgressProvider,
   ProgressContext
 } from "./ProgressProvider";
-export { default as SoundControler } from "./SoundControler";
 export { default as ScrollHandler } from "./ScrollHandler";
 export { default as SyncDragAndDrop } from "./SyncDragAndDrop";
 export { default as TaskBar } from "./TaskBar";

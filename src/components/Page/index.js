@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Wrapper } from "./element";
 
-import { About, NavBar, ProgressContext } from "..";
+import { About, NavBar, ProgressContext, GlobalSound } from "..";
 
 class Page extends React.Component {
   state = {};
@@ -24,6 +24,7 @@ class Page extends React.Component {
     const { children, backgroundColor, navbar } = this.props;
     return (
       <Wrapper backgroundColor={backgroundColor} id="wrapper">
+        <GlobalSound />
         {children}
         <ProgressContext.Consumer>
           {({ ages }) => (

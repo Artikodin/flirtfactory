@@ -32,21 +32,6 @@ class App extends React.Component {
     transition: false
   };
 
-  // onEnterTransition = () => {
-  //   console.log("on enter ");
-  //   this.setState({
-  //     transition: true
-  //   });
-  // };
-
-  // onExitTransition = () => {
-  //   setTimeout(() => {
-  //     console.log("on exit ");
-  //     this.setState({
-  //       transition: false
-  //     });
-  //   }, 1000);
-
   render() {
     const { transition } = this.state;
     return (
@@ -65,9 +50,6 @@ class App extends React.Component {
                         key={location.key}
                         timeout={5000}
                         classNames="transition"
-                        // onEnter={this.onEnterTransition}
-                        // onExit={this.onExitTransition}
-                        // onEntered={this.onEnterTransition}
                       >
                         <Switch location={location}>
                           <Route exact path="/" component={Intro} />
