@@ -56,7 +56,8 @@ const GlobalStyle = createGlobalStyle`
       z-index: 1;
       background-image: url("./assets/img/noise.gif");
       background-size: 80px;
-      opacity: 0.1;
+      opacity: 0.25;
+      mix-blend-mode: soft-light;
     }
   }
 
