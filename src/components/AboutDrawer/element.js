@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 10;
+  z-index: 51;
 
   &:after {
     content: "";
@@ -27,33 +27,41 @@ export const Wrapper = styled.div`
 
 export const ButtonAboutClose = styled.button`
   position: absolute;
-  right: 0;
-  top: 0;
-  margin: 30px;
   padding: 4px;
-  /* border: 1px solid white; */
   background: none;
   border: none;
   width: 30px;
   height: 30px;
-  margin-right: 30px;
+  margin: 30px auto 0 auto;
+  left: 0;
+  right: 0;
 
-  img {
+  svg {
     width: 100%;
     height: 100%;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+    background: none;
     cursor: pointer;
-    opacity: 1;
+
+    &:after {
+      transition: height 0.2s ease-out;
+      height: 0;
+    }
   }
 
-  /* div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.45;
-    color: white;
-    font-size: 22px;
-  } */
+  &:after {
+    content: "";
+    transition: height 0.2s ease-in;
+    position: absolute;
+    margin: 0 auto;
+    top: -30px;
+    left: 0;
+    right: 0;
+    width: 1px;
+    background: white;
+    height: 80%;
+  }
 `;

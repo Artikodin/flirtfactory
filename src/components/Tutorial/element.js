@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TutorialWrapper = styled.div`
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   position: absolute;
   top: 0;
   bottom: 0;

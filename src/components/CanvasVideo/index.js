@@ -10,6 +10,7 @@ const CanvasVideo = ({ age, frame, show }) => (
       src={`./assets/frames/${age}/${age}${frame}.jpg`}
       alt={age}
     />
+    <div className="noise" />
   </div>
 );
 

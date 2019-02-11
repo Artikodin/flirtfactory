@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
   html, body{
     font-family: "avenir";
     cursor: none;
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+    -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+    user-select: none; /* Propriété standard */
   }
   #root {
     min-height: 100vh;
@@ -26,26 +30,6 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     overflow: hidden;
   }
-
-  /* TRANSITIONS */
-
-  /* .transition-enter {
-    opacity: 0.01;
-  }
-
-  .transition-enter.transition-enter-active {
-    opacity: 1;
-    transition: opacity 5s ease-in;
-  }
-
-  .transition-exit {
-    opacity: 1;
-  }
-
-  .transition-exit.transition-exit-active {
-      opacity: 0.01;
-      transition: opacity 5s ease-in;
-  } */
 
   /* WRAPPER DU CANVAS ET DE LA BACKGROUND VIDEO */
   .background__wrapper {
@@ -63,6 +47,17 @@ const GlobalStyle = createGlobalStyle`
     left: 0;
     width: 100vw;
     height: 100vh;
+
+    .noise {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: blue;
+      z-index: 1;
+      background-image: url("./assets/img/noise.gif");
+      background-size: 80px;
+      opacity: 0.1;
+    }
   }
 
   .background__video {
@@ -189,7 +184,7 @@ const GlobalStyle = createGlobalStyle`
         box-shadow: none !important;
   }
 
-  button:hover,
+button:hover,
 button:focus {
     background: #0053ba;
 }
@@ -217,7 +212,7 @@ html {
 
 body {
   overflow: hidden;
-  background-color: #EFB4BF;
+  background-color: #1C1E33;
   margin: 0;
   padding: 0; 
 }
