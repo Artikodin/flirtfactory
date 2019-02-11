@@ -2,9 +2,7 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { pictoPath } from "./pictoPath";
-
-import { Picto, Path, Btn } from "./element";
+import { Picto } from "./element";
 
 /* eslint-disable */
 
@@ -25,7 +23,7 @@ const FlirtFactoryTag = ({
       top={top}
       onClick={() => handleClick(agenb)}
     />
-      // {/* {name} */}
+    // {/* {name} */}
     // {/* </Btn> */}
     // <Svg
     //   xmlns="http://www.w3.org/2000/svg"

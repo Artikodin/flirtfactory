@@ -1,7 +1,6 @@
 import React from "react";
 
 import posed, { PoseGroup } from "react-pose";
-import PropTypes from "prop-types";
 
 import { TutorialWrapper } from "./element";
 
