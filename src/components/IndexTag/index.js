@@ -15,26 +15,23 @@ import { Picto } from "..";
 
 class IndexTag extends React.Component {
   state = {
-    showed: false
+    // eslint-disable-next-line react/destructuring-assignment
+    showed: this.props.isOpen
   };
 
   static propTypes = {
     children: PropTypes.node,
+    isOpen: PropTypes.bool,
     title: PropTypes.string,
     name: PropTypes.string
   };
 
   static defaultProps = {
     children: "",
+    isOpen: false,
     title: "",
     name: ""
   };
-
-  componentDidMount() {
-    // this.setState({
-    //   showed: true
-    // });
-  }
 
   handleMouseEnter = () => {
     this.setState({

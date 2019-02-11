@@ -165,7 +165,7 @@ class DragNDrop extends React.Component {
 
     handleDrag(this.deltaDrag);
 
-    if (this.deltaDrag > 0.9) {
+    if (this.deltaDrag > 0.7) {
       this.goToEnd = true;
       this.handleDragEnd();
     }
@@ -214,10 +214,11 @@ class DragNDrop extends React.Component {
     const { elStart } = this.state;
 
     const ease = 0.07;
+    const easeEnd = 0.04;
 
     if (this.goToEnd) {
       this.deltaDrag =
-        this.deltaDrag < 1 ? this.easing(this.deltaDrag, 1.1, ease) : 1;
+        this.deltaDrag < 1 ? this.easing(this.deltaDrag, 1.1, easeEnd) : 1;
     } else {
       this.deltaDrag =
         this.deltaDrag > 0 ? this.easing(this.deltaDrag, -0.1, ease) : 0;
