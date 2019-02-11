@@ -30,9 +30,9 @@ export const ButtonAboutClose = styled.button`
   padding: 4px;
   background: none;
   border: none;
-  width: 30px;
-  height: 30px;
-  margin: 30px auto 0 auto;
+  width: 25px;
+  height: 25px;
+  margin: 25px auto 0 auto;
   left: 0;
   right: 0;
 

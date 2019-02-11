@@ -7,7 +7,8 @@ import {
   ProgressContext,
   TextContext,
   InteractionDragAndDrop,
-  TaskBar
+  TaskBar,
+  GlobalSound
 } from "../../components";
 
 class BelleEpoque extends React.Component {
@@ -34,6 +35,7 @@ class BelleEpoque extends React.Component {
                     age={agestr}
                     datas={value.epoques[agenbr]}
                   />
+                  <GlobalSound age={agestr} unlocked={ages.belleepoque.lock} />
                   {ages.belleepoque.lock && (
                     <>
                       <GenericTag

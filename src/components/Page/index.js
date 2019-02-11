@@ -6,7 +6,9 @@ import { Wrapper } from "./element";
 import { About, NavBar, ProgressContext, GlobalSound } from "..";
 
 class Page extends React.Component {
-  state = {};
+  state = {
+    globalSound: true
+  };
 
   static propTypes = {
     children: PropTypes.node,
@@ -20,12 +22,25 @@ class Page extends React.Component {
     navbar: true
   };
 
+  componentDidMount = () => {
+    this.setState({
+      globalSound: true
+    });
+  };
+
+  componentWillUnmount = () => {
+    this.setState({
+      globalSound: false
+    });
+  };
+
   render() {
+    const { globalSound } = this.state;
     const { children, backgroundColor, navbar } = this.props;
     return (
       <Wrapper backgroundColor={backgroundColor} id="wrapper">
-        <GlobalSound />
         {children}
+        <GlobalSound playing={globalSound} />
         <ProgressContext.Consumer>
           {({ ages }) => (
             <>

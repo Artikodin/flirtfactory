@@ -19,7 +19,6 @@ class HeartCounter extends React.Component {
   };
 
   getProgression = (total, progression) => {
-    console.log(progression);
     switch (progression) {
       case 0:
         return (
@@ -37,7 +36,6 @@ class HeartCounter extends React.Component {
             return (
               <>
                 <path
-                  class="st0"
                   d="M256.6,473.51c-468.98-255.83-129.8-573.88,0-359.68C386.42-100.37,725.61,217.68,256.6,473.51z"
                 />
                 <polygon
@@ -51,7 +49,6 @@ class HeartCounter extends React.Component {
             return (
               <>
                 <path
-                  class="st0"
                   d="M256.6,473.51c-468.98-255.83-129.8-573.88,0-359.68C386.42-100.37,725.61,217.68,256.6,473.51z"
                 />
                 <polygon
@@ -65,7 +62,6 @@ class HeartCounter extends React.Component {
             return (
               <>
                 <path
-                  class="st0"
                   d="M256.6,473.51c-468.98-255.83-129.8-573.88,0-359.68C386.42-100.37,725.61,217.68,256.6,473.51z"
                 />
                 <polygon
@@ -86,7 +82,6 @@ class HeartCounter extends React.Component {
               <>
                 <path
                   fill="white"
-                  class="st0"
                   d="M256.6,473.51c-468.98-255.83-129.8-573.88,0-359.68C386.42-100.37,725.61,217.68,256.6,473.51z"
                 />
               </>
@@ -96,7 +91,6 @@ class HeartCounter extends React.Component {
             return (
               <>
                 <path
-                  class="st0"
                   d="M256.6,473.51c-468.98-255.83-129.8-573.88,0-359.68C386.42-100.37,725.61,217.68,256.6,473.51z"
                 />
                 <polygon
@@ -110,7 +104,6 @@ class HeartCounter extends React.Component {
             return (
               <>
                 <path
-                  class="st0"
                   d="M256.6,473.51c-468.98-255.83-129.8-573.88,0-359.68C386.42-100.37,725.61,217.68,256.6,473.51z"
                 />
                 <polygon
@@ -130,7 +123,6 @@ class HeartCounter extends React.Component {
               <>
                 <path
                   fill="white"
-                  class="st0"
                   d="M256.6,473.51c-468.98-255.83-129.8-573.88,0-359.68C386.42-100.37,725.61,217.68,256.6,473.51z"
                 />
               </>
@@ -140,7 +132,6 @@ class HeartCounter extends React.Component {
             return (
               <>
                 <path
-                  class="st0"
                   d="M256.6,473.51c-468.98-255.83-129.8-573.88,0-359.68C386.42-100.37,725.61,217.68,256.6,473.51z"
                 />
                 <polygon
@@ -160,7 +151,6 @@ class HeartCounter extends React.Component {
               <>
                 <path
                   fill="white"
-                  class="st0"
                   d="M256.6,473.51c-468.98-255.83-129.8-573.88,0-359.68C386.42-100.37,725.61,217.68,256.6,473.51z"
                 />
               </>
