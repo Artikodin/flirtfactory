@@ -22,12 +22,14 @@ class VoiceAi extends React.Component {
   static propTypes = {
     datas: PropTypes.object,
     unlocked: PropTypes.bool,
+    isOpen: PropTypes.bool,
     age: PropTypes.string
   };
 
   static defaultProps = {
     datas: {},
     unlocked: false,
+    isOpen: true,
     age: ""
   };
 
@@ -98,11 +100,7 @@ class VoiceAi extends React.Component {
         />
         {isHangedUp && <PhoneCube name="raccroche" />}
         {isAnswered && (
-          <IndexTag
-            isAnswered={isAnswered}
-            title="Assistance I.A."
-            name="decroche"
-          >
+          <IndexTag isOpen={true} title="Assistance I.A." name="decroche">
             {this.setAIText(age, unlocked, datas)}
           </IndexTag>
         )}

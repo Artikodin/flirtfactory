@@ -37,7 +37,7 @@ class TaskBar extends React.Component {
         {age === "intro" ? (
           <VoiceAi {...this.props} />
         ) : (
-          <IndexTag title="Assistance I.A." name="decroche" isAnswered={true}>
+          <IndexTag isOpen={false} title="Assistance I.A." name="decroche" isAnswered={true}>
             Quelque chose a mal fonctionné. 0 sur 8 parties fonctionnent
             correctement. J'enclenche la réinitialisation du système.
           </IndexTag>
