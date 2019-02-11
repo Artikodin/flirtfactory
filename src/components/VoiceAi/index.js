@@ -22,18 +22,28 @@ class VoiceAi extends React.Component {
   static propTypes = {
     datas: PropTypes.object,
     unlocked: PropTypes.bool,
+    isOpen: PropTypes.bool,
     age: PropTypes.string
   };
 
   static defaultProps = {
     datas: {},
     unlocked: false,
+    isOpen: true,
     age: ""
   };
 
   handleHangUp = () => {
     this.setState({ isVisible: false });
     setTimeout(() => this.setState({ isHangedUp: true }), 200);
+    this.reCall();
+  };
+
+  reCall = () => {
+    setTimeout(() => {
+      this.setState({ isVisible: true });
+      this.setState({ isHangedUp: false });
+    }, 2000);
   };
 
   handleAnswer = () => {
@@ -46,27 +56,27 @@ class VoiceAi extends React.Component {
       case "intro":
         if (unlocked) {
           return (
-              <p>
-                Quelque chose a mal fonctionné. 0 sur 8 parties fonctionnent
-                correctement. J'enclenche la réinitialisation du système.
-              </p>
+            <p>
+              Quelque chose a mal fonctionné. 0 sur 8 parties fonctionnent
+              correctement. J'enclenche la réinitialisation du système.
+            </p>
           );
         } else {
           return (
-              <p>
-                Bonjour, je suis ton assistant personnel. Je suis prêt à
-                démarrer la Flirt Factory et à parcourir l'histoire de la
-                séduction au fil des époques. J'attends tes instructions.
-              </p>
+            <p>
+              Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer
+              la Flirt Factory et à parcourir l'histoire de la séduction au fil
+              des époques. J'attends tes instructions.
+            </p>
           );
         }
       case "flirtfactory":
         return (
-            <p>
-              Toutes les machines ont bien été réinitialisées. Tu as bien
-              travaillé. En récompense, j'ai entendu que tu étais un séducteur,
-              je te propose 8 catchphrases pour séduire ta future conquête.
-            </p>
+          <p>
+            Toutes les machines ont bien été réinitialisées. Tu as bien
+            travaillé. En récompense, j'ai entendu que tu étais un séducteur, je
+            te propose 8 catchphrases pour séduire ta future conquête.
+          </p>
         );
       default:
         if (unlocked) {
@@ -90,7 +100,7 @@ class VoiceAi extends React.Component {
         />
         {isHangedUp && <PhoneCube name="raccroche" />}
         {isAnswered && (
-          <IndexTag isAnswered={isAnswered} title="Assistance I.A." name="decroche">
+          <IndexTag isOpen={true} title="Assistance I.A." name="decroche">
             {this.setAIText(age, unlocked, datas)}
           </IndexTag>
         )}
@@ -101,6 +111,7 @@ class VoiceAi extends React.Component {
 
 const WrapperAnimated = posed(Wrapper)({
   visible: {
+    applyAtStart: { height: "43px", border: "solid 1px white" },
     // opacity: 1,
     width: 298,
     transition: {
