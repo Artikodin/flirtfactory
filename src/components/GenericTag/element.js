@@ -66,7 +66,7 @@ export const Paragraph = styled.div`
   color: #000;
   font-size: 14px;
   padding: 15px 15px;
-  line-height: 2em;
+  line-height: 1.8em;
   max-height: 260px;
   overflow: auto;
 
