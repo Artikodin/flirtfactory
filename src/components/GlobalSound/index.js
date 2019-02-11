@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import ReactHowler from "react-howler";
 
 class GlobalSound extends React.Component {
-  state = {
-    playedOnce: false
-  };
+  global = React.createRef();
+
+  state = {};
 
   static propTypes = {
     playing: PropTypes.bool,
@@ -20,20 +20,42 @@ class GlobalSound extends React.Component {
     age: ""
   };
 
+  componentDidMount = () => {
+    this.mounted = true;
+  };
+
   render() {
     const { playing, age, unlocked } = this.props;
-    console.log(playing + " " + age + " " + unlocked);
+    // if (this.mounted) {
+    //   console.log(this.global.howler.playing());
+    // }
+    console.log(unlocked);
     return (
       <>
         <ReactHowler
-          src="./assets/sound/flirtfactory.mp3"
+          src="./assets/sound/flirtfactory2.mp3"
+          loop
           preload
           html5
           volume={0.3}
           playing={playing}
+          // ref={ref => (this.global = ref)}
+        />
+        <ReactHowler
+          src={`./assets/sound/${age}ON.mp3`}
+          loop
+          preload
+          html5
+          volume={0.8}
+          playing={unlocked}
         />
         {unlocked === false && (
-          <ReactHowler src="./assets/sound/SonOFF.mp3" volume={0.4} playing />
+          <ReactHowler
+            src="./assets/sound/SonOFF.mp3"
+            volume={0.4}
+            loop
+            playing
+          />
         )}
         {unlocked && (
           <>
@@ -42,15 +64,7 @@ class GlobalSound extends React.Component {
               volume={0.7}
               autoplay={false}
               loop={false}
-              // playing={unlocked}
               onend={() => console.log("ok")}
-            />
-            <ReactHowler
-              src={`./assets/sound/${age}ON.mp3`}
-              preload
-              html5
-              volume={0.3}
-              playing={playing}
             />
           </>
         )}

@@ -35,7 +35,11 @@ class BelleEpoque extends React.Component {
                     age={agestr}
                     datas={value.epoques[agenbr]}
                   />
-                  <GlobalSound age={agestr} unlocked={ages.belleepoque.lock} />
+                  <GlobalSound
+                    playing={true}
+                    age={agestr}
+                    unlocked={ages.belleepoque.lock}
+                  />
                   {ages.belleepoque.lock && (
                     <>
                       <GenericTag

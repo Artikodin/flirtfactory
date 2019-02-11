@@ -22,17 +22,17 @@ class Page extends React.Component {
     navbar: true
   };
 
-  componentDidMount = () => {
-    this.setState({
-      globalSound: true
-    });
-  };
+  // componentDidMount = () => {
+  //   this.setState({
+  //     globalSound: true
+  //   });
+  // };
 
-  componentWillUnmount = () => {
-    this.setState({
-      globalSound: false
-    });
-  };
+  // componentWillUnmount = () => {
+  //   this.setState({
+  //     globalSound: false
+  //   });
+  // };
 
   render() {
     const { globalSound } = this.state;
@@ -40,7 +40,7 @@ class Page extends React.Component {
     return (
       <Wrapper backgroundColor={backgroundColor} id="wrapper">
         {children}
-        <GlobalSound playing={globalSound} />
+        {/* <GlobalSound playing={globalSound} /> */}
         <ProgressContext.Consumer>
           {({ ages }) => (
             <>
@@ -85,7 +85,7 @@ class Page extends React.Component {
                       }
                       pathTo="/lumieres"
                     >
-                      lumière
+                      lumières
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       imgSrc={
