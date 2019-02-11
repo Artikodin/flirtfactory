@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TransitionWrapper = styled.div`
+export const Wrapper = styled.div`
   box-sizing: border-box;
   position: absolute;
   width: 100vw;

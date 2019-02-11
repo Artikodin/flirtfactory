@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+// import posed from "react-pose";
 
 import { Wrapper } from "./element";
 
@@ -39,6 +40,7 @@ class Page extends React.Component {
     const { children, backgroundColor, navbar } = this.props;
     return (
       <Wrapper backgroundColor={backgroundColor} id="wrapper">
+        {/* <TransitionLayerAnimated /> */}
         {children}
         {/* <GlobalSound playing={globalSound} /> */}
         <ProgressContext.Consumer>
@@ -134,5 +136,10 @@ class Page extends React.Component {
     );
   }
 }
+
+// const TransitionLayerAnimated = posed(TransitionLayer)({
+//   enter: { opacity: 1 },
+//   exit: { opacity: 0, delay: 2000 }
+// });
 
 export default Page;
