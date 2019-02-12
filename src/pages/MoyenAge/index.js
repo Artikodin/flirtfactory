@@ -28,6 +28,7 @@ class MoyenAge extends React.Component {
               {({ ages, selectAges, updateVideo, unlockPoints }) => (
                 <>
                   <TaskBar
+                    isOpen
                     name="moyenage"
                     progress={ages.moyenage.points}
                     age={agestr}
