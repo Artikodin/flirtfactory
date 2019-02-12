@@ -20,7 +20,7 @@ export const CatchphraseContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10%;
+  padding: 0 8%;
 
   #catchphrase--container {
     text-align: left;
@@ -30,7 +30,7 @@ export const CatchphraseContainer = styled.div`
     .catchphrase--catchphrase {
       position: relative;
       font-family: GTCinetype;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: normal;
       font-style: italic;
       font-stretch: normal;
@@ -73,7 +73,7 @@ export const CatchphraseContainer = styled.div`
 
       h1 {
         font-family: GTCinetype;
-        font-size: 26px;
+        font-size: 1.2rem;
         font-weight: bold;
         font-style: normal;
         font-stretch: normal;

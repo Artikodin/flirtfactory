@@ -35,7 +35,7 @@ export const ButtonIAWrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
   width: 45px;
   height: 45px;
-  z-index: 4;
+  z-index: 6;
   border-radius: 50%;
   display: flex;
   justify-content: center;
