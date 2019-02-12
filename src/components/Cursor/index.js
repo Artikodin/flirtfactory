@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Pointer } from "./element";
-import Default from "./Default";
+import Next from "./Next";
 
 class Cursor extends React.Component {
   // state = {
@@ -14,7 +14,7 @@ class Cursor extends React.Component {
     // const { cursor } = this.state;
     return (
       <Pointer>
-        <Default />
+        <Next />
       </Pointer>
     );
   }

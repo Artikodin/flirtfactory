@@ -48,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     height: 100vh;
 
-    .noise {
+    /* .noise {
       position: relative;
       width: 100vw;
       height: 100vh;
@@ -57,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
       background-size: 80px;
       opacity: 0.25;
       mix-blend-mode: soft-light;
-    }
+    } */
   }
 
   .background__video {

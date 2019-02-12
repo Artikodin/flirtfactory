@@ -20,7 +20,11 @@ class Next extends React.Component {
 
   innerBg = React.createRef();
 
-  animationLongClick = null;
+  animationHold = {
+    start: false,
+    direction: 1,
+    progress: 0
+  };
 
   handleMouseMove = throttle(10, e => {
     this.target = {
@@ -34,38 +38,39 @@ class Next extends React.Component {
   });
 
   handleMouseDown = () => {
-    this.isMouseDown = true;
-    this.longClick();
+    this.animationHold.start = true;
+    this.animationHold.direction = 1;
   };
-
+  
   handleMouseUp = () => {
-    this.isMouseDown = false;
+    this.animationHold.direction = -1;
   };
 
   componentDidMount() {
-    window.addEventListener("mousemove", this.handleMouseMove, {
+    addEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
-    window.addEventListener("mousedown", this.handleMouseDown, {
+    addEventListener("mousedown", this.handleMouseDown, {
       passive: true
     });
-    window.addEventListener("mouseup", this.handleMouseUp, {
+    addEventListener("mouseup", this.handleMouseUp, {
       passive: true
     });
+    this.updateHold();
   }
 
   componentWillUnmount() {
-    window.removeEventListener("mousemove", this.handleMouseMove, {
+    removeEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
-    window.removeEventListener("mousedown", this.handleMouseDown, {
+    removeEventListener("mousedown", this.handleMouseDown, {
       passive: true
     });
-    window.removeEventListener("mouseup", this.handleMouseUp, {
+    removeEventListener("mouseup", this.handleMouseUp, {
       passive: true
     });
-    window.cancelAnimationFrame(this.longClick);
-    window.cancelAnimationFrame(this.update);
+    cancelAnimationFrame(this.updateHold);
+    cancelAnimationFrame(this.update);
   }
 
   update = () => {
@@ -100,44 +105,44 @@ class Next extends React.Component {
     }
   };
 
-  animationClick = {
-    start: null,
-    direction: 1,
-    elapsed: 0,
-    progress: 0,
-    totalDuration: 2000
-  };
+  // animationClick = {
+  //   start: null,
+  //   direction: 1,
+  //   elapsed: 0,
+  //   progress: 0,
+  //   totalDuration: 2000
+  // };
 
-  longClick = () => {
-    if (!this.animationClick.start) {
-      this.animationClick.start = performance.now();
-      this.animationClick.elapsed = 0;
-      this.animationClick.progress = 0;
-    }
-    if (this.isMouseDown) {
-      this.animationClick.direction = 1;
-    } else {
-      this.animationClick.direction = -1;
-    }
-    const elapsed = this.animationClick.elapsed;
-    this.animationClick.elapsed = performance.now() - this.animationClick.start;
-    this.animationClick.progress = Math.max(
-      Math.min(
-        this.animationClick.progress +
-          ((this.animationClick.elapsed - elapsed) /
-            this.animationClick.totalDuration) *
-            this.animationClick.direction,
-        1
-      ),
-      0
-    );
-    const scale = this.animationClick.progress * 6.5;
-    this.innerBg.current.style.transform = `scale(${scale})`;
-    if (this.animationClick.progress >= 1 || this.animationClick.progress <= 0) {
-      window.cancelAnimationFrame(this.animationLongClick);
-    } else {
-      this.animationLongClick = window.requestAnimationFrame(this.longClick);
-    }
+  updateHold = () => {
+    console.log(this.animationHold.progress);
+    this.animationHold.progress = this.animationHold.progress + 0.1 * this.animationHold.direction;
+    this.innerBg.current.style.transform = `scale(${this.animationHold.progress})`;
+    // if (!this.animationClick.start) {
+    //   this.animationClick.start = performance.now();
+    //   this.animationClick.elapsed = 0;
+    //   this.animationClick.progress = 0;
+    // }
+    // const elapsed = this.animationClick.elapsed;
+    // this.animationClick.elapsed = performance.now() - this.animationClick.start;
+    // this.animationClick.progress = Math.max(
+    //   Math.min(
+    //     this.animationClick.progress +
+    //       ((this.animationClick.elapsed - elapsed) /
+    //         this.animationClick.totalDuration) *
+    //         this.animationClick.direction,
+    //     1
+    //   ),
+    //   0
+    // );
+    // const scale = this.animationClick.progress * 6.5;
+    // this.innerBg.current.style.transform = `scale(${scale})`;
+    // if (this.animationClick.progress >= 1 || this.animationClick.progress <= 0) {
+    //   window.cancelAnimationFrame(this.animationLongClick);
+    // } else {
+    //   this.animationLongClick = window.requestAnimationFrame(this.longClick);
+    // }
+    if(this.animationHold.start)
+    requestAnimationFrame(this.updateHold);
   };
 
   render() {

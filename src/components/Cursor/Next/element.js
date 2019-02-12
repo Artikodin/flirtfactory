@@ -25,5 +25,5 @@ export const InnerBackground = styled.div`
   border-radius: 50%;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.4);
-  transform: scale(2);
+  transform: scale(0);
 `;

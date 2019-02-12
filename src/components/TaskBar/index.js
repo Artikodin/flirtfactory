@@ -29,6 +29,42 @@ class TaskBar extends React.Component {
     unlocked: false
   };
 
+  setAIText = (age, unlocked, datas) => {
+    switch (age) {
+      case "intro":
+        if (unlocked) {
+          return (
+            <p>
+              Quelque chose a mal fonctionné. 0 sur 8 parties fonctionnent
+              correctement. J'enclenche la réinitialisation du système.
+            </p>
+          );
+        } else {
+          return (
+            <p>
+              Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer
+              la Flirt Factory et à parcourir l'histoire de la séduction au fil
+              des époques. J'attends tes instructions.
+            </p>
+          );
+        }
+      case "flirtfactory":
+        return (
+          <p>
+            Toutes les machines ont bien été réinitialisées. Tu as bien
+            travaillé. En récompense, j'ai entendu que tu étais un séducteur, je
+            te propose 8 catchphrases pour séduire ta future conquête.
+          </p>
+        );
+      default:
+        if (unlocked) {
+          return <p>{datas.reinitialisation}</p>;
+        } else {
+          return <p>{datas.interaction}</p>;
+        }
+    }
+  };
+
   render() {
     const { age, name, datas, progress, unlocked } = this.props;
 
@@ -37,9 +73,12 @@ class TaskBar extends React.Component {
         {age === "intro" ? (
           <VoiceAi {...this.props} />
         ) : (
-          <IndexTag isOpen={false} title="Assistance I.A." name="decroche" isAnswered={true}>
-            Quelque chose a mal fonctionné. 0 sur 8 parties fonctionnent
-            correctement. J'enclenche la réinitialisation du système.
+          <IndexTag
+            isOpen={false}
+            title="Assistance I.A."
+            name="decroche"
+          >
+            {this.setAIText(age, unlocked, datas)}
           </IndexTag>
         )}
         {age !== "intro" && age !== "flirtfactory" && (
