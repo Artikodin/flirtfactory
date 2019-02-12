@@ -23,19 +23,6 @@ const FlirtFactoryTag = ({
       top={top}
       onClick={() => handleClick(agenb)}
     />
-    // {/* {name} */}
-    // {/* </Btn> */}
-    // <Svg
-    //   xmlns="http://www.w3.org/2000/svg"
-    //   style={{ display: "block" }}
-    //   width={width}
-    //   height={height}
-    //   left={left}
-    //   top={top}
-    //   viewBox="0 0 512 512"
-    // >
-    //   <Path fill={color} fillRule="evenodd" d={pictoPath[name]} />
-    // </Svg>
   );
 };
 

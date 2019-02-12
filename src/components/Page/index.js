@@ -123,7 +123,11 @@ class Page extends React.Component {
                       contemporain
                     </NavBar.NavItem>
                     <NavBar.NavItem
-                      imgSrc="./assets/img/noise.gif"
+                      imgSrc={
+                        ages.futur.lock
+                          ? "./assets/nav/futuron.gif"
+                          : "./assets/nav/futuroff.gif"
+                      }
                       pathTo="/futur"
                     >
                       futur
@@ -139,10 +143,5 @@ class Page extends React.Component {
     );
   }
 }
-
-// const TransitionLayerAnimated = posed(TransitionLayer)({
-//   enter: { opacity: 1 },
-//   exit: { opacity: 0, delay: 2000 }
-// });
 
 export default Page;

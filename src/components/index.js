@@ -12,6 +12,7 @@ export { default as Cursor } from "./Cursor";
 export { default as DragNDrop } from "./DragNDrop";
 export { default as EndingButton } from "./EndingButton";
 export { default as FlirtFactoryTag } from "./FlirtFactoryTag";
+export { default as FuturTag } from "./FuturTag";
 export { default as GlobalSound } from "./GlobalSound";
 export { default as GenericTag } from "./GenericTag";
 export { default as HeartCounter } from "./HeartCounter";

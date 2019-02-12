@@ -40,7 +40,6 @@ class GlobalSound extends React.Component {
           html5
           volume={1}
           playing={playing}
-          // ref={ref => (this.global = ref)}
         />
         <ReactHowler
           src={`./assets/sound/${age}ON.mp3`}
@@ -53,7 +52,7 @@ class GlobalSound extends React.Component {
         {unlocked === false && (
           <ReactHowler
             src="./assets/sound/SonOFF.mp3"
-            volume={0.3}
+            volume={0.2}
             loop
             playing
           />

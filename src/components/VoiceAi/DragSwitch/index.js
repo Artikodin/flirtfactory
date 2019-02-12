@@ -164,7 +164,6 @@ class DragSwitch extends React.Component {
     this.svgRef.current.addEventListener("mousemove", this.handleMouseMove, {
       passive: true
     });
-    console.log("test");
   };
 
   handleDragEnd = () => {

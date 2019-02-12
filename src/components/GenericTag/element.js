@@ -66,7 +66,6 @@ export const Container = styled.div`
   border: solid 1px white;
   border-top: none;
   background: rgba(255, 255, 255, 1);
-  /* background: red; */
   overflow: hidden;
   -webkit-clip-path: polygon(
     100% 0,

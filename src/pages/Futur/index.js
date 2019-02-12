@@ -6,26 +6,34 @@ import {
   GenericTag,
   ProgressContext,
   TextContext,
-  FlirtFactoryTag,
+  FuturTag,
   TaskBar,
   GlobalSound
 } from "../../components";
 
+/* eslint-disable */
+
 class BelleEpoque extends React.Component {
   state = {
     agestr: "futur",
-    agenbr: 7 // futur
-    // waitFor: 0 // sec
+    agenbr: 7, // futur
+    selectedPoint: 1
   };
 
   render() {
     const { agestr, agenbr } = this.state;
+    let { selectedPoint } = this.state;
     return (
       <Page>
         <TextContext.Consumer>
           {value => (
             <ProgressContext.Consumer>
-              {({ ages, updateVideo, unlockPoints, selectAges }) => (
+              {({
+                ages,
+                updateVideo,
+                unlockPoints,
+                selectAges
+              }) => (
                 <>
                   <TaskBar
                     name="futur"
@@ -42,26 +50,40 @@ class BelleEpoque extends React.Component {
                   />
                   {ages.futur.lock && (
                     <>
-                      <GenericTag
-                        unlocked={ages.futur.points[0]}
-                        unlockPoint={() => unlockPoints(agestr, 0)}
-                        title={value.epoques[agenbr].symbols[0].name}
-                        name="futur1"
-                        xPos="65vw"
-                        yPos="40vh"
-                      >
-                        {value.epoques[agenbr].symbols[0].description}
-                      </GenericTag>
+                      {selectedPoint === 1 && (
+                        <>
+                          <GenericTag
+                            unlocked={ages.futur.points[0]}
+                            unlockPoint={() =>
+                              unlockPoints(agestr, 0)
+                            }
+                            title={
+                              value.epoques[agenbr].symbols[0].name
+                            }
+                            name="futur1"
+                            xPos="65vw"
+                            yPos="40vh"
+                          >
+                            {
+                              value.epoques[agenbr].symbols[0]
+                                .description
+                            }
+                          </GenericTag>
+                        </>
+                      )}
                     </>
                   )}
                   {ages.futur.lock === false && (
                     <>
-                      <FlirtFactoryTag
+                      <FuturTag
                         name="futur"
                         agenb={0}
                         left="84vw"
                         top="20vh"
                         handleClick={() => {
+                          this.setState({
+                            selectedPoint: 2
+                          });
                           updateVideo(agestr);
                           selectAges(agestr);
                         }}
@@ -72,6 +94,7 @@ class BelleEpoque extends React.Component {
                     <BackgroundVideo
                       path={agestr}
                       number={ages.futur.video}
+                      futur={this.state.selectedPoint}
                       increaseVideo={() => updateVideo(agestr)}
                     />
                   </div>
