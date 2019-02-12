@@ -1,16 +1,13 @@
 import React from "react";
 // import PropTypes from "prop-types";
 
-import { Page, Cursor } from "../../components";
+import { Page } from "../../components";
 
-const Error = () => {
-  return (
-    <Page backgroundColor="#c4e6f1">
-      <Cursor />
-      <div>erreur 404</div>
-    </Page>
-  );
-};
+const Error = () => (
+  <Page backgroundColor="#c4e6f1">
+    <div>erreur 404</div>
+  </Page>
+);
 
 Error.propTypes = {
   // history: PropTypes.object.isRequired
