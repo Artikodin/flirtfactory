@@ -55,7 +55,19 @@ class IndexTag extends React.Component {
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
         >
-          <IconContainer>
+          <IconContainer
+            style={
+              showed
+                ? {
+                    background: "rgba(255, 255, 255, 0.2)",
+                    transition: "all 0.2s ease-in"
+                  }
+                : {
+                    background: "rgba(255, 255, 255, 0)",
+                    transition: "all 0.5s ease-out"
+                  }
+            }
+          >
             <Picto name={name} />
           </IconContainer>
           <PoseGroup>
@@ -78,13 +90,11 @@ const AnimatedWrapper = posed(Wrapper)({
   isClose: {
     width: 45,
     height: 45,
-    background: "rgba(255, 255, 255, 0)",
     delay: 450
   },
   isOpen: {
     width: 300,
-    // height: "auto",
-    background: "rgba(255, 255, 255, 0.2)"
+    height: "auto"
   }
 });
 
@@ -93,11 +103,13 @@ const AnimatedTitle = posed(Title)({
     scaleX: 0,
     opacity: 0,
     delay: 280,
+    background: "rgba(255, 255, 255, 0)",
     transition: { duration: 270 }
   },
   enter: {
     scaleX: 1,
     opacity: 1,
+    background: "rgba(255, 255, 255, 0.2)",
     transition: { duration: 300 }
   }
 });

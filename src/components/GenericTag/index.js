@@ -237,15 +237,12 @@ class GenericTag extends React.Component {
 const AnimatedWrapper = posed(Wrapper)({
   isClose: {
     width: 45,
-    height: 45,
     background: "rgba(255, 255, 255, 0)",
-    delay: 450
+    delay: 280
   },
   isOpen: {
     width: 300,
-    height: "auto",
-    background: "rgba(255, 255, 255, 0.2)",
-    delay: 50
+    background: "rgba(255, 255, 255, 0.2)"
   }
 });
 

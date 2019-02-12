@@ -22,7 +22,7 @@ export const IconContainer = styled.div`
   height: 45px;
   width: 45px;
   box-sizing: border-box;
-  transition: all 0.5s ease-in;
+  transition: all 0.2s ease-in;
 `;
 
 export const Title = styled.div`
@@ -63,7 +63,7 @@ export const Paragraph = styled.div`
   flex-shrink: 0;
   color: #1c1e33;
   font-size: 14px;
-  padding: 15px 15px;
+  /* padding: 15px 15px; */
   line-height: 1.8em;
   max-height: 260px;
   overflow: auto;
