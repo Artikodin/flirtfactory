@@ -1,5 +1,7 @@
 import React from "react";
 
+import { withRouter } from "react-router-dom";
+
 import PropTypes from "prop-types";
 import posed, { PoseGroup } from "react-pose";
 import { easing } from "popmotion";
@@ -152,6 +154,10 @@ class Catchphrase extends React.Component {
     this.raf = window.requestAnimationFrame(this.runRaf);
   };
 
+  changeRoute = (route) => {
+    this.props.history.push(`/${route}`);
+  }
+
   render() {
     const {
       forward,
@@ -184,16 +190,14 @@ class Catchphrase extends React.Component {
                           </div>
                         </div>
                         <div className="catchphrase--title">
-                          <div>
-                            <Picto name={ageCatchphrase} color={"#516081"} />
-                            <h1>{value.epoques[nbCatchphrase].name}</h1>
-                          </div>
-                          <div className="catchphrase--line" />
+                          <Picto name={ageCatchphrase} color={"#516081"} />
+                          <h1>{value.epoques[nbCatchphrase].name}</h1>
                         </div>
                         <div className="catchphrase--summary">
                           <Markup
                             content={value.epoques[nbCatchphrase].summary}
                           />
+                          <a className="catchphrase--link" onClick={() => this.changeRoute(ageCatchphrase)}>Retourner à l'époque</a>
                         </div>
                         <div className="catchphrase--nav">
                           <button
@@ -318,8 +322,6 @@ class Catchphrase extends React.Component {
   }
 }
 
-export default Catchphrase;
-
 const AnimatedCatchphraseWrapper = posed(CatchphraseWrapper)({
   enter: {
     left: 0,
@@ -338,3 +340,5 @@ const AnimatedCatchphraseWrapper = posed(CatchphraseWrapper)({
     }
   }
 });
+
+export default withRouter(Catchphrase);

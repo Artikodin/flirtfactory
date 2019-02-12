@@ -16,7 +16,7 @@ class FlirtFactory extends React.Component {
 
   state = {
     nbCatchphrase: 0,
-    showed: true,
+    showed: false,
     forward: true,
     arrayAges: [
       "antiquite",
