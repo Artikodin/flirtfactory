@@ -13,17 +13,20 @@ class Page extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     backgroundColor: PropTypes.string,
-    navbar: PropTypes.bool
+    navbar: PropTypes.bool,
+    transition: PropTypes.bool
   };
 
   static defaultProps = {
     children: "",
     backgroundColor: "",
-    navbar: true
+    navbar: true,
+    transition: false
   };
 
   componentDidMount() {
-    this.setState({ showed: false });
+    const { transition } = this.props;
+    if (transition) this.setState({ showed: false });
   }
 
   componentDidUpdate() {
@@ -37,11 +40,11 @@ class Page extends React.Component {
 
   render() {
     // const { globalSound } = this.state;
-    const { children, backgroundColor, navbar } = this.props;
+    const { children, backgroundColor, navbar, transition } = this.props;
     const { showed } = this.state;
     return (
       <Wrapper backgroundColor={backgroundColor} id="wrapper">
-        <Loader />
+        {transition && <Loader />}
         {showed && children}
         <ProgressContext.Consumer>
           {({ ages }) => (
