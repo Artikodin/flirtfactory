@@ -33,18 +33,11 @@ export const Container = styled.div`
   border: solid 1px white;
   border-top: none;
   background: rgba(255, 255, 255, 1);
+  /* background: red; */
+  overflow: hidden;
+  -webkit-clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
+  clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
 
-  &:after {
-    content: "";
-    opacity: 0.1;
-    background-size: 80px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-  }
 `;
 
 export const Title = styled.div`
@@ -63,7 +56,7 @@ export const Title = styled.div`
 `;
 
 export const Paragraph = styled.div`
-  color: #000;
+  color: #1C1E33;
   font-size: 14px;
   padding: 15px 15px;
   line-height: 1.8em;
@@ -87,10 +80,8 @@ export const IconContainer = styled.div`
   &:hover {
     border: solid 1px white;
   }
-  color: #000;
 `;
 
 export const Icon = styled.img`
-  color: #000;
   height: 60%;
 `;

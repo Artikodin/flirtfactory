@@ -75,16 +75,32 @@ class IndexTag extends React.Component {
 }
 
 const AnimatedWrapper = posed(Wrapper)({
-  isClose: { width: 45, height: 45, delay: 450 },
+  isClose: {
+    width: 45,
+    height: 45,
+    delay: 450,
+    background: "rgba(255, 255, 255, 0)"
+  },
   isOpen: {
     width: 300,
-    height: "auto"
+    height: "auto",
+    background: "rgba(255, 255, 255, 0.2)",
+    delay: 280
   }
 });
 
 const AnimatedTitle = posed(Title)({
-  exit: { scaleX: 0.5, opacity: 0, delay: 280, transition: { duration: 270 } },
-  enter: { scaleX: 1, opacity: 1, transition: { duration: 300 } }
+  exit: {
+    scaleX: 0.5,
+    opacity: 0,
+    delay: 280,
+    transition: { duration: 270 }
+  },
+  enter: {
+    scaleX: 1,
+    opacity: 1,
+    transition: { duration: 300 }
+  }
 });
 
 const AnimatedContainer = posed(Container)({

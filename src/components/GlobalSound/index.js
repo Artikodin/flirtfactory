@@ -33,22 +33,22 @@ class GlobalSound extends React.Component {
     return (
       <>
         <ReactHowler
-          src="./assets/sound/flirtfactory2.mp3"
+          src="./assets/sound/flirtfactory.mp3"
           loop
           preload
           html5
-          volume={0.3}
+          volume={1}
           playing={playing}
           // ref={ref => (this.global = ref)}
         />
-        <ReactHowler
+        {/* <ReactHowler
           src={`./assets/sound/${age}ON.mp3`}
           loop
           preload
           html5
           volume={0.8}
           playing={unlocked}
-        />
+        /> */}
         {unlocked === false && (
           <ReactHowler
             src="./assets/sound/SonOFF.mp3"

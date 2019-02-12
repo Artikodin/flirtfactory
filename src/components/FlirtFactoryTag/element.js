@@ -10,6 +10,8 @@ export const Picto = styled.img`
   transition: all 0.4s ease;
 
   &:hover {
+    transform-origin: bottom center;
+    transform: scale(1.1);
     opacity: 0.8;
   }
 `;

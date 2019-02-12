@@ -52,7 +52,6 @@ const GlobalStyle = createGlobalStyle`
       position: relative;
       width: 100vw;
       height: 100vh;
-      background: blue;
       z-index: 1;
       background-image: url("./assets/img/noise.gif");
       background-size: 80px;
