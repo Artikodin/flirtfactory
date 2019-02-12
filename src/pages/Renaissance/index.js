@@ -71,7 +71,7 @@ class Renaissance extends React.Component {
                       age={agestr}
                       frameTotal={frameTotal}
                       waitFor={waitFor}
-                      pathDraw="M 450 150 C 350 200 450 250 350 300"
+                      pathDraw="M 250 50 L 50 50"
                       top="5vh"
                       left="51vw"
                     />

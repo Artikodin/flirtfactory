@@ -81,9 +81,9 @@ class Moderne extends React.Component {
                       age={agestr}
                       frameTotal={frameTotal}
                       waitFor={waitFor}
-                      pathDraw="M 50 50 A 50 50 0 1 1 50 100"
+                      pathDraw="M 50 50 Q 150 150 250 50"
                       top="50vh"
-                      left="90vw"
+                      left="70vw"
                     />
                   </div>
                 </>

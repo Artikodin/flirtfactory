@@ -167,7 +167,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: white;
+    background: #1C1E33;
     border-radius: 10px;
   }
 

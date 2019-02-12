@@ -253,7 +253,11 @@ const AnimatedTitle = posed(Title)({
 
 const AnimatedContainer = posed(Container)({
   isClose: { scaleY: 0, opacity: 0 },
-  isOpen: { scaleY: 1, opacity: 1, delay: 280 }
+  isOpen: {
+    scaleY: 1,
+    opacity: 1,
+    delay: 280
+  }
 });
 
 export default GenericTag;

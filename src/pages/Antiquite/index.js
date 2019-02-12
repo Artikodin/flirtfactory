@@ -36,8 +36,10 @@ class Antiquite extends React.Component {
                     datas={value.epoques[agenbr]}
                   />
                   {ages.antiquite.lock && (
+                    <Tutorial showed={ages.antiquite.lock} />
+                  )}
+                  {ages.antiquite.lock && (
                     <>
-                      <Tutorial showed={ages.antiquite.lock} />
                       <GenericTag
                         unlocked={ages.antiquite.points[0]}
                         unlockPoint={() => unlockPoints(agestr, 0)}
@@ -83,7 +85,7 @@ class Antiquite extends React.Component {
                       age={agestr}
                       frameTotal={frameTotal}
                       waitFor={waitFor}
-                      pathDraw="M 150 50 C 150 150 50 100 50 200"
+                      pathDraw="M 200 50 L 50 200"
                       top="8vh"
                       left="40vw"
                     />
