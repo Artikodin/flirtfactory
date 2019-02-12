@@ -99,7 +99,7 @@ class TaskBar extends React.Component {
               <Markup content={datas.description} />
             </IndexTag>
             <PoseGroup id="HeartCounter">
-              {unlocked && (
+              {unlocked || age !== "futur" && (
                 <AnimatedHeartCounter key="heart-wrapper">
                   <HeartCounter progress={progress} />
                 </AnimatedHeartCounter>

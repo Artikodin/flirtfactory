@@ -21,7 +21,7 @@ const ages = {
   renaissance: {
     lock: false,
     video: 1,
-    points: [false, false]
+    points: [false, false, false]
   },
   lumieres: {
     lock: false,
@@ -41,12 +41,13 @@ const ages = {
   contemporain: {
     lock: false,
     video: 1,
-    points: [false, false, false, false]
+    points: [false, false, false]
   },
   futur: {
     lock: false,
     video: 1,
-    points: [false, false, false, false]
+    points: [false, false, false, false],
+    selected: 1
   }
 };
 
@@ -55,7 +56,8 @@ export const ProgressContext = React.createContext({
   unlockAll,
   selectAges: () => {},
   updateVideo: () => {},
-  unlockPoints: () => {}
+  unlockPoints: () => {},
+  selectFutur: () => {}
 });
 
 class ProgressProvider extends React.Component {
@@ -105,11 +107,24 @@ class ProgressProvider extends React.Component {
     }));
   };
 
+  selectFutur = (age, number) => {
+    this.setState(prevState => ({
+      ages: {
+        ...prevState.ages,
+        [age]: {
+          ...prevState.ages[age],
+          selected: number
+        }
+      }
+    }));
+  };
+
   state = {
     ages: ages,
     selectAges: this.selectAges,
     updateVideo: this.updateVideo,
-    unlockPoints: this.unlockPoints
+    unlockPoints: this.unlockPoints,
+    selectFutur: this.selectFutur
   };
   /* eslint-enable */
 

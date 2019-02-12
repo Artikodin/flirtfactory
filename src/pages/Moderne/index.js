@@ -16,7 +16,7 @@ class Moderne extends React.Component {
     agestr: "moderne",
     agenbr: 5, // moderne
     frameTotal: 41,
-    waitFor: 0 // sec
+    waitFor: 2500 // sec
   };
 
   render() {
@@ -49,7 +49,7 @@ class Moderne extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         name="moderne1"
-                        xPos="32vw"
+                        xPos="36vw"
                         yPos="25vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
@@ -69,7 +69,7 @@ class Moderne extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         name="moderne3"
-                        xPos="10vw"
+                        xPos="15vw"
                         yPos="40vh"
                       >
                         {value.epoques[agenbr].symbols[2].description}
@@ -89,7 +89,7 @@ class Moderne extends React.Component {
                       age={agestr}
                       frameTotal={frameTotal}
                       waitFor={waitFor}
-                      pathDraw="M 50 50 Q 150 150 250 50"
+                      pathDraw="M 50 50 A 50 50 0 0 0 200 50"
                       top="50vh"
                       left="70vw"
                     />

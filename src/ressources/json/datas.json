@@ -66,8 +66,12 @@
           "description": "Il était courant de parfumer ses lettres avant de les envoyer à l’être aimé."
         },
         {
-          "name": "Salons",
-          "description": "Les salons étaient très appréciés des femmes où l'on y parlait littérature mais pas que..."
+          "name": "Poèmes",
+          "description": ""
+        },
+        {
+          "name": "Lettres d'amour",
+          "description": ""
         }
       ]
     },
@@ -103,8 +107,8 @@
       "interaction": "Actionne le bras du bandit-manchos.",
       "reinitialisation": "Système réinitialisé. 146 petites annonces sont en attentes de publication.",
       "summary": "<p>Après la Révolution française, les rapports homme / femme deviennent plus égalitaires. Mais la Première Guerre mondiale va marquer un tounant dans l'histoire de la séduction, faisant  émerger de nouveaux types de relations.</p>",
-      "catchphrase": "En catchana baby tu dead ça",
-      "author": "Les paroles d'amour, qui sont toujours les mêmes, prennent le goût des lèvres dont elles sortent.",
+      "catchphrase": "Les paroles d'amour, qui sont toujours les mêmes, prennent le goût des lèvres dont elles sortent.",
+      "author": "Bel Ami",
       "description": "<p>Après la Révolution française, on observe des rapports peu à peu plus égalitaires entre les deux sexes, dans lesquels l'union amoureuse nécessite l’accord des deux parties. Les gens font ce qui leur plaît : de plus en plus, ils se choisissent en fonction de leurs désirs, de leurs attractions passionnelles. <strong>C'est le siècle du Romantisme, on explore la profondeur des sentiments.</strong></p> <p>En parallèle le <strong>flirt</strong>, venu des Anglo-Saxons, accorde une nouvelle liberté aux jeunes filles qui deviennent un peu plus entreprenantes. Toutefois, il ne fallait pas se permettre plus qu'un tendre effleurement ou un chaste baiser.</p> <p>Le XIXe siècle est aussi celui de la naissance du concept de la <strong>virilité</strong>. De nouvelles figures masculines apparaîssent telles que le militaire ou le sportif coureur de jupons.</p> <p>Plus tard, l'entre-deux guerres est une <strong>période contrastée</strong>, où la séduction prend place dans une société transformée. <strong>Les plus âgés cherchent à tourner la page de leur partenaire perdu au combat. Pour les jeunes, séduire, c'est s'amuser pour se changer les esprits face à la crise économique omniprésente. </strong></p>",
       "symbols": [
         {
@@ -158,15 +162,11 @@
       "description": "<p>C'est aujourd'hui les <strong>applications mobiles</strong> qui dominent le marché de la rencontre amoureuse. Pour draguer, il suffit de tapoter sur son smartphone ! Ces apps sont d'ailleurs de plus en plus performantes et de plus en plus spécifiques : algorithmes, filtres, géolocalisation... Tout est fait pour nous rendre plus exigeant. Liker et matcher sont ainsi devenus des actes de séduction à part entiers.</p> <p>Dans cette société de consommation, la rencontre devient alors un bien facilement accessible qu'il faut consommer rapidement. Le Romantisme laisse ainsi place aux <strong>relations fast food</strong> : des liaisons légères sans engagement sur le long terme.",
       "symbols": [
         {
-          "name": "Télé-réalité",
-          "description": "La séduction est extrêmement présente à la télévision, notamment dans les émissions de télé-réalité qui ont utilisé la drague et la rencontre amoureuse à toutes les sauces : Tournez Manège, l'Amour est dans le Pré, Qui veut épouser mon fils, Le Bachelor, L'Île de la tentation, l'Amour est Aveugle, Les Princes de l'Amour... Il y en a pour tous les goûts."
-        },
-        {
           "name": "Netflix & Chill",
           "description": "L'expression Netflix and Chill qui s'est popularisée à l'aide de Twitter en 2014 n'est en fait pas si innocente... Vous allez regarder Netflix tous les deux... et plus si affinité."
         },
         {
-          "name": "Tinder",
+          "name": "Applications de rencontre",
           "description": "Tinder"
         },
         {
@@ -182,8 +182,8 @@
       "interaction": "4 algorithmes ont été trouvés. Sélectionnez un des algorithme pour initialiser le système.",
       "reinitialisation": "Système réinitialisé. Je ne possède pas assez d'information pour t'en dire plus sur le futur.",
       "summary": "<p>Et à l'avenir, comment évoluera la séduction ?</p><p>Va-t-on créer de nouveaux outils de séductions utilisant la technologie à son maximum? Ou au contraire allons-nous revenir à un moyen plus tribal et plus naturel de choisir son partenaire?</p>",
-      "catchphrase": "En catchana baby tu dead ça",
-      "author": "Aya",
+      "catchphrase": "Vous me semblez très réelle.",
+      "author": "Theodore, Her",
       "description": "<p>Impossible de savoir à quoi la séduction ressemblera dans le futur. Cependant, certaines pistes nous permettent de l'envisager.</p> <p>On peut supposer que la séduction évoluera en corrélation avec la technologie, qui utilisera toujours plus d'outils et de moyens pour essayer au mieux de nous cibler.</p>",
       "symbols": [
         {

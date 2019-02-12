@@ -16,7 +16,7 @@ class BelleEpoque extends React.Component {
     agestr: "belleepoque",
     agenbr: 4, // belleepoque
     frameTotal: 41,
-    waitFor: 0 // sec
+    waitFor: 2000 // sec
   };
 
   render() {
@@ -50,7 +50,7 @@ class BelleEpoque extends React.Component {
                         title={value.epoques[agenbr].symbols[0].name}
                         name="belleepoque1"
                         xPos="52vw"
-                        yPos="72vh"
+                        yPos="66vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
@@ -59,8 +59,8 @@ class BelleEpoque extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
                         name="belleepoque2"
-                        xPos="72vw"
-                        yPos="30vh"
+                        xPos="76vw"
+                        yPos="40vh"
                       >
                         {value.epoques[agenbr].symbols[1].description}
                       </GenericTag>
@@ -90,8 +90,8 @@ class BelleEpoque extends React.Component {
                       frameTotal={frameTotal}
                       waitFor={waitFor}
                       pathDraw="M 150 50 L 50 200"
-                      top="17vh"
-                      left="52vw"
+                      top="40vh"
+                      left="78vw"
                     />
                   </div>
                 </>

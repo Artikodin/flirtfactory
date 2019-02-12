@@ -17,7 +17,7 @@ class Antiquite extends React.Component {
     agestr: "antiquite",
     agenbr: 0, // antiquite
     frameTotal: 41,
-    waitFor: 0 // sec
+    waitFor: 3000 // sec
   };
 
   render() {
@@ -43,9 +43,7 @@ class Antiquite extends React.Component {
                     unlocked={ages.antiquite.lock}
                     volume={0.8}
                   />
-                  {ages.antiquite.lock && (
-                    <Tutorial showed={ages.antiquite.lock} />
-                  )}
+                  <Tutorial showed={ages.antiquite.lock} />
                   {ages.antiquite.lock && (
                     <>
                       <GenericTag
@@ -53,8 +51,8 @@ class Antiquite extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         name="antiquite1"
-                        xPos="42vw"
-                        yPos="75vh"
+                        xPos="50vw"
+                        yPos="70vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
@@ -63,8 +61,8 @@ class Antiquite extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
                         name="antiquite2"
-                        xPos="80vw"
-                        yPos="56vh"
+                        xPos="76vw"
+                        yPos="55vh"
                       >
                         {value.epoques[agenbr].symbols[1].description}
                       </GenericTag>
@@ -73,8 +71,8 @@ class Antiquite extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         name="antiquite3"
-                        xPos="15vh"
-                        yPos="16vw"
+                        xPos="22vw"
+                        yPos="40vh"
                       >
                         {value.epoques[agenbr].symbols[2].description}
                       </GenericTag>
@@ -94,8 +92,8 @@ class Antiquite extends React.Component {
                       frameTotal={frameTotal}
                       waitFor={waitFor}
                       pathDraw="M 200 50 L 50 200"
-                      top="8vh"
-                      left="40vw"
+                      top="20vh"
+                      left="75vw"
                     />
                   </div>
                 </>

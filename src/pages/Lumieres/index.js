@@ -16,7 +16,7 @@ class Lumieres extends React.Component {
     agestr: "lumieres",
     agenbr: 3, // lumieres
     frameTotal: 41,
-    waitFor: 0 // sec
+    waitFor: 2500 // sec
   };
 
   render() {
@@ -49,8 +49,8 @@ class Lumieres extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         name="lumieres1"
-                        xPos="32vw"
-                        yPos="30vh"
+                        xPos="62vw"
+                        yPos="15vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
@@ -59,8 +59,8 @@ class Lumieres extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
                         name="lumieres2"
-                        xPos="62vw"
-                        yPos="15vh"
+                        xPos="32vw"
+                        yPos="30vh"
                       >
                         {value.epoques[agenbr].symbols[1].description}
                       </GenericTag>
@@ -89,8 +89,8 @@ class Lumieres extends React.Component {
                       age={agestr}
                       frameTotal={frameTotal}
                       waitFor={waitFor}
-                      pathDraw="M 50 50 Q 150 100 150 200"
-                      top="40vh"
+                      pathDraw="M 50 50 Q 150 100 150 250"
+                      top="48vh"
                       left="65vw"
                     />
                   </div>

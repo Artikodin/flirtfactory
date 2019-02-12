@@ -1,6 +1,7 @@
 import React from "react";
 
 import posed, { PoseGroup } from "react-pose";
+import PropTypes from "prop-types";
 
 import { TutorialWrapper } from "./element";
 
@@ -11,17 +12,17 @@ class Tutorial extends React.Component {
     hide: true
   };
 
-  // static propTypes = {
-  //   showed: PropTypes.bool
-  // };
+  static propTypes = {
+    showed: PropTypes.bool
+  };
 
-  // static defaultProps = {
-  //   showed: true
-  // };
+  static defaultProps = {
+    showed: true
+  };
 
   render() {
     const { hide } = this.state;
-    // const { showed } = this.props;
+    const { showed } = this.props;
 
     const defaultOptions = {
       loop: true,
@@ -34,7 +35,7 @@ class Tutorial extends React.Component {
     return (
       <>
         <PoseGroup id="Tutorial">
-          {hide && (
+          {showed && hide && (
             <AnimatedTutorialWrapper
               key="tutorial"
               onClick={() => {
@@ -57,7 +58,8 @@ const AnimatedTutorialWrapper = posed(TutorialWrapper)({
     opacity: 1,
     transition: {
       duration: 1500,
-      ease: "easeIn"
+      ease: "easeIn",
+      delay: 2000
     }
   },
   exit: {

@@ -48,7 +48,7 @@ export const ButtonAboutClose = styled.button`
 
     &:after {
       transition: height 0.2s ease-out;
-      height: 0;
+      height: 80%;
     }
   }
 
@@ -62,6 +62,6 @@ export const ButtonAboutClose = styled.button`
     right: 0;
     width: 1px;
     background: white;
-    height: 80%;
+    height: 0%;
   }
 `;

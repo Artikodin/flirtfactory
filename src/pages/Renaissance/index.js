@@ -16,7 +16,7 @@ class Renaissance extends React.Component {
     agestr: "renaissance",
     agenbr: 2, // renaissance
     frameTotal: 40,
-    waitFor: 0 // sec
+    waitFor: 2500 // sec
   };
 
   render() {
@@ -49,8 +49,8 @@ class Renaissance extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         name="renaissance1"
-                        xPos="500px"
-                        yPos="200px"
+                        xPos="60vw"
+                        yPos="10vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
@@ -59,10 +59,20 @@ class Renaissance extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 1)}
                         title={value.epoques[agenbr].symbols[1].name}
                         name="renaissance2"
-                        xPos="800px"
-                        yPos="100px"
+                        xPos="30vw"
+                        yPos="25vh"
                       >
                         {value.epoques[agenbr].symbols[1].description}
+                      </GenericTag>
+                      <GenericTag
+                        unlocked={ages.renaissance.points[2]}
+                        unlockPoint={() => unlockPoints(agestr, 2)}
+                        title={value.epoques[agenbr].symbols[2].name}
+                        name="renaissance3"
+                        xPos="16vw"
+                        yPos="64vh"
+                      >
+                        {value.epoques[agenbr].symbols[2].description}
                       </GenericTag>
                     </>
                   )}
@@ -81,7 +91,7 @@ class Renaissance extends React.Component {
                       waitFor={waitFor}
                       pathDraw="M 250 50 L 50 50"
                       top="5vh"
-                      left="51vw"
+                      left="40vw"
                     />
                   </div>
                 </>

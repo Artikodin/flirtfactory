@@ -48,8 +48,8 @@ class MoyenAge extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 0)}
                         title={value.epoques[agenbr].symbols[0].name}
                         name="joute"
-                        xPos="38vw"
-                        yPos="30vh"
+                        xPos="42vw"
+                        yPos="34vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>
@@ -68,8 +68,8 @@ class MoyenAge extends React.Component {
                         unlockPoint={() => unlockPoints(agestr, 2)}
                         title={value.epoques[agenbr].symbols[2].name}
                         name="serenade"
-                        xPos="15vw"
-                        yPos="50vh"
+                        xPos="20vw"
+                        yPos="40vh"
                       >
                         {value.epoques[agenbr].symbols[2].description}
                       </GenericTag>
@@ -88,8 +88,8 @@ class MoyenAge extends React.Component {
                       age={agestr}
                       waitFor={waitFor}
                       pathDraw="M 100 200 A 50 50 0 1 1 100 50"
-                      top="42vh"
-                      left="5vw"
+                      top="50vh"
+                      left="10vw"
                     />
                   </div>
                 </>

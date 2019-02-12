@@ -16,13 +16,11 @@ import {
 class BelleEpoque extends React.Component {
   state = {
     agestr: "futur",
-    agenbr: 7, // futur
-    selectedPoint: 1
+    agenbr: 7 // futur
   };
 
   render() {
     const { agestr, agenbr } = this.state;
-    let { selectedPoint } = this.state;
     return (
       <Page>
         <TextContext.Consumer>
@@ -32,7 +30,8 @@ class BelleEpoque extends React.Component {
                 ages,
                 updateVideo,
                 unlockPoints,
-                selectAges
+                selectAges,
+                selectFutur
               }) => (
                 <>
                   <TaskBar
@@ -51,7 +50,7 @@ class BelleEpoque extends React.Component {
                   />
                   {ages.futur.lock && (
                     <>
-                      {selectedPoint === 1 && (
+                      {ages.futur.selected === 1 && (
                         <>
                           <GenericTag
                             unlocked={ages.futur.points[0]}
@@ -72,6 +71,69 @@ class BelleEpoque extends React.Component {
                           </GenericTag>
                         </>
                       )}
+                      {ages.futur.selected === 2 && (
+                        <>
+                          <GenericTag
+                            unlocked={ages.futur.points[1]}
+                            unlockPoint={() =>
+                              unlockPoints(agestr, 1)
+                            }
+                            title={
+                              value.epoques[agenbr].symbols[1].name
+                            }
+                            name="futur2"
+                            xPos="50vw"
+                            yPos="40vh"
+                          >
+                            {
+                              value.epoques[agenbr].symbols[1]
+                                .description
+                            }
+                          </GenericTag>
+                        </>
+                      )}
+                      {ages.futur.selected === 3 && (
+                        <>
+                          <GenericTag
+                            unlocked={ages.futur.points[2]}
+                            unlockPoint={() =>
+                              unlockPoints(agestr, 2)
+                            }
+                            title={
+                              value.epoques[agenbr].symbols[2].name
+                            }
+                            name="futur3"
+                            xPos="50vw"
+                            yPos="50vh"
+                          >
+                            {
+                              value.epoques[agenbr].symbols[2]
+                                .description
+                            }
+                          </GenericTag>
+                        </>
+                      )}
+                      {ages.futur.selected === 4 && (
+                        <>
+                          <GenericTag
+                            unlocked={ages.futur.points[3]}
+                            unlockPoint={() =>
+                              unlockPoints(agestr, 3)
+                            }
+                            title={
+                              value.epoques[agenbr].symbols[3].name
+                            }
+                            name="futur4"
+                            xPos="36vw"
+                            yPos="63vh"
+                          >
+                            {
+                              value.epoques[agenbr].symbols[3]
+                                .description
+                            }
+                          </GenericTag>
+                        </>
+                      )}
                     </>
                   )}
                   {ages.futur.lock === false && (
@@ -79,12 +141,47 @@ class BelleEpoque extends React.Component {
                       <FuturTag
                         name="futur"
                         agenb={0}
-                        left="84vw"
+                        left="80vw"
                         top="20vh"
+                        show
                         handleClick={() => {
-                          this.setState({
-                            selectedPoint: 2
-                          });
+                          selectFutur(agestr, 1)
+                          updateVideo(agestr);
+                          selectAges(agestr);
+                        }}
+                      />
+                      <FuturTag
+                        name="futur"
+                        agenb={0}
+                        left="15vw"
+                        top="25vh"
+                        show
+                        handleClick={() => {
+                          selectFutur(agestr, 2)
+                          updateVideo(agestr);
+                          selectAges(agestr);
+                        }}
+                      />
+                      <FuturTag
+                        name="futur"
+                        agenb={0}
+                        left="20vw"
+                        top="60vh"
+                        show
+                        handleClick={() => {
+                          selectFutur(agestr, 3)
+                          updateVideo(agestr);
+                          selectAges(agestr);
+                        }}
+                      />
+                      <FuturTag
+                        name="futur"
+                        agenb={0}
+                        left="60vw"
+                        top="65vh"
+                        show
+                        handleClick={() => {
+                          selectFutur(agestr, 4)
                           updateVideo(agestr);
                           selectAges(agestr);
                         }}
@@ -95,7 +192,7 @@ class BelleEpoque extends React.Component {
                     <BackgroundVideo
                       path={agestr}
                       number={ages.futur.video}
-                      futur={this.state.selectedPoint}
+                      futur={ages.futur.selected}
                       increaseVideo={() => updateVideo(agestr)}
                     />
                   </div>
