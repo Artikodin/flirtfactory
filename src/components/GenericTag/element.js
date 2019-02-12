@@ -25,7 +25,7 @@ export const Container = styled.div`
   height: auto;
   transform-origin: top center;
   position: absolute;
-  top: 94%;
+  top: 99%;
   left: 0;
   right: 0;
   text-align: left;
@@ -35,9 +35,20 @@ export const Container = styled.div`
   background: rgba(255, 255, 255, 1);
   /* background: red; */
   overflow: hidden;
-  -webkit-clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
-  clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
-
+  -webkit-clip-path: polygon(
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%,
+    0 0
+  );
+  clip-path: polygon(
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0 0
+  );
 `;
 
 export const Title = styled.div`
@@ -56,7 +67,7 @@ export const Title = styled.div`
 `;
 
 export const Paragraph = styled.div`
-  color: #1C1E33;
+  color: #1c1e33;
   font-size: 14px;
   padding: 15px 15px;
   line-height: 1.8em;
