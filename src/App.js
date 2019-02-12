@@ -44,7 +44,7 @@ class App extends React.Component {
                       <Route exact path="/antiquite" component={Antiquite} />
                       <Route
                         exact
-                        path="/belle-epoque"
+                        path="/belleepoque"
                         component={BelleEpoque}
                       />
                       <Route
@@ -55,7 +55,7 @@ class App extends React.Component {
                       <Route exact path="/futur" component={Futur} />
                       <Route exact path="/lumieres" component={Lumieres} />
                       <Route exact path="/moderne" component={Moderne} />
-                      <Route exact path="/moyen-age" component={MoyenAge} />
+                      <Route exact path="/moyenage" component={MoyenAge} />
                       <Route
                         exact
                         path="/renaissance"

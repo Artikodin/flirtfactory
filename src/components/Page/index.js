@@ -65,7 +65,7 @@ class Page extends React.Component {
                           ? "./assets/nav/moyenageon.gif"
                           : "./assets/nav/moyenageoff.gif"
                       }
-                      pathTo="/moyen-age"
+                      pathTo="/moyenage"
                     >
                       moyen-âge
                     </NavBar.NavItem>
@@ -95,7 +95,7 @@ class Page extends React.Component {
                           ? "./assets/nav/belleepoqueon.gif"
                           : "./assets/nav/belleepoqueoff.gif"
                       }
-                      pathTo="/belle-epoque"
+                      pathTo="/belleepoque"
                     >
                       belle-époque
                     </NavBar.NavItem>
