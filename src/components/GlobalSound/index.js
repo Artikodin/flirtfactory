@@ -10,14 +10,14 @@ class GlobalSound extends React.Component {
 
   static propTypes = {
     playing: PropTypes.bool,
-    unlocked: PropTypes.bool,
-    age: PropTypes.string
+    unlocked: PropTypes.bool
+    // age: PropTypes.string
   };
 
   static defaultProps = {
     playing: false,
-    unlocked: false,
-    age: ""
+    unlocked: false
+    // age: ""
   };
 
   componentDidMount = () => {
@@ -25,11 +25,11 @@ class GlobalSound extends React.Component {
   };
 
   render() {
-    const { playing, age, unlocked } = this.props;
+    const { playing, unlocked } = this.props;
     // if (this.mounted) {
     //   console.log(this.global.howler.playing());
     // }
-    console.log(unlocked);
+    // console.log(unlocked);
     return (
       <>
         <ReactHowler

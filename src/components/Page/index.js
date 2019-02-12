@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+// import posed from "react-pose";
+// import { Transition } from "react-transition-group";
 
 import { Wrapper } from "./element";
 
-import { About, NavBar, ProgressContext, GlobalSound } from "..";
+import { About, NavBar, ProgressContext, Loader } from "..";
 
 class Page extends React.Component {
-  state = {
-    globalSound: true
-  };
+  state = { showed: true };
 
   static propTypes = {
     children: PropTypes.node,
@@ -22,25 +22,27 @@ class Page extends React.Component {
     navbar: true
   };
 
-  // componentDidMount = () => {
-  //   this.setState({
-  //     globalSound: true
-  //   });
-  // };
+  componentDidMount() {
+    this.setState({ showed: false });
+  }
 
-  // componentWillUnmount = () => {
-  //   this.setState({
-  //     globalSound: false
-  //   });
-  // };
+  componentDidUpdate() {
+    const { showed } = this.state;
+    if (!showed) {
+      this.showedTimeout = setTimeout(() => {
+        this.setState(() => ({ showed: true }));
+      }, 1000);
+    }
+  }
 
   render() {
-    const { globalSound } = this.state;
+    // const { globalSound } = this.state;
     const { children, backgroundColor, navbar } = this.props;
+    const { showed } = this.state;
     return (
       <Wrapper backgroundColor={backgroundColor} id="wrapper">
-        {children}
-        {/* <GlobalSound playing={globalSound} /> */}
+        <Loader />
+        {showed && children}
         <ProgressContext.Consumer>
           {({ ages }) => (
             <>
@@ -134,5 +136,10 @@ class Page extends React.Component {
     );
   }
 }
+
+// const TransitionLayerAnimated = posed(TransitionLayer)({
+//   enter: { opacity: 1 },
+//   exit: { opacity: 0, delay: 2000 }
+// });
 
 export default Page;

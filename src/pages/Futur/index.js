@@ -17,9 +17,9 @@ class BelleEpoque extends React.Component {
     // waitFor: 0 // sec
   };
 
-  handleClick = ageNb => {
-    console.log(ageNb);
-  };
+  // handleClick = ageNb => {
+  //   console.log(ageNb);
+  // };
 
   render() {
     const { agestr, agenbr } = this.state;
