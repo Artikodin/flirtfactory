@@ -3,6 +3,8 @@ import posed from "react-pose";
 import PropTypes from "prop-types";
 import { throttle } from "throttle-debounce";
 
+import { Howl } from "howler";
+
 import { Markup } from "interweave";
 
 import {
@@ -50,6 +52,14 @@ class GenericTag extends React.Component {
   };
 
   magnet = React.createRef();
+
+  soundTag = new Howl({
+    src: "./assets/sound/tag.mp3",
+    autoplay: false,
+    preload: true,
+    playing: false,
+    volume: 0.5
+  });
 
   magnetProperty = {};
 
@@ -190,6 +200,10 @@ class GenericTag extends React.Component {
     }
   };
 
+  playSound = () => {
+    this.soundTag.play();
+  };
+
   handleMouseEnter = () => {
     const { unlockPoint } = this.props;
     unlockPoint();
@@ -213,6 +227,7 @@ class GenericTag extends React.Component {
         ref={this.magnet}
         xPos={xPos}
         yPos={yPos}
+        onMouseEnter={() => this.playSound()}
       >
         <AnimatedWrapper
           pose={showed ? "isOpen" : "isClose"}

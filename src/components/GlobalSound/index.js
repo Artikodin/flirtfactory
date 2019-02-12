@@ -13,13 +13,15 @@ class GlobalSound extends React.Component {
   static propTypes = {
     playing: PropTypes.bool,
     unlocked: PropTypes.bool,
-    age: PropTypes.string
+    age: PropTypes.string,
+    volume: PropTypes.number
   };
 
   static defaultProps = {
     playing: false,
     unlocked: false,
-    age: ""
+    age: "",
+    volume: 1
   };
 
   componentDidMount = () => {
@@ -28,7 +30,7 @@ class GlobalSound extends React.Component {
 
   render() {
     const { playedOnce } = this.state;
-    const { age, playing, unlocked } = this.props;
+    const { age, playing, unlocked, volume } = this.props;
     return (
       <>
         <ReactHowler
@@ -45,7 +47,7 @@ class GlobalSound extends React.Component {
           loop
           preload
           html5
-          volume={0.8}
+          volume={volume}
           playing={unlocked}
         />
         {unlocked === false && (
@@ -60,7 +62,7 @@ class GlobalSound extends React.Component {
           <>
             <ReactHowler
               src="./assets/sound/SonActivation.mp3"
-              volume={0.6}
+              volume={0.4}
               autoplay={false}
               loop={false}
               onEnd={() =>

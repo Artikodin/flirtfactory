@@ -13,6 +13,10 @@ export const ButtonAboutWrapper = styled.div`
   transition: all 0.4s ease;
   opacity: 0.45;
 
+  @media screen and (max-width: 1250px) {
+    bottom: 70px;
+  }
+
   &:hover {
     cursor: pointer;
     opacity: 1;

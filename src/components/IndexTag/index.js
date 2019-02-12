@@ -1,6 +1,7 @@
 import React from "react";
 import posed, { PoseGroup } from "react-pose";
 import PropTypes from "prop-types";
+import { Howl } from "howler";
 
 import {
   Title,
@@ -14,6 +15,8 @@ import {
 import { Picto } from "..";
 
 class IndexTag extends React.Component {
+  soundIndex = React.createRef();
+
   state = {
     // eslint-disable-next-line react/destructuring-assignment
     showed: this.props.isOpen
@@ -33,6 +36,14 @@ class IndexTag extends React.Component {
     name: ""
   };
 
+  soundIndex = new Howl({
+    src: "./assets/sound/tag.mp3",
+    autoplay: false,
+    preload: true,
+    playing: false,
+    volume: 0.5
+  });
+
   handleMouseEnter = () => {
     this.setState({
       showed: true
@@ -45,11 +56,15 @@ class IndexTag extends React.Component {
     });
   };
 
+  playSound = () => {
+    this.soundIndex.play();
+  };
+
   render() {
     const { children, title, name } = this.props;
     const { showed } = this.state;
     return (
-      <GlobalContainer ref={this.magnet}>
+      <GlobalContainer ref={this.magnet} onMouseEnter={() => this.playSound()}>
         <AnimatedWrapper
           pose={showed ? "isOpen" : "isClose"}
           onMouseEnter={this.handleMouseEnter}

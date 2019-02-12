@@ -7,7 +7,8 @@ import {
   ProgressContext,
   TextContext,
   InteractionDragAndDrop,
-  TaskBar
+  TaskBar,
+  GlobalSound
 } from "../../components";
 
 class Moderne extends React.Component {
@@ -33,6 +34,12 @@ class Moderne extends React.Component {
                     unlocked={ages.moderne.lock}
                     age={agestr}
                     datas={value.epoques[agenbr]}
+                  />
+                  <GlobalSound
+                    playing
+                    age={agestr}
+                    unlocked={ages.moderne.lock}
+                    volume={0.8}
                   />
                   {ages.moderne.lock && (
                     <>

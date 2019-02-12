@@ -90,7 +90,6 @@ class VoiceAi extends React.Component {
   render() {
     const { isAnswered, isHangedUp, isVisible } = this.state;
     const { age, unlocked, datas } = this.props;
-    console.log(age);
     return (
       <WrapperAnimated pose={isVisible ? "visible" : "hidden"}>
         <DragSwitch

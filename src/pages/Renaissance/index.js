@@ -7,7 +7,8 @@ import {
   ProgressContext,
   TextContext,
   InteractionDragAndDrop,
-  TaskBar
+  TaskBar,
+  GlobalSound
 } from "../../components";
 
 class Renaissance extends React.Component {
@@ -33,6 +34,12 @@ class Renaissance extends React.Component {
                     unlocked={ages.renaissance.lock}
                     age={agestr}
                     datas={value.epoques[agenbr]}
+                  />
+                  <GlobalSound
+                    playing
+                    age={agestr}
+                    unlocked={ages.renaissance.lock}
+                    volume={0.8}
                   />
                   {ages.renaissance.lock && (
                     <>

@@ -36,9 +36,10 @@ class BelleEpoque extends React.Component {
                     datas={value.epoques[agenbr]}
                   />
                   <GlobalSound
-                    playing={true}
+                    playing
                     age={agestr}
                     unlocked={ages.belleepoque.lock}
+                    volume={0.8}
                   />
                   {ages.belleepoque.lock && (
                     <>

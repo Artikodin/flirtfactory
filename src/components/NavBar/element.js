@@ -12,4 +12,9 @@ export const Wrapper = styled.ul`
   align-items: flex-end;
   max-width: 1100px;
   width: calc(100% - 80px);
+
+  @media screen and (max-width: 1250px) {
+    max-width: 1200px;
+    width: calc(100% - 60px);
+  }
 `;

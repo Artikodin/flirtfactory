@@ -7,7 +7,8 @@ import {
   ProgressContext,
   TextContext,
   FlirtFactoryTag,
-  TaskBar
+  TaskBar,
+  GlobalSound
 } from "../../components";
 
 class BelleEpoque extends React.Component {
@@ -16,10 +17,6 @@ class BelleEpoque extends React.Component {
     agenbr: 7 // futur
     // waitFor: 0 // sec
   };
-
-  // handleClick = ageNb => {
-  //   console.log(ageNb);
-  // };
 
   render() {
     const { agestr, agenbr } = this.state;
@@ -36,6 +33,12 @@ class BelleEpoque extends React.Component {
                     unlocked={ages.futur.lock}
                     age={agestr}
                     datas={value.epoques[agenbr]}
+                  />
+                  <GlobalSound
+                    playing
+                    age={agestr}
+                    unlocked={ages.futur.lock}
+                    volume={0.8}
                   />
                   {ages.futur.lock && (
                     <>

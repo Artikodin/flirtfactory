@@ -8,7 +8,8 @@ import {
   TextContext,
   InteractionDragAndDrop,
   TaskBar,
-  Tutorial
+  Tutorial,
+  GlobalSound
 } from "../../components";
 
 class Antiquite extends React.Component {
@@ -34,6 +35,12 @@ class Antiquite extends React.Component {
                     unlocked={ages.antiquite.lock}
                     age={agestr}
                     datas={value.epoques[agenbr]}
+                  />
+                  <GlobalSound
+                    playing
+                    age={agestr}
+                    unlocked={ages.antiquite.lock}
+                    volume={0.8}
                   />
                   {ages.antiquite.lock && (
                     <Tutorial showed={ages.antiquite.lock} />
