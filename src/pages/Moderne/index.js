@@ -29,6 +29,7 @@ class Moderne extends React.Component {
               {({ ages, selectAges, updateVideo, unlockPoints }) => (
                 <>
                   <TaskBar
+                    isOpen
                     name="moderne"
                     progress={ages.moderne.points}
                     unlocked={ages.moderne.lock}

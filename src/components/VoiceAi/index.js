@@ -8,8 +8,6 @@ import { Wrapper } from "./element";
 
 import { IndexTag } from "..";
 
-/* eslint-disable */
-
 class VoiceAi extends React.Component {
   testDiv = React.createRef();
 
@@ -23,14 +21,16 @@ class VoiceAi extends React.Component {
     datas: PropTypes.object,
     unlocked: PropTypes.bool,
     isOpen: PropTypes.bool,
-    age: PropTypes.string
+    age: PropTypes.string,
+    onAnswer: PropTypes.func
   };
 
   static defaultProps = {
     datas: {},
     unlocked: false,
     isOpen: true,
-    age: ""
+    age: "",
+    onAnswer: () => {}
   };
 
   handleHangUp = () => {
@@ -47,6 +47,8 @@ class VoiceAi extends React.Component {
   };
 
   handleAnswer = () => {
+    const { onAnswer } = this.props;
+    onAnswer();
     this.setState({ isVisible: false });
     setTimeout(() => this.setState({ isAnswered: true }), 200);
   };
@@ -61,15 +63,15 @@ class VoiceAi extends React.Component {
               correctement. J'enclenche la réinitialisation du système.
             </p>
           );
-        } else {
-          return (
-            <p>
-              Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer
-              la Flirt Factory et à parcourir l'histoire de la séduction au fil
-              des époques. J'attends tes instructions.
-            </p>
-          );
         }
+        return (
+          <p>
+            Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer la
+            Flirt Factory et à parcourir l'histoire de la séduction au fil des
+            époques. J'attends tes instructions.
+          </p>
+        );
+
       case "flirtfactory":
         return (
           <p>
@@ -81,15 +83,15 @@ class VoiceAi extends React.Component {
       default:
         if (unlocked) {
           return <p>{datas.reinitialisation}</p>;
-        } else {
-          return <p>{datas.interaction}</p>;
         }
+        return <p>{datas.interaction}</p>;
     }
   };
 
   render() {
     const { isAnswered, isHangedUp, isVisible } = this.state;
-    const { age, unlocked, datas } = this.props;
+    // eslint-disable-next-line no-unused-vars
+    const { age, unlocked, datas, isOpen } = this.props;
     return (
       <WrapperAnimated pose={isVisible ? "visible" : "hidden"}>
         <DragSwitch
@@ -99,7 +101,7 @@ class VoiceAi extends React.Component {
         />
         {isHangedUp && <PhoneCube name="raccroche" />}
         {isAnswered && (
-          <IndexTag isOpen={true} title="Assistance I.A." name="decroche">
+          <IndexTag isOpen title="Assistance I.A." name="decroche">
             {this.setAIText(age, unlocked, datas)}
           </IndexTag>
         )}

@@ -18,7 +18,9 @@ class TaskBar extends React.Component {
     name: PropTypes.string,
     datas: PropTypes.object,
     progress: PropTypes.array,
-    unlocked: PropTypes.bool
+    unlocked: PropTypes.bool,
+    isOpen: PropTypes.bool,
+    onAnswer: PropTypes.func
   };
 
   static defaultProps = {
@@ -26,7 +28,9 @@ class TaskBar extends React.Component {
     name: "",
     datas: {},
     progress: [],
-    unlocked: false
+    unlocked: false,
+    isOpen: false,
+    onAnswer: () => {}
   };
 
   setAIText = (age, unlocked, datas) => {
@@ -65,19 +69,27 @@ class TaskBar extends React.Component {
     }
   };
 
+  test = () => {
+    console.log("aaaaaaaa");
+  };
+
   render() {
-    const { age, name, datas, progress, unlocked } = this.props;
+    const {
+      age,
+      name,
+      datas,
+      progress,
+      unlocked,
+      isOpen,
+      onAnswer
+    } = this.props;
 
     return (
       <Wrapper className="taskbar">
         {age === "intro" ? (
-          <VoiceAi {...this.props} />
+          <VoiceAi onAnswer={onAnswer} {...this.props} />
         ) : (
-          <IndexTag
-            isOpen={false}
-            title="Assistance I.A."
-            name="decroche"
-          >
+          <IndexTag isOpen={isOpen} title="Assistance I.A." name="decroche">
             {this.setAIText(age, unlocked, datas)}
           </IndexTag>
         )}

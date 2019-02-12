@@ -29,6 +29,7 @@ class Renaissance extends React.Component {
               {({ ages, selectAges, updateVideo, unlockPoints }) => (
                 <>
                   <TaskBar
+                    isOpen
                     name="renaissance"
                     progress={ages.renaissance.points}
                     unlocked={ages.renaissance.lock}

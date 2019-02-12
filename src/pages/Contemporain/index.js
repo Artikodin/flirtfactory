@@ -29,6 +29,7 @@ class Contemporain extends React.Component {
               {({ ages, selectAges, updateVideo, unlockPoints }) => (
                 <>
                   <TaskBar
+                    isOpen
                     name="contemporain"
                     progress={ages.contemporain.points}
                     unlocked={ages.contemporain.lock}
