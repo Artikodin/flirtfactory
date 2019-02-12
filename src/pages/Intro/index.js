@@ -12,34 +12,45 @@ class Intro extends React.Component {
   state = {
     agestr: "intro",
     frameTotal: 25,
-    waitFor: 0 // sec
+    waitFor: 0, // sec,
+    showed: false
+  };
+
+  handeAnswer = () => {
+    this.setState({ showed: true });
   };
 
   render() {
-    const { agestr, frameTotal, waitFor } = this.state;
+    const { agestr, frameTotal, waitFor, showed } = this.state;
     return (
       <Page navbar={false}>
         <ProgressContext.Consumer>
           {({ ages, selectAges, updateVideo }) => (
             <>
-              <TaskBar age={agestr} unlocked={ages.intro.lock} />
+              <TaskBar
+                onAnswer={() => this.handeAnswer()}
+                age={agestr}
+                unlocked={ages.intro.lock}
+              />
               <div className="background__wrapper">
                 <BackgroundVideo
                   path={agestr}
                   number={ages.intro.video}
                   increaseVideo={() => updateVideo(agestr)}
                 />
-                <InteractionDragAndDrop
-                  display={ages.intro.lock}
-                  unlockAge={() => selectAges(agestr)}
-                  increaseVideo={() => updateVideo(agestr)}
-                  age={agestr}
-                  frameTotal={frameTotal}
-                  waitFor={waitFor}
-                  pathDraw="M 50 200 L 50 50"
-                  top="36vh"
-                  left="30vw"
-                />
+                {showed && (
+                  <InteractionDragAndDrop
+                    display={ages.intro.lock}
+                    unlockAge={() => selectAges(agestr)}
+                    increaseVideo={() => updateVideo(agestr)}
+                    age={agestr}
+                    frameTotal={frameTotal}
+                    waitFor={waitFor}
+                    pathDraw="M 50 200 L 50 50"
+                    top="36vh"
+                    left="30vw"
+                  />
+                )}
               </div>
             </>
           )}

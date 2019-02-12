@@ -36,6 +36,7 @@ class BelleEpoque extends React.Component {
               }) => (
                 <>
                   <TaskBar
+                    isOpen
                     name="futur"
                     progress={ages.futur.points}
                     unlocked={ages.futur.lock}

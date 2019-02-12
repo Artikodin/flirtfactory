@@ -19,7 +19,7 @@ class IndexTag extends React.Component {
 
   state = {
     // eslint-disable-next-line react/destructuring-assignment
-    showed: this.props.isOpen
+    showed: false
   };
 
   static propTypes = {
@@ -43,6 +43,15 @@ class IndexTag extends React.Component {
     playing: false,
     volume: 0.2
   });
+
+  componentDidMount() {
+    const { isOpen } = this.props;
+    if (isOpen) {
+      setTimeout(() => {
+        this.setState({ showed: true });
+      }, 500);
+    }
+  }
 
   handleMouseEnter = () => {
     this.setState({
