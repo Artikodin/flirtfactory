@@ -30,7 +30,7 @@ export const CatchphraseContainer = styled.div`
     .catchphrase--catchphrase {
       position: relative;
       font-family: GTCinetype;
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: normal;
       font-style: italic;
       font-stretch: normal;
@@ -67,9 +67,7 @@ export const CatchphraseContainer = styled.div`
     .catchphrase--title {
       position: relative;
       margin-top: 5vh;
-      display: flex;
       align-items: center;
-      justify-content: space-around;
 
       h1 {
         font-family: GTCinetype;
@@ -84,17 +82,11 @@ export const CatchphraseContainer = styled.div`
         overflow: hidden;
         white-space: nowrap;
       }
-
-      .catchphrase--line {
-        position: relative;
-        margin: 0 5%;
-        width: 100%;
-        height: 1px;
-        background: #516081;
-      }
     }
 
     .catchphrase--summary {
+      border-left: 1px solid #516081;
+      padding-left: 5%;
       opacity: 0.61;
       font-family: GTCinetype;
       font-size: 14px;

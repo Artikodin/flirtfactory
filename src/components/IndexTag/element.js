@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const GlobalContainer = styled.div`
   position: relative;
   box-sizing: border-box;
-  z-index: 5;
+  z-index: 6;
   opacity: 1;
   transition: opacity 0.5s ease;
 `;

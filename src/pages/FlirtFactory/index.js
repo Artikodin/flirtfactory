@@ -15,34 +15,44 @@ class FlirtFactory extends React.Component {
   }
 
   state = {
-    ageCatchphrase: 0,
-    showed: false,
-    forward: true
+    nbCatchphrase: 0,
+    showed: true,
+    forward: true,
+    arrayAges: [
+      "antiquite",
+      "moyenage",
+      "renaissance",
+      "lumieres",
+      "belleepoque",
+      "moderne",
+      "contemporain",
+      "futur"
+    ]
   };
 
   updateAgeCatchphrase = next => {
-    const { ageCatchphrase } = this.state;
+    const { nbCatchphrase } = this.state;
     if (next) {
-      if (ageCatchphrase === 7) {
+      if (nbCatchphrase === 7) {
         this.setState({
-          ageCatchphrase: 0,
+          nbCatchphrase: 0,
           forward: true
         });
       } else {
         this.setState({
-          ageCatchphrase: ageCatchphrase + 1,
+          nbCatchphrase: nbCatchphrase + 1,
           forward: true
         });
       }
     } else {
-      if (ageCatchphrase === 0) {
+      if (nbCatchphrase === 0) {
         this.setState({
-          ageCatchphrase: 7,
+          nbCatchphrase: 7,
           forward: false
         });
       } else {
         this.setState({
-          ageCatchphrase: ageCatchphrase - 1,
+          nbCatchphrase: nbCatchphrase - 1,
           forward: false
         });
       }
@@ -52,13 +62,13 @@ class FlirtFactory extends React.Component {
   handleClick = ageNb => {
     const { showed } = this.state;
     this.setState({
-      ageCatchphrase: ageNb,
+      nbCatchphrase: ageNb,
       showed: !showed
     });
   };
 
   render() {
-    const { ageCatchphrase, showed, forward } = this.state;
+    const { nbCatchphrase, showed, forward, arrayAges } = this.state;
     return (
       <Page navbar={false}>
         <TaskBar age="flirtfactory" />
@@ -124,7 +134,8 @@ class FlirtFactory extends React.Component {
         <Catchphrase
           forward={forward}
           showed={showed}
-          ageCatchphrase={ageCatchphrase}
+          ageCatchphrase={arrayAges[nbCatchphrase]}
+          nbCatchphrase={nbCatchphrase}
           handleClick={this.handleClick}
           updateAgeCatchphrase={this.updateAgeCatchphrase}
         />

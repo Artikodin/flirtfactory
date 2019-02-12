@@ -4,7 +4,7 @@ export const Picto = styled.img`
   width: 60px;
   height: auto;
   position: absolute;
-  z-index: 20;
+  z-index: 5;
   top: ${({ top }) => top};
   left: ${({ left }) => left};
   transition: all 0.4s ease;

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import posed, { PoseGroup } from "react-pose";
 import { easing } from "popmotion";
 
-import { TextContext } from "../index";
+import { TextContext, Picto } from "../index";
 
 import { Markup } from "interweave";
 
@@ -18,7 +18,8 @@ class Catchphrase extends React.Component {
   static propTypes = {
     forward: PropTypes.bool,
     showed: PropTypes.bool,
-    ageCatchphrase: PropTypes.number,
+    ageCatchphrase: PropTypes.string,
+    nbCatchphrase: PropTypes.number,
     handleClick: PropTypes.func,
     updateAgeCatchphrase: PropTypes.func
   };
@@ -26,7 +27,8 @@ class Catchphrase extends React.Component {
   static defaultProps = {
     forward: true,
     showed: false,
-    ageCatchphrase: 0,
+    nbCatchphrase: 0,
+    ageCatchphrase: "",
     handleClick: () => {},
     updateAgeCatchphrase: () => {}
   };
@@ -60,18 +62,18 @@ class Catchphrase extends React.Component {
   /* eslint-disable */
 
   componentDidUpdate(prevProps) {
-    const { ageCatchphrase, forward, showed } = this.props;
+    const { nbCatchphrase, forward, showed } = this.props;
     if (showed !== prevProps.showed && showed) {
       this.videoCatchphraseForward.current.currentTime = this.expectedTimeValues[
-        ageCatchphrase
+        nbCatchphrase
       ][0];
       this.videoCatchphraseBackward.current.currentTime = this.expectedTimeValues[
-        ageCatchphrase
+        nbCatchphrase
       ][1];
       this.videoElement = this.videoCatchphraseForward;
       this.runRaf();
     }
-    if (ageCatchphrase !== prevProps.ageCatchphrase) {
+    if (nbCatchphrase !== prevProps.nbCatchphrase) {
       this.updateCatchphraseVideo();
     }
     if (forward) {
@@ -82,37 +84,37 @@ class Catchphrase extends React.Component {
   }
 
   updateCatchphraseVideo = () => {
-    const { ageCatchphrase, forward, showed } = this.props;
+    const { nbCatchphrase, forward, showed } = this.props;
     if (showed) {
       this.videoCatchphraseForward.current.play();
       this.videoCatchphraseBackward.current.play();
       if (forward) {
         this.setState({
-          expectedTime: this.expectedTimeValues[ageCatchphrase][0]
+          expectedTime: this.expectedTimeValues[nbCatchphrase][0]
         });
       } else {
         this.setState({
-          expectedTime: this.expectedTimeValues[ageCatchphrase][1]
+          expectedTime: this.expectedTimeValues[nbCatchphrase][1]
         });
       }
     }
   };
 
   runRaf = () => {
-    const { ageCatchphrase, forward, showed } = this.props;
+    const { nbCatchphrase, forward, showed } = this.props;
     const { expectedTime } = this.state;
     if (showed === false) {
       return;
     }
     if (forward) {
-      if (ageCatchphrase === 0) {
+      if (nbCatchphrase === 0) {
         if (
           this.videoElement.current.currentTime > 0 &&
           this.videoElement.current.currentTime < 0.05
         ) {
           this.videoCatchphraseForward.current.pause();
           this.videoCatchphraseBackward.current.currentTime = this.expectedTimeValues[
-            ageCatchphrase
+            nbCatchphrase
           ][1];
           this.videoCatchphraseBackward.current.pause();
         }
@@ -120,20 +122,20 @@ class Catchphrase extends React.Component {
         if (this.videoElement.current.currentTime > expectedTime) {
           this.videoCatchphraseForward.current.pause();
           this.videoCatchphraseBackward.current.currentTime = this.expectedTimeValues[
-            ageCatchphrase
+            nbCatchphrase
           ][1];
           this.videoCatchphraseBackward.current.pause();
         }
       }
     } else {
-      if (ageCatchphrase === 0) {
+      if (nbCatchphrase === 0) {
         if (
           this.videoElement.current.currentTime > 0 &&
           this.videoElement.current.currentTime < 0.05
         ) {
           this.videoCatchphraseBackward.current.pause();
           this.videoCatchphraseForward.current.currentTime = this.expectedTimeValues[
-            ageCatchphrase
+            nbCatchphrase
           ][0];
           this.videoCatchphraseForward.current.pause();
         }
@@ -141,7 +143,7 @@ class Catchphrase extends React.Component {
         if (this.videoElement.current.currentTime > expectedTime) {
           this.videoCatchphraseBackward.current.pause();
           this.videoCatchphraseForward.current.currentTime = this.expectedTimeValues[
-            ageCatchphrase
+            nbCatchphrase
           ][0];
           this.videoCatchphraseForward.current.pause();
         }
@@ -154,9 +156,10 @@ class Catchphrase extends React.Component {
     const {
       forward,
       showed,
-      ageCatchphrase,
+      nbCatchphrase,
       handleClick,
-      updateAgeCatchphrase
+      updateAgeCatchphrase,
+      ageCatchphrase
     } = this.props;
 
     return (
@@ -174,21 +177,22 @@ class Catchphrase extends React.Component {
                       <div id="catchphrase--container">
                         <div className="catchphrase--catchphrase">
                           <Markup
-                            content={value.epoques[ageCatchphrase].catchphrase}
+                            content={value.epoques[nbCatchphrase].catchphrase}
                           />
                           <div className="catchphrase--author">
-                            {value.epoques[ageCatchphrase].author}
+                            {value.epoques[nbCatchphrase].author}
                           </div>
                         </div>
                         <div className="catchphrase--title">
                           <div>
-                            <h1>{value.epoques[ageCatchphrase].name}</h1>
+                            <Picto name={ageCatchphrase} color={"#516081"} />
+                            <h1>{value.epoques[nbCatchphrase].name}</h1>
                           </div>
                           <div className="catchphrase--line" />
                         </div>
                         <div className="catchphrase--summary">
                           <Markup
-                            content={value.epoques[ageCatchphrase].summary}
+                            content={value.epoques[nbCatchphrase].summary}
                           />
                         </div>
                         <div className="catchphrase--nav">
