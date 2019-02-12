@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
+/* INDEX TAG */
+
 export const GlobalContainer = styled.div`
   position: relative;
   box-sizing: border-box;
   z-index: 5;
   opacity: 1;
+  transition: opacity 0.5s ease;
 `;
 
 export const Wrapper = styled.div`
@@ -53,23 +56,21 @@ export const Container = styled.div`
   border: solid 1px white;
   box-sizing: border-box;
   border-top: none;
+  background: rgba(255, 255, 255, 1);
 `;
 
 export const Paragraph = styled.div`
-  color: white;
   flex-shrink: 0;
+  color: #1c1e33;
   font-size: 14px;
-  font-style: normal;
-  font-stretch: normal;
+  padding: 15px 15px;
   line-height: 1.8em;
-  letter-spacing: normal;
-  color: #ffffff;
+  max-height: 260px;
+  overflow: auto;
   padding: 5%;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  /* padding: 25px 40px; */
-  max-height: 260px;
   width: 100%;
   overflow: auto;
   user-select: none;

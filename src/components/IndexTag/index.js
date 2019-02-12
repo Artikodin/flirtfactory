@@ -78,20 +78,19 @@ const AnimatedWrapper = posed(Wrapper)({
   isClose: {
     width: 45,
     height: 45,
-    delay: 450,
-    background: "rgba(255, 255, 255, 0)"
+    background: "rgba(255, 255, 255, 0)",
+    delay: 450
   },
   isOpen: {
     width: 300,
-    height: "auto",
-    background: "rgba(255, 255, 255, 0.2)",
-    delay: 280
+    // height: "auto",
+    background: "rgba(255, 255, 255, 0.2)"
   }
 });
 
 const AnimatedTitle = posed(Title)({
   exit: {
-    scaleX: 0.5,
+    scaleX: 0,
     opacity: 0,
     delay: 280,
     transition: { duration: 270 }

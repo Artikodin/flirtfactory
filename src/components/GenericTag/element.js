@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+/* GENERIC TAG */
+
 export const GlobalContainer = styled.div`
   display: inline-block;
 
@@ -7,7 +9,6 @@ export const GlobalContainer = styled.div`
   z-index: 5;
   top: ${({ yPos }) => yPos};
   left: ${({ xPos }) => xPos};
-  opacity: ${({ unlocked }) => (unlocked ? "1" : "0.1")};
   transition: opacity 0.5s ease;
 `;
 
@@ -19,6 +20,37 @@ export const Wrapper = styled.div`
   .hide {
     display: none;
   }
+`;
+
+export const IconContainer = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px white;
+  height: 45px;
+  min-width: 45px;
+  transition: all 0.5s ease-in;
+  box-sizing: border-box;
+
+  &:hover {
+    border: solid 1px white;
+  }
+`;
+
+export const Title = styled.div`
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  width: 255px;
+  border: solid 1px white;
+  border-left: none;
+  height: 45px;
+  line-height: 45px;
+  padding-left: 10px;
+  left: 45px;
+  transform-origin: center left;
+  box-sizing: border-box;
 `;
 
 export const Container = styled.div`
@@ -51,21 +83,6 @@ export const Container = styled.div`
   );
 `;
 
-export const Title = styled.div`
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  position: absolute;
-  width: 242px;
-  border: solid 1px white;
-  border-left: none;
-  height: 45px;
-  line-height: 45px;
-  padding-left: 10px;
-  left: 47px;
-  transform-origin: center left;
-`;
-
 export const Paragraph = styled.div`
   color: #1c1e33;
   font-size: 14px;
@@ -73,23 +90,13 @@ export const Paragraph = styled.div`
   line-height: 1.8em;
   max-height: 260px;
   overflow: auto;
+  padding: 5%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 
   p {
     margin-bottom: 10px;
-  }
-`;
-
-export const IconContainer = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: solid 1px white;
-  height: 45px;
-  min-width: 45px;
-  transition: all 0.5s ease-in;
-
-  &:hover {
-    border: solid 1px white;
   }
 `;
 
