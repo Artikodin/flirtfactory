@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 import { hot } from "react-hot-loader";
 
 import GlobalStyle from "./theme/global";
@@ -18,7 +18,13 @@ import {
   Test
 } from "./pages";
 
-import { Cursor, TextProvider, ProgressProvider, Logo } from "./components";
+import {
+  Cursor,
+  TextProvider,
+  ProgressProvider,
+  Logo,
+  TransitionSwitch
+} from "./components";
 
 class App extends React.Component {
   render() {
@@ -33,7 +39,7 @@ class App extends React.Component {
                   <>
                     <Cursor />
                     <Logo />
-                    <Switch location={location}>
+                    <TransitionSwitch location={location}>
                       <Route exact path="/" component={Intro} />
                       <Route exact path="/antiquite" component={Antiquite} />
                       <Route
@@ -62,7 +68,7 @@ class App extends React.Component {
                       />
                       <Route exact path="/test" component={Test} />
                       <Route path="*" component={Error} />
-                    </Switch>
+                    </TransitionSwitch>
                   </>
                 )}
               />
