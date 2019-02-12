@@ -1,4 +1,9 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const breath = keyframes`
+  0% { transform: translate3d(-50%, -50%, 0) scale(0.3); }
+  50% { transform: translate3d(-50%, -50%, 0) scale(0.4); }
+`;
 
 export const OutsideCircle = styled.div`
   height: 45px;
@@ -18,12 +23,14 @@ export const InnerDot = styled.div`
 `;
 
 export const InnerBackground = styled.div`
-  width: 8px;
-  height: 8px;
-  top: 0;
-  left: 0;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
   border-radius: 50%;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.4);
-  transform: scale(0);
+  transform: translate3d(-50%, -50%, 0) scale(0.3);
+  animation: ${breath} 2s infinite ease-in-out;
+  animation-play-state: running;
 `;
