@@ -24,24 +24,48 @@ export const IntroVideoWrapper = styled.div`
       }
 
       #start {
-        background: none;
-        border: none;
+        background: rgba(255, 255, 255, 0.15);
+        text-transform: uppercase;
+        border-radius: 30px;
+        border: 1px solid white;
+        padding: 12px;
         z-index: 0;
         display: block;
-        margin: 0 auto;
+        margin: 5vh auto 0 auto;
         left: 0;
         right: 0;
+        font-family: GTCinetype;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #ffffff;
+        transition: all 0.4s ease;
+
+        &:hover {
+          transition: all 0.4s ease;
+          background: rgba(255, 255, 255, 0.3);
+        }
       }
     }
   }
 
   #skip {
     position: absolute;
-    background: none;
-    border: none;
-    z-index: 5;
-    right: 30px;
+    left: 0;
+    right: 0;
     bottom: 30px;
+    margin: 0 auto;
+    width: 200px;
+    z-index: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    border: 1px solid white;
+    padding: 12px;
+    font-family: GTCinetype;
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #ffffff;
+    transition: all 0.4s ease;
   }
 
   video {

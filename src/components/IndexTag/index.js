@@ -3,6 +3,8 @@ import posed, { PoseGroup } from "react-pose";
 import PropTypes from "prop-types";
 import { Howl } from "howler";
 
+import Lottie from "react-lottie";
+
 import {
   Title,
   Paragraph,
@@ -38,6 +40,15 @@ class IndexTag extends React.Component {
     title: "",
     name: "",
     animated: false
+  };
+
+  defaultOptions = {
+    loop: true,
+    autoplay: true,
+    path: "./assets/anim/ai.json",
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
   };
 
   soundIndex = new Howl({
@@ -114,6 +125,12 @@ class IndexTag extends React.Component {
                     children
                   )}
                 </Paragraph>
+                <Lottie
+                  options={this.defaultOptions}
+                  height="auto"
+                  width="auto"
+                  alt="logo flirt factory"
+                />
               </AnimatedContainer>
             )}
           </PoseGroup>

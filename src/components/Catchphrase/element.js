@@ -27,18 +27,17 @@ export const CatchphraseContainer = styled.div`
     height: 60%;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
 
     .catchphrase--catchphrase {
-      position: absolute;
-      top: 0;
+      width: 100%;
+      height: 30%;
+      position: relative;
       font-family: GTCinetype;
       font-size: 1.7rem;
       font-weight: normal;
       font-style: italic;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: normal;
       color: #516081;
 
       &:before {

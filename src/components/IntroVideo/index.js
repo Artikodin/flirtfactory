@@ -91,7 +91,7 @@ class IntroVideo extends React.Component {
                         })
                       }
                     >
-                      SKIP
+                      Passer l'introduction
                     </button>
                   </AnimatedVideoWrapper>
                 )}
