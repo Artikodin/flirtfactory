@@ -6,7 +6,6 @@ import { DragNDrop } from "..";
 class SyncDragAndDrop extends React.Component {
   static propTypes = {
     display: PropTypes.bool,
-    waited: PropTypes.bool,
     frame: PropTypes.number,
     switchCanvas: PropTypes.func,
     updateFrame: PropTypes.func,
@@ -19,7 +18,6 @@ class SyncDragAndDrop extends React.Component {
 
   static defaultProps = {
     display: true,
-    waited: true,
     frame: 0,
     switchCanvas: () => {},
     updateFrame: () => {},
@@ -80,12 +78,11 @@ class SyncDragAndDrop extends React.Component {
   };
 
   render() {
-    const { pathDraw, top, left, display, waited } = this.props;
+    const { pathDraw, top, left, display } = this.props;
     return (
       <>
         <DragNDrop
           display={display}
-          waited={waited}
           pathDraw={pathDraw}
           handleDragStart={this.onDragStart}
           handleDrag={this.onDrag}

@@ -21,7 +21,7 @@ class Loader extends React.Component {
 
   componentDidMount() {
     this.getRandomInt(1, 3);
-    this.setState({ showed: true });
+    this.setState({ showed: false });
   }
 
   componentDidUpdate() {

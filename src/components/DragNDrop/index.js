@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import posed, { PoseGroup } from "react-pose";
 
 import { Svg, Circle, Gear } from "./element";
 
@@ -33,7 +34,6 @@ class DragNDrop extends React.Component {
 
   static propTypes = {
     display: PropTypes.bool,
-    waited: PropTypes.bool,
     pathDraw: PropTypes.string,
     left: PropTypes.string,
     top: PropTypes.string,
@@ -46,7 +46,6 @@ class DragNDrop extends React.Component {
 
   static defaultProps = {
     display: true,
-    waited: true,
     pathDraw: "M 150 300 L 350 300",
     left: "0",
     top: "0",
@@ -260,7 +259,7 @@ class DragNDrop extends React.Component {
   };
 
   render() {
-    const { pathDraw, height, width, top, left, display, waited } = this.props;
+    const { pathDraw, height, width, top, left, display } = this.props;
     const { elStart, elEnd, hover } = this.state;
     const gearPos = {
       x: -4.268 + elStart.x,
@@ -268,67 +267,89 @@ class DragNDrop extends React.Component {
     };
     return (
       <>
-        <Svg
-          ref={this.svgRef}
-          className={waited || display ? "dragndrop--hide" : ""}
-          version="1.1"
-          baseProfile="full"
-          width={height}
-          height={width}
-          xmlns="http://www.w3.org/2000/svg"
-          top={top}
-          left={left}
-          viewBox="0 0 512 512"
-        >
-          <path
-            ref={this.path}
-            d={pathDraw}
-            fill="transparent"
-            stroke="white"
-            strokeWidth="2"
-            strokeDasharray="1 5"
-            strokeLinecap="round"
-            id="wire"
-          />
+        <PoseGroup id="DragAndDrop">
+          {display === false && (
+            <AnimatedSvg
+              key="draganddrop"
+              ref={this.svgRef}
+              version="1.1"
+              baseProfile="full"
+              width={height}
+              height={width}
+              xmlns="http://www.w3.org/2000/svg"
+              top={top}
+              left={left}
+              viewBox="0 0 512 512"
+            >
+              <path
+                ref={this.path}
+                d={pathDraw}
+                fill="transparent"
+                stroke="white"
+                strokeWidth="2"
+                strokeDasharray="1 5"
+                strokeLinecap="round"
+                id="wire"
+              />
 
-          <circle
-            cx={elEnd.x}
-            cy={elEnd.y}
-            r="25"
-            fill="transparent"
-            stroke="white"
-            strokeWidth="2"
-            strokeDasharray="0 4"
-            strokeLinecap="round"
-          />
+              <circle
+                cx={elEnd.x}
+                cy={elEnd.y}
+                r="25"
+                fill="transparent"
+                stroke="white"
+                strokeWidth="2"
+                strokeDasharray="0 4"
+                strokeLinecap="round"
+              />
 
-          <Circle
-            ref={this.dragCircle}
-            cx={elStart.x}
-            cy={elStart.y}
-            r="25"
-            fill={hover ? "white" : "transparent"}
-            stroke="white"
-            onMouseDown={() => this.handleDragStart()}
-            onMouseEnter={() => this.handleMouseEnter()}
-            onMouseLeave={() => this.handleMouseLeave()}
-          />
+              <Circle
+                ref={this.dragCircle}
+                cx={elStart.x}
+                cy={elStart.y}
+                r="25"
+                fill={hover ? "white" : "transparent"}
+                stroke="white"
+                onMouseDown={() => this.handleDragStart()}
+                onMouseEnter={() => this.handleMouseEnter()}
+                onMouseLeave={() => this.handleMouseLeave()}
+              />
 
-          <Gear
-            onMouseDown={() => this.handleDragStart()}
-            onMouseEnter={() => this.handleMouseEnter()}
-            onMouseLeave={() => this.handleMouseLeave()}
-            ref={this.dragGear}
-            fill={hover ? "#68759f" : "white"}
-            d={`m
+              <Gear
+                onMouseDown={() => this.handleDragStart()}
+                onMouseEnter={() => this.handleMouseEnter()}
+                onMouseLeave={() => this.handleMouseLeave()}
+                ref={this.dragGear}
+                fill={hover ? "#68759f" : "white"}
+                d={`m
             ${gearPos.x}
             ${gearPos.y}
             c0-2.354 1.912-4.262 4.271-4.262s4.271 1.908 4.271 4.262-1.912 4.262-4.271 4.262c-1.133 0-2.219-.449-3.02-1.248a4.258 4.258 0 0 1-1.251-3.014zm2.592 9.44a9.531 9.531 0 0 0 3.358 0l.6-2.206c.424-.134.836-.304 1.231-.511l1.99 1.137a9.652 9.652 0 0 0 2.377-2.373l-1.14-1.986a7.553 7.553 0 0 0 .512-1.228l2.21-.599c.199-1.108.199-2.243 0-3.351l-2.21-.599c-.134-.424-.305-.835-.511-1.229l1.14-1.986a9.643 9.643 0 0 0-2.378-2.372l-1.991 1.138a7.562 7.562 0 0 0-1.23-.511l-.6-2.206a9.531 9.531 0 0 0-3.358 0l-.6 2.206c-.424.134-.836.304-1.231.51l-1.99-1.137a9.657 9.657 0 0 0-2.377 2.373l1.14 1.986a7.553 7.553 0 0 0-.512 1.228l-2.21.599a9.474 9.474 0 0 0 0 3.351l2.21.6c.134.424 .305.835 .511 1.229l-1.14 1.986a9.643 9.643 0 0 0 2.378 2.372l1.99-1.137c.394.206 .806.377 1.23.511l.601 2.205z`}
-          />
-        </Svg>
+              />
+            </AnimatedSvg>
+          )}
+        </PoseGroup>
       </>
     );
   }
 }
+
+const AnimatedSvg = posed(Svg)({
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: 1500,
+      ease: "easeIn",
+      delay: 5000
+    }
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 1000,
+      ease: "easeOut"
+    }
+  }
+});
 
 export default DragNDrop;

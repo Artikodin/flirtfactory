@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import styled from "styled-components";
 
 import { CanvasVideo, SyncDragAndDrop } from "..";
 
@@ -12,8 +11,7 @@ class InteractionDragAndDrop extends React.Component {
     left: PropTypes.string,
     pathDraw: PropTypes.string,
     top: PropTypes.string,
-    unlockAge: PropTypes.func,
-    waitFor: PropTypes.number
+    unlockAge: PropTypes.func
   };
 
   static defaultProps = {
@@ -23,14 +21,12 @@ class InteractionDragAndDrop extends React.Component {
     left: "",
     top: "",
     pathDraw: "",
-    unlockAge: () => {},
-    waitFor: 0
+    unlockAge: () => {}
   };
 
   state = {
     show: false,
-    frame: 0,
-    waited: true
+    frame: 0
   };
 
   switchCanvas = () => {
@@ -47,16 +43,16 @@ class InteractionDragAndDrop extends React.Component {
   };
 
   componentWillMount = () => {
-    const { waitFor } = this.props;
-    setTimeout(() => {
-      this.setState({
-        waited: false
-      });
-    }, waitFor);
+    // const { waitFor } = this.props;
+    // setTimeout(() => {
+    //   this.setState({
+    //     waited: false
+    //   });
+    // }, waitFor);
   };
 
   render() {
-    const { show, frame, waited } = this.state;
+    const { show, frame } = this.state;
     const {
       display,
       age,
@@ -74,7 +70,6 @@ class InteractionDragAndDrop extends React.Component {
           increaseVideo={increaseVideo}
           unlockAge={unlockAge}
           display={display}
-          waited={waited}
           switchCanvas={this.switchCanvas}
           updateFrame={this.updateFrame}
           pathDraw={pathDraw}

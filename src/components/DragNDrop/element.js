@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Svg = styled.svg`
   visibility: visible;
-  opacity: 1;
+  /* opacity: 1; */
   transition: all 1s ease-out;
   position: absolute;
   z-index: 10;
