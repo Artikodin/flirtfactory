@@ -61,7 +61,7 @@ class BelleEpoque extends React.Component {
                           <GenericTag
                             unlocked={ages.futur.points[2]}
                             unlockPoint={() =>
-                              unlockPoints(agestr, 2)
+                              unlockPoints(agestr, 0)
                             }
                             title={
                               value.epoques[agenbr].symbols[2].name
@@ -82,7 +82,7 @@ class BelleEpoque extends React.Component {
                           <GenericTag
                             unlocked={ages.futur.points[1]}
                             unlockPoint={() =>
-                              unlockPoints(agestr, 1)
+                              unlockPoints(agestr, 0)
                             }
                             title={
                               value.epoques[agenbr].symbols[1].name
@@ -124,7 +124,7 @@ class BelleEpoque extends React.Component {
                           <GenericTag
                             unlocked={ages.futur.points[3]}
                             unlockPoint={() =>
-                              unlockPoints(agestr, 3)
+                              unlockPoints(agestr, 0)
                             }
                             title={
                               value.epoques[agenbr].symbols[3].name

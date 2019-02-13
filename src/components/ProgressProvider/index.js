@@ -47,7 +47,7 @@ const ages = {
   futur: {
     lock: false,
     video: 1,
-    points: [false, false, false, false],
+    points: [false],
     selected: 1
   }
 };
