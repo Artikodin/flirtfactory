@@ -7,8 +7,8 @@ import {
   ProgressContext,
   InteractionDragAndDrop,
   TaskBar,
-  SoundController
-  // IntroVideo
+  SoundController,
+  IntroVideo
 } from "../../components";
 
 class Intro extends React.Component {
@@ -36,7 +36,7 @@ class Intro extends React.Component {
         history={history}
         pathTo="antiquite"
       >
-        {/* <IntroVideo /> */}
+        <IntroVideo />
         <ProgressContext.Consumer>
           {({ ages, selectAges, updateVideo }) => (
             <>
