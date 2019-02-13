@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
   Page,
@@ -16,14 +17,19 @@ class Intro extends React.Component {
     showed: false
   };
 
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  };
+
   handeAnswer = () => {
     this.setState({ showed: true });
   };
 
   render() {
     const { agestr, frameTotal, waitFor, showed } = this.state;
+    const { history } = this.props;
     return (
-      <Page navbar={false}>
+      <Page navbar={false} history={history}>
         <ProgressContext.Consumer>
           {({ ages, selectAges, updateVideo }) => (
             <>

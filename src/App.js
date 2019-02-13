@@ -19,7 +19,6 @@ import {
 } from "./pages";
 
 import {
-  Cursor,
   TextProvider,
   ProgressProvider,
   Logo,
@@ -37,7 +36,6 @@ class App extends React.Component {
               <Route
                 render={({ location }) => (
                   <>
-                    <Cursor />
                     <Logo />
                     <TransitionSwitch location={location}>
                       <Route exact path="/" component={Intro} />

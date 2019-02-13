@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
   Page,
@@ -19,10 +20,19 @@ class BelleEpoque extends React.Component {
     agenbr: 7 // futur
   };
 
+  // handleClick = ageNb => {
+  //   console.log(ageNb);
+  // };
+
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  };
+
   render() {
     const { agestr, agenbr } = this.state;
+    const { history } = this.props;
     return (
-      <Page>
+      <Page periode={agestr} history={history} pathTo="flirtfactory">
         <TextContext.Consumer>
           {value => (
             <ProgressContext.Consumer>

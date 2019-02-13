@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import posed from "react-pose";
-// import { Transition } from "react-transition-group";
 
 import { Wrapper } from "./element";
 
-import { About, NavBar, ProgressContext, Loader } from "..";
+import { About, NavBar, ProgressContext, Loader, Cursor } from "..";
 
 class Page extends React.Component {
   state = { showed: true };
@@ -13,6 +11,9 @@ class Page extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     backgroundColor: PropTypes.string,
+    history: PropTypes.object,
+    periode: PropTypes.string,
+    pathTo: PropTypes.string,
     navbar: PropTypes.bool,
     transition: PropTypes.bool
   };
@@ -20,6 +21,9 @@ class Page extends React.Component {
   static defaultProps = {
     children: "",
     backgroundColor: "",
+    pathTo: "",
+    history: {},
+    periode: "",
     navbar: true,
     transition: false
   };
@@ -40,10 +44,19 @@ class Page extends React.Component {
 
   render() {
     // const { globalSound } = this.state;
-    const { children, backgroundColor, navbar, transition } = this.props;
+    const {
+      children,
+      backgroundColor,
+      navbar,
+      transition,
+      periode,
+      history,
+      pathTo
+    } = this.props;
     const { showed } = this.state;
     return (
       <Wrapper backgroundColor={backgroundColor} id="wrapper">
+        <Cursor periode={periode} history={history} pathTo={pathTo}/>
         {transition && <Loader />}
         {showed && children}
         <ProgressContext.Consumer>
