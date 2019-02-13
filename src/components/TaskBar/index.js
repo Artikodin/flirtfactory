@@ -34,44 +34,20 @@ class TaskBar extends React.Component {
   };
 
   setAIText = (age, unlocked, datas) => {
-    switch (age) {
-      case "intro":
-        if (unlocked) {
-          return (
-            <p>
-              Quelque chose a mal fonctionné lors de l'initialisation de
-              l'usine. 0 sur 8 parties fonctionnent correctement, il va falloir
-              les réparer. J'enclenche la réinitialisation du système.
-            </p>
-          );
-        } else {
-          return (
-            <p>
-              Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer
-              la Flirt Factory et à parcourir l'histoire de la séduction au fil
-              des époques. J'attends que tu démarres l'usine.
-            </p>
-          );
-        }
-      case "flirtfactory":
-        return (
-          <p>
-            Toutes les machines ont bien été réinitialisées. Tu as bien
-            travaillé. En récompense, j'ai entendu que tu étais un séducteur, je
-            te propose 8 catchphrases pour séduire ta future conquête.
-          </p>
-        );
-      default:
-        if (unlocked) {
-          return <p>{datas.reinitialisation}</p>;
-        } else {
-          return <p>{datas.interaction}</p>;
-        }
+    if (age === "flirtfactory") {
+      return (
+        <p>
+          Toutes les machines ont bien été réinitialisées. Tu as bien travaillé.
+          En récompense, j'ai entendu que tu étais un séducteur, je te propose 8
+          catchphrases pour séduire ta future conquête.
+        </p>
+      );
     }
-  };
-
-  test = () => {
-    console.log("aaaaaaaa");
+    if (unlocked) {
+      return <p>{datas.reinitialisation}</p>;
+    } else {
+      return <p>{datas.interaction}</p>;
+    }
   };
 
   render() {
@@ -100,12 +76,26 @@ class TaskBar extends React.Component {
               <Markup content={datas.description} />
             </IndexTag>
             <PoseGroup id="HeartCounter">
+<<<<<<< Updated upstream
               {unlocked ||
                 (age !== "futur" && (
                   <AnimatedHeartCounter key="heart-wrapper">
                     <HeartCounter progress={progress} />
                   </AnimatedHeartCounter>
                 ))}
+||||||| merged common ancestors
+              {unlocked || age !== "futur" && (
+                <AnimatedHeartCounter key="heart-wrapper">
+                  <HeartCounter progress={progress} />
+                </AnimatedHeartCounter>
+              )}
+=======
+              {age !== "futur" && unlocked && (
+                <AnimatedHeartCounter key="heart-wrapper">
+                  <HeartCounter progress={progress} />
+                </AnimatedHeartCounter>
+              )}
+>>>>>>> Stashed changes
             </PoseGroup>
           </>
         )}
