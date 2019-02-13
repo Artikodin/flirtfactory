@@ -78,7 +78,7 @@ class FlirtFactory extends React.Component {
     const { history } = this.props;
     return (
       <Page navbar={false} periode={agestr} history={history}>
-        <TaskBar age="flirtfactory" />
+        <TaskBar isOpen age="flirtfactory" />
         <div className="globalview background__wrapper">
           <BackgroundVideo path="flirtfactory" number={1} />
         </div>
