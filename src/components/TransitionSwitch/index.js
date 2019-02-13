@@ -25,8 +25,6 @@ class TransitionSwitch extends React.Component {
     if (location.pathname !== prevProps.location.pathname) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ showed: true });
-      console.log("this.props", location);
-      console.log("prevProps", prevProps.location);
     }
   }
 

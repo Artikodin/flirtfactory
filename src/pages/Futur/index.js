@@ -20,10 +20,6 @@ class BelleEpoque extends React.Component {
     agenbr: 7 // futur
   };
 
-  // handleClick = ageNb => {
-  //   console.log(ageNb);
-  // };
-
   static propTypes = {
     history: PropTypes.object.isRequired
   };

@@ -139,7 +139,7 @@ class Next extends React.Component {
 
     this.animationHold.progress =
       this.animationHold.progress +
-      0.02 * this.animationHold.easing * this.animationHold.direction;
+      0.01 * this.animationHold.easing * this.animationHold.direction;
     this.innerBg.current.style.transform = `translate3d(-50%, -50%, 0) scale(${
       this.animationHold.progress
     })`;

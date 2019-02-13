@@ -1,7 +1,7 @@
 import React from "react";
 
 import PropTypes from "prop-types";
-import posed, { PoseGroup } from "react-pose";
+import posed from "react-pose";
 
 import { Svg, Gear } from "./element";
 
