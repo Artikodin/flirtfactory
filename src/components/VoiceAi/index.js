@@ -80,6 +80,7 @@ class VoiceAi extends React.Component {
         {isHangedUp && <PhoneCube name="raccroche" />}
         {isAnswered && (
           <IndexTag
+            ai
             animated
             stayOpen={stayOpen}
             isOpen

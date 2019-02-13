@@ -65,7 +65,7 @@ class TaskBar extends React.Component {
         {age === "intro" ? (
           <VoiceAi stayOpen={stayOpen} onAnswer={onAnswer} {...this.props} />
         ) : (
-          <IndexTag animated isOpen={isOpen} title="Assistance I.A." name="decroche">
+          <IndexTag ai animated isOpen={isOpen} title="Assistance I.A." name="decroche">
             {this.setAIText(age, unlocked, datas)}
           </IndexTag>
         )}

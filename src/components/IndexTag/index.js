@@ -11,7 +11,8 @@ import {
   Wrapper,
   Container,
   GlobalContainer,
-  IconContainer
+  IconContainer,
+  Wave
 } from "./element";
 
 import { Picto, AnimatedText } from "..";
@@ -25,6 +26,7 @@ class IndexTag extends React.Component {
   };
 
   static propTypes = {
+    ai: PropTypes.bool,
     children: PropTypes.node,
     isOpen: PropTypes.bool,
     stayOpen: PropTypes.bool,
@@ -34,6 +36,7 @@ class IndexTag extends React.Component {
   };
 
   static defaultProps = {
+    ai: false,
     children: "",
     isOpen: false,
     stayOpen: false,
@@ -88,7 +91,7 @@ class IndexTag extends React.Component {
   };
 
   render() {
-    const { children, title, name, animated } = this.props;
+    const { children, title, name, animated, ai } = this.props;
     const { showed } = this.state;
     return (
       <GlobalContainer ref={this.magnet} onMouseEnter={() => this.playSound()}>
@@ -125,12 +128,28 @@ class IndexTag extends React.Component {
                     children
                   )}
                 </Paragraph>
-                {/* <Lottie
-                  options={this.defaultOptions}
-                  height="auto"
-                  width="auto"
-                  alt="logo flirt factory"
-                /> */}
+                {ai && (
+                  <Wave>
+                    <Lottie
+                      options={this.defaultOptions}
+                      height="auto"
+                      width="33%"
+                      alt="logo flirt factory"
+                    />
+                    <Lottie
+                      options={this.defaultOptions}
+                      height="auto"
+                      width="33%"
+                      alt="logo flirt factory"
+                    />
+                    <Lottie
+                      options={this.defaultOptions}
+                      height="auto"
+                      width="33%"
+                      alt="logo flirt factory"
+                    />
+                  </Wave>
+                )}
               </AnimatedContainer>
             )}
           </PoseGroup>

@@ -14,6 +14,12 @@ export const Wrapper = styled.div`
   height: 45px;
 `;
 
+export const Wave = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+`;
+
 export const IconContainer = styled.div`
   display: inline-flex;
   align-items: center;
