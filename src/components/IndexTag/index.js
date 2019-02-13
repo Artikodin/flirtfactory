@@ -12,7 +12,7 @@ import {
   IconContainer
 } from "./element";
 
-import { Picto } from "..";
+import { Picto, AnimatedText } from "..";
 
 class IndexTag extends React.Component {
   soundIndex = React.createRef();
@@ -27,7 +27,8 @@ class IndexTag extends React.Component {
     isOpen: PropTypes.bool,
     stayOpen: PropTypes.bool,
     title: PropTypes.string,
-    name: PropTypes.string
+    name: PropTypes.string,
+    animated: PropTypes.bool
   };
 
   static defaultProps = {
@@ -35,7 +36,8 @@ class IndexTag extends React.Component {
     isOpen: false,
     stayOpen: false,
     title: "",
-    name: ""
+    name: "",
+    animated: false
   };
 
   soundIndex = new Howl({
@@ -75,7 +77,7 @@ class IndexTag extends React.Component {
   };
 
   render() {
-    const { children, title, name } = this.props;
+    const { children, title, name, animated } = this.props;
     const { showed } = this.state;
     return (
       <GlobalContainer ref={this.magnet} onMouseEnter={() => this.playSound()}>
@@ -105,7 +107,13 @@ class IndexTag extends React.Component {
             )}
             {showed && (
               <AnimatedContainer key="animatedContainer">
-                <Paragraph>{children}</Paragraph>
+                <Paragraph>
+                  {animated ? (
+                    <AnimatedText>{children}</AnimatedText>
+                  ) : (
+                    children
+                  )}
+                </Paragraph>
               </AnimatedContainer>
             )}
           </PoseGroup>

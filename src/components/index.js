@@ -2,6 +2,7 @@
 export { default as About } from "./About";
 export { default as AboutDrawer } from "./AboutDrawer";
 export { default as AboutDrawerContent } from "./AboutDrawerContent";
+export { default as AnimatedText } from "./AnimatedText";
 export { default as AudioVisualizer } from "./AudioVisualizer";
 export { default as BackgroundVideo } from "./BackgroundVideo";
 export { default as ButtonIA } from "./ButtonIA";
