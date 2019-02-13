@@ -37,18 +37,14 @@ class TaskBar extends React.Component {
 
   setAIText = (age, unlocked, datas) => {
     if (age === "flirtfactory") {
-      return (
-        <p>
-          Toutes les machines ont bien été réinitialisées. Tu as bien travaillé.
+      return `Toutes les machines ont bien été réinitialisées. Tu as bien travaillé.
           En récompense, j'ai entendu que tu étais un séducteur, je te propose 8
-          catchphrases pour séduire ta future conquête.
-        </p>
-      );
+          catchphrases pour séduire ta future conquête.`;
     }
     if (unlocked) {
-      return <p>{datas.reinitialisation}</p>;
+      return datas.reinitialisation;
     } else {
-      return <p>{datas.interaction}</p>;
+      return datas.interaction;
     }
   };
 
@@ -69,7 +65,7 @@ class TaskBar extends React.Component {
         {age === "intro" ? (
           <VoiceAi stayOpen={stayOpen} onAnswer={onAnswer} {...this.props} />
         ) : (
-          <IndexTag isOpen={isOpen} title="Assistance I.A." name="decroche">
+          <IndexTag animated isOpen={isOpen} title="Assistance I.A." name="decroche">
             {this.setAIText(age, unlocked, datas)}
           </IndexTag>
         )}

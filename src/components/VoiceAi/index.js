@@ -57,21 +57,13 @@ class VoiceAi extends React.Component {
 
   setAIText = unlocked => {
     if (unlocked) {
-      return (
-        <p>
-          Quelque chose a mal fonctionné lors de l'initialisation de l'usine. 0
+      return `Quelque chose a mal fonctionné lors de l'initialisation de l'usine. 0
           sur 8 parties fonctionnent correctement, il va falloir les réparer.
-          J'enclenche la réinitialisation du système.
-        </p>
-      );
+          J'enclenche la réinitialisation du système.`;
     }
-    return (
-      <p>
-        Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer la
+    return `Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer la
         Flirt Factory et à parcourir l'histoire de la séduction au fil des
-        époques. J'attends tes instructions.
-      </p>
-    );
+        époques. J'attends tes instructions.`;
   };
 
   render() {
@@ -88,6 +80,7 @@ class VoiceAi extends React.Component {
         {isHangedUp && <PhoneCube name="raccroche" />}
         {isAnswered && (
           <IndexTag
+            animated
             stayOpen={stayOpen}
             isOpen
             title="Assistance I.A."
