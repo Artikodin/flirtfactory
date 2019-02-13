@@ -14,6 +14,7 @@ export { default as EndingButton } from "./EndingButton";
 export { default as FlirtFactoryTag } from "./FlirtFactoryTag";
 export { default as FuturTag } from "./FuturTag";
 export { default as SoundController } from "./SoundController";
+export { default as GlobalSound } from "./GlobalSound";
 export { default as GenericTag } from "./GenericTag";
 export { default as HeartCounter } from "./HeartCounter";
 export { default as IntroVideo } from "./IntroVideo";

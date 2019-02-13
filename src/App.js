@@ -22,6 +22,7 @@ import {
   TextProvider,
   ProgressProvider,
   Logo,
+  GlobalSound,
   TransitionSwitch
 } from "./components";
 
@@ -37,6 +38,7 @@ class App extends React.Component {
                 render={({ location }) => (
                   <>
                     <Logo />
+                    <GlobalSound />
                     <TransitionSwitch location={location}>
                       <Route exact path="/" component={Intro} />
                       <Route exact path="/antiquite" component={Antiquite} />
