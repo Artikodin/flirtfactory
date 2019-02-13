@@ -189,15 +189,17 @@ class Catchphrase extends React.Component {
                             {value.epoques[nbCatchphrase].author}
                           </div>
                         </div>
-                        <div className="catchphrase--title">
-                          <Picto name={ageCatchphrase} color={"#516081"} />
-                          <h1>{value.epoques[nbCatchphrase].name}</h1>
-                        </div>
-                        <div className="catchphrase--summary">
-                          <Markup
-                            content={value.epoques[nbCatchphrase].summary}
-                          />
-                          <a className="catchphrase--link" onClick={() => this.changeRoute(ageCatchphrase)}>Retourner à l'époque</a>
+                        <div className="catchphrase--content">
+                          <div className="catchphrase--title">
+                            <Picto name={ageCatchphrase} color={"#516081"} />
+                            <h1>{value.epoques[nbCatchphrase].name}</h1>
+                          </div>
+                          <div className="catchphrase--summary">
+                            <Markup
+                              content={value.epoques[nbCatchphrase].summary}
+                            />
+                            <a className="catchphrase--link" onClick={() => this.changeRoute(ageCatchphrase)}>Retourner à l'époque</a>
+                          </div>
                         </div>
                         <div className="catchphrase--nav">
                           <button
@@ -325,18 +327,16 @@ class Catchphrase extends React.Component {
 const AnimatedCatchphraseWrapper = posed(CatchphraseWrapper)({
   enter: {
     left: 0,
-    // opacity: 1,
     transition: {
       duration: 1500,
-      ease: easing.backInOut
+      ease: easing.backIn
     }
   },
   exit: {
     left: "100vw",
-    // opacity: 0,
     transition: {
       duration: 1500,
-      ease: easing.backInOut
+      ease: easing.backOut
     }
   }
 });

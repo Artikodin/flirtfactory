@@ -26,9 +26,12 @@ export const CatchphraseContainer = styled.div`
     text-align: left;
     height: 60%;
     position: relative;
+    display: flex;
+    align-items: center;
 
     .catchphrase--catchphrase {
-      position: relative;
+      position: absolute;
+      top: 0;
       font-family: GTCinetype;
       font-size: 1.7rem;
       font-weight: normal;
@@ -65,55 +68,61 @@ export const CatchphraseContainer = styled.div`
       margin-top: 15px;
     }
 
-    .catchphrase--title {
+    .catchphrase--content {
       position: relative;
-      margin-top: 5vh;
-      align-items: center;
-      display: flex;
+      display: block;
 
-      h1 {
+      .catchphrase--title {
+        position: relative;
+        margin-top: 5vh;
+        align-items: center;
+        display: flex;
+
+        h1 {
+          font-family: GTCinetype;
+          font-size: 1.2rem;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #516081;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          margin-left: 10px;
+        }
+      }
+
+      .catchphrase--summary {
+        display: block;
+        border-left: 1px solid #516081;
+        padding-left: 5%;
         font-family: GTCinetype;
-        font-size: 1.2rem;
-        font-weight: bold;
-        font-style: normal;
+        font-size: 14px;
+        font-weight: normal;
+        /* font-style: italic; */
         font-stretch: normal;
-        line-height: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #959eb2;
+      }
+
+      .catchphrase--link {
+        display: block;
+        font-family: GTCinetype;
+        font-size: 14px;
+        opacity: 1;
+        color: #516081;
+        text-decoration: underline;
+        font-weight: normal;
+        font-style: italic;
+        font-stretch: normal;
+        line-height: 1.5;
         letter-spacing: normal;
         color: #516081;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        margin-left: 10px;
+        padding-top: 10px;
       }
-    }
-
-    .catchphrase--summary {
-      border-left: 1px solid #516081;
-      padding-left: 5%;
-      font-family: GTCinetype;
-      font-size: 14px;
-      font-weight: normal;
-      /* font-style: italic; */
-      font-stretch: normal;
-      line-height: 1.5;
-      letter-spacing: normal;
-      color: #959EB2;
-    }
-
-    .catchphrase--link {
-      display: block;
-      font-family: GTCinetype;
-      font-size: 14px;
-      opacity: 1;
-      color: #516081;
-      text-decoration: underline;
-      font-weight: normal;
-      font-style: italic;
-      font-stretch: normal;
-      line-height: 1.5;
-      letter-spacing: normal;
-      color: #516081;
-      padding-top: 10px;
     }
 
     .catchphrase--nav {
