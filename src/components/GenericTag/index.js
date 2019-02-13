@@ -58,7 +58,7 @@ class GenericTag extends React.Component {
     autoplay: false,
     preload: true,
     playing: false,
-    volume: 0.2
+    volume: 0.1
   });
 
   magnetProperty = {};
