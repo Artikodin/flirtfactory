@@ -18,6 +18,7 @@ class Cursor extends React.Component {
     history: {}
   };
 
+  // eslint-disable-next-line consistent-return
   checkIsTrue = ages => {
     const { periode } = this.props;
     if (periode) {
