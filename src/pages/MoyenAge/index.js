@@ -15,8 +15,7 @@ import {
 class MoyenAge extends React.Component {
   state = {
     agestr: "moyenage",
-    agenbr: 1, // moyenage
-    waitFor: 2000 // sec
+    agenbr: 1 // moyenage
   };
 
   static propTypes = {
@@ -24,7 +23,7 @@ class MoyenAge extends React.Component {
   };
 
   render() {
-    const { agestr, agenbr, waitFor } = this.state;
+    const { agestr, agenbr } = this.state;
     const { history } = this.props;
     return (
       <Page periode={agestr} history={history} pathTo="renaissance">
@@ -92,7 +91,6 @@ class MoyenAge extends React.Component {
                       unlockAge={() => selectAges(agestr)}
                       increaseVideo={() => updateVideo(agestr)}
                       age={agestr}
-                      waitFor={waitFor}
                       pathDraw="M 100 200 A 50 50 0 1 1 100 50"
                       top="50vh"
                       left="10vw"

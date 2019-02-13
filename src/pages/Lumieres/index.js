@@ -16,8 +16,7 @@ class Lumieres extends React.Component {
   state = {
     agestr: "lumieres",
     agenbr: 3, // lumieres
-    frameTotal: 41,
-    waitFor: 2500 // sec
+    frameTotal: 41
   };
 
   static propTypes = {
@@ -25,7 +24,7 @@ class Lumieres extends React.Component {
   };
 
   render() {
-    const { agestr, agenbr, frameTotal, waitFor } = this.state;
+    const { agestr, agenbr, frameTotal } = this.state;
     const { history } = this.props;
     return (
       <Page periode={agestr} history={history} pathTo="belleepoque">
@@ -94,7 +93,6 @@ class Lumieres extends React.Component {
                       increaseVideo={() => updateVideo(agestr)}
                       age={agestr}
                       frameTotal={frameTotal}
-                      waitFor={waitFor}
                       pathDraw="M 50 50 Q 150 100 150 250"
                       top="48vh"
                       left="65vw"

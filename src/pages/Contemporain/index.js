@@ -16,8 +16,7 @@ class Contemporain extends React.Component {
   state = {
     agestr: "contemporain",
     agenbr: 6, // contemporain
-    frameTotal: 41,
-    waitFor: 2500 // sec
+    frameTotal: 41
   };
 
   static propTypes = {
@@ -25,7 +24,7 @@ class Contemporain extends React.Component {
   };
 
   render() {
-    const { agestr, agenbr, frameTotal, waitFor } = this.state;
+    const { agestr, agenbr, frameTotal } = this.state;
     const { history } = this.props;
     return (
       <Page periode={agestr} history={history} pathTo="futur">
@@ -94,7 +93,6 @@ class Contemporain extends React.Component {
                       increaseVideo={() => updateVideo(agestr)}
                       age={agestr}
                       frameTotal={frameTotal}
-                      waitFor={waitFor}
                       pathDraw="M 50 50 A 50 50 0 1 1 50 200"
                       top="22vh"
                       left="10vw"

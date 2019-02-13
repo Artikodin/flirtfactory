@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import posed, { PoseGroup } from "react-pose";
+
 import { DragNDrop } from "..";
 
 class SyncDragAndDrop extends React.Component {
@@ -80,19 +82,41 @@ class SyncDragAndDrop extends React.Component {
   render() {
     const { pathDraw, top, left, display } = this.props;
     return (
-      <>
-        <DragNDrop
-          display={display}
-          pathDraw={pathDraw}
-          handleDragStart={this.onDragStart}
-          handleDrag={this.onDrag}
-          handleDragEnd={this.onDragEnd}
-          top={top}
-          left={left}
-        />
-      </>
+      <PoseGroup>
+        {display === false && (
+          <AnimatedDiv key="animatedDiv">
+            <DragNDrop
+              display={display}
+              pathDraw={pathDraw}
+              handleDragStart={this.onDragStart}
+              handleDrag={this.onDrag}
+              handleDragEnd={this.onDragEnd}
+              top={top}
+              left={left}
+            />
+          </AnimatedDiv>
+        )}
+      </PoseGroup>
     );
   }
 }
+
+const AnimatedDiv = posed.div({
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: 1500,
+      ease: "easeIn",
+      delay: 5000
+    }
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 1000,
+      ease: "easeOut"
+    }
+  }
+});
 
 export default SyncDragAndDrop;

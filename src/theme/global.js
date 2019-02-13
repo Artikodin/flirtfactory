@@ -151,10 +151,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .dragndrop--hide {
-    visibility: hidden; 
+    /* visibility: hidden;  */
     opacity: 0 !important;
   }
-  
+
   ::-webkit-scrollbar {
     width: 5px;
   }

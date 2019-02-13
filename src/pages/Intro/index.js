@@ -13,7 +13,6 @@ class Intro extends React.Component {
   state = {
     agestr: "intro",
     frameTotal: 25,
-    waitFor: 0, // sec,
     showed: false
   };
 
@@ -26,7 +25,7 @@ class Intro extends React.Component {
   };
 
   render() {
-    const { agestr, frameTotal, waitFor, showed } = this.state;
+    const { agestr, frameTotal, showed } = this.state;
     const { history } = this.props;
     return (
       <Page navbar={false} history={history}>
@@ -51,7 +50,6 @@ class Intro extends React.Component {
                     increaseVideo={() => updateVideo(agestr)}
                     age={agestr}
                     frameTotal={frameTotal}
-                    waitFor={waitFor}
                     pathDraw="M 50 200 L 50 50"
                     top="36vh"
                     left="30vw"
