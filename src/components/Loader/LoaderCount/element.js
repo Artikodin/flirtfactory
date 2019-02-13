@@ -6,6 +6,7 @@ export const Wrapper = styled.span`
   z-index: 10;
   font-weight: 500;
   font-size: 130px;
+  font-family: "GTCinetype";
   & > span {
     font-size: 40px;
   }
