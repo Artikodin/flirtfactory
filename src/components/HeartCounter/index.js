@@ -157,7 +157,6 @@ class HeartCounter extends React.Component {
   render() {
     let { progression } = this.state;
     const { progress } = this.props;
-    console.log("progress", progress);
     progress.forEach(function(point) {
       if (point) {
         progression = progression + 1;

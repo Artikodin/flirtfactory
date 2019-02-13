@@ -22,7 +22,6 @@ class Tutorial extends React.Component {
 
   render() {
     const { showed, hide, removeTutorial } = this.props;
-    console.log(hide);
 
     const defaultOptions = {
       loop: true,

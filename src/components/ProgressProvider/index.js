@@ -81,7 +81,6 @@ class ProgressProvider extends React.Component {
   };
 
   removeTutorial = age => {
-    console.log("remove tutorial");
     this.setState(prevState => ({
       ages: {
         ...prevState.ages,
