@@ -23,8 +23,15 @@ class DragNDrop extends React.Component {
       y: 0
     },
     hover: false,
-    clicked: false
+    clicked: false,
+    wait: false
   };
+
+  // ON GERE ICI L'APPARITION DU DRAG AND DROP
+
+  timeToWait = 5000;
+
+  // ON LUI AJOUTE LA CLASS DRAGNDROP--HIDE
 
   deltaDrag = 0;
 
@@ -67,6 +74,11 @@ class DragNDrop extends React.Component {
         y: this.coordValueAlongPath("y", 1)
       }
     });
+    setTimeout(() => {
+      this.setState({
+        wait: true
+      });
+    }, this.timeToWait);
 
     this.svgRef.current.addEventListener("mouseup", this.handleDragEnd, {
       passive: true
@@ -260,7 +272,7 @@ class DragNDrop extends React.Component {
 
   render() {
     const { pathDraw, height, width, top, left, display } = this.props;
-    const { elStart, elEnd, hover } = this.state;
+    const { elStart, elEnd, hover, wait } = this.state;
     const gearPos = {
       x: -4.268 + elStart.x,
       y: 0 + elStart.y
@@ -270,6 +282,7 @@ class DragNDrop extends React.Component {
         <PoseGroup id="DragAndDrop">
           {display === false && (
             <AnimatedSvg
+              className={wait ? "" : "dragndrop--hide"}
               key="draganddrop"
               ref={this.svgRef}
               version="1.1"

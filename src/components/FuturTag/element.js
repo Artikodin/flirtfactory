@@ -12,19 +12,32 @@ export const Svg = styled.svg`
   top: ${({ top }) => top};
   left: ${({ left }) => left};
   transition: fill 0.35s ease-in;
+  animation: bounce 0.6s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  background-color: white;
 
   &:hover {
-    background-color: white;
+    background: none;
     transition: fill 0.35s ease-out;
 
     path {
-      fill: #68759f;
+      fill: white;
       transition: fill 0.35s ease-out;
+    }
+  }
+
+  @keyframes bounce {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 5px, 0);
     }
   }
 `;
 
 export const Gear = styled.path`
   transition: fill 0.35s ease-in;
-  fill: white;
+  fill: #68759f;
 `;

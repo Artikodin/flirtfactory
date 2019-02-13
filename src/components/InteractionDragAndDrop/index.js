@@ -42,15 +42,6 @@ class InteractionDragAndDrop extends React.Component {
     });
   };
 
-  componentWillMount = () => {
-    // const { waitFor } = this.props;
-    // setTimeout(() => {
-    //   this.setState({
-    //     waited: false
-    //   });
-    // }, waitFor);
-  };
-
   render() {
     const { show, frame } = this.state;
     const {
