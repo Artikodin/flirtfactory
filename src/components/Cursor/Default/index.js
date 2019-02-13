@@ -50,17 +50,20 @@ class Default extends React.Component {
     this.outsidePos.x += (this.target.x - this.outsidePos.x) * outsideEase;
     this.outsidePos.y += (this.target.y - this.outsidePos.y) * outsideEase;
 
-    this.outside.current.style.transform = `translate3d(${
-      this.outsidePos.x
-    }px, ${this.outsidePos.y}px,0)`;
+    if (this.outside.current) {
+      this.outside.current.style.transform = `translate3d(${
+        this.outsidePos.x
+      }px, ${this.outsidePos.y}px,0)`;
+    }
 
     this.innerPos.x += (this.target.x - this.innerPos.x) * innerEase;
     this.innerPos.y += (this.target.y - this.innerPos.y) * innerEase;
 
-    this.inner.current.style.transform = `translate3d(${this.innerPos.x}px, ${
-      this.innerPos.y
-    }px,0)`;
-
+    if (this.inner.current) {
+      this.inner.current.style.transform = `translate3d(${this.innerPos.x}px, ${
+        this.innerPos.y
+      }px,0)`;
+    }
     if (
       Math.abs(this.outsidePos.x - this.target.x) > 0.1 ||
       Math.abs(this.outsidePos.y - this.target.y) > 0.1 ||
