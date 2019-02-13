@@ -8,6 +8,73 @@ export const DrawerLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  #marquee {
+    position: absolute;
+    margin-left: 0%;
+    /* left: 100vw; */
+    /* width: 200vw; */
+    z-index: 0;
+    text-align: left;
+    font-family: GTCinetype;
+    font-size: 200px;
+    color: white;
+    z-index: 0;
+    opacity: 0.1;
+    width: 10000%;
+    -webkit-animation: linear marqueelike 20s infinite;
+    -moz-animation: linear marqueelike 20s infinite;
+    -o-animation: linear marqueelike 20s infinite;
+    -ms-animation: linear marqueelike 20s infinite;
+    animation: linear marqueelike 20s infinite;
+
+    @-webkit-keyframes marqueelike {
+      0%,
+      100% {
+        margin-left: 0;
+      }
+      99.99% {
+        margin-left: -100%;
+      }
+    }
+    @-moz-keyframes marqueelike {
+      0%,
+      100% {
+        margin-left: 0;
+      }
+      99.99% {
+        margin-left: -100%;
+      }
+    }
+    @-o-keyframes marqueelike {
+      0%,
+      100% {
+        margin-left: 0;
+      }
+      99.99% {
+        margin-left: -100%;
+      }
+    }
+    @-ms-keyframes marqueelike {
+      0%,
+      100% {
+        margin-left: 0;
+      }
+      99.99% {
+        margin-left: -100%;
+      }
+    }
+    @keyframes marqueelike {
+      0%,
+      100% {
+        margin-left: 0;
+      }
+      99.99% {
+        margin-left: -100%;
+      }
+    }
+  }
+
   .line {
     opacity: 0.1;
     position: absolute;
@@ -35,17 +102,6 @@ export const DrawerLayout = styled.div`
     right: 5vh;
     width: 1px;
     height: 100vh;
-  }
-  marquee {
-    position: absolute;
-    /* left: 100vw; */
-    /* width: 200vw; */
-    z-index: 0;
-    font-family: GTCinetype;
-    font-size: 200px;
-    color: white;
-    z-index: 0;
-    opacity: 0.1;
   }
 `;
 

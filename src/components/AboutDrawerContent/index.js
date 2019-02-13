@@ -10,7 +10,7 @@ const AboutDrawerContent = () => (
     <div className="line line__bottom" />
     <div className="line line__right" />
     <div className="line line__left" />
-    <marquee scrollamount="10">
+    <div id="marquee">
       About About About About About About About About About About About About About About About
       About About About About About About About About About About About About About About About
       About About About About About About About About About About About About About About About
@@ -18,7 +18,7 @@ const AboutDrawerContent = () => (
       About About About About About About About About About About About About About About About
       About About About About About About About About About About About About About About About
       About About About About About About About About About About About About About About About
-    </marquee>
+    </div>
     <AboutLayout id="About-layout">
       <About id="About">
         <h2 id="About-title">About</h2>
