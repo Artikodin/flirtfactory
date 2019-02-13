@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
   Page,
@@ -9,6 +10,10 @@ import {
 } from "../../components";
 
 class FlirtFactory extends React.Component {
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  };
+
   constructor(props) {
     super(props);
     this.catchphrase = {};
@@ -45,6 +50,7 @@ class FlirtFactory extends React.Component {
         });
       }
     } else {
+      // eslint-disable-next-line no-lonely-if
       if (nbCatchphrase === 0) {
         this.setState({
           nbCatchphrase: 7,
@@ -68,9 +74,10 @@ class FlirtFactory extends React.Component {
   };
 
   render() {
-    const { nbCatchphrase, showed, forward, arrayAges } = this.state;
+    const { nbCatchphrase, showed, forward, arrayAges, agestr } = this.state;
+    const { history } = this.props;
     return (
-      <Page navbar={false}>
+      <Page navbar={false} periode={agestr} history={history}>
         <TaskBar age="flirtfactory" />
         <div className="globalview background__wrapper">
           <BackgroundVideo path="flirtfactory" number={1} />

@@ -1,12 +1,22 @@
 /* eslint-disable */
 
 import React from "react";
+import PropTypes from "prop-types";
+
 import { throttle } from "throttle-debounce";
 
 import WordBorder from "./WordBorder";
 import { InnerDot, InnerBackground } from "./element";
 
 class Next extends React.Component {
+  static propTypes = {
+    onHolded: PropTypes.func
+  };
+
+  static defaultProps = {
+    onHolded: () => {}
+  };
+
   isRunning = false;
   isMouseDown = false;
 
@@ -23,7 +33,8 @@ class Next extends React.Component {
   animationHold = {
     start: false,
     direction: 1,
-    progress: 0
+    progress: 0,
+    easing: 0.3
   };
 
   handleMouseMove = throttle(10, e => {
@@ -38,12 +49,27 @@ class Next extends React.Component {
   });
 
   handleMouseDown = () => {
-    this.animationHold.start = true;
     this.animationHold.direction = 1;
+    if (!this.animationHold.start) {
+      const matrix = getComputedStyle(this.innerBg.current).getPropertyValue(
+        "transform"
+      );
+      const scale = parseFloat(matrix.split(",")[3]);
+      this.animationHold.progress = scale;
+      this.innerBg.current.style.animation = "paused";
+
+      this.animationHold.start = true;
+      this.updateHold();
+    }
   };
-  
+
   handleMouseUp = () => {
     this.animationHold.direction = -1;
+  };
+
+  handleHolded = () => {
+    const { onHolded } = this.props;
+    onHolded();
   };
 
   componentDidMount() {
@@ -56,7 +82,6 @@ class Next extends React.Component {
     addEventListener("mouseup", this.handleMouseUp, {
       passive: true
     });
-    this.updateHold();
   }
 
   componentWillUnmount() {
@@ -105,44 +130,33 @@ class Next extends React.Component {
     }
   };
 
-  // animationClick = {
-  //   start: null,
-  //   direction: 1,
-  //   elapsed: 0,
-  //   progress: 0,
-  //   totalDuration: 2000
-  // };
-
   updateHold = () => {
-    console.log(this.animationHold.progress);
-    this.animationHold.progress = this.animationHold.progress + 0.1 * this.animationHold.direction;
-    this.innerBg.current.style.transform = `scale(${this.animationHold.progress})`;
-    // if (!this.animationClick.start) {
-    //   this.animationClick.start = performance.now();
-    //   this.animationClick.elapsed = 0;
-    //   this.animationClick.progress = 0;
-    // }
-    // const elapsed = this.animationClick.elapsed;
-    // this.animationClick.elapsed = performance.now() - this.animationClick.start;
-    // this.animationClick.progress = Math.max(
-    //   Math.min(
-    //     this.animationClick.progress +
-    //       ((this.animationClick.elapsed - elapsed) /
-    //         this.animationClick.totalDuration) *
-    //         this.animationClick.direction,
-    //     1
-    //   ),
-    //   0
-    // );
-    // const scale = this.animationClick.progress * 6.5;
-    // this.innerBg.current.style.transform = `scale(${scale})`;
-    // if (this.animationClick.progress >= 1 || this.animationClick.progress <= 0) {
-    //   window.cancelAnimationFrame(this.animationLongClick);
-    // } else {
-    //   this.animationLongClick = window.requestAnimationFrame(this.longClick);
-    // }
-    if(this.animationHold.start)
-    requestAnimationFrame(this.updateHold);
+    this.animationHold.easing =
+      this.animationHold.easing + 0.05 * this.animationHold.direction;
+    if (this.animationHold.easing < 0.3) {
+      this.animationHold.easing = 0.3;
+    }
+
+    this.animationHold.progress =
+      this.animationHold.progress +
+      0.02 * this.animationHold.easing * this.animationHold.direction;
+    this.innerBg.current.style.transform = `translate3d(-50%, -50%, 0) scale(${
+      this.animationHold.progress
+    })`;
+
+    if (this.animationHold.progress > 0.3 && this.animationHold.progress < 1) {
+      requestAnimationFrame(this.updateHold);
+    } else {
+      this.animationHold.start = false;
+    }
+
+    if (this.animationHold.progress < 0.3) {
+      this.innerBg.current.style.animation = "eBAAL 2s infinite ease-in-out";
+    }
+
+    if (this.animationHold.progress > 1) {
+      this.handleHolded();
+    }
   };
 
   render() {

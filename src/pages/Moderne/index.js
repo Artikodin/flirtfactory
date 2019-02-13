@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
   Page,
@@ -19,10 +20,15 @@ class Moderne extends React.Component {
     waitFor: 2500 // sec
   };
 
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  };
+
   render() {
     const { agestr, agenbr, frameTotal, waitFor } = this.state;
+    const { history } = this.props;
     return (
-      <Page>
+      <Page periode={agestr} history={history} pathTo="contemporain">
         <TextContext.Consumer>
           {value => (
             <ProgressContext.Consumer>
