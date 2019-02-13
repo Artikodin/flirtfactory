@@ -9,7 +9,7 @@ import {
   TextContext,
   InteractionDragAndDrop,
   TaskBar,
-  GlobalSound
+  SoundController
 } from "../../components";
 
 class Contemporain extends React.Component {
@@ -41,11 +41,11 @@ class Contemporain extends React.Component {
                     age={agestr}
                     datas={value.epoques[agenbr]}
                   />
-                  <GlobalSound
+                  <SoundController
                     playing
                     age={agestr}
                     unlocked={ages.contemporain.lock}
-                    volume={0.8}
+                    volume={0.15}
                   />
                   {ages.contemporain.lock && (
                     <>

@@ -227,14 +227,13 @@ class GenericTag extends React.Component {
         ref={this.magnet}
         xPos={xPos}
         yPos={yPos}
-        onMouseEnter={() => this.playSound()}
       >
         <AnimatedWrapper
           pose={showed ? "isOpen" : "isClose"}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
         >
-          <IconContainer>
+          <IconContainer onMouseEnter={() => this.playSound()}>
             <Picto name={name} />
           </IconContainer>
           <AnimatedTitle>{title}</AnimatedTitle>

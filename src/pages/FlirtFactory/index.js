@@ -7,7 +7,7 @@ import {
   Catchphrase,
   TaskBar,
   FlirtFactoryTag,
-  GlobalSound
+  SoundController
 } from "../../components";
 
 class FlirtFactory extends React.Component {
@@ -80,7 +80,7 @@ class FlirtFactory extends React.Component {
     return (
       <Page navbar={false} periode={agestr} history={history}>
         <TaskBar isOpen age="flirtfactory" />
-        <GlobalSound playing age="flirtfactory" volume={0} />
+        <SoundController playing age="flirtfactory" volume={0} />
         <div className="globalview background__wrapper">
           <BackgroundVideo path="flirtfactory" number={1} />
         </div>

@@ -6,7 +6,9 @@ import {
   BackgroundVideo,
   ProgressContext,
   InteractionDragAndDrop,
-  TaskBar
+  TaskBar,
+  SoundController,
+  IntroVideo
 } from "../../components";
 
 class Intro extends React.Component {
@@ -29,6 +31,7 @@ class Intro extends React.Component {
     const { history } = this.props;
     return (
       <Page navbar={false} history={history}>
+        {/* <IntroVideo /> */}
         <ProgressContext.Consumer>
           {({ ages, selectAges, updateVideo }) => (
             <>
@@ -36,6 +39,12 @@ class Intro extends React.Component {
                 onAnswer={() => this.handeAnswer()}
                 age={agestr}
                 unlocked={ages.intro.lock}
+              />
+              <SoundController
+                playing
+                age="intro"
+                unlocked={ages.intro.lock}
+                volume={0}
               />
               <div className="background__wrapper">
                 <BackgroundVideo
@@ -52,7 +61,7 @@ class Intro extends React.Component {
                     frameTotal={frameTotal}
                     pathDraw="M 50 200 L 50 50"
                     top="36vh"
-                    left="30vw"
+                    left="60vw"
                   />
                 )}
               </div>

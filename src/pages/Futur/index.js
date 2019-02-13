@@ -9,7 +9,7 @@ import {
   TextContext,
   FuturTag,
   TaskBar,
-  GlobalSound
+  SoundController
 } from "../../components";
 
 /* eslint-disable */
@@ -48,7 +48,7 @@ class BelleEpoque extends React.Component {
                     age={agestr}
                     datas={value.epoques[agenbr]}
                   />
-                  <GlobalSound
+                  <SoundController
                     playing
                     age={agestr}
                     unlocked={ages.futur.lock}

@@ -1,31 +1,11 @@
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import PropTypes from "prop-types";
 
 import { Howl } from "howler";
 
 class GlobalSound extends React.Component {
-  global = React.createRef();
-
   state = {
-    flirtfactoryPlayed: true,
-    ageOnPlayed: true,
-    offPlayed: true,
-    activationPlayed: true
-  };
-
-  static propTypes = {
-    playing: PropTypes.bool,
-    unlocked: PropTypes.bool,
-    age: PropTypes.string,
-    volume: PropTypes.number
-  };
-
-  static defaultProps = {
-    playing: false,
-    unlocked: false,
-    age: "",
-    volume: 1
+    flirtfactoryPlayed: true
   };
 
   soundFlirtFactory = new Howl({
@@ -34,47 +14,10 @@ class GlobalSound extends React.Component {
     preload: true,
     html5: true,
     volume: 1,
-    playing: this.props.playing,
+    playing: true,
     onplay: () =>
       this.setState({
         flirtfactoryPlayed: false
-      })
-  });
-
-  soundOff = new Howl({
-    src: "./assets/sound/SonOFF.mp3",
-    loop: true,
-    preload: true,
-    html5: true,
-    volume: 0.2,
-    onplay: () =>
-      this.setState({
-        offPlayed: false
-      })
-  });
-
-  soundActivation = new Howl({
-    src: "./assets/sound/SonActivation.mp3",
-    loop: false,
-    autoplay: false,
-    preload: true,
-    html5: true,
-    volume: 0.4,
-    onplay: () =>
-      this.setState({
-        activationPlayed: false
-      })
-  });
-
-  soundAgeOn = new Howl({
-    src: `./assets/sound/${this.props.age}ON.mp3`,
-    loop: true,
-    preload: true,
-    html5: true,
-    volume: this.props.volume,
-    onplay: () =>
-      this.setState({
-        ageOnPlayed: false
       })
   });
 
@@ -87,29 +30,12 @@ class GlobalSound extends React.Component {
     window.removeEventListener("mousemove", this.playSound);
     this.mounted = false;
     this.soundFlirtFactory.unload();
-    this.soundAgeOn.unload();
-    this.soundOff.unload();
   };
 
   playSound = () => {
-    const { unlocked } = this.props;
-    const {
-      flirtfactoryPlayed,
-      ageOnPlayed,
-      activationPlayed,
-      offPlayed
-    } = this.state;
+    const { flirtfactoryPlayed } = this.state;
     if (flirtfactoryPlayed) {
       this.soundFlirtFactory.play();
-    }
-    if (ageOnPlayed && unlocked) {
-      this.soundAgeOn.play();
-    }
-    if (activationPlayed && unlocked) {
-      this.soundActivation.play();
-    }
-    if (offPlayed && unlocked === false) {
-      this.soundOff.play();
     }
   };
 

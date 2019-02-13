@@ -9,7 +9,7 @@ import {
   ProgressContext,
   TextContext,
   InteractionDragAndDrop,
-  GlobalSound
+  SoundController
 } from "../../components";
 
 class MoyenAge extends React.Component {
@@ -40,11 +40,11 @@ class MoyenAge extends React.Component {
                     datas={value.epoques[agenbr]}
                     unlocked={ages.moyenage.lock}
                   />
-                  <GlobalSound
+                  <SoundController
                     playing
                     age={agestr}
                     unlocked={ages.moyenage.lock}
-                    volume={0.8}
+                    volume={0.7}
                   />
                   {ages.moyenage.lock && (
                     <>

@@ -9,7 +9,7 @@ import {
   TextContext,
   InteractionDragAndDrop,
   TaskBar,
-  GlobalSound
+  SoundController
 } from "../../components";
 
 class Lumieres extends React.Component {
@@ -41,11 +41,11 @@ class Lumieres extends React.Component {
                     age={agestr}
                     datas={value.epoques[agenbr]}
                   />
-                  <GlobalSound
+                  <SoundController
                     playing
                     age={agestr}
                     unlocked={ages.lumieres.lock}
-                    volume={0.8}
+                    volume={0.9}
                   />
                   {ages.lumieres.lock && (
                     <>

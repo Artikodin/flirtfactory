@@ -43,7 +43,6 @@ class Page extends React.Component {
   }
 
   render() {
-    // const { globalSound } = this.state;
     const {
       children,
       backgroundColor,

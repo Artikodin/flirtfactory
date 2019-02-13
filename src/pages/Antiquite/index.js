@@ -10,7 +10,7 @@ import {
   InteractionDragAndDrop,
   TaskBar,
   Tutorial,
-  GlobalSound
+  SoundController
 } from "../../components";
 
 class Antiquite extends React.Component {
@@ -48,11 +48,11 @@ class Antiquite extends React.Component {
                     age={agestr}
                     datas={value.epoques[agenbr]}
                   />
-                  <GlobalSound
+                  <SoundController
                     playing
                     age={agestr}
                     unlocked={ages.antiquite.lock}
-                    volume={0.8}
+                    volume={0.5}
                   />
                   <Tutorial
                     showed={ages.antiquite.lock}
@@ -106,8 +106,8 @@ class Antiquite extends React.Component {
                       age={agestr}
                       frameTotal={frameTotal}
                       pathDraw="M 200 50 L 50 200"
-                      top="20vh"
-                      left="75vw"
+                      top="30vh"
+                      left="66vw"
                     />
                   </div>
                 </>
