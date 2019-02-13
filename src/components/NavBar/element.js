@@ -14,6 +14,10 @@ export const Wrapper = styled.ul`
   width: calc(100% - 80px);
   z-index: 1;
 
+  .active a span {
+    opacity: 1;
+  }
+
   @media screen and (max-width: 1250px) {
     max-width: 1200px;
     width: calc(100% - 60px);

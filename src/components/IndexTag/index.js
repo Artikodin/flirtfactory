@@ -125,12 +125,12 @@ class IndexTag extends React.Component {
                     children
                   )}
                 </Paragraph>
-                <Lottie
+                {/* <Lottie
                   options={this.defaultOptions}
                   height="auto"
                   width="auto"
                   alt="logo flirt factory"
-                />
+                /> */}
               </AnimatedContainer>
             )}
           </PoseGroup>

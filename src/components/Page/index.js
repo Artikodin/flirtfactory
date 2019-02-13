@@ -55,7 +55,7 @@ class Page extends React.Component {
     const { showed } = this.state;
     return (
       <Wrapper backgroundColor={backgroundColor} id="wrapper">
-        <Cursor periode={periode} history={history} pathTo={pathTo}/>
+        <Cursor periode={periode} history={history} pathTo={pathTo} />
         {transition && <Loader />}
         {showed && children}
         <ProgressContext.Consumer>
@@ -65,6 +65,7 @@ class Page extends React.Component {
                 <>
                   <NavBar>
                     <NavBar.NavItem
+                      active={history.location.pathname === "/antiquite"}
                       imgSrc={
                         ages.antiquite.lock
                           ? "./assets/nav/antiquiteon.gif"
@@ -75,6 +76,7 @@ class Page extends React.Component {
                       antiquité
                     </NavBar.NavItem>
                     <NavBar.NavItem
+                      active={history.location.pathname === "/moyenage"}
                       imgSrc={
                         ages.moyenage.lock
                           ? "./assets/nav/moyenageon.gif"
@@ -85,6 +87,7 @@ class Page extends React.Component {
                       moyen-âge
                     </NavBar.NavItem>
                     <NavBar.NavItem
+                      active={history.location.pathname === "/renaissance"}
                       imgSrc={
                         ages.renaissance.lock
                           ? "./assets/nav/renaissanceon.gif"
@@ -95,6 +98,7 @@ class Page extends React.Component {
                       renaissance
                     </NavBar.NavItem>
                     <NavBar.NavItem
+                      active={history.location.pathname === "/lumieres"}
                       imgSrc={
                         ages.lumieres.lock
                           ? "./assets/nav/lumiereson.gif"
@@ -105,6 +109,7 @@ class Page extends React.Component {
                       lumières
                     </NavBar.NavItem>
                     <NavBar.NavItem
+                      active={history.location.pathname === "/belleepoque"}
                       imgSrc={
                         ages.belleepoque.lock
                           ? "./assets/nav/belleepoqueon.gif"
@@ -115,6 +120,7 @@ class Page extends React.Component {
                       belle-époque
                     </NavBar.NavItem>
                     <NavBar.NavItem
+                      active={history.location.pathname === "/moderne"}
                       imgSrc={
                         ages.moderne.lock
                           ? "./assets/nav/moderneon.gif"
@@ -125,6 +131,7 @@ class Page extends React.Component {
                       moderne
                     </NavBar.NavItem>
                     <NavBar.NavItem
+                      active={history.location.pathname === "/contemporain"}
                       imgSrc={
                         ages.contemporain.lock
                           ? "./assets/nav/contemporainon.gif"
@@ -135,6 +142,7 @@ class Page extends React.Component {
                       contemporain
                     </NavBar.NavItem>
                     <NavBar.NavItem
+                      active={history.location.pathname === "/futur"}
                       imgSrc={
                         ages.futur.lock
                           ? "./assets/nav/futuron.gif"

@@ -8,12 +8,14 @@ import { Wrapper, ImgContainer, StyledLink, TextContainer } from "./element";
 class NavItem extends React.Component {
   static propTypes = {
     children: PropTypes.node,
+    active: PropTypes.bool,
     pathTo: PropTypes.string.isRequired,
     imgSrc: PropTypes.string.isRequired
   };
 
   static defaultProps = {
-    children: null
+    children: null,
+    active: false
   };
 
   static displayName = "NavBar.NavItem";
@@ -31,10 +33,12 @@ class NavItem extends React.Component {
   };
 
   render() {
-    const { pathTo, imgSrc, children } = this.props;
-
+    const { pathTo, imgSrc, children, active } = this.props;
     return (
-      <Wrapper onMouseEnter={() => this.playSound()}>
+      <Wrapper
+        className={active ? "active" : ""}
+        onMouseEnter={() => this.playSound()}
+      >
         <StyledLink to={pathTo}>
           <ImgContainer src={imgSrc} alt="" />
           <TextContainer>{children}</TextContainer>
