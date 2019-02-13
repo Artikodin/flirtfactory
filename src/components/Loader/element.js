@@ -10,7 +10,20 @@ export const Wrapper = styled.div`
   z-index: 10000;
 `;
 
-export const Video = styled.video``;
+export const Video = styled.video`
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  @media screen and (max-aspect-ratio: 1920/1080) {
+    height: 100%;
+  }
+  @media screen and (min-aspect-ratio: 1920/1080) {
+    width: 100%;
+  }
+`;
 
 export const ColoredLayer = styled.div`
   background-color: ${({ backgroundColor }) => backgroundColor};

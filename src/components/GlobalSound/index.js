@@ -14,11 +14,7 @@ class GlobalSound extends React.Component {
     preload: true,
     html5: true,
     volume: 1,
-    playing: true,
-    onplay: () =>
-      this.setState({
-        flirtfactoryPlayed: false
-      })
+    playing: true
   });
 
   componentDidMount = () => {
@@ -36,6 +32,9 @@ class GlobalSound extends React.Component {
     const { flirtfactoryPlayed } = this.state;
     if (flirtfactoryPlayed) {
       this.soundFlirtFactory.play();
+      this.setState({
+        flirtfactoryPlayed: false
+      });
     }
   };
 

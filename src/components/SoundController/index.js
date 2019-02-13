@@ -32,11 +32,7 @@ class SoundController extends React.Component {
     loop: true,
     preload: true,
     html5: true,
-    volume: 0.2,
-    onplay: () =>
-      this.setState({
-        offPlayed: false
-      })
+    volume: 0.2
   });
 
   soundActivation = new Howl({
@@ -45,11 +41,7 @@ class SoundController extends React.Component {
     autoplay: false,
     preload: true,
     html5: true,
-    volume: 0.3,
-    onplay: () =>
-      this.setState({
-        activationPlayed: false
-      })
+    volume: 0.3
   });
 
   soundAgeOn = new Howl({
@@ -57,11 +49,7 @@ class SoundController extends React.Component {
     loop: true,
     preload: true,
     html5: true,
-    volume: this.props.volume,
-    onplay: () =>
-      this.setState({
-        ageOnPlayed: false
-      })
+    volume: this.props.volume
   });
 
   componentDidMount = () => {
@@ -81,12 +69,21 @@ class SoundController extends React.Component {
     const { ageOnPlayed, activationPlayed, offPlayed } = this.state;
     if (ageOnPlayed && unlocked) {
       this.soundAgeOn.play();
+      this.setState({
+        ageOnPlayed: false
+      });
     }
     if (activationPlayed && unlocked && age !== "futur") {
       this.soundActivation.play();
+      this.setState({
+        activationPlayed: false
+      });
     }
     if (offPlayed && unlocked === false) {
       this.soundOff.play();
+      this.setState({
+        offPlayed: false
+      });
     }
   };
 
