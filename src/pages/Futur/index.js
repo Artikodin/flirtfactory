@@ -53,19 +53,19 @@ class BelleEpoque extends React.Component {
                       {ages.futur.selected === 1 && (
                         <>
                           <GenericTag
-                            unlocked={ages.futur.points[0]}
+                            unlocked={ages.futur.points[2]}
                             unlockPoint={() =>
-                              unlockPoints(agestr, 0)
+                              unlockPoints(agestr, 2)
                             }
                             title={
-                              value.epoques[agenbr].symbols[0].name
+                              value.epoques[agenbr].symbols[2].name
                             }
-                            name="futur1"
+                            name="futur3"
                             xPos="65vw"
                             yPos="40vh"
                           >
                             {
-                              value.epoques[agenbr].symbols[0]
+                              value.epoques[agenbr].symbols[2]
                                 .description
                             }
                           </GenericTag>
@@ -95,19 +95,19 @@ class BelleEpoque extends React.Component {
                       {ages.futur.selected === 3 && (
                         <>
                           <GenericTag
-                            unlocked={ages.futur.points[2]}
+                            unlocked={ages.futur.points[0]}
                             unlockPoint={() =>
-                              unlockPoints(agestr, 2)
+                              unlockPoints(agestr, 0)
                             }
                             title={
-                              value.epoques[agenbr].symbols[2].name
+                              value.epoques[agenbr].symbols[0].name
                             }
-                            name="futur3"
+                            name="futur1"
                             xPos="50vw"
                             yPos="50vh"
                           >
                             {
-                              value.epoques[agenbr].symbols[2]
+                              value.epoques[agenbr].symbols[0]
                                 .description
                             }
                           </GenericTag>
