@@ -7,20 +7,20 @@ import LoaderCount from "./LoaderCount";
 
 class Loader extends React.Component {
   state = {
-    showed: false
-  };
-
-  static propTypes = {
-    duration: PropTypes.number,
-    videoIndex: PropTypes.number
-  };
-
-  static defaultProps = {
-    duration: 3000,
+    showed: false,
     videoIndex: 1
   };
 
+  static propTypes = {
+    duration: PropTypes.number
+  };
+
+  static defaultProps = {
+    duration: 3000
+  };
+
   componentDidMount() {
+    this.getRandomInt(1, 3);
     this.setState({ showed: true });
   }
 
@@ -38,11 +38,17 @@ class Loader extends React.Component {
     clearTimeout(this.showedTimeout);
   }
 
-  getRandomInt = (min, max) => Math.floor(Math.random() * max) + min;
+  getRandomInt = (min, max) => {
+    const value = Math.floor(Math.random() * max) + min;
+    this.setState({
+      videoIndex: value
+    });
+  };
 
   render() {
-    const { showed } = this.state;
-    const { duration, videoIndex } = this.props;
+    const { showed, videoIndex } = this.state;
+    const { duration } = this.props;
+    console.log(videoIndex);
     return (
       <PoseGroup>
         {showed && (
@@ -50,14 +56,36 @@ class Loader extends React.Component {
             <ColoredLayerAnimated backgroundColor="#FFFFFF" />
             <ColoredLayer2Animated backgroundColor="#68759F" />
             <ColoredLayer3Animated backgroundColor="#F0A9B5">
-              <video
-                src={`./assets/videos/transition/transition${videoIndex}.mp4`}
-                type="video/mp4"
-                autoPlay
-                loop
-                playsInline
-                muted
-              />
+              {videoIndex === 1 && (
+                <video
+                  src="./assets/videos/transition/transition1.mp4"
+                  type="video/mp4"
+                  autoPlay
+                  loop
+                  playsInline
+                  muted
+                />
+              )}
+              {videoIndex === 2 && (
+                <video
+                  src="./assets/videos/transition/transition2.mp4"
+                  type="video/mp4"
+                  autoPlay
+                  loop
+                  playsInline
+                  muted
+                />
+              )}
+              {videoIndex === 3 && (
+                <video
+                  src="./assets/videos/transition/transition3.mp4"
+                  type="video/mp4"
+                  autoPlay
+                  loop
+                  playsInline
+                  muted
+                />
+              )}
               <LoaderCount duration={duration} />
             </ColoredLayer3Animated>
           </WrapperAnimated>

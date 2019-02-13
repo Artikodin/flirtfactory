@@ -25,7 +25,7 @@ class Page extends React.Component {
     history: {},
     periode: "",
     navbar: true,
-    transition: false
+    transition: true
   };
 
   componentDidMount() {
