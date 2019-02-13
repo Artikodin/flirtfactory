@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Pointer } from "./element";
 import Next from "./Next";
@@ -7,28 +8,45 @@ import Default from "./Default";
 import { ProgressContext } from "..";
 
 class Cursor extends React.Component {
-  // state = {
-  //   cursor: "default"
-  // };
+  static propTypes = {
+    periode: PropTypes.string.isRequired,
+    pathTo: PropTypes.string.isRequired,
+    history: PropTypes.object
+  };
 
-  componentDidMount() {}
+  static defaultProps = {
+    history: {}
+  };
 
   checkIsTrue = ages => {
-    console.log(ages);
-    const interestTags = ages.antiquite.points;
-    // eslint-disable-next-line guard-for-in
-    for (const interestTag of interestTags) {
-      if (!interestTag) return false;
+    const { periode } = this.props;
+    if (periode) {
+      const interestTags = ages[periode].points;
+      // eslint-disable-next-line guard-for-in
+      for (const interestTag of interestTags) {
+        if (!interestTag) return false;
+      }
       return true;
     }
   };
 
+  handleHolded = () => {
+    const { history } = this.props;
+    const { pathTo } = this.props;
+    history.push(`/${pathTo}`);
+  };
+
   render() {
-    // const { cursor } = this.state;
     return (
       <ProgressContext.Consumer>
         {({ ages }) => (
-          <Pointer>{this.checkIsTrue(ages) ? <Next /> : <Default />}</Pointer>
+          <Pointer>
+            {this.checkIsTrue(ages) ? (
+              <Next onHolded={() => this.handleHolded()} />
+            ) : (
+              <Default />
+            )}
+          </Pointer>
         )}
       </ProgressContext.Consumer>
     );

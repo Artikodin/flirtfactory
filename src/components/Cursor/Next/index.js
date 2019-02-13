@@ -1,12 +1,22 @@
 /* eslint-disable */
 
 import React from "react";
+import PropTypes from "prop-types";
+
 import { throttle } from "throttle-debounce";
 
 import WordBorder from "./WordBorder";
 import { InnerDot, InnerBackground } from "./element";
 
 class Next extends React.Component {
+  static propTypes = {
+    onHolded: PropTypes.func
+  };
+
+  static defaultProps = {
+    onHolded: () => {}
+  };
+
   isRunning = false;
   isMouseDown = false;
 
@@ -58,7 +68,8 @@ class Next extends React.Component {
   };
 
   handleHolded = () => {
-    console.log("test");
+    const { onHolded } = this.props;
+    onHolded();
   };
 
   componentDidMount() {
