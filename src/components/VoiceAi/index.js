@@ -21,6 +21,7 @@ class VoiceAi extends React.Component {
     datas: PropTypes.object,
     unlocked: PropTypes.bool,
     isOpen: PropTypes.bool,
+    stayOpen: PropTypes.bool,
     age: PropTypes.string,
     onAnswer: PropTypes.func
   };
@@ -29,6 +30,7 @@ class VoiceAi extends React.Component {
     datas: {},
     unlocked: false,
     isOpen: true,
+    stayOpen: false,
     age: "",
     onAnswer: () => {}
   };
@@ -75,7 +77,7 @@ class VoiceAi extends React.Component {
   render() {
     const { isAnswered, isHangedUp, isVisible } = this.state;
     // eslint-disable-next-line no-unused-vars
-    const { age, unlocked, datas, isOpen } = this.props;
+    const { age, unlocked, datas, isOpen, stayOpen } = this.props;
     return (
       <WrapperAnimated pose={isVisible ? "visible" : "hidden"}>
         <DragSwitch
@@ -85,7 +87,12 @@ class VoiceAi extends React.Component {
         />
         {isHangedUp && <PhoneCube name="raccroche" />}
         {isAnswered && (
-          <IndexTag isOpen title="Assistance I.A." name="decroche">
+          <IndexTag
+            stayOpen={stayOpen}
+            isOpen
+            title="Assistance I.A."
+            name="decroche"
+          >
             {this.setAIText(unlocked)}
           </IndexTag>
         )}

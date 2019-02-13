@@ -21,7 +21,10 @@ class Cursor extends React.Component {
   // eslint-disable-next-line consistent-return
   checkIsTrue = ages => {
     const { periode } = this.props;
-    if (periode) {
+    if (periode === "intro") {
+      return ages[periode].lock;
+    }
+    if (periode && periode !== "intro") {
       const interestTags = ages[periode].points;
       // eslint-disable-next-line guard-for-in
       for (const interestTag of interestTags) {

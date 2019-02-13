@@ -7,8 +7,8 @@ import {
   ProgressContext,
   InteractionDragAndDrop,
   TaskBar,
-  SoundController,
-  IntroVideo
+  SoundController
+  // IntroVideo
 } from "../../components";
 
 class Intro extends React.Component {
@@ -30,7 +30,12 @@ class Intro extends React.Component {
     const { agestr, frameTotal, showed } = this.state;
     const { history } = this.props;
     return (
-      <Page navbar={false} history={history}>
+      <Page
+        periode={agestr}
+        navbar={false}
+        history={history}
+        pathTo="antiquite"
+      >
         {/* <IntroVideo /> */}
         <ProgressContext.Consumer>
           {({ ages, selectAges, updateVideo }) => (
@@ -39,6 +44,7 @@ class Intro extends React.Component {
                 onAnswer={() => this.handeAnswer()}
                 age={agestr}
                 unlocked={ages.intro.lock}
+                stayOpen
               />
               <SoundController
                 playing
