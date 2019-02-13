@@ -22,8 +22,7 @@ class DragNDrop extends React.Component {
       y: 0
     },
     hover: false,
-    clicked: false,
-    wait: false
+    clicked: false
   };
 
   // ON GERE ICI L'APPARITION DU DRAG AND DROP
@@ -39,7 +38,6 @@ class DragNDrop extends React.Component {
   goToEnd = false;
 
   static propTypes = {
-    display: PropTypes.bool,
     pathDraw: PropTypes.string,
     left: PropTypes.string,
     top: PropTypes.string,
@@ -51,7 +49,6 @@ class DragNDrop extends React.Component {
   };
 
   static defaultProps = {
-    display: true,
     pathDraw: "M 150 300 L 350 300",
     left: "0",
     top: "0",
@@ -270,7 +267,7 @@ class DragNDrop extends React.Component {
   };
 
   render() {
-    const { pathDraw, height, width, top, left, display } = this.props;
+    const { pathDraw, height, width, top, left } = this.props;
     const { elStart, elEnd, hover } = this.state;
     const gearPos = {
       x: -4.268 + elStart.x,

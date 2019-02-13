@@ -20,6 +20,7 @@ class TaskBar extends React.Component {
     progress: PropTypes.array,
     unlocked: PropTypes.bool,
     isOpen: PropTypes.bool,
+    stayOpen: PropTypes.bool,
     onAnswer: PropTypes.func
   };
 
@@ -30,6 +31,7 @@ class TaskBar extends React.Component {
     progress: [],
     unlocked: false,
     isOpen: false,
+    stayOpen: false,
     onAnswer: () => {}
   };
 
@@ -58,13 +60,14 @@ class TaskBar extends React.Component {
       progress,
       unlocked,
       isOpen,
-      onAnswer
+      onAnswer,
+      stayOpen
     } = this.props;
 
     return (
       <Wrapper className="taskbar">
         {age === "intro" ? (
-          <VoiceAi onAnswer={onAnswer} {...this.props} />
+          <VoiceAi stayOpen={stayOpen} onAnswer={onAnswer} {...this.props} />
         ) : (
           <IndexTag isOpen={isOpen} title="Assistance I.A." name="decroche">
             {this.setAIText(age, unlocked, datas)}

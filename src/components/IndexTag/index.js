@@ -25,6 +25,7 @@ class IndexTag extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     isOpen: PropTypes.bool,
+    stayOpen: PropTypes.bool,
     title: PropTypes.string,
     name: PropTypes.string
   };
@@ -32,6 +33,7 @@ class IndexTag extends React.Component {
   static defaultProps = {
     children: "",
     isOpen: false,
+    stayOpen: false,
     title: "",
     name: ""
   };
@@ -60,9 +62,12 @@ class IndexTag extends React.Component {
   };
 
   handleMouseLeave = () => {
-    this.setState({
-      showed: false
-    });
+    const { stayOpen } = this.props;
+    if (!stayOpen) {
+      this.setState({
+        showed: false
+      });
+    }
   };
 
   playSound = () => {
