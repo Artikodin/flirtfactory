@@ -57,8 +57,9 @@ class VoiceAi extends React.Component {
     if (unlocked) {
       return (
         <p>
-          Quelque chose a mal fonctionné. 0 sur 8 parties fonctionnent
-          correctement. J'enclenche la réinitialisation du système.
+          Quelque chose a mal fonctionné lors de l'initialisation de l'usine. 0
+          sur 8 parties fonctionnent correctement, il va falloir les réparer.
+          J'enclenche la réinitialisation du système.
         </p>
       );
     }
