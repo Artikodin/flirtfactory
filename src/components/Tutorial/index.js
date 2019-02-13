@@ -8,21 +8,21 @@ import { TutorialWrapper } from "./element";
 import Lottie from "react-lottie";
 
 class Tutorial extends React.Component {
-  state = {
-    hide: true
-  };
-
   static propTypes = {
-    showed: PropTypes.bool
+    showed: PropTypes.bool,
+    hide: PropTypes.bool,
+    removeTutorial: PropTypes.func
   };
 
   static defaultProps = {
-    showed: true
+    showed: true,
+    hide: true,
+    removeTutorial: () => {}
   };
 
   render() {
-    const { hide } = this.state;
-    const { showed } = this.props;
+    const { showed, hide, removeTutorial } = this.props;
+    console.log(hide);
 
     const defaultOptions = {
       loop: true,
@@ -38,11 +38,7 @@ class Tutorial extends React.Component {
           {showed && hide && (
             <AnimatedTutorialWrapper
               key="tutorial"
-              onClick={() => {
-                this.setState({
-                  hide: false
-                });
-              }}
+              onClick={() => removeTutorial()}
             >
               <Lottie options={defaultOptions} height="auto" width="100%" />
             </AnimatedTutorialWrapper>

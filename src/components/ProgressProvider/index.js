@@ -11,7 +11,8 @@ const ages = {
   antiquite: {
     lock: false,
     video: 1,
-    points: [false, false, false]
+    points: [false, false, false],
+    tutorial: true
   },
   moyenage: {
     lock: false,
@@ -57,7 +58,8 @@ export const ProgressContext = React.createContext({
   selectAges: () => {},
   updateVideo: () => {},
   unlockPoints: () => {},
-  selectFutur: () => {}
+  selectFutur: () => {},
+  removeTutorial: () => {}
 });
 
 class ProgressProvider extends React.Component {
@@ -73,6 +75,19 @@ class ProgressProvider extends React.Component {
         [age]: {
           ...prevState.ages[age],
           lock: true
+        }
+      }
+    }));
+  };
+
+  removeTutorial = age => {
+    console.log("remove tutorial");
+    this.setState(prevState => ({
+      ages: {
+        ...prevState.ages,
+        [age]: {
+          ...prevState.ages[age],
+          tutorial: false
         }
       }
     }));
@@ -124,7 +139,8 @@ class ProgressProvider extends React.Component {
     selectAges: this.selectAges,
     updateVideo: this.updateVideo,
     unlockPoints: this.unlockPoints,
-    selectFutur: this.selectFutur
+    selectFutur: this.selectFutur,
+    removeTutorial: this.removeTutorial
   };
   /* eslint-enable */
 

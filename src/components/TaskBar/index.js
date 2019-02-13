@@ -39,8 +39,9 @@ class TaskBar extends React.Component {
         if (unlocked) {
           return (
             <p>
-              Quelque chose a mal fonctionné. 0 sur 8 parties fonctionnent
-              correctement. J'enclenche la réinitialisation du système.
+              Quelque chose a mal fonctionné lors de l'initialisation de
+              l'usine. 0 sur 8 parties fonctionnent correctement, il va falloir
+              les réparer. J'enclenche la réinitialisation du système.
             </p>
           );
         } else {
@@ -48,7 +49,7 @@ class TaskBar extends React.Component {
             <p>
               Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer
               la Flirt Factory et à parcourir l'histoire de la séduction au fil
-              des époques. J'attends tes instructions.
+              des époques. J'attends que tu démarres l'usine.
             </p>
           );
         }
@@ -99,11 +100,12 @@ class TaskBar extends React.Component {
               <Markup content={datas.description} />
             </IndexTag>
             <PoseGroup id="HeartCounter">
-              {unlocked || age !== "futur" && (
-                <AnimatedHeartCounter key="heart-wrapper">
-                  <HeartCounter progress={progress} />
-                </AnimatedHeartCounter>
-              )}
+              {unlocked ||
+                (age !== "futur" && (
+                  <AnimatedHeartCounter key="heart-wrapper">
+                    <HeartCounter progress={progress} />
+                  </AnimatedHeartCounter>
+                ))}
             </PoseGroup>
           </>
         )}

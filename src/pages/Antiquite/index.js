@@ -27,7 +27,13 @@ class Antiquite extends React.Component {
         <TextContext.Consumer>
           {value => (
             <ProgressContext.Consumer>
-              {({ ages, selectAges, updateVideo, unlockPoints }) => (
+              {({
+                ages,
+                selectAges,
+                updateVideo,
+                unlockPoints,
+                removeTutorial
+              }) => (
                 <>
                   <TaskBar
                     isOpen
@@ -43,7 +49,11 @@ class Antiquite extends React.Component {
                     unlocked={ages.antiquite.lock}
                     volume={0.8}
                   />
-                  <Tutorial showed={ages.antiquite.lock} />
+                  <Tutorial
+                    showed={ages.antiquite.lock}
+                    hide={ages.antiquite.tutorial}
+                    removeTutorial={() => removeTutorial(agestr)}
+                  />
                   {ages.antiquite.lock && (
                     <>
                       <GenericTag
