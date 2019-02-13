@@ -48,7 +48,6 @@ class Loader extends React.Component {
   render() {
     const { showed, videoIndex } = this.state;
     const { duration } = this.props;
-    console.log(videoIndex);
     return (
       <PoseGroup>
         {showed && (

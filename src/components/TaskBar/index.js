@@ -76,26 +76,11 @@ class TaskBar extends React.Component {
               <Markup content={datas.description} />
             </IndexTag>
             <PoseGroup id="HeartCounter">
-<<<<<<< Updated upstream
-              {unlocked ||
-                (age !== "futur" && (
-                  <AnimatedHeartCounter key="heart-wrapper">
-                    <HeartCounter progress={progress} />
-                  </AnimatedHeartCounter>
-                ))}
-||||||| merged common ancestors
-              {unlocked || age !== "futur" && (
-                <AnimatedHeartCounter key="heart-wrapper">
-                  <HeartCounter progress={progress} />
-                </AnimatedHeartCounter>
-              )}
-=======
               {age !== "futur" && unlocked && (
                 <AnimatedHeartCounter key="heart-wrapper">
                   <HeartCounter progress={progress} />
                 </AnimatedHeartCounter>
               )}
->>>>>>> Stashed changes
             </PoseGroup>
           </>
         )}
