@@ -85,7 +85,9 @@ class GlobalSound extends React.Component {
   componentWillUnmount = () => {
     window.removeEventListener("mousemove", this.playSound);
     this.mounted = false;
-    Howler.unload();
+    this.soundFlirtFactory.unload();
+    this.soundAgeOn.unload();
+    this.soundOff.unload();
   };
 
   playSound = () => {
