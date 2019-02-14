@@ -45,7 +45,7 @@ class BelleEpoque extends React.Component {
                     playing
                     age={agestr}
                     unlocked={ages.belleepoque.lock}
-                    volume={0.6}
+                    volume={0.8}
                   />
                   {ages.belleepoque.lock && (
                     <>

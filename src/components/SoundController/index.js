@@ -14,14 +14,12 @@ class SoundController extends React.Component {
   };
 
   static propTypes = {
-    // playing: PropTypes.bool,
     unlocked: PropTypes.bool,
     age: PropTypes.string,
     volume: PropTypes.number
   };
 
   static defaultProps = {
-    // playing: false,
     unlocked: false,
     age: "",
     volume: 1
@@ -48,7 +46,7 @@ class SoundController extends React.Component {
     src: `./assets/sound/${this.props.age}ON.mp3`,
     loop: true,
     preload: true,
-    html5: true,
+    // html5: true,
     volume: this.props.volume
   });
 

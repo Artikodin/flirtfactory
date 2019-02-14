@@ -56,7 +56,6 @@ class GenericTag extends React.Component {
   soundTag = new Howl({
     src: "./assets/sound/tag.mp3",
     autoplay: false,
-    preload: true,
     playing: false,
     volume: 0.1
   });

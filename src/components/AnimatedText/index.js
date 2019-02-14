@@ -21,8 +21,6 @@ class AnimatedText extends React.Component {
   soundIA = new Howl({
     src: "./assets/sound/soundIA.mp3",
     loop: true,
-    preload: true,
-    html5: true,
     volume: 0.1,
     playing: false
   });

@@ -45,7 +45,7 @@ class VoiceAi extends React.Component {
   playSound = () => {
     const { phonePlayed } = this.state;
     if (phonePlayed) {
-      this.soundPhone.play();
+      // this.soundPhone.play();
       this.setState({
         phonePlayed: false
       });
@@ -53,7 +53,7 @@ class VoiceAi extends React.Component {
   };
 
   stopSound = () => {
-    this.soundPhone.stop();
+    // this.soundPhone.stop();
   };
 
   handleHangUp = () => {

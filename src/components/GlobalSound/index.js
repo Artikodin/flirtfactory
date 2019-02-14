@@ -25,13 +25,13 @@ class GlobalSound extends React.Component {
   componentWillUnmount = () => {
     window.removeEventListener("mousemove", this.playSound);
     this.mounted = false;
-    this.soundFlirtFactory.unload();
+    // this.soundFlirtFactory.unload();
   };
 
   playSound = () => {
     const { flirtfactoryPlayed } = this.state;
     if (flirtfactoryPlayed) {
-      // this.soundFlirtFactory.play();
+      this.soundFlirtFactory.play();
       this.setState({
         flirtfactoryPlayed: false
       });

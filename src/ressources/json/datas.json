@@ -38,7 +38,7 @@
       "symbols": [
         {
           "name": "Tournois",
-          "description": "Des tournois étaient souvent organisés par les seigneurs. En plus d'entraîner leurs chevaliers, les tournois étaient l'occasion pour ces derniers de prouver leurs bravoures auprès des dames."
+          "description": "Des tournois étaient souvent organisés par les seigneurs. En plus d'entraîner leurs chevaliers, les tournois étaient l'occasion pour ces derniers de prouver leur bravoure auprès des dames."
         },
         {
           "name": "Fleurs",
@@ -46,7 +46,7 @@
         },
         {
           "name": "Sénérades",
-          "description": "La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à l'image chantait son amour sous le balcon de sa Juliette. Mais auparavant, il devait effectuer d’incessants allers-retours dans la rue pour attirer son attention. Pas très discret mais efficace…"
+          "description": "La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à l'image de Roméo chantait son amour sous le balcon de sa Juliette. Mais auparavant, il devait effectuer d’incessants allers-retours dans la rue pour attirer son attention. Pas très discret mais efficace…"
         }
       ]
     },
@@ -96,7 +96,7 @@
         },
         {
           "name": "Bal Masqué",
-          "description": "La cour du roi aimait s'amuser. Une des soirée préférée était les bals masqués et un vrai contexte érotique propice à la séduction."
+          "description": "La cour du roi aimait s'amuser. Une des soirées préférées étaient les bals masqués et un vrai contexte érotique propice à la séduction."
         }
       ]
     },
