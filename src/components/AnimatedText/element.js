@@ -16,7 +16,7 @@ export const Wrapper = styled.span`
     background-color: #1c1e33;
     right: 0;
     bottom: 0;
-    transform: translate3d(100%, -40%, 0);
+    transform: translate3d(100%, -35%, 0);
     animation: ${blink} 0.7s infinite ease-in-out;
   }
 `;
