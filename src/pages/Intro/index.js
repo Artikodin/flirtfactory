@@ -40,6 +40,7 @@ class Intro extends React.Component {
         navbar={false}
         history={history}
         pathTo="antiquite"
+        transition={false}
       >
         <IntroVideo ringPhone={() => this.ringPhone()} />
         <ProgressContext.Consumer>
