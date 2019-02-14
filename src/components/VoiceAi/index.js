@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import posed from "react-pose";
+import { Howl } from "howler";
 
 import DragSwitch from "./DragSwitch";
 import PhoneCube from "./PhoneCube";
@@ -14,25 +15,45 @@ class VoiceAi extends React.Component {
   state = {
     isVisible: true,
     isAnswered: false,
-    isHangedUp: false
+    isHangedUp: false,
+    phonePlayed: true
   };
 
   static propTypes = {
-    datas: PropTypes.object,
     unlocked: PropTypes.bool,
-    isOpen: PropTypes.bool,
     stayOpen: PropTypes.bool,
-    age: PropTypes.string,
+    phoneRing: PropTypes.bool,
     onAnswer: PropTypes.func
   };
 
   static defaultProps = {
-    datas: {},
     unlocked: false,
-    isOpen: true,
     stayOpen: true,
-    age: "",
+    phoneRing: false,
     onAnswer: () => {}
+  };
+
+  soundPhone = new Howl({
+    src: "./assets/sound/phone.mp3",
+    loop: true,
+    preload: true,
+    html5: true,
+    volume: 1,
+    playing: false
+  });
+
+  playSound = () => {
+    const { phonePlayed } = this.state;
+    if (phonePlayed) {
+      this.soundPhone.play();
+      this.setState({
+        phonePlayed: false
+      });
+    }
+  };
+
+  stopSound = () => {
+    this.soundPhone.stop();
   };
 
   handleHangUp = () => {
@@ -49,6 +70,7 @@ class VoiceAi extends React.Component {
   };
 
   handleAnswer = () => {
+    this.stopSound();
     const { onAnswer } = this.props;
     onAnswer();
     this.setState({ isVisible: false });
@@ -69,7 +91,10 @@ class VoiceAi extends React.Component {
   render() {
     const { isAnswered, isHangedUp, isVisible } = this.state;
     // eslint-disable-next-line no-unused-vars
-    const { age, unlocked, datas, isOpen, stayOpen } = this.props;
+    const { unlocked, stayOpen, phoneRing } = this.props;
+    if (phoneRing) {
+      this.playSound();
+    }
     return (
       <WrapperAnimated pose={isVisible ? "visible" : "hidden"}>
         <DragSwitch

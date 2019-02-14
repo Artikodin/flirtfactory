@@ -21,7 +21,8 @@ class TaskBar extends React.Component {
     unlocked: PropTypes.bool,
     isOpen: PropTypes.bool,
     stayOpen: PropTypes.bool,
-    onAnswer: PropTypes.func
+    onAnswer: PropTypes.func,
+    phoneRing: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -32,6 +33,7 @@ class TaskBar extends React.Component {
     unlocked: false,
     isOpen: false,
     stayOpen: false,
+    phoneRing: false,
     onAnswer: () => {}
   };
 
@@ -63,7 +65,7 @@ class TaskBar extends React.Component {
     return (
       <Wrapper className="taskbar">
         {age === "intro" ? (
-          <VoiceAi stayOpen={stayOpen} onAnswer={onAnswer} {...this.props} />
+          <VoiceAi phoneRing stayOpen={stayOpen} onAnswer={onAnswer} {...this.props} />
         ) : (
           <IndexTag ai animated isOpen={isOpen} title="Assistance I.A." name="decroche">
             {this.setAIText(age, unlocked, datas)}

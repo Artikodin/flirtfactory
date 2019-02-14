@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from "react";
+import PropTypes from "prop-types";
 
 import posed, { PoseGroup } from "react-pose";
 import Lottie from "react-lottie";
@@ -10,6 +11,14 @@ class IntroVideo extends React.Component {
   state = {
     showComponent: true,
     showVideo: false
+  };
+
+  static propTypes = {
+    ringPhone: PropTypes.func
+  };
+
+  static defaultProps = {
+    ringPhone: () => {}
   };
 
   defaultOptions = {
@@ -23,6 +32,7 @@ class IntroVideo extends React.Component {
 
   render() {
     const { showVideo, showComponent } = this.state;
+    const { ringPhone } = this.props;
     return (
       <>
         <PoseGroup id="IntroVideo">
@@ -55,11 +65,11 @@ class IntroVideo extends React.Component {
                   <button
                     id="start"
                     type="button"
-                    onClick={() =>
+                    onClick={() => {
                       this.setState({
                         showVideo: true
-                      })
-                    }
+                      });
+                    }}
                   >
                     Commencer l'expérience
                   </button>
@@ -77,20 +87,22 @@ class IntroVideo extends React.Component {
                       volume="0.1"
                       autoPlay
                       playsInline
-                      onEnded={() =>
+                      onEnded={() => {
+                        ringPhone();
                         this.setState({
                           showComponent: false
-                        })
-                      }
+                        });
+                      }}
                     />
                     <button
                       id="skip"
                       type="button"
-                      onClick={() =>
+                      onClick={() => {
+                        ringPhone();
                         this.setState({
                           showComponent: false
-                        })
-                      }
+                        });
+                      }}
                     >
                       Passer l'introduction
                     </button>

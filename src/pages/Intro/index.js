@@ -15,7 +15,8 @@ class Intro extends React.Component {
   state = {
     agestr: "intro",
     frameTotal: 25,
-    showed: false
+    showed: false,
+    phoneRing: false
   };
 
   static propTypes = {
@@ -26,8 +27,13 @@ class Intro extends React.Component {
     this.setState({ showed: true });
   };
 
+  ringPhone = () => {
+    console.log("ring phone");
+    this.setState({ phoneRing: true });
+  };
+
   render() {
-    const { agestr, frameTotal, showed } = this.state;
+    const { agestr, frameTotal, showed, phoneRing } = this.state;
     const { history } = this.props;
     return (
       <Page
@@ -36,7 +42,7 @@ class Intro extends React.Component {
         history={history}
         pathTo="antiquite"
       >
-        <IntroVideo />
+        <IntroVideo ringPhone={() => this.ringPhone()} />
         <ProgressContext.Consumer>
           {({ ages, selectAges, updateVideo }) => (
             <>
@@ -45,6 +51,7 @@ class Intro extends React.Component {
                 age={agestr}
                 unlocked={ages.intro.lock}
                 stayOpen
+                phoneRing={phoneRing}
               />
               <SoundController
                 playing
