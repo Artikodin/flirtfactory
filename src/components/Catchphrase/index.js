@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import posed, { PoseGroup } from "react-pose";
-import { easing } from "popmotion";
 
 import { TextContext, Picto } from "../index";
 
@@ -179,7 +178,7 @@ class Catchphrase extends React.Component {
               <TextContext.Consumer>
                 {value => (
                   <>
-                    <CatchphraseContainer>
+                    <AnimatedCatchphraseContainer>
                       <div id="catchphrase--container">
                         <div className="catchphrase--catchphrase">
                           <Markup
@@ -263,8 +262,8 @@ class Catchphrase extends React.Component {
                           </button>
                         </div>
                       </div>
-                    </CatchphraseContainer>
-                    <CatchphraseVideoContainer>
+                    </AnimatedCatchphraseContainer>
+                    <AnimatedCatchphraseVideo>
                       <video
                         ref={this.videoCatchphraseForward}
                         style={{ display: forward ? "block" : "none" }}
@@ -312,7 +311,7 @@ class Catchphrase extends React.Component {
                           </g>
                         </svg>
                       </button>
-                    </CatchphraseVideoContainer>
+                    </AnimatedCatchphraseVideo>
                   </>
                 )}
               </TextContext.Consumer>
@@ -326,17 +325,52 @@ class Catchphrase extends React.Component {
 
 const AnimatedCatchphraseWrapper = posed(CatchphraseWrapper)({
   enter: {
-    left: 0,
+    x: 0,
+    delayChildren: 500,
     transition: {
-      duration: 1500,
-      ease: easing.backIn
+      duration: 500,
+      ease: 'easeOut'
     }
   },
   exit: {
-    left: "100vw",
+    x: "100%",
     transition: {
-      duration: 1500,
-      ease: easing.backOut
+      duration: 500,
+      ease: 'easeOut'
+    }
+  }
+});
+
+const AnimatedCatchphraseVideo = posed(CatchphraseVideoContainer)({
+  enter: {
+    x: 0,
+    transition: {
+      duration: 600,
+      ease: 'easeOut'
+    }
+  },
+  exit: {
+    x: "100%",
+    transition: {
+      duration: 350,
+      ease: 'easeOut'
+    }
+  }
+});
+
+const AnimatedCatchphraseContainer = posed(CatchphraseContainer)({
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: 600,
+      ease: 'easeIn'
+    }
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 350,
+      ease: 'easeIn'
     }
   }
 });
