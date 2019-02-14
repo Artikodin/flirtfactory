@@ -67,9 +67,11 @@ class DragSwitch extends React.Component {
   }
 
   componentWillUnmount() {
-    this.svgRef.current.removeEventListener("mouseup", this.handleDragEnd, {
-      passive: true
-    });
+    if (this.svgRef.current) {
+      this.svgRef.current.removeEventListener("mouseup", this.handleDragEnd, {
+        passive: true
+      });
+    }
     cancelAnimationFrame(this.moveStar);
   }
 
@@ -167,9 +169,15 @@ class DragSwitch extends React.Component {
   };
 
   handleDragEnd = () => {
-    this.svgRef.current.removeEventListener("mousemove", this.handleMouseMove, {
-      passive: true
-    });
+    if (this.svgRef.current) {
+      this.svgRef.current.removeEventListener(
+        "mousemove",
+        this.handleMouseMove,
+        {
+          passive: true
+        }
+      );
+    }
     this.moveStar();
   };
 

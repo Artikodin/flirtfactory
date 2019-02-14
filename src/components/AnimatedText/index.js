@@ -62,6 +62,16 @@ class AnimatedText extends React.Component {
   animate = ({ timing, draw, duration }) => {
     const start = performance.now();
 
+    let once = false;
+
+    const handleTypingStarted = () => {
+      console.log("handleTypingStarted");
+    };
+
+    const handleTypingEnded = () => {
+      console.log("handleTypingEnded");
+    };
+
     requestAnimationFrame(function animate(time) {
       // timeFraction goes from 0 to 1
       let timeFraction = (time - start) / duration;
@@ -71,6 +81,14 @@ class AnimatedText extends React.Component {
       const progress = timing(timeFraction);
 
       draw(progress); // draw it
+
+      if (!once) {
+        handleTypingStarted();
+        once = true;
+      }
+      if (timeFraction === 1) {
+        handleTypingEnded();
+      }
 
       if (timeFraction < 1) {
         requestAnimationFrame(animate);

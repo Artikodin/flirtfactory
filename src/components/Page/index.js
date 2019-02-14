@@ -38,7 +38,7 @@ class Page extends React.Component {
     if (!showed) {
       this.showedTimeout = setTimeout(() => {
         this.setState(() => ({ showed: true }));
-      }, 1000);
+      }, 3300);
     }
   }
 
