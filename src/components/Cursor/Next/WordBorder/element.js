@@ -12,7 +12,7 @@ const rotation = keyframes`
 
 export const CircularLetter = styled.span`
   text-align: center;
-  font-size: 9px;
+  font-size: 11px;
   height: 35px;
   width: 10px;
   position: absolute;
