@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import posed, { PoseGroup } from "react-pose";
-import { easing } from "popmotion";
 
 import { TextContext, Picto } from "../index";
 
