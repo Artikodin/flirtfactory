@@ -35,6 +35,7 @@ class Intro extends React.Component {
         navbar={false}
         history={history}
         pathTo="antiquite"
+        transition={false}
       >
         <IntroVideo />
         <ProgressContext.Consumer>

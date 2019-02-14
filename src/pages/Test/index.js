@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Page, AnimatedText } from "../../components";
+import { Page, VoiceAi } from "../../components";
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Test extends React.Component {
@@ -16,9 +16,7 @@ class Test extends React.Component {
             padding: 50
           }}
         >
-          <AnimatedText>
-          La mode était aux sérénades. Pour déclarer sa flamme, le prétendant, à l'image chantait son amour sous le balcon de sa Juliette. Mais auparavant, il devait effectuer d’incessants allers-retours dans la rue pour attirer son attention. Pas très discret mais efficace…
-          </AnimatedText>
+          <VoiceAi stayOpen onAnswer {...this.props} />
         </div>
       </Page>
     );
