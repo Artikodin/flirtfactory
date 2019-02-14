@@ -67,7 +67,7 @@ class SoundController extends React.Component {
   playSound = () => {
     const { unlocked, age } = this.props;
     const { ageOnPlayed, activationPlayed, offPlayed } = this.state;
-    if (ageOnPlayed && unlocked) {
+    if (ageOnPlayed && unlocked && age !== "intro") {
       this.soundAgeOn.play();
       this.setState({
         ageOnPlayed: false
