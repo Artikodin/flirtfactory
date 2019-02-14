@@ -129,11 +129,12 @@ export const About = styled.div`
 
   #About-text {
     margin-top: 7vh;
-    font-size: 14px;
+    font-size: 15px;
     p {
       font-size: 14px;
       line-height: 2.07;
       letter-spacing: normal;
+      margin-bottom: 3vh;
     }
   }
 `;

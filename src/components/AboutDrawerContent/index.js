@@ -11,27 +11,34 @@ const AboutDrawerContent = () => (
     <div className="line line__right" />
     <div className="line line__left" />
     <div id="marquee">
-      About About About About About About About About About About About About About About About
-      About About About About About About About About About About About About About About About
-      About About About About About About About About About About About About About About About
-      About About About About About About About About About About About About About About About
-      About About About About About About About About About About About About About About About
-      About About About About About About About About About About About About About About About
-      About About About About About About About About About About About About About About About
+      About About About About About About About About About About About About
+      About About About About About About About About About About About About
+      About About About About About About About About About About About About
+      About About About About About About About About About About About About
+      About About About About About About About About About About About About
+      About About About About About About About About About About About About
+      About About About About About About About About About About About About
+      About About About About About About About About About About About About
+      About About About About About About About About About
     </div>
     <AboutLayout id="About-layout">
       <About id="About">
         <h2 id="About-title">About</h2>
         <div id="About-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac
-            turpis non lorem vehicula pharetra. Pellentesque maximus enim sed
-            massa placerat, ut hendrerit sem iaculis. Nunc vel erat egestas,
-            interdum nunc vitae, sagittis justo. Aliquam sit amet ante
-            scelerisque eros faucibus tempus ac sit amet tellus. Nulla eget
-            felis et lacus aliquam iaculis nec a lacus. Morbi vel est ut libero
-            ultricies mollis. Sed facilisis iaculis venenatis. Cras id laoreet
-            sem. Curabitur molestie purus dui, at commodo leo sodales sed.
+            La Flirt Factory est une expérience imaginée, créée et développée
+            par Audren Mauplot, Alix Chabagny, Bastien Lepecheur, Fany Thourain
+            et Artium Wasse dans le cadre d'un projet à l'école des Gobelins.
+          </p>
+          <p>
+            Tous utilisateurs de sites de rencontres, nous nous sommes
+            questionné aussi bien sur notre vision des relations que sur nos
+            propres méthodes de séduction.
+          </p>
+          <p>
+            Cette expérience a pour volonté d'interroger sur les questions
+            suivantes : A quoi ressemblait le flirt avant ? Qu’est devenue la
+            séduction aujourd’hui ? Et à quoi ressemblera-t-elle dans le futur ?
           </p>
         </div>
       </About>

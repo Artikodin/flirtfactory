@@ -74,7 +74,7 @@ class IntroVideo extends React.Component {
                     <video
                       src="./assets/videos/Intro.mp4"
                       type="video/mp4"
-                      volume={0.5}
+                      volume="0.1"
                       autoPlay
                       playsInline
                       onEnded={() =>

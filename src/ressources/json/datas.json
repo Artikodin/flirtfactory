@@ -59,7 +59,7 @@
       "summary": "<p>La galanterie apparaît. Les codes changent et la séduction devient quelque chose de plus léger et moins dramatique. La femme commence à être davantage considérée.</p>",
       "catchphrase": "D'une personne comme vous, madame, tout est des faveurs hors l'indifférence.",
       "author": "La Princesse de Clèves",
-      "description": "<p>C’est à partir du XVIIème siècle que la <strong>galanterie</strong> fait son apparition. Les codes changent et deviennent plus légers et moins dramatiques que ceux de la courtoisie.</p> <p>La femme, au centre des échanges galants, commence à être davantage considérée. Les histoires d'amour laissent plus de place aux sentiments, à la sincérité, au désir et à la jalousie…</p> <p>C’est aussi l’époque des <strong>relations épistolaires</strong>. On s'écrivait, on faisait des vers et des rimes pour <strong>déclarer sa flamme</strong>.  On raffolait des salons où l'on parle de poésie et de littérature.</p>      ",
+      "description": "<p>C’est à partir du XVIIème siècle que la <strong>galanterie</strong> fait son apparition. Les codes changent et deviennent plus légers et moins dramatiques que ceux de la courtoisie.</p> <p>La femme, au centre des échanges galants, commence à être davantage considérée. Les histoires d'amour laissent plus de place aux sentiments, à la sincérité, au désir et à la jalousie…</p>",
       "symbols": [
         {
           "name": "Parfum",
@@ -67,11 +67,11 @@
         },
         {
           "name": "Poèmes",
-          "description": ""
+          "description": "Les femmes raffolaient des salons où l'on parle de poésie et de littérature. "
         },
         {
           "name": "Lettres d'amour",
-          "description": ""
+          "description": "C’est l’époque des relations épistolaires. Quelle meilleure façon de déclarer sa flamme que par une lettre sulfureuse composée de vers et de rimes ?"
         }
       ]
     },
@@ -157,8 +157,8 @@
       "interaction": "Mouline pour transformer les aubergines.",
       "reinitialisation": "Système réinitialisé. 16 074 personnes ont swippé à droite sur Tinder.",
       "summary": "<p>La séduction est aujourd'hui mobile : l'omniprésence et la spécificité des apps de rencontre permettent la multiplication des rencontres.</p>",
-      "catchphrase": "En catchana baby tu dead ça",
-      "author": "Aya",
+      "catchphrase": "Ma mère voulait savoir si vous donniez des cours particuliers à domicile ?",
+      "author": "LOL (laughing out loud)",
       "description": "<p>C'est aujourd'hui les <strong>applications mobiles</strong> qui dominent le marché de la rencontre amoureuse. Pour draguer, il suffit de tapoter sur son smartphone ! Ces apps sont d'ailleurs de plus en plus performantes et de plus en plus spécifiques : algorithmes, filtres, géolocalisation... Tout est fait pour nous rendre plus exigeant. Liker et matcher sont ainsi devenus des actes de séduction à part entiers.</p> <p>Dans cette société de consommation, la rencontre devient alors un bien facilement accessible qu'il faut consommer rapidement. Le Romantisme laisse ainsi place aux <strong>relations fast food</strong> : des liaisons légères sans engagement sur le long terme.",
       "symbols": [
         {
@@ -183,7 +183,7 @@
       "reinitialisation": "Système réinitialisé.",
       "summary": "<p>Et à l'avenir, comment évoluera la séduction ?</p><p>Va-t-on créer de nouveaux outils de séductions utilisant la technologie à son maximum? Ou au contraire allons-nous revenir à un moyen plus tribal et plus naturel de choisir son partenaire?</p>",
       "catchphrase": "Vous me semblez très réelle.",
-      "author": "Theodore, Her",
+      "author": "Her",
       "description": "<p>Impossible de savoir à quoi la séduction ressemblera dans le futur. Cependant, certaines pistes nous permettent de l'envisager.</p> <p>On peut supposer que la séduction évoluera en corrélation avec la technologie, qui utilisera toujours plus d'outils et de moyens pour essayer au mieux de nous cibler.</p>",
       "symbols": [
         {
