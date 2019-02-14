@@ -67,7 +67,7 @@ class Antiquite extends React.Component {
                         title={value.epoques[agenbr].symbols[0].name}
                         name="antiquite1"
                         xPos="50vw"
-                        yPos="70vh"
+                        yPos="58vh"
                       >
                         {value.epoques[agenbr].symbols[0].description}
                       </GenericTag>

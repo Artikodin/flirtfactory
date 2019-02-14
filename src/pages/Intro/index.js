@@ -28,7 +28,6 @@ class Intro extends React.Component {
   };
 
   ringPhone = () => {
-    console.log("ring phone");
     this.setState({ phoneRing: true });
   };
 
