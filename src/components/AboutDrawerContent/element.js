@@ -12,8 +12,6 @@ export const DrawerLayout = styled.div`
   #marquee {
     position: absolute;
     margin-left: 0%;
-    /* left: 100vw; */
-    /* width: 200vw; */
     z-index: 0;
     text-align: left;
     font-family: GTCinetype;
@@ -21,7 +19,8 @@ export const DrawerLayout = styled.div`
     color: white;
     z-index: 0;
     opacity: 0.1;
-    width: 10000%;
+    width: 1000%;
+    white-space: nowrap;
     -webkit-animation: linear marqueelike 20s infinite;
     -moz-animation: linear marqueelike 20s infinite;
     -o-animation: linear marqueelike 20s infinite;

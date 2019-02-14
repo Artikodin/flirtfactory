@@ -184,23 +184,23 @@
       "summary": "<p>Et à l'avenir, comment évoluera la séduction ?</p><p>Va-t-on créer de nouveaux outils de séductions utilisant la technologie à son maximum? Ou au contraire allons-nous revenir à un moyen plus tribal et plus naturel de choisir son partenaire?</p>",
       "catchphrase": "Vous me semblez très réelle.",
       "author": "Her",
-      "description": "<p>Impossible de savoir à quoi la séduction ressemblera dans le futur. Cependant, certaines pistes nous permettent de l'envisager.</p> <p>On peut supposer que la séduction évoluera en corrélation avec la technologie, qui utilisera toujours plus d'outils et de moyens pour essayer au mieux de nous cibler.</p>",
+      "description": "<p>Impossible de savoir à quoi la séduction ressemblera dans le futur. Cependant, certaines pistes nous permettent de l'envisager.</p><p>On peut supposer que la séduction évoluera en corrélation avec la technologie, qui utilisera toujours plus d'outils et de moyens pour essayer au mieux de nous cibler. Réalité virtuelle, chatbot, algorithmes, l'amour devient un ensemble de données à maîtriser. <strong>La technologie prendra-t-elle le pas sur le réel, délaissant le contact humain ?</strong></p><p>Ou au contraire, alors que les applications de rencontre viennent d'arriver sur le marché, elles sont déjà en train d'évoluer au profit d'un concept plus tribal, <strong>remettant l'humain au centre des échanges.</strong></p>      ",
       "symbols": [
         {
-          "name": "Tests ADN",
-          "description": ""
+          "name": "Compatibilité ADN",
+          "description": "Un nouveau type d'applications de rencontre va apparaître sur le marché : la compatibilité amoureuse par test ADN. En échange d'un échantillon d'ADN, l'application te proposera de trouver un partenaire génétiquement compatible."
         },
         {
-          "name": "Big data",
-          "description": ""
+          "name": "Algorithmes",
+          "description": "Dans un monde ultra-connecté où tout le monde possède une présence en ligne, les applications vont récupérer toutes nos données pour nous cibler au plus précis. Les algorithmes seront toujours plus performants et le matching plus précis et mieux ciblé."
         },
         {
           "name": "Robots sexuels",
-          "description": ""
+          "description": "Déjà commercialisés au Japon, certains robots prennent le rôle de partenaire amoureux et sexuel. Ces robots sont personnalisés selon nos désirs et interchangeable pour nous satisfaire au maximum."
         },
         {
           "name": "Echanges virtuels",
-          "description": ""
+          "description": "Les échanges virtuels deviennent le terrain de la séduction : on va privilégier une expérience numérique à l'aide de nouveaux outils comme la réalité virtuelle pour rencontrer des personnes."
         }
       ]
     }
