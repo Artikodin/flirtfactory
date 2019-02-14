@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 
 import { Wrapper } from "./element";
 
+import { Howl } from "howler";
+
 class AnimatedText extends React.Component {
-  state = { text: "" };
+  state = { text: "", iaplayed: true };
 
   text = React.createRef();
 
@@ -15,6 +17,15 @@ class AnimatedText extends React.Component {
   static defaultProps = {
     children: ""
   };
+
+  soundIA = new Howl({
+    src: "./assets/sound/soundIA.mp3",
+    loop: true,
+    preload: true,
+    html5: true,
+    volume: 1,
+    playing: false
+  });
 
   componentDidMount() {
     const { children } = this.props;
@@ -65,11 +76,20 @@ class AnimatedText extends React.Component {
     let once = false;
 
     const handleTypingStarted = () => {
-      console.log("handleTypingStarted");
+      const { iaplayed } = this.state;
+      if (iaplayed) {
+        this.soundIA.play();
+        this.setState({
+          iaplayed: false
+        });
+      }
     };
 
     const handleTypingEnded = () => {
-      console.log("handleTypingEnded");
+      this.soundIA.stop();
+      this.setState({
+        iaplayed: true
+      });
     };
 
     requestAnimationFrame(function animate(time) {
