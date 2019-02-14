@@ -30,7 +30,7 @@ class VoiceAi extends React.Component {
     datas: {},
     unlocked: false,
     isOpen: true,
-    stayOpen: false,
+    stayOpen: true,
     age: "",
     onAnswer: () => {}
   };

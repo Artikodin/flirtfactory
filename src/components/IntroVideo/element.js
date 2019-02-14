@@ -27,7 +27,7 @@ export const IntroVideoWrapper = styled.div`
         background: rgba(255, 255, 255, 0.15);
         text-transform: uppercase;
         border-radius: 30px;
-        border: 1px solid white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
         padding: 12px;
         z-index: 0;
         display: block;
@@ -57,8 +57,8 @@ export const IntroVideoWrapper = styled.div`
     width: 200px;
     z-index: 0;
     background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 30px;
-    border: 1px solid white;
     padding: 12px;
     font-family: GTCinetype;
     font-size: 12px;
@@ -66,6 +66,11 @@ export const IntroVideoWrapper = styled.div`
     letter-spacing: 1px;
     color: #ffffff;
     transition: all 0.4s ease;
+
+    &:hover {
+      transition: all 0.4s ease;
+      background: rgba(255, 255, 255, 0.3);
+    }
   }
 
   video {

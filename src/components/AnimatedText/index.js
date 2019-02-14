@@ -23,7 +23,7 @@ class AnimatedText extends React.Component {
     loop: true,
     preload: true,
     html5: true,
-    volume: 1,
+    volume: 0.1,
     playing: false
   });
 
