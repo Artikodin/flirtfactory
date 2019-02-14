@@ -80,7 +80,7 @@ class VoiceAi extends React.Component {
   setAIText = unlocked => {
     if (unlocked) {
       return `Quelque chose a mal fonctionné lors de l'initialisation de l'usine. 0
-          sur 8 parties fonctionnent correctement, il va devoir les réparer.
+          sur 8 parties fonctionnent correctement, tu vas devoir les réparer.
           J'enclenche la réinitialisation du système.`;
     }
     return `Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer la

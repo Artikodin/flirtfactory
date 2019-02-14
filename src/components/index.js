@@ -5,7 +5,6 @@ export { default as AboutDrawerContent } from "./AboutDrawerContent";
 export { default as AnimatedText } from "./AnimatedText";
 export { default as AudioVisualizer } from "./AudioVisualizer";
 export { default as BackgroundVideo } from "./BackgroundVideo";
-export { default as ButtonIA } from "./ButtonIA";
 export { default as ButtonAbout } from "./ButtonAbout";
 export { default as Catchphrase } from "./Catchphrase";
 export { default as CanvasVideo } from "./CanvasVideo";
