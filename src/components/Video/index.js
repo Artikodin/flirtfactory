@@ -25,6 +25,7 @@ class Video extends React.Component {
           style={{ display: number === 1 ? "block" : "none" }}
           src={`./assets/videos/${path}/${path}1.mp4`}
           type="video/mp4"
+          preload="auto"
           autoPlay
           playsInline
           loop={path === "flirtfactory" ? true : false}
@@ -36,6 +37,7 @@ class Video extends React.Component {
               style={{ display: (number === 2 && futur === 1) ? "block" : "none" }}
               src={`./assets/videos/${path}/${path}2_1.mp4`}
               type="video/mp4"
+              preload="auto"
               autoPlay
               playsInline
               muted
@@ -45,6 +47,7 @@ class Video extends React.Component {
               style={{ display: (number === 2 && futur === 2) ? "block" : "none" }}
               src={`./assets/videos/${path}/${path}2_2.mp4`}
               type="video/mp4"
+              preload="auto"
               autoPlay
               playsInline
               muted
@@ -54,6 +57,7 @@ class Video extends React.Component {
               style={{ display: (number === 2 && futur === 3) ? "block" : "none" }}
               src={`./assets/videos/${path}/${path}2_3.mp4`}
               type="video/mp4"
+              preload="auto"
               autoPlay
               playsInline
               muted
@@ -63,6 +67,7 @@ class Video extends React.Component {
               style={{ display: (number === 2 && futur === 4) ? "block" : "none" }}
               src={`./assets/videos/${path}/${path}2_4.mp4`}
               type="video/mp4"
+              preload="auto"
               autoPlay
               playsInline
               muted
@@ -72,6 +77,7 @@ class Video extends React.Component {
               style={{ display: (number === 3 && futur === 1) ? "block" : "none" }}
               src={`./assets/videos/${path}/${path}3_1.mp4`}
               type="video/mp4"
+              preload="auto"
               autoPlay
               playsInline
               loop
@@ -81,6 +87,7 @@ class Video extends React.Component {
               style={{ display: (number === 3 && futur === 2) ? "block" : "none" }}
               src={`./assets/videos/${path}/${path}3_2.mp4`}
               type="video/mp4"
+              preload="auto"
               autoPlay
               playsInline
               loop
@@ -90,6 +97,7 @@ class Video extends React.Component {
               style={{ display: (number === 3 && futur === 3) ? "block" : "none" }}
               src={`./assets/videos/${path}/${path}3_3.mp4`}
               type="video/mp4"
+              preload="auto"
               autoPlay
               playsInline
               loop
@@ -99,6 +107,7 @@ class Video extends React.Component {
               style={{ display: (number === 3 && futur === 4) ? "block" : "none" }}
               src={`./assets/videos/${path}/${path}3_4.mp4`}
               type="video/mp4"
+              preload="auto"
               autoPlay
               playsInline
               loop
@@ -114,6 +123,7 @@ class Video extends React.Component {
                   style={{ display: number === 2 ? "block" : "none" }}
                   src={`./assets/videos/${path}/${path}2.mp4`}
                   type="video/mp4"
+                  preload="auto"
                   autoPlay
                   playsInline
                   muted
@@ -123,6 +133,7 @@ class Video extends React.Component {
                   style={{ display: number === 3 ? "block" : "none" }}
                   src={`./assets/videos/${path}/${path}3.mp4`}
                   type="video/mp4"
+                  preload="auto"
                   autoPlay
                   playsInline
                   loop
