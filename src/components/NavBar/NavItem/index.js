@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Howl } from "howler";
-
 import { Wrapper, ImgContainer, StyledLink, TextContainer } from "./element";
 
-import NavAudio from "../../../assets/sound/nav.mp3";
+// import { Howl } from "howler";
+// import NavAudio from "../../../assets/sound/nav.mp3";
 
 class NavItem extends React.Component {
   static propTypes = {

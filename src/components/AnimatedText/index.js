@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 import { Wrapper } from "./element";
 
-import { Howl } from "howler";
-import IAAudio from "../../assets/sound/soundIA.mp3";
+// import { Howl } from "howler";
+// import IAAudio from "../../assets/sound/soundIA.mp3";
 
 class AnimatedText extends React.Component {
   state = { text: "", iaplayed: true };

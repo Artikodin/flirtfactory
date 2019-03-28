@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import posed from "react-pose";
-import { Howl } from "howler";
+// import { Howl } from "howler";
 
 import DragSwitch from "./DragSwitch";
 import PhoneCube from "./PhoneCube";

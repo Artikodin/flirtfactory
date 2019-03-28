@@ -39,8 +39,7 @@ class Video extends React.Component {
               }}
               src={`./assets/videos/${path}/${path}2_1.mp4`}
               type="video/mp4"
-              autoPlay preload="auto" 
-              preload="auto"
+              autoPlay 
               muted
               onEnded={increaseVideo}
             />
@@ -50,7 +49,6 @@ class Video extends React.Component {
               }}
               src={`./assets/videos/${path}/${path}2_2.mp4`}
               type="video/mp4"
-              preload="auto"
               autoPlay
               playsInline
               muted
@@ -62,7 +60,6 @@ class Video extends React.Component {
               }}
               src={`./assets/videos/${path}/${path}2_3.mp4`}
               type="video/mp4"
-              preload="auto"
               autoPlay
               playsInline
               muted
@@ -74,7 +71,6 @@ class Video extends React.Component {
               }}
               src={`./assets/videos/${path}/${path}2_4.mp4`}
               type="video/mp4"
-              preload="auto"
               autoPlay
               playsInline
               muted
@@ -86,7 +82,6 @@ class Video extends React.Component {
               }}
               src={`./assets/videos/${path}/${path}3_1.mp4`}
               type="video/mp4"
-              preload="auto"
               autoPlay
               playsInline
               loop
@@ -98,7 +93,6 @@ class Video extends React.Component {
               }}
               src={`./assets/videos/${path}/${path}3_2.mp4`}
               type="video/mp4"
-              preload="auto"
               autoPlay
               playsInline
               loop
@@ -110,7 +104,6 @@ class Video extends React.Component {
               }}
               src={`./assets/videos/${path}/${path}3_3.mp4`}
               type="video/mp4"
-              preload="auto"
               autoPlay
               playsInline
               loop
@@ -122,7 +115,6 @@ class Video extends React.Component {
               }}
               src={`./assets/videos/${path}/${path}3_4.mp4`}
               type="video/mp4"
-              preload="auto"
               autoPlay
               playsInline
               loop
@@ -138,7 +130,7 @@ class Video extends React.Component {
                   style={{ display: number === 2 ? "block" : "none" }}
                   src={`./assets/videos/${path}/${path}2.mp4`}
                   type="video/mp4"
-                  preload="auto"
+                  preload="metadata"
                   autoPlay
                   playsInline
                   muted
@@ -148,7 +140,7 @@ class Video extends React.Component {
                   style={{ display: number === 3 ? "block" : "none" }}
                   src={`./assets/videos/${path}/${path}3.mp4`}
                   type="video/mp4"
-                  preload="auto"
+                  preload="metadata"
                   autoPlay
                   playsInline
                   loop

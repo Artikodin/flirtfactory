@@ -1,7 +1,7 @@
 import React from "react";
 import posed, { PoseGroup } from "react-pose";
 import PropTypes from "prop-types";
-import { Howl } from "howler";
+// import { Howl } from "howler";
 
 import Lottie from "react-lottie";
 import * as AI from "../../assets/lottie/ai.json";

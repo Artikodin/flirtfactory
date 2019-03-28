@@ -1,9 +1,8 @@
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
 
-import { Howl } from "howler";
-
-import FlirtFactoryAudio from "../../assets/sound/flirtfactory.mp3";
+// import { Howl } from "howler";
+// import FlirtFactoryAudio from "../../assets/sound/flirtfactory.mp3";
 
 class GlobalSound extends React.Component {
   state = {

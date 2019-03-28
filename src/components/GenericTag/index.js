@@ -3,8 +3,8 @@ import posed from "react-pose";
 import PropTypes from "prop-types";
 import { throttle } from "throttle-debounce";
 
-import { Howl } from "howler";
-import TagAudio from "../../assets/sound/tag.mp3";
+// import { Howl } from "howler";
+// import TagAudio from "../../assets/sound/tag.mp3";
 
 import { Markup } from "interweave";
 

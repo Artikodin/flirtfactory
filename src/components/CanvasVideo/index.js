@@ -16,16 +16,16 @@ class CanvasVideo extends React.Component {
     show: false
   };
 
-  static = {
-    frames: []
-  };
+  frames = [];
 
-  componentDidMount() {
-    const { age } = this.props;
-    for (let i = 0; i < 40; i++) {
-      new Image().src = `./assets/frames/${age}/${age}${i}.jpg`;
-    }
-  }
+  // componentDidMount() {
+  //   const { age } = this.props;
+  //   for (let i = 0; i < 40; i += 1) {
+  //     this.frames.push(
+  //       (new Image().src = `./assets/frames/${age}/${age}${i}.jpg`)
+  //     );
+  //   }
+  // }
 
   render() {
     const { age, frame, show } = this.props;

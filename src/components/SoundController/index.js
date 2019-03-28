@@ -2,9 +2,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Howl } from "howler";
-import SonOffAudio from "../../assets/sound/SonOFF.mp3";
-import ActivationAudio from "../../assets/sound/SonActivation.mp3";
+// import { Howl } from "howler";
+// import SonOffAudio from "../../assets/sound/SonOFF.mp3";
+// import ActivationAudio from "../../assets/sound/SonActivation.mp3";
 
 class SoundController extends React.Component {
   global = React.createRef();
@@ -17,14 +17,14 @@ class SoundController extends React.Component {
 
   static propTypes = {
     unlocked: PropTypes.bool,
-    age: PropTypes.string,
-    volume: PropTypes.number
+    age: PropTypes.string
+    // volume: PropTypes.number
   };
 
   static defaultProps = {
     unlocked: false,
-    age: "",
-    volume: 1
+    age: ""
+    // volume: 1
   };
 
   // soundOff = new Howl({
