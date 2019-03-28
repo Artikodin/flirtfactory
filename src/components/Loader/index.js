@@ -5,6 +5,10 @@ import { Wrapper, ColoredLayer, Video } from "./element";
 import posed, { PoseGroup } from "react-pose";
 import LoaderCount from "./LoaderCount";
 
+import Transition1 from "../../assets/videos/transition/transition1.mp4";
+import Transition2 from "../../assets/videos/transition/transition2.mp4";
+import Transition3 from "../../assets/videos/transition/transition3.mp4";
+
 class Loader extends React.Component {
   state = {
     showed: false,
@@ -57,9 +61,10 @@ class Loader extends React.Component {
             <ColoredLayer3Animated backgroundColor="#F0A9B5">
               {videoIndex === 1 && (
                 <Video
-                  src="./assets/videos/transition/transition1.mp4"
+                  src={Transition1}
                   type="video/mp4"
                   autoPlay
+                  preload="auto"
                   loop
                   playsInline
                   muted
@@ -67,9 +72,10 @@ class Loader extends React.Component {
               )}
               {videoIndex === 2 && (
                 <Video
-                  src="./assets/videos/transition/transition2.mp4"
+                  src={Transition2}
                   type="video/mp4"
                   autoPlay
+                  preload="auto"
                   loop
                   playsInline
                   muted
@@ -77,9 +83,10 @@ class Loader extends React.Component {
               )}
               {videoIndex === 3 && (
                 <Video
-                  src="./assets/videos/transition/transition3.mp4"
+                  src={Transition3}
                   type="video/mp4"
                   autoPlay
+                  preload="auto"
                   loop
                   playsInline
                   muted

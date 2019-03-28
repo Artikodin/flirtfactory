@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import posed, { PoseGroup } from "react-pose";
 import { easing } from "popmotion";
 
-import { VoiceAi, IndexTag, HeartCounter } from "..";
+import { IndexTag, HeartCounter } from "..";
 
 import { Markup } from "interweave";
 
@@ -19,10 +19,7 @@ class TaskBar extends React.Component {
     datas: PropTypes.object,
     progress: PropTypes.array,
     unlocked: PropTypes.bool,
-    isOpen: PropTypes.bool,
-    stayOpen: PropTypes.bool,
-    onAnswer: PropTypes.func,
-    phoneRing: PropTypes.bool,
+    isOpen: PropTypes.bool
   };
 
   static defaultProps = {
@@ -31,10 +28,7 @@ class TaskBar extends React.Component {
     datas: {},
     progress: [],
     unlocked: false,
-    isOpen: false,
-    stayOpen: false,
-    phoneRing: false,
-    onAnswer: () => {}
+    isOpen: false
   };
 
   setAIText = (age, unlocked, datas) => {
@@ -57,20 +51,14 @@ class TaskBar extends React.Component {
       datas,
       progress,
       unlocked,
-      isOpen,
-      onAnswer,
-      stayOpen
+      isOpen
     } = this.props;
 
     return (
       <Wrapper className="taskbar">
-        {age === "intro" ? (
-          <VoiceAi phoneRing stayOpen={stayOpen} onAnswer={onAnswer} {...this.props} />
-        ) : (
-          <IndexTag ai animated isOpen={isOpen} title="Assistance I.A." name="decroche">
-            {this.setAIText(age, unlocked, datas)}
-          </IndexTag>
-        )}
+        <IndexTag ai animated isOpen={isOpen} title="Assistance I.A." name="decroche">
+          {this.setAIText(age, unlocked, datas)}
+        </IndexTag>
         {age !== "intro" && age !== "flirtfactory" && (
           <>
             <IndexTag title={datas.name} name={name} isLoggedIn={false}>

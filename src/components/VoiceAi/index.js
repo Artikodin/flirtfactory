@@ -14,7 +14,7 @@ class VoiceAi extends React.Component {
 
   state = {
     isVisible: true,
-    isAnswered: false,
+    isAnswered: true,
     isHangedUp: false,
     phonePlayed: true
   };

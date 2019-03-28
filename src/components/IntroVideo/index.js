@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import posed, { PoseGroup } from "react-pose";
 import Lottie from "react-lottie";
+import Logo from "../../assets/lottie/logo.json";
 
 import { IntroVideoWrapper, VideoWrapper } from "./element";
 
@@ -24,7 +25,7 @@ class IntroVideo extends React.Component {
   defaultOptions = {
     loop: true,
     autoplay: true,
-    path: "./assets/anim/logo.json",
+    animationData: Logo.default,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
     }

@@ -200,7 +200,7 @@ class GenericTag extends React.Component {
   };
 
   playSound = () => {
-    this.soundTag.play();
+    // this.soundTag.play();
   };
 
   handleMouseEnter = () => {

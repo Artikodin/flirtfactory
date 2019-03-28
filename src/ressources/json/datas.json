@@ -203,6 +203,11 @@
           "description": "Les échanges virtuels deviennent le terrain de la séduction : on va privilégier une expérience numérique à l'aide de nouveaux outils comme la réalité virtuelle pour rencontrer des personnes."
         }
       ]
+    },
+    {
+      "name": "intro",
+      "interaction": "Bonjour, je suis ton assistant personnel. Je suis prêt à démarrer la Flirt Factory et à parcourir l'histoire de la séduction au fil des époques. J'attends tes instructions.",
+      "reinitialisation": "Quelque chose a mal fonctionné lors de l'initialisation de l'usine. 0 sur 8 parties fonctionnent correctement, tu vas devoir les réparer. J'enclenche la réinitialisation du système."
     }
   ]
 }

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Howl } from "howler";
 
 import Lottie from "react-lottie";
+import * as AI from "../../assets/lottie/ai.json";
 
 import {
   Title,
@@ -39,7 +40,7 @@ class IndexTag extends React.Component {
     ai: false,
     children: "",
     isOpen: false,
-    stayOpen: false,
+    stayOpen: true,
     title: "",
     name: "",
     animated: false
@@ -48,7 +49,7 @@ class IndexTag extends React.Component {
   defaultOptions = {
     loop: true,
     autoplay: true,
-    path: "./assets/anim/ai.json",
+    animationData: AI.default,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
     }
@@ -68,6 +69,9 @@ class IndexTag extends React.Component {
       setTimeout(() => {
         this.setState({ showed: true });
       }, 500);
+      setTimeout(() => {
+        this.setState({ showed: false });
+      }, 4000);
     }
   }
 
@@ -87,7 +91,7 @@ class IndexTag extends React.Component {
   };
 
   playSound = () => {
-    this.soundIndex.play();
+    // this.soundIndex.play();
   };
 
   render() {
@@ -134,19 +138,6 @@ class IndexTag extends React.Component {
                       options={this.defaultOptions}
                       height="auto"
                       width="33%"
-                      alt="logo flirt factory"
-                    />
-                    <Lottie
-                      options={this.defaultOptions}
-                      height="auto"
-                      width="33%"
-                      alt="logo flirt factory"
-                    />
-                    <Lottie
-                      options={this.defaultOptions}
-                      height="auto"
-                      width="33%"
-                      alt="logo flirt factory"
                     />
                   </Wave>
                 )}

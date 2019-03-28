@@ -29,7 +29,7 @@ class NavItem extends React.Component {
   });
 
   playSound = () => {
-    this.soundNav.play();
+    // this.soundNav.play();
   };
 
   render() {

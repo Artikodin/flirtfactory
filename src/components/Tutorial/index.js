@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { TutorialWrapper } from "./element";
 
 import Lottie from "react-lottie";
+import Tuto from "../../assets/lottie/tutorial.json";
 
 class Tutorial extends React.Component {
   static propTypes = {
@@ -26,7 +27,7 @@ class Tutorial extends React.Component {
     const defaultOptions = {
       loop: true,
       autoplay: true,
-      path: "./assets/anim/tutorial.json",
+      animationData: Tuto.default,
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice"
       }

@@ -5,34 +5,26 @@ import {
   Page,
   BackgroundVideo,
   ProgressContext,
+  TextContext,
   InteractionDragAndDrop,
   TaskBar,
-  SoundController,
-  IntroVideo
+  SoundController
 } from "../../components";
 
 class Intro extends React.Component {
   state = {
     agestr: "intro",
+    agenbr: 8, // antiquite
     frameTotal: 25,
-    showed: false,
-    phoneRing: false
+    showed: true
   };
 
   static propTypes = {
     history: PropTypes.object.isRequired
   };
 
-  handeAnswer = () => {
-    this.setState({ showed: true });
-  };
-
-  ringPhone = () => {
-    this.setState({ phoneRing: true });
-  };
-
   render() {
-    const { agestr, frameTotal, showed, phoneRing } = this.state;
+    const { agestr, agenbr, frameTotal, showed } = this.state;
     const { history } = this.props;
     return (
       <Page
@@ -42,45 +34,47 @@ class Intro extends React.Component {
         pathTo="antiquite"
         transition={false}
       >
-        <IntroVideo ringPhone={() => this.ringPhone()} />
-        <ProgressContext.Consumer>
-          {({ ages, selectAges, updateVideo }) => (
-            <>
-              <TaskBar
-                onAnswer={() => this.handeAnswer()}
-                age={agestr}
-                unlocked={ages.intro.lock}
-                stayOpen
-                phoneRing={phoneRing}
-              />
-              <SoundController
-                playing
-                age="intro"
-                unlocked={ages.intro.lock}
-                volume={0}
-              />
-              <div className="background__wrapper">
-                <BackgroundVideo
-                  path={agestr}
-                  number={ages.intro.video}
-                  increaseVideo={() => updateVideo(agestr)}
-                />
-                {showed && (
-                  <InteractionDragAndDrop
-                    display={ages.intro.lock}
-                    unlockAge={() => selectAges(agestr)}
-                    increaseVideo={() => updateVideo(agestr)}
+        <TextContext.Consumer>
+          {value => (
+            <ProgressContext.Consumer>
+              {({ ages, selectAges, updateVideo }) => (
+                <>
+                  <TaskBar
                     age={agestr}
-                    frameTotal={frameTotal}
-                    pathDraw="M 50 200 L 50 50"
-                    top="36vh"
-                    left="60vw"
+                    unlocked={ages.intro.lock}
+                    datas={value.epoques[agenbr]}
+                    isOpen
                   />
-                )}
-              </div>
-            </>
+                  <SoundController
+                    playing
+                    age="intro"
+                    unlocked={ages.intro.lock}
+                    volume={0}
+                  />
+                  <div className="background__wrapper">
+                    <BackgroundVideo
+                      path={agestr}
+                      number={ages.intro.video}
+                      increaseVideo={() => updateVideo(agestr)}
+                    />
+                    {showed && (
+                      <InteractionDragAndDrop
+                        display={ages.intro.lock}
+                        unlockAge={() => selectAges(agestr)}
+                        increaseVideo={() => updateVideo(agestr)}
+                        age={agestr}
+                        frameTotal={frameTotal}
+                        pathDraw="M 50 200 L 50 50"
+                        top="36vh"
+                        left="60vw"
+                      />
+                    )}
+                  </div>
+                </>
+              )}
+            </ProgressContext.Consumer>
           )}
-        </ProgressContext.Consumer>
+        </TextContext.Consumer>
       </Page>
     );
   }

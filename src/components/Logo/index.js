@@ -3,11 +3,12 @@ import React from "react";
 import { LogoWrapper } from "./element";
 
 import Lottie from "react-lottie";
+import * as LogoAnim from "../../assets/lottie/logo.json";
 
 const defaultOptions = {
   loop: true,
   autoplay: true,
-  path: "./assets/anim/logo.json",
+  animationData: LogoAnim.default,
   rendererSettings: {
     preserveAspectRatio: "xMidYMid slice"
   }

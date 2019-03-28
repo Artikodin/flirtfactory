@@ -76,7 +76,7 @@ class AnimatedText extends React.Component {
     const handleTypingStarted = () => {
       const { iaplayed } = this.state;
       if (iaplayed) {
-        this.soundIA.play();
+        // this.soundIA.play();
         this.setState({
           iaplayed: false
         });
@@ -84,7 +84,7 @@ class AnimatedText extends React.Component {
     };
 
     const handleTypingEnded = () => {
-      this.soundIA.stop();
+      // this.soundIA.stop();
       this.setState({
         iaplayed: true
       });

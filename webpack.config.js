@@ -30,14 +30,18 @@ module.exports = {
         }
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(png|svg|jpg|gif|mp4)$/,
+        use: ["file-loader"]
+      },
+      {
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        use: ["file-loader"]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: "file-loader"
-            // options: {
-            //   name: "[name].[ext]",
-            //   outputPath: "fonts/"
-            // }
           }
         ]
       },
