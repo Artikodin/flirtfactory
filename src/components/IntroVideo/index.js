@@ -31,6 +31,12 @@ class IntroVideo extends React.Component {
     }
   };
 
+  componentDidMount() {
+    const loadVideo = document.createElement("video");
+    loadVideo.src = "./assets/videos/Intro.mp4";
+    loadVideo.load();
+  }
+
   render() {
     const { showVideo, showComponent } = this.state;
     const { ringPhone } = this.props;
@@ -46,6 +52,7 @@ class IntroVideo extends React.Component {
                 <video
                   src="./assets/videos/transition/transition2.mp4"
                   type="video/mp4"
+                  preload="auto"
                   autoPlay
                   playsInline
                   muted
@@ -86,6 +93,7 @@ class IntroVideo extends React.Component {
                       src="./assets/videos/Intro.mp4"
                       type="video/mp4"
                       volume="0.1"
+                      preload="auto"
                       autoPlay
                       playsInline
                       onEnded={() => {
