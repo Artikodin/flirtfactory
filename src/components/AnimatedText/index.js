@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Wrapper } from "./element";
 
 import { Howl } from "howler";
+import IAAudio from "../../assets/sound/soundIA.mp3";
 
 class AnimatedText extends React.Component {
   state = { text: "", iaplayed: true };
@@ -18,12 +19,12 @@ class AnimatedText extends React.Component {
     children: ""
   };
 
-  soundIA = new Howl({
-    src: "./assets/sound/soundIA.mp3",
-    loop: true,
-    volume: 0.1,
-    playing: false
-  });
+  // soundIA = new Howl({
+  //   src: { IAAudio },
+  //   loop: true,
+  //   volume: 0.1,
+  //   playing: false
+  // });
 
   componentDidMount() {
     const { children } = this.props;

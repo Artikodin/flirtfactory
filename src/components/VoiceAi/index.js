@@ -33,14 +33,14 @@ class VoiceAi extends React.Component {
     onAnswer: () => {}
   };
 
-  soundPhone = new Howl({
-    src: "./assets/sound/phone.mp3",
-    loop: true,
-    preload: true,
-    html5: true,
-    volume: 1,
-    playing: false
-  });
+  // soundPhone = new Howl({
+  //   src: "./assets/sound/phone.mp3",
+  //   loop: true,
+  //   preload: true,
+  //   html5: true,
+  //   volume: 1,
+  //   playing: false
+  // });
 
   playSound = () => {
     const { phonePlayed } = this.state;
@@ -70,7 +70,7 @@ class VoiceAi extends React.Component {
   };
 
   handleAnswer = () => {
-    this.stopSound();
+    // this.stopSound();
     const { onAnswer } = this.props;
     onAnswer();
     this.setState({ isVisible: false });

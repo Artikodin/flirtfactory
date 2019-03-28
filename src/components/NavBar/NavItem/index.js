@@ -5,6 +5,8 @@ import { Howl } from "howler";
 
 import { Wrapper, ImgContainer, StyledLink, TextContainer } from "./element";
 
+import NavAudio from "../../../assets/sound/nav.mp3";
+
 class NavItem extends React.Component {
   static propTypes = {
     children: PropTypes.node,
@@ -20,13 +22,14 @@ class NavItem extends React.Component {
 
   static displayName = "NavBar.NavItem";
 
-  soundNav = new Howl({
-    src: "./assets/sound/nav.mp3",
-    autoplay: false,
-    preload: true,
-    playing: false,
-    volume: 1
-  });
+  // soundNav = new Howl({
+  //   src: NavAudio,
+  //   autoplay: false,
+  //   preload: true,
+  //   playing: false,
+  //   html5: true,
+  //   volume: 1
+  // });
 
   playSound = () => {
     // this.soundNav.play();

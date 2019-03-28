@@ -40,7 +40,7 @@ class IndexTag extends React.Component {
     ai: false,
     children: "",
     isOpen: false,
-    stayOpen: true,
+    stayOpen: false,
     title: "",
     name: "",
     animated: false
@@ -55,23 +55,23 @@ class IndexTag extends React.Component {
     }
   };
 
-  soundIndex = new Howl({
-    src: "./assets/sound/tag.mp3",
-    autoplay: false,
-    preload: true,
-    playing: false,
-    volume: 0.1
-  });
+  // soundIndex = new Howl({
+  //   src: "./assets/sound/tag.mp3",
+  //   autoplay: false,
+  //   preload: true,
+  //   playing: false,
+  //   volume: 0.1
+  // });
 
   componentDidMount() {
     const { isOpen } = this.props;
     if (isOpen) {
       setTimeout(() => {
         this.setState({ showed: true });
-      }, 500);
+      }, 2000);
       setTimeout(() => {
         this.setState({ showed: false });
-      }, 4000);
+      }, 6000);
     }
   }
 

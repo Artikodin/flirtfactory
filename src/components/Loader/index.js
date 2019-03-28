@@ -20,7 +20,7 @@ class Loader extends React.Component {
   };
 
   static defaultProps = {
-    duration: 2000
+    duration: 3000
   };
 
   componentDidMount() {

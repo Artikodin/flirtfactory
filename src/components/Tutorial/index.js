@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { TutorialWrapper } from "./element";
 
 import Lottie from "react-lottie";
-import Tuto from "../../assets/lottie/tutorial.json";
+import * as Tuto from "../../assets/lottie/tutorial.json";
 
 class Tutorial extends React.Component {
   static propTypes = {
@@ -40,7 +40,7 @@ class Tutorial extends React.Component {
               key="tutorial"
               onClick={() => removeTutorial()}
             >
-              <Lottie options={defaultOptions} height="auto" width="100%" />
+              <Lottie options={defaultOptions} height="auto" width="auto" />
             </AnimatedTutorialWrapper>
           )}
         </PoseGroup>

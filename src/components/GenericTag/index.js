@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { throttle } from "throttle-debounce";
 
 import { Howl } from "howler";
+import TagAudio from "../../assets/sound/tag.mp3";
 
 import { Markup } from "interweave";
 
@@ -53,12 +54,12 @@ class GenericTag extends React.Component {
 
   magnet = React.createRef();
 
-  soundTag = new Howl({
-    src: "./assets/sound/tag.mp3",
-    autoplay: false,
-    playing: false,
-    volume: 0.1
-  });
+  // soundTag = new Howl({
+  //   src: { TagAudio },
+  //   autoplay: false,
+  //   playing: false,
+  //   volume: 0.1
+  // });
 
   magnetProperty = {};
 

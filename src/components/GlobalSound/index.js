@@ -3,19 +3,21 @@ import React from "react";
 
 import { Howl } from "howler";
 
+import FlirtFactoryAudio from "../../assets/sound/flirtfactory.mp3";
+
 class GlobalSound extends React.Component {
   state = {
     flirtfactoryPlayed: true
   };
 
-  soundFlirtFactory = new Howl({
-    src: "./assets/sound/flirtfactory.mp3",
-    loop: true,
-    preload: true,
-    html5: true,
-    volume: 1,
-    playing: true
-  });
+  // soundFlirtFactory = new Howl({
+  //   src: FlirtFactoryAudio,
+  //   loop: true,
+  //   preload: true,
+  //   html5: true,
+  //   volume: 1,
+  //   playing: true
+  // });
 
   componentDidMount = () => {
     window.addEventListener("mousemove", this.playSound);
@@ -25,7 +27,7 @@ class GlobalSound extends React.Component {
   componentWillUnmount = () => {
     window.removeEventListener("mousemove", this.playSound);
     this.mounted = false;
-    // this.soundFlirtFactory.unload();
+    this.soundFlirtFactory.unload();
   };
 
   playSound = () => {

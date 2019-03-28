@@ -3,6 +3,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Howl } from "howler";
+import SonOffAudio from "../../assets/sound/SonOFF.mp3";
+import ActivationAudio from "../../assets/sound/SonActivation.mp3";
 
 class SoundController extends React.Component {
   global = React.createRef();
@@ -25,30 +27,30 @@ class SoundController extends React.Component {
     volume: 1
   };
 
-  soundOff = new Howl({
-    src: "./assets/sound/SonOFF.mp3",
-    loop: true,
-    preload: true,
-    html5: true,
-    volume: 0.2
-  });
+  // soundOff = new Howl({
+  //   src: { SonOffAudio },
+  //   loop: true,
+  //   preload: true,
+  //   html5: true,
+  //   volume: 0.2
+  // });
 
-  soundActivation = new Howl({
-    src: "./assets/sound/SonActivation.mp3",
-    loop: false,
-    autoplay: false,
-    preload: true,
-    html5: true,
-    volume: 0.3
-  });
+  // soundActivation = new Howl({
+  //   src: { ActivationAudio },
+  //   loop: false,
+  //   autoplay: false,
+  //   preload: true,
+  //   html5: true,
+  //   volume: 0.3
+  // });
 
-  soundAgeOn = new Howl({
-    src: `./assets/sound/${this.props.age}ON.mp3`,
-    loop: true,
-    preload: true,
-    // html5: true,
-    volume: this.props.volume
-  });
+  // soundAgeOn = new Howl({
+  //   src: `./assets/sound/${this.props.age}ON.mp3`,
+  //   loop: true,
+  //   preload: true,
+  //   html5: true,
+  //   volume: this.props.volume
+  // });
 
   componentDidMount = () => {
     window.addEventListener("mousemove", this.playSound);
@@ -58,8 +60,8 @@ class SoundController extends React.Component {
   componentWillUnmount = () => {
     window.removeEventListener("mousemove", this.playSound);
     this.mounted = false;
-    this.soundAgeOn.unload();
-    this.soundOff.unload();
+    // this.soundAgeOn.unload();
+    // this.soundOff.unload();
   };
 
   playSound = () => {

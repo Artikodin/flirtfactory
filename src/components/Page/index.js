@@ -5,6 +5,23 @@ import { Wrapper } from "./element";
 
 import { About, NavBar, ProgressContext, Loader, Cursor } from "..";
 
+import AntiquiteOn from "../../assets/nav/antiquiteon.gif";
+import AntiquiteOff from "../../assets/nav/antiquiteoff.gif";
+import MoyenAgeOn from "../../assets/nav/moyenageon.gif";
+import MoyenAgeOff from "../../assets/nav/moyenageoff.gif";
+import RenaissanceOn from "../../assets/nav/renaissanceon.gif";
+import RenaissanceOff from "../../assets/nav/renaissanceoff.gif";
+import LumieresOn from "../../assets/nav/lumiereson.gif";
+import LumieresOff from "../../assets/nav/lumieresoff.gif";
+import BelleEpoqueOn from "../../assets/nav/belleepoqueon.gif";
+import BelleEpoqueOff from "../../assets/nav/belleepoqueoff.gif";
+import ModerneOn from "../../assets/nav/moderneon.gif";
+import ModerneOff from "../../assets/nav/moderneoff.gif";
+import ContemporainOn from "../../assets/nav/contemporainon.gif";
+import ContemporainOff from "../../assets/nav/contemporainoff.gif";
+import FuturOn from "../../assets/nav/futuron.gif";
+import FuturOff from "../../assets/nav/futuroff.gif";
+
 class Page extends React.Component {
   state = { showed: true };
 
@@ -66,22 +83,14 @@ class Page extends React.Component {
                   <NavBar>
                     <NavBar.NavItem
                       active={history.location.pathname === "/antiquite"}
-                      imgSrc={
-                        ages.antiquite.lock
-                          ? "./assets/nav/antiquiteon.gif"
-                          : "./assets/nav/antiquiteoff.gif"
-                      }
+                      imgSrc={ages.antiquite.lock ? AntiquiteOn : AntiquiteOff}
                       pathTo="/antiquite"
                     >
                       antiquité
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       active={history.location.pathname === "/moyenage"}
-                      imgSrc={
-                        ages.moyenage.lock
-                          ? "./assets/nav/moyenageon.gif"
-                          : "./assets/nav/moyenageoff.gif"
-                      }
+                      imgSrc={ages.moyenage.lock ? MoyenAgeOn : MoyenAgeOff}
                       pathTo="/moyenage"
                     >
                       moyen-âge
@@ -89,9 +98,7 @@ class Page extends React.Component {
                     <NavBar.NavItem
                       active={history.location.pathname === "/renaissance"}
                       imgSrc={
-                        ages.renaissance.lock
-                          ? "./assets/nav/renaissanceon.gif"
-                          : "./assets/nav/renaissanceoff.gif"
+                        ages.renaissance.lock ? RenaissanceOn : RenaissanceOff
                       }
                       pathTo="/renaissance"
                     >
@@ -99,11 +106,7 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       active={history.location.pathname === "/lumieres"}
-                      imgSrc={
-                        ages.lumieres.lock
-                          ? "./assets/nav/lumiereson.gif"
-                          : "./assets/nav/lumieresoff.gif"
-                      }
+                      imgSrc={ages.lumieres.lock ? LumieresOn : LumieresOff}
                       pathTo="/lumieres"
                     >
                       lumières
@@ -111,9 +114,7 @@ class Page extends React.Component {
                     <NavBar.NavItem
                       active={history.location.pathname === "/belleepoque"}
                       imgSrc={
-                        ages.belleepoque.lock
-                          ? "./assets/nav/belleepoqueon.gif"
-                          : "./assets/nav/belleepoqueoff.gif"
+                        ages.belleepoque.lock ? BelleEpoqueOn : BelleEpoqueOff
                       }
                       pathTo="/belleepoque"
                     >
@@ -121,11 +122,7 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       active={history.location.pathname === "/moderne"}
-                      imgSrc={
-                        ages.moderne.lock
-                          ? "./assets/nav/moderneon.gif"
-                          : "./assets/nav/moderneoff.gif"
-                      }
+                      imgSrc={ages.moderne.lock ? ModerneOn : ModerneOff}
                       pathTo="/moderne"
                     >
                       moderne
@@ -134,8 +131,8 @@ class Page extends React.Component {
                       active={history.location.pathname === "/contemporain"}
                       imgSrc={
                         ages.contemporain.lock
-                          ? "./assets/nav/contemporainon.gif"
-                          : "./assets/nav/contemporainoff.gif"
+                          ? ContemporainOn
+                          : ContemporainOff
                       }
                       pathTo="/contemporain"
                     >
@@ -143,11 +140,7 @@ class Page extends React.Component {
                     </NavBar.NavItem>
                     <NavBar.NavItem
                       active={history.location.pathname === "/futur"}
-                      imgSrc={
-                        ages.futur.lock
-                          ? "./assets/nav/futuron.gif"
-                          : "./assets/nav/futuroff.gif"
-                      }
+                      imgSrc={ages.futur.lock ? FuturOn : FuturOff}
                       pathTo="/futur"
                     >
                       futur
