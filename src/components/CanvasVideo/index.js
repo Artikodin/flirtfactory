@@ -29,13 +29,23 @@ class CanvasVideo extends React.Component {
 
   render() {
     const { age, frame, show } = this.props;
+
+    // const frames = {
+    //   for (let i = 0; i < 40; i += 1) {
+    //     this.frames.push(
+    //       (new Image().src = `./assets/frames/${age}/${age}${i}.jpg`)
+    //     );
+    //   }
+    // }
+    }
     return (
       <div className="background background__canvas">
-        <img
+        {/* <img
           style={show ? { opacity: 1 } : { opacity: 0 }}
           src={`./assets/frames/${age}/${age}${frame}.jpg`}
           alt={age}
-        />
+        /> */}
+        { frames }
         <div className="noise" />
       </div>
     );

@@ -25,7 +25,7 @@ class Video extends React.Component {
           style={{ display: number === 1 ? "block" : "none" }}
           src={`./assets/videos/${path}/${path}1.mp4`}
           type="video/mp4"
-          preload="auto"
+          // preload="auto"
           autoPlay
           playsInline
           loop={path === "flirtfactory" ? true : false}
@@ -130,7 +130,7 @@ class Video extends React.Component {
                   style={{ display: number === 2 ? "block" : "none" }}
                   src={`./assets/videos/${path}/${path}2.mp4`}
                   type="video/mp4"
-                  preload="metadata"
+                  // preload="metadata"
                   autoPlay
                   playsInline
                   muted
@@ -140,7 +140,7 @@ class Video extends React.Component {
                   style={{ display: number === 3 ? "block" : "none" }}
                   src={`./assets/videos/${path}/${path}3.mp4`}
                   type="video/mp4"
-                  preload="metadata"
+                  // preload="metadata"
                   autoPlay
                   playsInline
                   loop

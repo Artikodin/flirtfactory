@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   bottom: 0;
   z-index: 51;
 
-  &:after {
+  /* &:after {
     content: "";
     background-image: url("./assets/img/noise.gif");
     background-size: 80px;
@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
     right: 0;
     position: absolute;
     z-index: -1;
-  }
+  } */
 `;
 
 export const ButtonAboutClose = styled.button`
